@@ -4,7 +4,7 @@ import { SlideContent } from '../';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
-import { ArrowLeftUnHovered } from '../../assets'
+import { ArrowLeftUnHovered } from '../../assets';
 
 interface Props {
   dataList: object[];
@@ -21,14 +21,14 @@ function Slide(props: Props) {
     speed: 500,
     slidesToShow: length,
     slidesToScroll: length,
-    cssEase: "linear",
-    arrows: true
-  }
+    cssEase: 'linear',
+    arrows: true,
+  };
 
   return (
     <SliderWrap>
       <Slider {...settings}>
-        {dataList.map((datum) => {
+        {dataList.map(datum => {
           return <SlideContent datum={datum} />;
         })}
       </Slider>
@@ -52,4 +52,4 @@ const SliderWrap = styled.div`
     opacity: 1;
     color: black;
   }
-`
+`;
