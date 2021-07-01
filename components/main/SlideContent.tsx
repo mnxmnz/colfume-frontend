@@ -8,12 +8,11 @@ interface Props {
 }
 
 function SlideContent(props: Props) {
-  const image = props.datum.image.src;
-  const keyword = props.datum.keyword;
+  const datum = props.datum;
 
   return (
-    <ContentWrap>
-      <img src={image} alt={keyword} />
+    <ContentWrap className={datum.keyword}>
+      <img src={datum.image.src} alt="" />
     </ContentWrap>
   );
 }
