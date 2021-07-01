@@ -40,7 +40,7 @@ export default Slide;
 
 const SliderWrap = styled.div`
   width: 106.6rem;
-  margin-left: 1rem;
+  margin-left: 10rem;
 
   .slick-prev:before {
     opacity: 1; // 기존에 숨어있던 화살표 버튼이 보이게

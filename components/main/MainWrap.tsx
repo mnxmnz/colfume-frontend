@@ -42,7 +42,7 @@ function MainWrap() {
   return (
     <div>
       MainWrap
-        <Slide dataList={dataList} length={4} />
+      <Slide dataList={dataList} length={4} />
     </div>
   );
 }
