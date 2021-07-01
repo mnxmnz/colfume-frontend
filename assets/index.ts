@@ -7,3 +7,4 @@ export { default as Palette05Blue } from './main/Palette05Blue.svg';
 export { default as Palette06Purple } from './main/Palette06Purple.svg';
 export { default as Palette07Pink } from './main/Palette07Pink.svg';
 export { default as Palette08White } from './main/Palette08White.svg';
+export { default as ArrowLeftUnHovered } from './main/Palette08White.svg';

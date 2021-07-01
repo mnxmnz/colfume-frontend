@@ -4,6 +4,7 @@ import { SlideContent } from '../';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
+import { ArrowLeftUnHovered } from '../../assets'
 
 interface Props {
   dataList: object[];
@@ -40,6 +41,7 @@ export default Slide;
 const SliderWrap = styled.div`
   width: 106.6rem;
   margin-left: 1rem;
+
   .slick-prev:before {
     opacity: 1; // 기존에 숨어있던 화살표 버튼이 보이게
     color: black; // 버튼 색은 검은색으로
