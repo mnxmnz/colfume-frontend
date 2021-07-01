@@ -28,8 +28,8 @@ function Slide(props: Props) {
   return (
     <SliderWrap>
       <Slider {...settings}>
-        {dataList.map(datum => {
-          return <SlideContent datum={datum} />;
+        {dataList.map((datum, idx) => {
+          return <SlideContent datum={datum} key={idx} />;
         })}
       </Slider>
     </SliderWrap>
