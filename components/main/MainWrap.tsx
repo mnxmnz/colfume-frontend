@@ -24,7 +24,13 @@ function MainWrap() {
           paddingContent="0rem"
           paddingBottom="12.5rem"
         />
-        <Slide slideName="palette" length={4} paddingBottom="35.7rem" paddingTop="0rem" />
+        <Slide
+          slideName="palette"
+          length={4}
+          paddingBottom="35.7rem"
+          paddingTop="0rem"
+          width="106.6rem"
+        />
       </ContentWrap>
       <Mood />
       <ContentWrap>
@@ -46,6 +52,7 @@ function MainWrap() {
               length={3}
               paddingBottom="18.9rem"
               paddingTop="9.8rem"
+              width="127.7rem"
             />
           </div>
         </div>
@@ -73,5 +80,8 @@ const ContentWrap = styled.div`
   .slide-container {
     border-top: solid;
     border-bottom: solid;
+    width: 127.2rem;
+    display: flex;
+    justify-content: center;
   }
 `;

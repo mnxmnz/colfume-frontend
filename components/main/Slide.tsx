@@ -18,6 +18,7 @@ interface Props {
   length: number;
   paddingBottom: string;
   paddingTop: string;
+  width: string;
 }
 
 function ArrowLeft(props) {
@@ -61,6 +62,7 @@ function Slide(props: Props) {
   const styleSlider = {
     paddingBottom: `${props.paddingBottom}`,
     paddingTop: `${props.paddingTop}`,
+    width: `${props.width}`,
   };
   const slideName = props.slideName;
 
@@ -86,10 +88,12 @@ function Slide(props: Props) {
           : sampleData.map((datum, idx) => {
               return (
                 // div로 한 번 더 감싸지 않으면 flex 적용이 안됨,,
-                <div>
+                <div id={slideName}>
                   <div className={slideName}>
-                    <img src={datum.image.src} key={idx} alt="" />
-                    <div id="keyword">{datum.keyword}</div>
+                    <div>
+                      <img id={slideName} src={datum.image.src} key={idx} alt="" />
+                      <span id="keyword">{datum.keyword}</span>
+                    </div>
                   </div>
                 </div>
               );
@@ -102,35 +106,10 @@ function Slide(props: Props) {
 export default Slide;
 
 const SliderWrap = styled.div`
-  // custom
-  .recommendation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    #keyword {
-      color: black;
-      height: 5.1rem;
-      font-size: 2.2rem;
-      line-height: 3.96rem;
-    }
-  }
-  .slick-list {
-    // custom
-    width: 112rem;
-  }
-
-  .slick-slide {
-    img {
-      // custom
-      height: 27.7rem;
-    }
-  }
-
   .slick-arrow {
     img {
-      width: 1.9rem;
-      height: 4.432rem;
+      width: 2.1rem;
+      height: 4.6rem;
     }
   }
 
@@ -140,16 +119,40 @@ const SliderWrap = styled.div`
 
   .slick-arrow.slick-prev {
     // custom
-    left: -18rem;
+    left: -18.3rem;
   }
 
   .slick-arrow.slick-next {
     // custom
-    right: -18rem;
+    right: -18.3rem;
   }
 
   .slick-dots {
     // custom
     bottom: -17rem;
+  }
+  // no need to custom
+  .recommendation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #keyword {
+      color: #3e3e3e;
+      font-size: 2.2rem;
+      line-height: 3.96rem;
+    }
+  }
+
+  .slick-slide {
+    img {
+      // custom
+      height: 27.7rem;
+    }
+
+    #recommendation {
+      width: 33.2rem;
+      height: 45rem;
+    }
   }
 `;
