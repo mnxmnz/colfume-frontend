@@ -56,13 +56,10 @@ function MainWrap() {
       <Banner />
       <Content
         title="About Colfume"
-        content="8가지의 색과 함께 쉽고 재미있게 향을 알아보세요
-        
-        8가지의 색과 함께 쉽고 재미있게 향을 알아보세요"
+        content="8가지의 색과 함께 쉽고 재미있게 향을 알아보세요"
         paddingTitle="12.5rem"
         paddingContent="6.3rem"
       />
-      <Slide dataList={dataList} length={4} />
       <Content
         title="Colfume Palette"
         content="8가지의 색과 함께 쉽고 재미있게 향을 알아보세요"

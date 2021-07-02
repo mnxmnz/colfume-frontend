@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BannerImg } from '../../assets';
-import Image from "next/image";
+import Image from 'next/image';
 
 const BannerWrap = styled.div`
     color: #3E3E3E;
