@@ -4,11 +4,48 @@ import { SlideContent } from '../';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
-import { ArrowLeftUnHovered } from '../../assets';
-
+import {
+  ArrowLeftUnHovered,
+  ArrowLeftHovered,
+  ArrowRightUnHovered,
+  ArrowRightHovered,
+} from '../../assets/';
 interface Props {
   dataList: object[];
   length: number;
+}
+
+function ArrowLeft(props) {
+  const { className, style, onClick } = props;
+  const leftButton = React.useRef();
+
+  return (
+    <div className={className} style={{ ...style, display: 'block' }} onClick={onClick}>
+      <img
+        src={ArrowLeftUnHovered.src}
+        alt=""
+        onMouseEnter={() => (leftButton.current.src = ArrowLeftHovered.src)}
+        onMouseLeave={() => (leftButton.current.src = ArrowLeftUnHovered.src)}
+        ref={leftButton}
+      />
+    </div>
+  );
+}
+
+function ArrowRight(props) {
+  const { className, style, onClick } = props;
+  const rightButton = React.useRef();
+  return (
+    <div className={className} style={{ ...style, display: 'block' }} onClick={onClick}>
+      <img
+        src={ArrowRightUnHovered.src}
+        alt=""
+        onMouseEnter={() => (rightButton.current.src = ArrowRightHovered.src)}
+        onMouseLeave={() => (rightButton.current.src = ArrowRightUnHovered.src)}
+        ref={rightButton}
+      />
+    </div>
+  );
 }
 
 function Slide(props: Props) {
@@ -23,6 +60,8 @@ function Slide(props: Props) {
     slidesToScroll: length,
     cssEase: 'linear',
     arrows: true,
+    nextArrow: <ArrowRight />,
+    prevArrow: <ArrowLeft />,
   };
 
   return (
@@ -39,17 +78,11 @@ function Slide(props: Props) {
 export default Slide;
 
 const SliderWrap = styled.div`
-  width: 106.6rem;
-  margin-left: 10rem;
-
-  .slick-prev:before {
-    opacity: 1; // 기존에 숨어있던 화살표 버튼이 보이게
-    color: black; // 버튼 색은 검은색으로
-    left: 0;
-  }
-
-  .slick-next:before {
-    opacity: 1;
-    color: black;
+  width: 142.8rem;
+  .slick-arrow {
+    img {
+      width: 1.9rem;
+      height: 4.432rem;
+    }
   }
 `;

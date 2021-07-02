@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 interface Props {
   datum: object;
-  image: string;
-  // keyword: string;
 }
 
 function SlideContent(props: Props) {
