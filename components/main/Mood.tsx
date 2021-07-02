@@ -14,6 +14,7 @@ function Mood() {
         content="원하는 무드 또는 스타일을 선택하여 향수를 찾아보세요"
         paddingTitle="12.5rem"
         paddingContent="0rem"
+        paddingBottom="17.2rem"
       />
       <ThemeWrap>
         <ThemeTable title="Mood" list={moodList} />

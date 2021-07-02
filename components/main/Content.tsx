@@ -1,25 +1,22 @@
 import React from 'react';
+import { constSelector } from 'recoil';
 import styled from 'styled-components';
-import { Slide } from '../';
-import PaletteData from '../../public/PaletteData';
 
-function Content({ title, content, paddingTitle, paddingContent }) {
+function Content({ title, content, paddingTitle, paddingContent, paddingBottom }) {
   const styleTitle = {
     paddingTop: `${paddingTitle}`,
   };
 
   const styleContent = {
     paddingTop: `${paddingContent}`,
+    paddingBottom: `${paddingBottom}`,
   };
-
-  const dataList: object[] = PaletteData;
 
   return (
     <>
       <TitleWrap style={styleTitle}>{title}</TitleWrap>
       <ContentWrap style={styleContent}>
-        {content}
-        <Slide dataList={dataList} length={4} />
+        <div>{content}</div>
       </ContentWrap>
     </>
   );
@@ -38,7 +35,9 @@ const ContentWrap = styled.div`
   font-weight: 400;
   line-height: 4rem;
   text-align: center;
-  margin-left: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export default Content;

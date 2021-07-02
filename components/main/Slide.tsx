@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { SlideContent } from '../';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
@@ -10,9 +9,15 @@ import {
   ArrowRightUnHovered,
   ArrowRightHovered,
 } from '../../assets/';
+import PaletteData from '../../public/PaletteData';
+import SampleData from '../../public/SampleData';
+import { sample } from 'lodash';
+
 interface Props {
-  dataList: object[];
+  slideName: string;
   length: number;
+  paddingBottom: string;
+  paddingTop: string;
 }
 
 function ArrowLeft(props) {
@@ -35,6 +40,7 @@ function ArrowLeft(props) {
 function ArrowRight(props) {
   const { className, style, onClick } = props;
   const rightButton = React.useRef();
+
   return (
     <div className={className} style={{ ...style, display: 'block' }} onClick={onClick}>
       <img
@@ -49,8 +55,14 @@ function ArrowRight(props) {
 }
 
 function Slide(props: Props) {
-  const dataList = props.dataList;
+  const paletteData = PaletteData;
+  const sampleData = SampleData;
   const length = props.length;
+  const styleSlider = {
+    paddingBottom: `${props.paddingBottom}`,
+    paddingTop: `${props.paddingTop}`,
+  };
+  const slideName = props.slideName;
 
   const settings = {
     dots: true,
@@ -65,11 +77,23 @@ function Slide(props: Props) {
   };
 
   return (
-    <SliderWrap>
+    <SliderWrap style={styleSlider}>
       <Slider {...settings}>
-        {dataList.map((datum, idx) => {
-          return <SlideContent datum={datum} key={idx} />;
-        })}
+        {slideName === 'palette'
+          ? paletteData.map((datum, idx) => {
+              return <img src={datum.image.src} key={idx} alt="" />;
+            })
+          : sampleData.map((datum, idx) => {
+              return (
+                // div로 한 번 더 감싸지 않으면 flex 적용이 안됨,,
+                <div>
+                  <div className={slideName}>
+                    <img src={datum.image.src} key={idx} alt="" />
+                    <div id="keyword">{datum.keyword}</div>
+                  </div>
+                </div>
+              );
+            })}
       </Slider>
     </SliderWrap>
   );
@@ -78,11 +102,54 @@ function Slide(props: Props) {
 export default Slide;
 
 const SliderWrap = styled.div`
-  width: 142.8rem;
+  // custom
+  .recommendation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #keyword {
+      color: black;
+      height: 5.1rem;
+      font-size: 2.2rem;
+      line-height: 3.96rem;
+    }
+  }
+  .slick-list {
+    // custom
+    width: 112rem;
+  }
+
+  .slick-slide {
+    img {
+      // custom
+      height: 27.7rem;
+    }
+  }
+
   .slick-arrow {
     img {
       width: 1.9rem;
       height: 4.432rem;
     }
+  }
+
+  .slick-arrow::before {
+    display: none;
+  }
+
+  .slick-arrow.slick-prev {
+    // custom
+    left: -18rem;
+  }
+
+  .slick-arrow.slick-next {
+    // custom
+    right: -18rem;
+  }
+
+  .slick-dots {
+    // custom
+    bottom: -17rem;
   }
 `;
