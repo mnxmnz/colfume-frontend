@@ -4,7 +4,7 @@ import { SlideContent } from '../';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
-import { ArrowLeftUnHovered } from '../../assets'
+import { ArrowLeftUnHovered } from '../../assets';
 
 interface Props {
   dataList: object[];
@@ -21,15 +21,15 @@ function Slide(props: Props) {
     speed: 500,
     slidesToShow: length,
     slidesToScroll: length,
-    cssEase: "linear",
-    arrows: true
-  }
+    cssEase: 'linear',
+    arrows: true,
+  };
 
   return (
     <SliderWrap>
       <Slider {...settings}>
-        {dataList.map((datum) => {
-          return <SlideContent datum={datum} />;
+        {dataList.map((datum, idx) => {
+          return <SlideContent datum={datum} key={idx} />;
         })}
       </Slider>
     </SliderWrap>
@@ -40,7 +40,7 @@ export default Slide;
 
 const SliderWrap = styled.div`
   width: 106.6rem;
-  margin-left: 1rem;
+  margin-left: 10rem;
 
   .slick-prev:before {
     opacity: 1; // 기존에 숨어있던 화살표 버튼이 보이게
@@ -52,4 +52,4 @@ const SliderWrap = styled.div`
     opacity: 1;
     color: black;
   }
-`
+`;
