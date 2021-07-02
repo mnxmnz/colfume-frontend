@@ -8,6 +8,7 @@ const Positioner = styled.div`
     position: fixed;
     width: 100%;
     z-index: 1;
+    top: 0;
 `
 
 // 흰 배경, 내용 중간 정렬
@@ -20,7 +21,7 @@ const WhiteBackground = styled.div`
 
 // 해더의 내용
 const HeaderContents = styled.div`
-    width: 192rem;
+    width: 100%;
     height: 7.2rem;
     display: flex;
     align-items: center;
