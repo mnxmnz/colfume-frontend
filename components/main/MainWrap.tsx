@@ -41,7 +41,6 @@ function MainWrap() {
           paddingContent="0rem"
           paddingBottom="16rem"
         />
-
         <div>
           <div id="comment">
             다음 주 <strong>면접</strong> 전에, 이런 향수는 어떤가요?

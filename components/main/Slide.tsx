@@ -11,7 +11,6 @@ import {
 } from '../../assets/';
 import PaletteData from '../../public/PaletteData';
 import SampleData from '../../public/SampleData';
-import { sample } from 'lodash';
 
 interface Props {
   slideName: string;
