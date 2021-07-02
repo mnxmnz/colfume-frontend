@@ -1,4 +1,5 @@
 export { default as Header } from './common/Header';
+export { default as Banner } from  './main/Banner';
 export { default as MainWrap } from './main/MainWrap';
 export { default as Slide } from './main/Slide';
 export { default as SlideContent } from './main/SlideContent';

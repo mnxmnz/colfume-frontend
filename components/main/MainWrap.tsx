@@ -1,6 +1,7 @@
 import React from 'react';
 import { Slide } from '../';
 import { Palette01Red, Palette02Orange, Palette03Yellow, Palette04Green, Palette05Blue, Palette06Purple, Palette07Pink, Palette08White } from '../../assets';
+import Banner from './Banner';
 
 function MainWrap() {
   const dataList: object[] = [
@@ -41,7 +42,7 @@ function MainWrap() {
 
   return (
     <div>
-      MainWrap
+      <Banner />
         <Slide dataList={dataList} length={4} />
     </div>
   );
