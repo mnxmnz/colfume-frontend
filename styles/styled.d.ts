@@ -2,8 +2,9 @@ import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    color: {
-      white: '#ffffff';
+    colors: {
+      backgroundGray: string;
+      borderGray: string;
     };
   }
 }

@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 10px;
+    font-family: NotoSans;
   }
 
   a {
@@ -21,6 +22,20 @@ export const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     border: none;
     outline: none;                                                                                                                                                                         
+  }
+
+  @font-face {
+    font-family: "NotoSans";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/fonts/NotoSansKR-Regular.otf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Junge";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/fonts/Junge-Regular.ttf") format("truetype");
   }
 `;
 
