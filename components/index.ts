@@ -2,7 +2,6 @@ export { default as Header } from './common/Header';
 export { default as Banner } from  './main/Banner';
 export { default as MainWrap } from './main/MainWrap';
 export { default as Slide } from './main/Slide';
-export { default as SlideContent } from './main/SlideContent';
 export { default as ProductWrap } from './product/ProductWrap';
 export { default as ProductDetailWrap } from './productDetail/ProductDetailWrap';
 export { default as SearchWrap } from './search/SearchWrap';

@@ -1,19 +1,23 @@
 import React from 'react';
+import { constSelector } from 'recoil';
 import styled from 'styled-components';
 
-function Content({ title, content, paddingTitle, paddingContent }) {
+function Content({ title, content, paddingTitle, paddingContent, paddingBottom }) {
   const styleTitle = {
     paddingTop: `${paddingTitle}`,
   };
 
   const styleContent = {
     paddingTop: `${paddingContent}`,
+    paddingBottom: `${paddingBottom}`,
   };
 
   return (
     <>
       <TitleWrap style={styleTitle}>{title}</TitleWrap>
-      <ContentWrap style={styleContent}>{content}</ContentWrap>
+      <ContentWrap style={styleContent}>
+        <div>{content}</div>
+      </ContentWrap>
     </>
   );
 }
@@ -31,6 +35,9 @@ const ContentWrap = styled.div`
   font-weight: 400;
   line-height: 4rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export default Content;

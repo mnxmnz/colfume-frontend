@@ -1,19 +1,69 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { SlideContent } from '../';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
-import { ArrowLeftUnHovered } from '../../assets';
+import {
+  ArrowLeftUnHovered,
+  ArrowLeftHovered,
+  ArrowRightUnHovered,
+  ArrowRightHovered,
+} from '../../assets/';
+import PaletteData from '../../public/PaletteData';
+import SampleData from '../../public/SampleData';
 
 interface Props {
-  dataList: object[];
+  slideName: string;
   length: number;
+  paddingBottom: string;
+  paddingTop: string;
+  width: string;
+}
+
+function ArrowLeft(props) {
+  const { className, style, onClick } = props;
+  const leftButton = React.useRef();
+
+  return (
+    <div className={className} style={{ ...style, display: 'block' }} onClick={onClick}>
+      <img
+        src={ArrowLeftUnHovered.src}
+        alt=""
+        onMouseEnter={() => (leftButton.current.src = ArrowLeftHovered.src)}
+        onMouseLeave={() => (leftButton.current.src = ArrowLeftUnHovered.src)}
+        ref={leftButton}
+      />
+    </div>
+  );
+}
+
+function ArrowRight(props) {
+  const { className, style, onClick } = props;
+  const rightButton = React.useRef();
+
+  return (
+    <div className={className} style={{ ...style, display: 'block' }} onClick={onClick}>
+      <img
+        src={ArrowRightUnHovered.src}
+        alt=""
+        onMouseEnter={() => (rightButton.current.src = ArrowRightHovered.src)}
+        onMouseLeave={() => (rightButton.current.src = ArrowRightUnHovered.src)}
+        ref={rightButton}
+      />
+    </div>
+  );
 }
 
 function Slide(props: Props) {
-  const dataList = props.dataList;
+  const paletteData = PaletteData;
+  const sampleData = SampleData;
   const length = props.length;
+  const styleSlider = {
+    paddingBottom: `${props.paddingBottom}`,
+    paddingTop: `${props.paddingTop}`,
+    width: `${props.width}`,
+  };
+  const slideName = props.slideName;
 
   const settings = {
     dots: true,
@@ -23,14 +73,30 @@ function Slide(props: Props) {
     slidesToScroll: length,
     cssEase: 'linear',
     arrows: true,
+    nextArrow: <ArrowRight />,
+    prevArrow: <ArrowLeft />,
   };
 
   return (
-    <SliderWrap>
+    <SliderWrap style={styleSlider}>
       <Slider {...settings}>
-        {dataList.map((datum, idx) => {
-          return <SlideContent datum={datum} key={idx} />;
-        })}
+        {slideName === 'palette'
+          ? paletteData.map((datum, idx) => {
+              return <img src={datum.image.src} key={idx} alt="" />;
+            })
+          : sampleData.map((datum, idx) => {
+              return (
+                // div로 한 번 더 감싸지 않으면 flex 적용이 안됨,,
+                <div id={slideName}>
+                  <div className={slideName}>
+                    <div>
+                      <img id={slideName} src={datum.image.src} key={idx} alt="" />
+                      <span id="keyword">{datum.keyword}</span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
       </Slider>
     </SliderWrap>
   );
@@ -39,17 +105,53 @@ function Slide(props: Props) {
 export default Slide;
 
 const SliderWrap = styled.div`
-  width: 106.6rem;
-  margin-left: 10rem;
-
-  .slick-prev:before {
-    opacity: 1; // 기존에 숨어있던 화살표 버튼이 보이게
-    color: black; // 버튼 색은 검은색으로
-    left: 0;
+  .slick-arrow {
+    img {
+      width: 2.1rem;
+      height: 4.6rem;
+    }
   }
 
-  .slick-next:before {
-    opacity: 1;
-    color: black;
+  .slick-arrow::before {
+    display: none;
+  }
+
+  .slick-arrow.slick-prev {
+    // custom
+    left: -18.3rem;
+  }
+
+  .slick-arrow.slick-next {
+    // custom
+    right: -18.3rem;
+  }
+
+  .slick-dots {
+    // custom
+    bottom: -17rem;
+  }
+  // no need to custom
+  .recommendation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #keyword {
+      color: #3e3e3e;
+      font-size: 2.2rem;
+      line-height: 3.96rem;
+    }
+  }
+
+  .slick-slide {
+    img {
+      // custom
+      height: 27.7rem;
+    }
+
+    #recommendation {
+      width: 33.2rem;
+      height: 45rem;
+    }
   }
 `;
