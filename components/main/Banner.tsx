@@ -1,31 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { BannerImg } from '../../assets';
-import Image from "next/image";
+import Image from 'next/image';
 
 const BannerWrap = styled.div`
-& > div {
-    z-index: -1;
-}
-
-img {
-     width: 100%; 
-}
-
-p{
-    font-size: 100px;
-}
+  img {
+    width: 100vw;
+  }
 `;
 
 const Banner = () => {
-    return (
-        <BannerWrap>
-         <div>
-            <Image src={BannerImg} />
-         </div>
-            <p>test</p>
-        </BannerWrap>
-    );
+  return (
+    <BannerWrap>
+      <Image src={BannerImg} />
+    </BannerWrap>
+  );
 };
 
 export default Banner;
