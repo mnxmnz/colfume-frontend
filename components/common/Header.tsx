@@ -3,12 +3,13 @@ import styled from 'styled-components';
 
 // 상단 고정
 const Positioner = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-`;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+`
 
 // 흰 배경, 내용 중간 정렬
 const WhiteBackground = styled.div`
