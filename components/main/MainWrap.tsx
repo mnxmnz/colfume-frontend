@@ -1,16 +1,8 @@
 import React from 'react';
 import Content from './Content';
 import { Slide } from '../';
-import {
-  Palette01Red,
-  Palette02Orange,
-  Palette03Yellow,
-  Palette04Green,
-  Palette05Blue,
-  Palette06Purple,
-  Palette07Pink,
-  Palette08White,
-} from '../../assets';
+import { Palette01Red, Palette02Orange, Palette03Yellow, Palette04Green, Palette05Blue, Palette06Purple, Palette07Pink, Palette08White } from '../../assets';
+import Banner from './Banner';
 import Mood from './Mood';
 
 function MainWrap() {
@@ -52,6 +44,7 @@ function MainWrap() {
 
   return (
     <>
+      <Banner />
       <Content
         title="About Colfume"
         content="8가지의 색과 함께 쉽고 재미있게 향을 알아보세요
@@ -60,6 +53,7 @@ function MainWrap() {
         paddingTitle="12.5rem"
         paddingContent="6.3rem"
       />
+      <Slide dataList={dataList} length={4} />
       <Content
         title="Colfume Palette"
         content="8가지의 색과 함께 쉽고 재미있게 향을 알아보세요"
@@ -74,6 +68,7 @@ function MainWrap() {
         paddingTitle="12.4rem"
         paddingContent="0rem"
       />
+      <Slide dataList={dataList} length={4} />
     </>
   );
 }
