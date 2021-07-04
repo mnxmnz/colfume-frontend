@@ -51,7 +51,7 @@ function MainWrap() {
               length={3}
               paddingBottom="18.9rem"
               paddingTop="9.8rem"
-              width="127.7rem"
+              width="141rem"
             />
           </div>
         </div>
@@ -78,7 +78,7 @@ const ContentWrap = styled.div`
   .slide-container {
     border-top: solid;
     border-bottom: solid;
-    width: 127.2rem;
+    width: 142.6rem;
     display: flex;
     justify-content: center;
     margin-bottom: 19.7rem;

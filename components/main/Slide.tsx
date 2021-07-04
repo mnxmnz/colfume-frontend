@@ -22,11 +22,11 @@ interface Props {
 }
 
 function ArrowLeft(props) {
-  const { className, style, onClick } = props;
+  const { className, style, onClick, id } = props;
   const leftButton = React.useRef();
 
   return (
-    <div className={className} style={{ ...style, display: 'block' }} onClick={onClick}>
+    <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
       <img
         src={ArrowLeftUnHovered.src}
         alt=""
@@ -39,11 +39,11 @@ function ArrowLeft(props) {
 }
 
 function ArrowRight(props) {
-  const { className, style, onClick } = props;
+  const { className, style, onClick, id } = props;
   const rightButton = React.useRef();
 
   return (
-    <div className={className} style={{ ...style, display: 'block' }} onClick={onClick}>
+    <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
       <img
         src={ArrowRightUnHovered.src}
         alt=""
@@ -74,8 +74,9 @@ function Slide(props: Props) {
     slidesToScroll: length,
     cssEase: 'linear',
     arrows: true,
-    nextArrow: <ArrowRight />,
-    prevArrow: <ArrowLeft />,
+    nextArrow: <ArrowRight id={slideName} />,
+    prevArrow: <ArrowLeft id={slideName} />,
+    dotsClass: `slick-dots ${slideName}`,
   };
 
   return (
@@ -86,7 +87,7 @@ function Slide(props: Props) {
               return <img src={datum.image.src} key={idx} alt="" height="277rem" />;
             })
           : sampleData.map((datum, idx) => {
-              return <Recommendation className={slideName} datum={datum} idx={idx} />;
+              return <Recommendation datum={datum} idx={idx} />;
             })}
       </Slider>
     </SliderWrap>
@@ -96,9 +97,14 @@ function Slide(props: Props) {
 export default Slide;
 
 const SliderWrap = styled.div`
-  .slick-dots {
+  .slick-dots.palette {
     bottom: -17rem;
+  }
 
+  .slick-dots.recommendation {
+    bottom: -8.2rem;
+  }
+  .slick-dots {
     button::before {
       width: 1.5rem;
       height: 1.5rem;
@@ -126,17 +132,19 @@ const SliderWrap = styled.div`
     display: none;
   }
 
-  .slick-arrow.slick-prev {
-    // custom
+  #palette.slick-arrow.slick-prev {
     left: -18.3rem;
   }
 
-  .slick-arrow.slick-next {
-    // custom
+  #palette.slick-arrow.slick-next {
     right: -18.3rem;
   }
 
-  .slick-dots {
-    // custom
+  #recommendation.slick-arrow.slick-prev {
+    left: -0.8rem;
+  }
+
+  #recommendation.slick-arrow.slick-next {
+    right: -0.8rem;
   }
 `;
