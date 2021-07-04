@@ -8,10 +8,10 @@ import {
   ArrowLeftHovered,
   ArrowRightUnHovered,
   ArrowRightHovered,
-  Contour,
 } from '../../assets/';
 import PaletteData from '../../public/PaletteData';
 import SampleData from '../../public/SampleData';
+import Recommendation from './Recommendation';
 
 interface Props {
   slideName: string;
@@ -83,21 +83,10 @@ function Slide(props: Props) {
       <Slider {...settings}>
         {slideName === 'palette'
           ? paletteData.map((datum, idx) => {
-              return <img src={datum.image.src} key={idx} alt="" />;
+              return <img src={datum.image.src} key={idx} alt="" height="277rem" />;
             })
           : sampleData.map((datum, idx) => {
-              return (
-                // div로 한 번 더 감싸지 않으면 flex 적용이 안됨,,
-                // 1,3,6,8,11,13 // idx % 5 === 1 or idx % 5 === 3
-                <div>
-                  <div className={slideName}>
-                    <div key={idx}>
-                      <img id={slideName} src={datum.image.src} alt="" />
-                      <span id="keyword">{datum.keyword}</span>
-                    </div>
-                  </div>
-                </div>
-              );
+              return <Recommendation className={slideName} datum={datum} idx={idx} />;
             })}
       </Slider>
     </SliderWrap>
@@ -108,6 +97,8 @@ export default Slide;
 
 const SliderWrap = styled.div`
   .slick-dots {
+    bottom: -17rem;
+
     button::before {
       width: 1.5rem;
       height: 1.5rem;
@@ -119,9 +110,11 @@ const SliderWrap = styled.div`
     .slick-active {
       button::before {
         background-color: #3e3e3e;
+        color: #3e3e3e;
       }
     }
   }
+
   .slick-arrow {
     img {
       width: 2.1rem;
@@ -145,34 +138,5 @@ const SliderWrap = styled.div`
 
   .slick-dots {
     // custom
-    bottom: -17rem;
-  }
-  // no need to custom
-  .recommendation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    #keyword {
-      color: #3e3e3e;
-      font-size: 2.2rem;
-      line-height: 3.96rem;
-    }
-  }
-
-  .slick-slide {
-    img {
-      // custom
-      height: 27.7rem;
-    }
-
-    #recommendation {
-      width: 33.2rem;
-      height: 45rem;
-    }
-  }
-
-  .contour {
-    margin: 0;
   }
 `;
