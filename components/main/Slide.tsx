@@ -86,12 +86,10 @@ function Slide(props: Props) {
               return <img src={datum.image.src} key={idx} alt="" />;
             })
           : sampleData.map((datum, idx) => {
-              // if (idx % 5 === 1 || idx % 5 === 3) return <img src={Contour.src} alt="" />;
               return (
                 // div로 한 번 더 감싸지 않으면 flex 적용이 안됨,,
                 // 1,3,6,8,11,13 // idx % 5 === 1 or idx % 5 === 3
-
-                <div id={slideName}>
+                <div>
                   <div className={slideName}>
                     <div key={idx}>
                       <img id={slideName} src={datum.image.src} alt="" />
@@ -109,6 +107,21 @@ function Slide(props: Props) {
 export default Slide;
 
 const SliderWrap = styled.div`
+  .slick-dots {
+    button::before {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: white;
+      border: 0.08rem solid;
+      border-radius: 50%;
+      border-color: black;
+    }
+    .slick-active {
+      button::before {
+        background-color: #3e3e3e;
+      }
+    }
+  }
   .slick-arrow {
     img {
       width: 2.1rem;
@@ -157,5 +170,9 @@ const SliderWrap = styled.div`
       width: 33.2rem;
       height: 45rem;
     }
+  }
+
+  .contour {
+    margin: 0;
   }
 `;
