@@ -8,6 +8,7 @@ import {
   ArrowLeftHovered,
   ArrowRightUnHovered,
   ArrowRightHovered,
+  Contour,
 } from '../../assets/';
 import PaletteData from '../../public/PaletteData';
 import SampleData from '../../public/SampleData';
@@ -85,12 +86,15 @@ function Slide(props: Props) {
               return <img src={datum.image.src} key={idx} alt="" />;
             })
           : sampleData.map((datum, idx) => {
+              // if (idx % 5 === 1 || idx % 5 === 3) return <img src={Contour.src} alt="" />;
               return (
                 // div로 한 번 더 감싸지 않으면 flex 적용이 안됨,,
+                // 1,3,6,8,11,13 // idx % 5 === 1 or idx % 5 === 3
+
                 <div id={slideName}>
                   <div className={slideName}>
-                    <div>
-                      <img id={slideName} src={datum.image.src} key={idx} alt="" />
+                    <div key={idx}>
+                      <img id={slideName} src={datum.image.src} alt="" />
                       <span id="keyword">{datum.keyword}</span>
                     </div>
                   </div>
