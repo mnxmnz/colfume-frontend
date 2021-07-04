@@ -142,9 +142,11 @@ const SliderWrap = styled.div`
 
   #recommendation.slick-arrow.slick-prev {
     left: -0.8rem;
+    top: 45%;
   }
 
   #recommendation.slick-arrow.slick-next {
     right: -0.8rem;
+    top: 45%;
   }
 `;
