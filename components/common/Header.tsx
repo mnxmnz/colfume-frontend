@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+
 const Header = () => {
   const [category, setCategory] = useState('Product');
   const onClickCategory = event => {
@@ -35,13 +36,14 @@ const Header = () => {
   );
 };
 
+
 const Logo = styled.div`
   position: fixed;
   top: 2rem;
   z-index: 100;
   margin-left: 11.2rem;
-  font-size: 3.2rem;
   font-family: 'Junge';
+  font-size: 3.2rem;
 `;
 
 const Positioner = styled.div`

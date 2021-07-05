@@ -106,12 +106,12 @@ const SliderWrap = styled.div`
   }
   .slick-dots {
     button::before {
-      width: 1.5rem;
-      height: 1.5rem;
-      color: white;
       border: 0.08rem solid;
       border-radius: 50%;
       border-color: black;
+      width: 1.5rem;
+      height: 1.5rem;
+      color: white;
     }
     .slick-active {
       button::before {
@@ -141,12 +141,12 @@ const SliderWrap = styled.div`
   }
 
   #recommendation.slick-arrow.slick-prev {
-    left: -0.8rem;
     top: 45%;
+    left: -0.8rem;
   }
 
   #recommendation.slick-arrow.slick-next {
-    right: -0.8rem;
     top: 45%;
+    right: -0.8rem;
   }
 `;

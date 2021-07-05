@@ -26,15 +26,15 @@ function Mood() {
 }
 
 const MoodWrap = styled.div`
-  height: 77.7rem;
   /* margin-top: 17.265rem; */
   background-color: ${({ theme }) => theme.colors.backgroundGray};
+  height: 77.7rem;
 `;
 
 const ThemeWrap = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-top: 10rem;
 `;
 
