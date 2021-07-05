@@ -18,3 +18,4 @@ export { default as SearchArrowOff } from './search/SearchArrowOff.svg';
 export { default as SearchCheckboxOn } from './search/SearchCheckboxOn.svg';
 export { default as SearchCheckboxOff } from './search/SearchCheckboxOff.svg';
 export { default as SearchCheckboxHover } from './search/SearchCheckboxHover.svg';
+export { default as PerfumeImg } from './search/PerfumeImg.svg';
