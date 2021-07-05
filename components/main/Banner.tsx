@@ -4,22 +4,22 @@ import { BannerImg } from '../../assets';
 import Image from 'next/image';
 
 const BannerWrap = styled.div`
-  color: #3e3e3e;
   margin-top: 7.4rem;
+  color: #3e3e3e;
   /* margin-bottom: 30rem; */
 
   img {
-    width: 100vw;
     position: relative;
     justify-content: center;
+    width: 100vw;
   }
 `;
 
 const BannerBox = styled.div`
   display: flex;
-  flex-direction: column;
   position: absolute;
   top: 22.7rem;
+  flex-direction: column;
   width: 100%;
 `;
 
@@ -30,27 +30,27 @@ const TitleBox = styled.div`
 `;
 
 const MainTitle = styled.div`
-  font-size: 12rem;
   font-family: 'Junge';
+  font-size: 12rem;
 `;
 
 const SubTitle = styled.div`
-  font-size: 2.8rem;
-  font-family: 'Noto Sans KR';
   margin-top: 2rem;
   margin-bottom: 16%;
+  font-family: 'Noto Sans KR';
+  font-size: 2.8rem;
 `;
 
 const TestBnt = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
-  font-family: 'Junge';
+  margin: auto;
+  border: 0.3rem solid #3e3e3e;
   width: 38.2rem;
   height: 10.7rem;
-  border: 0.3rem solid #3e3e3e;
-  margin: auto;
+  font-family: 'Junge';
+  font-size: 5rem;
 
   &:hover {
     cursor: pointer;

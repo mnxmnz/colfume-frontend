@@ -68,19 +68,19 @@ const ContentWrap = styled.div`
   align-items: center;
 
   #comment {
-    font-size: 2rem;
     margin-bottom: 1.98rem;
+    font-size: 2rem;
     strong {
       font-weight: bold;
     }
   }
 
   .slide-container {
-    border-top: solid;
-    border-bottom: solid;
-    width: 142.6rem;
     display: flex;
     justify-content: center;
     margin-bottom: 19.7rem;
+    border-top: solid;
+    border-bottom: solid;
+    width: 142.6rem;
   }
 `;
