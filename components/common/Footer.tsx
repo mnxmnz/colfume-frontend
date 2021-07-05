@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-//mport { Box, Container, Row, Column, FooterButton, Heading,FooterContent} from "./FooterStyles";
 
 const Box = styled.div`
   background: #FAFAFA;
@@ -18,23 +17,41 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: cetner;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 1900px;
+
 `;
 
 const Row = styled.div`
-  margin-top: 178px;
+    margin-top: 11.44rem;
+    margin-left: 11.56rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
     grid-gap: 20px;
 `;
+
 const Column = styled.div`
- // background: ivory;
+ width: 130px;
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-left: 60px;
 `;
+
+const InfoColumn = styled.div`
+display: flex;
+width: 440px;
+flex-direction: column;
+text-align: left;
+`;
+
+const FollowColumn = styled.div`
+margin-left: 230px;
+width: 150px;
+display: flex;
+flex-direction: column;
+text-align: left;
+`;
+
+
 const Heading = styled.div`
   margin-bottom: 40px;
   font-family: 'Gotham';
@@ -50,18 +67,20 @@ const FooterHeading = styled.div`
 
 `;
 const FooterButton = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 38px;
   font-family: 'Junge';
   font-weight: 400;
   font-size: 20px;
   
 `;
 const FooterContent = styled.div`
+  margin-bottom: 12px;
   font-family: 'Noto Sans KR';
   font-weight: 400;
   font-size: 15px;
 `;
 
+const Image = styled.div``;
 const Footer = () => {
   return (
     <Box>
@@ -76,18 +95,18 @@ const Footer = () => {
             <FooterButton>Color Test</FooterButton>
             <FooterButton>Search</FooterButton>
           </Column>
-          <Column>
+          <InfoColumn>
             <Heading>Contact</Heading>
             <FooterButton>khyeryun98@inha.edu</FooterButton>
             <Heading>Info</Heading>
-            <FooterContent>Colfume| 대표 구혜련</FooterContent>
+            <FooterContent>COLFUME | 대표 구혜련</FooterContent>
             <FooterContent>https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788</FooterContent>
-          </Column>
-          <Column>
+          </InfoColumn>
+          <FollowColumn>
             <Heading>Follow us</Heading>
             <FooterContent>개인정보취급방침</FooterContent>
             <FooterContent>이용약관</FooterContent>
-          </Column>
+          </FollowColumn>
         </Row>
       </Container>
     </Box>
@@ -95,65 +114,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-    // <FooterContainer>
-    //   <ContentBox>
-    //     <FooterLogo>Colfume</FooterLogo>
-    //      <FooterCategory>
-    //      Menu
-    //       <button>Product</button>
-    //       <button>Color Test</button>
-    //       <button>Search</button>
-    //     </FooterCategory>
-    //     <FooterInfo>
-    //       <classname = "info-title">Contact</>
-    //       <classname = "info-content">khyeryun@inha.edu</>
-    //     </FooterInfo>
-    //   </ContentBox>
-     
-    // </FooterContainer>
-    const FooterContainer = styled.div`
-    background: #FAFAFA;
-     display: flex;
-     min-height: 576px;
-     margin-top: auto;
-   `;
-   
-   const ContentBox = styled.div`
-     background: grey;
-     width: 100%;
-     margin: 11.13rem 19.47vw 10.94rem 12.76vw;
-   `;
-   const FooterLogo = styled.div`
-     background: white;
-     display: flex;
-     font-size: 32px;
-     font-weight: 400;
-     font-family: 'Junge';
-   `;
-   
-   const FooterCategory = styled.div`
-     background: white;
-     display: flex;
-     font-family: 'Gotham';
-     font-weight: 700;
-     font-size: 20px;
-   
-     button {
-       font-family: 'Junge';
-       font-weight: 400;
-       font-size: 20px;
-     }
-   `;
-   
-   const FooterInfo = styled.div`
-   background: white;
-   display: flex;
-   
-   `;
-   
-   const FooterEtc = styled.div`
-   background: white;
-   display: flex;
-   `;
