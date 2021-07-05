@@ -3,10 +3,24 @@ import styled from 'styled-components';
 import { BannerImg } from '../../assets';
 import Image from 'next/image';
 
+const Banner = () => {
+  return (
+    <BannerWrap>
+      <Image src={BannerImg} />
+      <BannerBox>
+        <TitleBox>
+          <MainTitle>Find Your Colfume</MainTitle>
+          <SubTitle>컬러테스트와 함께 나에게 어울리는 색과 향수를 찾아보세요</SubTitle>
+        </TitleBox>
+        <TestBnt>Start</TestBnt>
+      </BannerBox>
+    </BannerWrap>
+  );
+};
+
 const BannerWrap = styled.div`
-  margin-top: 7.4rem;
   color: #3e3e3e;
-  /* margin-bottom: 30rem; */
+  margin-top: 7.2rem;
 
   img {
     position: relative;
@@ -54,22 +68,9 @@ const TestBnt = styled.div`
 
   &:hover {
     cursor: pointer;
+    color: white;
+    background-color: #3e3e3e;
   }
 `;
-
-const Banner = () => {
-  return (
-    <BannerWrap>
-      <Image src={BannerImg} />
-      <BannerBox>
-        <TitleBox>
-          <MainTitle>Find Your Colfume</MainTitle>
-          <SubTitle>컬러테스트와 함께 나에게 어울리는 색과 향수를 찾아보세요</SubTitle>
-        </TitleBox>
-        <TestBnt>Start</TestBnt>
-      </BannerBox>
-    </BannerWrap>
-  );
-};
 
 export default Banner;
