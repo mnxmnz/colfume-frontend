@@ -12,6 +12,8 @@ export { default as ArrowLeftHovered } from './main/ArrowLeftHovered.svg';
 export { default as ArrowRightUnHovered } from './main/ArrowRightUnHovered.svg';
 export { default as ArrowRightHovered } from './main/ArrowRightHovered.svg';
 export { default as BannerImg } from './main/BannerImg.svg';
+export { default as Contour } from './main/Contour.svg';
+export { default as FooterIcons } from './main/FooterIcons.svg';
 export { default as SearchIcon } from './search/SearchIcon.svg';
 export { default as SearchArrowOn } from './search/SearchArrowOn.svg';
 export { default as SearchArrowOff } from './search/SearchArrowOff.svg';
