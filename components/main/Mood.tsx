@@ -12,9 +12,9 @@ function Mood() {
       <Content
         title="Mood and Style"
         content="원하는 무드 또는 스타일을 선택하여 향수를 찾아보세요"
-        paddingTitle="12.5rem"
+        paddingTitle="12.4rem"
         paddingContent="0rem"
-        paddingBottom="17.2rem"
+        paddingBottom="0rem"
       />
       <ThemeWrap>
         <ThemeTable title="Mood" list={moodList} />
@@ -27,7 +27,7 @@ function Mood() {
 
 const MoodWrap = styled.div`
   height: 77.7rem;
-  margin-top: 17.265rem;
+  /* margin-top: 17.265rem; */
   background-color: ${({ theme }) => theme.colors.backgroundGray};
 `;
 

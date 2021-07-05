@@ -20,7 +20,7 @@ function MainWrap() {
         <Content
           title="Colfume Palette"
           content="8가지의 색과 함께 쉽고 재미있게 향을 알아보세요"
-          paddingTitle="12.3rem"
+          paddingTitle="12.5rem"
           paddingContent="0rem"
           paddingBottom="12.5rem"
         />
@@ -29,7 +29,7 @@ function MainWrap() {
           length={4}
           paddingBottom="35.7rem"
           paddingTop="0rem"
-          width="106.6rem"
+          width="106.2rem"
         />
       </ContentWrap>
       <Mood />
@@ -37,7 +37,7 @@ function MainWrap() {
         <Content
           title="Recommendation"
           content="당신의 상황에 어울리는 향수를 찾아보세요"
-          paddingTitle="12.4rem"
+          paddingTitle="12.1rem"
           paddingContent="0rem"
           paddingBottom="16rem"
         />
@@ -51,7 +51,7 @@ function MainWrap() {
               length={3}
               paddingBottom="18.9rem"
               paddingTop="9.8rem"
-              width="127.7rem"
+              width="141rem"
             />
           </div>
         </div>
@@ -66,7 +66,6 @@ const ContentWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 20.9rem;
 
   #comment {
     font-size: 2rem;
@@ -79,8 +78,9 @@ const ContentWrap = styled.div`
   .slide-container {
     border-top: solid;
     border-bottom: solid;
-    width: 127.2rem;
+    width: 142.6rem;
     display: flex;
     justify-content: center;
+    margin-bottom: 19.7rem;
   }
 `;
