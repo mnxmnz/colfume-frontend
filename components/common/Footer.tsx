@@ -1,15 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FooterIcons } from '../../assets';
+import Image from 'next/image';
 
 const Box = styled.div`
   background: #FAFAFA;
   bottom: 0;
   width: 100%;
   margin-top: auto;
-  min-height: 576px;
+  min-height: 57.6rem;
 
-  @media (max-width: 1000px) {
-    padding: 70px 30px
+  @media (max-width: 100rem) {
+    padding: 7rem 3rem
   }
 `;
 
@@ -17,7 +19,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: cetner;
-  max-width: 1900px;
+  max-width: 190rem;
 
 `;
 
@@ -26,11 +28,11 @@ const Row = styled.div`
     margin-left: 11.56rem;
     display: grid;
    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-    grid-gap: 20px;
+    grid-gap: 2rem;
 `;
 
 const Column = styled.div`
- width: 130px;
+ width: 13rem;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -38,7 +40,7 @@ const Column = styled.div`
 
 const InfoColumn = styled.div`
 display: flex;
-width: 440px;
+width: 44rem;
 flex-direction: column;
 text-align: left;
 `;
@@ -53,34 +55,40 @@ text-align: left;
 
 
 const Heading = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
   font-family: 'Gotham';
   font-weight: 700;
-  font-size: 20px;
+  font-size: 2rem;
 `;
 
 const FooterHeading = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
   font-family: 'Junge';
   font-weight: 400;
-  font-size: 32px;
+  font-size: 3.2rem;
 
 `;
 const FooterButton = styled.div`
-  margin-bottom: 38px;
+  margin-bottom: 3.8rem;
   font-family: 'Junge';
   font-weight: 400;
-  font-size: 20px;
-  
+  font-size: 2rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const FooterContent = styled.div`
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
   font-family: 'Noto Sans KR';
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1.5rem;
 `;
 
-const Image = styled.div``;
+const ImageWrapper = styled.div`
+  margin-bottom: 3.8rem;
+`;
+
 const Footer = () => {
   return (
     <Box>
@@ -104,6 +112,9 @@ const Footer = () => {
           </InfoColumn>
           <FollowColumn>
             <Heading>Follow us</Heading>
+              <ImageWrapper>
+              <Image src={FooterIcons} />
+              </ImageWrapper>
             <FooterContent>개인정보취급방침</FooterContent>
             <FooterContent>이용약관</FooterContent>
           </FollowColumn>
