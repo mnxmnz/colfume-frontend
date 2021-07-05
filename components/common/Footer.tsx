@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FooterIcons } from '../../assets';
+import Image from 'next/image';
 
 const Box = styled.div`
   background: #FAFAFA;
@@ -71,7 +73,10 @@ const FooterButton = styled.div`
   font-family: 'Junge';
   font-weight: 400;
   font-size: 20px;
-  
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const FooterContent = styled.div`
   margin-bottom: 12px;
@@ -80,7 +85,10 @@ const FooterContent = styled.div`
   font-size: 15px;
 `;
 
-const Image = styled.div``;
+const ImageWrapper = styled.div`
+  margin-bottom: 38px;
+`;
+
 const Footer = () => {
   return (
     <Box>
@@ -104,6 +112,9 @@ const Footer = () => {
           </InfoColumn>
           <FollowColumn>
             <Heading>Follow us</Heading>
+              <ImageWrapper>
+              <Image src={FooterIcons} />
+              </ImageWrapper>
             <FooterContent>개인정보취급방침</FooterContent>
             <FooterContent>이용약관</FooterContent>
           </FollowColumn>
