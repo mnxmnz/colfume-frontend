@@ -19,7 +19,6 @@ const Banner = () => {
 };
 
 const BannerWrap = styled.div`
-  color: #3e3e3e;
   margin-top: 7.2rem;
 
   img {
@@ -49,9 +48,9 @@ const MainTitle = styled.div`
 `;
 
 const SubTitle = styled.div`
+  font-size: 2.8rem;
   margin-top: 2rem;
   margin-bottom: 16%;
-  font-family: 'Noto Sans KR';
   font-size: 2.8rem;
 `;
 

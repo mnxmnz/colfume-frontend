@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+const Positioner = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+`;
+
+// 흰 배경, 내용 중간 정렬
+const WhiteBackground = styled.div`
+  background: ${({ theme }) => theme.colors.white};
+  border-bottom: 0.2rem solid #3e3e3e;
+  display: flex;
+`;
 
 const Header = () => {
   const [category, setCategory] = useState('Product');

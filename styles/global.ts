@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 10px;
     font-family: NotoSans;
+    color: #3E3E3E
   }
 
   a {

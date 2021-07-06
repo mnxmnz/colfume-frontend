@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ImageTable(props) {
+function ImageTable() {
   return <div>ImageTable</div>;
 }
 

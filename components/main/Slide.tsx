@@ -59,11 +59,13 @@ function Slide(props: Props) {
   const paletteData = PaletteData;
   const sampleData = SampleData;
   const length = props.length;
+
   const styleSlider = {
     paddingBottom: `${props.paddingBottom}`,
     paddingTop: `${props.paddingTop}`,
     width: `${props.width}`,
   };
+
   const slideName = props.slideName;
 
   const settings = {
@@ -104,19 +106,27 @@ const SliderWrap = styled.div`
   .slick-dots.recommendation {
     bottom: -8.2rem;
   }
+
   .slick-dots {
     button::before {
-      border: 0.08rem solid;
-      border-radius: 50%;
-      border-color: black;
       width: 1.5rem;
       height: 1.5rem;
-      color: white;
+      color: ${({ theme }) => theme.colors.white};
+      border: 0.08rem solid;
+      border-radius: 50%;
+      border-color: ${({ theme }) => theme.colors.black};
+      border: 0.08rem solid;
+      border-radius: 50%;
+      border-color: ${({ theme }) => theme.colors.black};
+      width: 1.5rem;
+      height: 1.5rem;
+      color: ${({ theme }) => theme.colors.white};
     }
+
     .slick-active {
       button::before {
-        background-color: #3e3e3e;
-        color: #3e3e3e;
+        background-color: ${({ theme }) => theme.colors.black};
+        color: ${({ theme }) => theme.colors.black};
       }
     }
   }
