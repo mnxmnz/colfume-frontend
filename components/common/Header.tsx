@@ -63,7 +63,9 @@ const WhiteBackground = styled.div`
 `;
 
 const Category = styled.div`
+  display: flex;
   margin: auto;
+  padding-right: 1.5rem;
 
   #Product {
     width: 10rem;
