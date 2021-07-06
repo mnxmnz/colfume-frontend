@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Header = () => {
-  const [category, setCategory] = useState('Product');
+  const [category, setCategory] = useState('');
   const onClickCategory = event => {
     const target = event.currentTarget.getAttribute('value');
     setCategory(target);
@@ -59,7 +59,7 @@ const WhiteBackground = styled.div`
   background: ${({ theme }) => theme.colors.white};
   display: flex;
   align-items: center;
-  border-bottom: 0.2rem solid #3e3e3e;
+  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
 `;
 
 const Category = styled.div`
