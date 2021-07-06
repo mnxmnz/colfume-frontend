@@ -106,7 +106,7 @@ const SliderWrap = styled.div`
   }
 
   .slick-dots.recommendation {
-    bottom: -8.2rem;
+    bottom: -11rem;
   }
 
   .slick-dots {

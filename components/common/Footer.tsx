@@ -4,10 +4,7 @@ import { FooterIcons } from '../../assets';
 import Image from 'next/image';
 
 const Box = styled.div`
-<<<<<<< HEAD
-=======
   background: #fafafa;
->>>>>>> cfe631d... chore: spelling
   bottom: 0;
   margin-top: auto;
   background: ${({ theme }) => theme.colors.gray1};
