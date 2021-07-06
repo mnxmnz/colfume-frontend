@@ -8,7 +8,7 @@ function Filter() {
   return (
     <FilterWrap>
       <div className="title">Which Color You Want</div>
-      <div className="icon-field">
+      <div className="icon-wrap">
         {iconTokens.map((icon, idx) => {
           return <img src={icon.image.src} key={idx} alt="" />;
         })}
@@ -32,7 +32,7 @@ const FilterWrap = styled.div`
     color: ${({ theme }) => theme.colors.black};
   }
 
-  .icon-field {
+  .icon-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
