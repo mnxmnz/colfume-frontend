@@ -4,9 +4,9 @@ import { FooterIcons } from '../../assets';
 import Image from 'next/image';
 
 const Box = styled.div`
-  background: #fafafa;
   bottom: 0;
   margin-top: auto;
+  background: #fafafa;
   background: ${({ theme }) => theme.colors.gray1};
   width: 100%;
   min-height: 57.6rem;
@@ -24,56 +24,33 @@ const Container = styled.div`
 `;
 
 const Row = styled.div`
-<<<<<<< HEAD
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-   grid-gap: 2rem;
-   margin-top: 11.44rem;
-   margin-left: 11.56rem;
-`;
-
-const Column = styled.div`
-=======
-  margin-top: 11.44rem;
-  margin-left: 11.56rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
   grid-gap: 2rem;
+  margin-top: 11.44rem;
+  margin-left: 11.56rem;
 `;
 
 const Column = styled.div`
-  width: 13rem;
->>>>>>> cfe631d... chore: spelling
   display: flex;
   flex-direction: column;
+  width: 13rem;
   width: 13rem;
   text-align: left;
 `;
 
 const InfoColumn = styled.div`
   display: flex;
-<<<<<<< HEAD
   flex-direction: column;
   width: 44rem;
-=======
-  width: 44rem;
-  flex-direction: column;
->>>>>>> cfe631d... chore: spelling
   text-align: left;
 `;
 
 const FollowColumn = styled.div`
-<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   margin-left: 230px;
   width: 150px;
-=======
-  margin-left: 230px;
-  width: 150px;
-  display: flex;
-  flex-direction: column;
->>>>>>> cfe631d... chore: spelling
   text-align: left;
 `;
 
@@ -88,10 +65,6 @@ const FooterHeading = styled.div`
   margin-bottom: 4rem;
   font-family: 'Junge';
   font-size: 3.2rem;
-<<<<<<< HEAD
-  font-weight: 400;
-=======
->>>>>>> cfe631d... chore: spelling
 `;
 
 const FooterButton = styled.div`
