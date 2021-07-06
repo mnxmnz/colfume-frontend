@@ -52,4 +52,4 @@ const FilterTokens: object[] = [
   },
 ];
 
-export default PaletteData;
+export default FilterTokens;
