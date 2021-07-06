@@ -99,12 +99,14 @@ function Slide(props: Props) {
 export default Slide;
 
 const SliderWrap = styled.div`
+  height: 74.9rem;
+
   .slick-dots.palette {
     bottom: -17rem;
   }
 
   .slick-dots.recommendation {
-    bottom: -8.2rem;
+    bottom: -11rem;
   }
 
   .slick-dots {

@@ -31,6 +31,13 @@ const TitleWrap = styled.div`
 `;
 
 const ContentWrap = styled.div`
+<<<<<<< HEAD
+=======
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 4rem;
+  text-align: center;
+>>>>>>> 2c62b28... style: modify num of slide and margin
   display: flex;
   flex-direction: column;
   align-items: center;
