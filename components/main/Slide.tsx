@@ -86,7 +86,7 @@ function Slide(props: Props) {
       <Slider {...settings}>
         {slideName === 'palette'
           ? paletteData.map((datum, idx) => {
-              return <img src={datum.image.src} key={idx} alt="" height="277rem" />;
+              return <img src={datum.image.src} key={idx} alt={datum.keyword} height="277rem" />;
             })
           : sampleData.map((datum, idx) => {
               return <Recommendation datum={datum} idx={idx} />;
