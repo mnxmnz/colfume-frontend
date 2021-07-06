@@ -10,7 +10,7 @@ function Filter() {
       <div className="title">Which Color You Want</div>
       <div className="icon-wrap">
         {iconTokens.map((icon, idx) => {
-          return <img src={icon.image.src} key={idx} alt="" />;
+          return <img src={icon.image.src} key={idx} alt={icon.keyword} />;
         })}
       </div>
     </FilterWrap>

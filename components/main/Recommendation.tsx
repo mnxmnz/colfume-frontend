@@ -16,10 +16,10 @@ function Recommendation(props: Props) {
       <RecommWrap key={idx}>
         <>
           <div>
-            <img className="item" src={datum.image.src} alt="" />
+            <img className="item" src={datum.image.src} alt="sampleImage" />
             <span id="keyword">{datum.keyword}</span>
           </div>
-          <img className="contour" id="none" src={Contour.src} alt="" />
+          <img className="contour" id="none" src={Contour.src} alt="sampleImage" />
         </>
       </RecommWrap>
     );
@@ -27,10 +27,10 @@ function Recommendation(props: Props) {
     <RecommWrap key={idx}>
       <>
         <div>
-          <img className="item" src={datum.image.src} alt="" />
+          <img className="item" src={datum.image.src} alt="sampleImage" />
           <span id="keyword">{datum.keyword}</span>
         </div>
-        <img className="contour" src={Contour.src} alt="" />
+        <img className="contour" src={Contour.src} alt="sampleImage" />
       </>
     </RecommWrap>
   );
