@@ -57,7 +57,7 @@ const KeywordWrap = styled.div`
 const Line = styled.div`
   height: 23.5rem;
   width: 0.16rem;
-  background-color: #d4d4d4;
+  background-color: ${({ theme }) => theme.colors.gray3};
   margin: 6.6rem 2.7rem 0 2.7rem;
 `;
 

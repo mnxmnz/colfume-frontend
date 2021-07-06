@@ -57,7 +57,7 @@ const KeywordWrap = styled.div`
     left: 0;
     width: 18px;
     height: 18px;
-    background-color: #3e3e3e;
+    background-color: ${({ theme }) => theme.colors.black};
   }
 `;
 

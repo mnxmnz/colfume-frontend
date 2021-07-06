@@ -4,9 +4,7 @@ import { BannerImg } from '../../assets';
 import Image from 'next/image';
 
 const BannerWrap = styled.div`
-  color: #3e3e3e;
   margin-top: 7.4rem;
-  /* margin-bottom: 30rem; */
 
   img {
     width: 100vw;
@@ -36,7 +34,6 @@ const MainTitle = styled.div`
 
 const SubTitle = styled.div`
   font-size: 2.8rem;
-  font-family: 'Noto Sans KR';
   margin-top: 2rem;
   margin-bottom: 16%;
 `;

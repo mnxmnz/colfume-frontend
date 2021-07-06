@@ -4,14 +4,14 @@ import { FooterIcons } from '../../assets';
 import Image from 'next/image';
 
 const Box = styled.div`
-  background: #FAFAFA;
+  background: ${({ theme }) => theme.colors.gray1};
   bottom: 0;
   width: 100%;
   margin-top: auto;
   min-height: 57.6rem;
 
   @media (max-width: 100rem) {
-    padding: 7rem 3rem
+    padding: 7rem 3rem;
   }
 `;
 
@@ -20,39 +20,37 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: cetner;
   max-width: 190rem;
-
 `;
 
 const Row = styled.div`
-    margin-top: 11.44rem;
-    margin-left: 11.56rem;
-    display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-    grid-gap: 2rem;
+  margin-top: 11.44rem;
+  margin-left: 11.56rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  grid-gap: 2rem;
 `;
 
 const Column = styled.div`
- width: 13rem;
+  width: 13rem;
   display: flex;
   flex-direction: column;
   text-align: left;
 `;
 
 const InfoColumn = styled.div`
-display: flex;
-width: 44rem;
-flex-direction: column;
-text-align: left;
+  display: flex;
+  width: 44rem;
+  flex-direction: column;
+  text-align: left;
 `;
 
 const FollowColumn = styled.div`
-margin-left: 230px;
-width: 150px;
-display: flex;
-flex-direction: column;
-text-align: left;
+  margin-left: 230px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 `;
-
 
 const Heading = styled.div`
   margin-bottom: 4rem;
@@ -66,7 +64,6 @@ const FooterHeading = styled.div`
   font-family: 'Junge';
   font-weight: 400;
   font-size: 3.2rem;
-
 `;
 const FooterButton = styled.div`
   margin-bottom: 3.8rem;
@@ -80,7 +77,6 @@ const FooterButton = styled.div`
 `;
 const FooterContent = styled.div`
   margin-bottom: 1.2rem;
-  font-family: 'Noto Sans KR';
   font-weight: 400;
   font-size: 1.5rem;
 `;
@@ -108,13 +104,15 @@ const Footer = () => {
             <FooterButton>khyeryun98@inha.edu</FooterButton>
             <Heading>Info</Heading>
             <FooterContent>COLFUME | 대표 구혜련</FooterContent>
-            <FooterContent>https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788</FooterContent>
+            <FooterContent>
+              https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788
+            </FooterContent>
           </InfoColumn>
           <FollowColumn>
             <Heading>Follow us</Heading>
-              <ImageWrapper>
+            <ImageWrapper>
               <Image src={FooterIcons} />
-              </ImageWrapper>
+            </ImageWrapper>
             <FooterContent>개인정보취급방침</FooterContent>
             <FooterContent>이용약관</FooterContent>
           </FollowColumn>
