@@ -40,8 +40,8 @@ export default Recommendation;
 
 const RecommWrap = styled.div`
   display: flex;
-  justify-content: flex-end;
   align-items: flex-start;
+  justify-content: flex-end;
 
   .item {
     width: 33.2rem;
@@ -57,7 +57,7 @@ const RecommWrap = styled.div`
   }
 
   #keyword {
-    font-size: 2.2rem;
     line-height: 3.96rem;
+    font-size: 2.2rem;
   }
 `;

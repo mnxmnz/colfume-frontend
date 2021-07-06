@@ -3,57 +3,6 @@ import styled from 'styled-components';
 import { BannerImg } from '../../assets';
 import Image from 'next/image';
 
-const BannerWrap = styled.div`
-  margin-top: 7.4rem;
-
-  img {
-    width: 100vw;
-    position: relative;
-    justify-content: center;
-  }
-`;
-
-const BannerBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 22.7rem;
-  width: 100%;
-`;
-
-const TitleBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-`;
-
-const MainTitle = styled.div`
-  font-size: 12rem;
-  font-family: 'Junge';
-`;
-
-const SubTitle = styled.div`
-  font-size: 2.8rem;
-  margin-top: 2rem;
-  margin-bottom: 16%;
-`;
-
-const TestBnt = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 5rem;
-  font-family: 'Junge';
-  width: 38.2rem;
-  height: 10.7rem;
-  border: 0.3rem solid #3e3e3e;
-  margin: auto;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
 const Banner = () => {
   return (
     <BannerWrap>
@@ -68,5 +17,59 @@ const Banner = () => {
     </BannerWrap>
   );
 };
+
+const BannerWrap = styled.div`
+  margin-top: 7.2rem;
+
+  img {
+    position: relative;
+    justify-content: center;
+    width: 100vw;
+  }
+`;
+
+const BannerBox = styled.div`
+  display: flex;
+  position: absolute;
+  top: 22.7rem;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const TitleBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+`;
+
+const MainTitle = styled.div`
+  font-family: 'Junge';
+  font-size: 12rem;
+`;
+
+const SubTitle = styled.div`
+  font-size: 2.8rem;
+  margin-top: 2rem;
+  margin-bottom: 16%;
+  font-size: 2.8rem;
+`;
+
+const TestBnt = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border: 0.3rem solid #3e3e3e;
+  width: 38.2rem;
+  height: 10.7rem;
+  font-family: 'Junge';
+  font-size: 5rem;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #3e3e3e;
+  }
+`;
 
 export default Banner;

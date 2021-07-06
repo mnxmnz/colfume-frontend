@@ -115,6 +115,12 @@ const SliderWrap = styled.div`
       border: 0.08rem solid;
       border-radius: 50%;
       border-color: ${({ theme }) => theme.colors.black};
+      border: 0.08rem solid;
+      border-radius: 50%;
+      border-color: ${({ theme }) => theme.colors.black};
+      width: 1.5rem;
+      height: 1.5rem;
+      color: ${({ theme }) => theme.colors.white};
     }
 
     .slick-active {
@@ -145,12 +151,12 @@ const SliderWrap = styled.div`
   }
 
   #recommendation.slick-arrow.slick-prev {
-    left: -0.8rem;
     top: 45%;
+    left: -0.8rem;
   }
 
   #recommendation.slick-arrow.slick-next {
-    right: -0.8rem;
     top: 45%;
+    right: -0.8rem;
   }
 `;

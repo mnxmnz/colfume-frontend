@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-// 상단 고정
 const Positioner = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,59 +17,92 @@ const WhiteBackground = styled.div`
   display: flex;
 `;
 
-// 헤더의 내용
-const HeaderContents = styled.div`
-  height: 7.2rem;
-  display: flex;
-  align-items: center;
-`;
+const Header = () => {
+  const [category, setCategory] = useState('Product');
+  const onClickCategory = event => {
+    const target = event.currentTarget.getAttribute('value');
+    setCategory(target);
+  };
 
-// 로고
+  return (
+    <>
+      <Logo>Colfume</Logo>
+      <Positioner>
+        <WhiteBackground>
+          <Category>
+            <CategoryBtn id="Product" value="Product" onClick={onClickCategory} category={category}>
+              Product
+            </CategoryBtn>
+            <CategoryBtn
+              id="ColorTest"
+              value="Color Test"
+              onClick={onClickCategory}
+              category={category}
+            >
+              Color Test
+            </CategoryBtn>
+            <CategoryBtn id="Search" value="Search" onClick={onClickCategory} category={category}>
+              Search
+            </CategoryBtn>
+          </Category>
+        </WhiteBackground>
+      </Positioner>
+    </>
+  );
+};
+
+
 const Logo = styled.div`
+  position: fixed;
+  top: 2rem;
+  z-index: 100;
   margin-left: 11.2rem;
-  font-size: 3.2rem;
   font-family: 'Junge';
+  font-size: 3.2rem;
 `;
 
-// 헤더 가운데 정렬하기 위해 wrap
-const CategoryWrap = styled.div`
+const Positioner = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+`;
+
+const WhiteBackground = styled.div`
+  width: 100vw;
+  height: 7.2rem;
+  background: white;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  border-bottom: 0.2rem solid #3e3e3e;
 `;
 
-//  헤더 카테고리
 const Category = styled.div`
-  display: flex;
-  width: 40rem;
-  align-items: center;
-  text-align: center;
+  margin: auto;
 
-  button {
-    font-size: 2.2rem;
-    font-family: 'Junge';
-    margin: auto;
+  #Product {
+    width: 10rem;
+  }
+
+  #ColorTest {
+    width: 12.7rem;
+  }
+
+  #Search {
+    width: 8.8rem;
   }
 `;
 
-const Header = () => {
-  return (
-    <Positioner>
-      <WhiteBackground>
-        <HeaderContents>
-          <Logo>Colfume</Logo>
-          <CategoryWrap>
-            <Category>
-              <button>Product</button>
-              <button>Color Test</button>
-              <button>Search</button>
-            </Category>
-          </CategoryWrap>
-        </HeaderContents>
-      </WhiteBackground>
-    </Positioner>
-  );
-};
+const CategoryBtn = styled.span`
+  font-size: 2.2rem;
+  font-family: 'Junge';
+  text-align: center;
+  padding: 0 1rem;
+  margin: 0 3rem;
+  cursor: pointer;
+  border-bottom: ${props => props.category === props.value && '0.1rem solid #3e3e3e;'};
+`;
 
 export default Header;

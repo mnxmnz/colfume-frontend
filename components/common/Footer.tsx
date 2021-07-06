@@ -4,10 +4,10 @@ import { FooterIcons } from '../../assets';
 import Image from 'next/image';
 
 const Box = styled.div`
-  background: ${({ theme }) => theme.colors.gray1};
   bottom: 0;
-  width: 100%;
   margin-top: auto;
+  background: ${({ theme }) => theme.colors.gray1};
+  width: 100%;
   min-height: 57.6rem;
 
   @media (max-width: 100rem) {
@@ -23,62 +23,64 @@ const Container = styled.div`
 `;
 
 const Row = styled.div`
-  margin-top: 11.44rem;
-  margin-left: 11.56rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-  grid-gap: 2rem;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+   grid-gap: 2rem;
+   margin-top: 11.44rem;
+   margin-left: 11.56rem;
 `;
 
 const Column = styled.div`
-  width: 13rem;
   display: flex;
   flex-direction: column;
+  width: 13rem;
   text-align: left;
 `;
 
 const InfoColumn = styled.div`
   display: flex;
-  width: 44rem;
   flex-direction: column;
+  width: 44rem;
   text-align: left;
 `;
 
 const FollowColumn = styled.div`
-  margin-left: 230px;
-  width: 150px;
   display: flex;
   flex-direction: column;
+  margin-left: 230px;
+  width: 150px;
   text-align: left;
 `;
 
 const Heading = styled.div`
   margin-bottom: 4rem;
   font-family: 'Gotham';
-  font-weight: 700;
   font-size: 2rem;
+  font-weight: 700;
 `;
 
 const FooterHeading = styled.div`
   margin-bottom: 4rem;
   font-family: 'Junge';
-  font-weight: 400;
   font-size: 3.2rem;
+  font-weight: 400;
 `;
+
 const FooterButton = styled.div`
   margin-bottom: 3.8rem;
   font-family: 'Junge';
-  font-weight: 400;
   font-size: 2rem;
+  font-weight: 400;
 
   &:hover {
     cursor: pointer;
   }
 `;
+
 const FooterContent = styled.div`
   margin-bottom: 1.2rem;
-  font-weight: 400;
   font-size: 1.5rem;
+  font-weight: 400;
 `;
 
 const ImageWrapper = styled.div`
