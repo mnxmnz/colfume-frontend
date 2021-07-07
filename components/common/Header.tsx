@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
+import { Logo } from '../../assets';
 import styled from 'styled-components';
 
 const Header = () => {
@@ -10,7 +12,9 @@ const Header = () => {
 
   return (
     <>
-      <Logo>Colfume</Logo>
+      <LogoWrap>
+        <Image src={Logo} />
+      </LogoWrap>
       <Positioner>
         <WhiteBackground>
           <Category>
@@ -35,13 +39,11 @@ const Header = () => {
   );
 };
 
-const Logo = styled.div`
+const LogoWrap = styled.div`
   position: fixed;
-  top: 2rem;
+  top: 1.62rem;
   z-index: 100;
-  margin-left: 11.2rem;
-  font-family: 'Junge';
-  font-size: 3.2rem;
+  margin-left: 10.1rem;
 `;
 
 const Positioner = styled.div`
@@ -59,7 +61,7 @@ const WhiteBackground = styled.div`
   background: ${({ theme }) => theme.colors.white};
   display: flex;
   align-items: center;
-  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
+  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.gray2};
 `;
 
 const Category = styled.div`
