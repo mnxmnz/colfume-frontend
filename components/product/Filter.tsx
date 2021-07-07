@@ -10,7 +10,7 @@ function Filter() {
       <div className="title">Which Color You Want</div>
       <div className="icon-wrap">
         {iconTokens.map((icon, idx) => {
-          return <img src={icon.image.src} key={idx} alt={icon.keyword} />;
+          return <img src={icon.image.src} key={idx} alt={icon.keyword} width={icon.width} />;
         })}
       </div>
     </FilterWrap>
@@ -35,7 +35,6 @@ const FilterWrap = styled.div`
   .icon-wrap {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-top: 6.5rem;
     width: 84.9rem;
     height: 13.6rem;

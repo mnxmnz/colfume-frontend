@@ -11,18 +11,6 @@ function Recommendation(props: Props) {
   const idx = props.idx;
   const datum = props.datum;
 
-  if (idx % 3 === 2)
-    return (
-      <RecommWrap key={idx}>
-        <>
-          <div>
-            <img className="item" src={datum.image.src} alt="sampleImage" />
-            <span id="keyword">{datum.keyword}</span>
-          </div>
-          <img className="contour" id="none" src={Contour.src} alt="sampleImage" />
-        </>
-      </RecommWrap>
-    );
   return (
     <RecommWrap key={idx}>
       <>
@@ -30,7 +18,12 @@ function Recommendation(props: Props) {
           <img className="item" src={datum.image.src} alt="sampleImage" />
           <span id="keyword">{datum.keyword}</span>
         </div>
-        <img className="contour" src={Contour.src} alt="sampleImage" />
+        <img
+          className="contour"
+          id={idx % 3 === 2 ? 'hidden' : 'show'}
+          src={Contour.src}
+          alt="sampleImage"
+        />
       </>
     </RecommWrap>
   );
@@ -52,7 +45,7 @@ const RecommWrap = styled.div`
     padding-left: 6.7rem;
   }
 
-  #none.contour {
+  #hidden.contour {
     visibility: hidden;
   }
 
