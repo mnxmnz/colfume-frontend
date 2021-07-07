@@ -1,7 +1,13 @@
 import React from 'react';
+import Filter from './Filter';
 
 function ProductWrap() {
-  return <div>ProductWrap</div>;
+  return (
+    <>
+      <Filter />
+      products
+    </>
+  );
 }
 
 export default ProductWrap;

@@ -20,6 +20,7 @@ const Banner = () => {
 
 const BannerWrap = styled.div`
   margin-top: 7.2rem;
+  height: 94.1rem;
 
   img {
     position: relative;
@@ -59,7 +60,7 @@ const TestBnt = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
-  border: 0.3rem solid #3e3e3e;
+  border: 0.3rem solid ${({ theme }) => theme.colors.black};
   width: 38.2rem;
   height: 10.7rem;
   font-family: 'Junge';
@@ -68,7 +69,7 @@ const TestBnt = styled.div`
   &:hover {
     cursor: pointer;
     color: white;
-    background-color: #3e3e3e;
+    background-color: ${({ theme }) => theme.colors.black};
   }
 `;
 

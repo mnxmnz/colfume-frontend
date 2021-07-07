@@ -31,6 +31,10 @@ const TitleWrap = styled.div`
 `;
 
 const ContentWrap = styled.div`
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 4rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
