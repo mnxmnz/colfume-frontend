@@ -2,7 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import { Contour } from '../../assets';
 
-function Recommendation({ datum, idx }) {
+interface Img {
+  height: number;
+  src: string;
+  width: number;
+}
+
+interface DatumType {
+  image: Img;
+  keyword: string;
+  name: string;
+}
+interface Props {
+  datum: DatumType;
+  idx: number;
+}
+
+function Recommendation(props: Props) {
+  const datum = props.datum;
+  const idx = props.idx;
+
   return (
     <RecommWrap key={idx}>
       <div>

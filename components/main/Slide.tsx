@@ -13,7 +13,13 @@ import PaletteData from '../../public/PaletteData';
 import SampleData from '../../public/SampleData';
 import Recommendation from './Recommendation';
 
-function ArrowLeft(props) {
+interface ArrowPropsType {
+  className: string;
+  style: object;
+  onClick: Event;
+  id: number;
+}
+function ArrowLeft(props: ArrowPropsType) {
   const { className, style, onClick, id } = props;
   const leftButton = React.useRef();
 
@@ -30,7 +36,7 @@ function ArrowLeft(props) {
   );
 }
 
-function ArrowRight(props) {
+function ArrowRight(props: ArrowPropsType) {
   const { className, style, onClick, id } = props;
   const rightButton = React.useRef();
 
@@ -47,19 +53,28 @@ function ArrowRight(props) {
   );
 }
 
-function Slide({ slideName, length, paddingBottom, paddingTop, width }) {
+interface SlidePropsType {
+  slideName: string;
+  length: number;
+  paddingBottom: string;
+  paddingTop: string;
+  width: string;
+}
+
+function Slide(props: SlidePropsType) {
+  const slideName = props.slideName;
   const styleSlider = {
-    paddingBottom: `${paddingBottom}`,
-    paddingTop: `${paddingTop}`,
-    width: `${width}`,
+    paddingBottom: `${props.paddingBottom}`,
+    paddingTop: `${props.paddingTop}`,
+    width: `${props.width}`,
   };
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: length,
-    slidesToScroll: length,
+    slidesToShow: props.length,
+    slidesToScroll: props.length,
     cssEase: 'linear',
     arrows: true,
     nextArrow: <ArrowRight id={slideName} />,

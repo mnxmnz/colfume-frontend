@@ -1,6 +1,18 @@
 import Sample from '../assets/main/PerfumeSample.svg';
 
-const SampleData: object[] = [
+interface Img {
+  height: number;
+  src: string;
+  width: number;
+}
+
+interface Data {
+  image: Img;
+  keyword: string;
+  name: string;
+}
+
+const SampleData: Data[] = [
   {
     image: Sample,
     keyword: '#지적인#차분한',
