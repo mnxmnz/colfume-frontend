@@ -64,9 +64,9 @@ interface SlidePropsType {
 function Slide(props: SlidePropsType) {
   const slideName = props.slideName;
   const styleSlider = {
-    paddingBottom: `${props.paddingBottom}`,
-    paddingTop: `${props.paddingTop}`,
-    width: `${props.width}`,
+    paddingBottom: `${paddingBottom}`,
+    paddingTop: `${paddingTop}`,
+    width: `${width}`,
   };
 
   const settings = {
