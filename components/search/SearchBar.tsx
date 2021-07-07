@@ -57,7 +57,7 @@ const SearchBarBox = styled.div`
 
   button {
     position: relative;
-    bottom: -0.6rem;
+    bottom: -0.7rem;
     right: -0.6rem;
   }
 `;

@@ -56,19 +56,21 @@ const PerfumeImgWrap = styled.div`
 `;
 
 const Name = styled.div`
-  display: block;
-  width: 13rem;
-  text-align: center;
+  margin-top: 2.5rem;
+  display: flex;
+  letter-spacing: 4px;
+  width: 20rem;
   font-weight: bold;
   font-size: 2.6rem;
   line-height: 3.12rem;
 `;
 
 const Keyword = styled.div`
+  margin-top: 1.5rem;
   font-size: 2rem;
   line-height: 2.4rem;
   text-align: center;
-  line-height: 2.8rem;
+  line-height: 2.4rem;
 `;
 
 export default PerfumeImg;
