@@ -9,7 +9,19 @@ import {
   Palette08White,
 } from '../assets';
 
-const PaletteData: object[] = [
+interface Img {
+  height: number;
+  src: string;
+  width: number;
+}
+
+interface Data {
+  image: Img;
+  keyword: string;
+  url: string;
+}
+
+const PaletteData: Data[] = [
   {
     image: Palette01Red,
     keyword: 'Red',
