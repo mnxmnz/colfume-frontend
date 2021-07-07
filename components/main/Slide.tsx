@@ -86,7 +86,7 @@ function Slide(props: Props) {
       <Slider {...settings}>
         {slideName === 'palette'
           ? paletteData.map((datum, idx) => {
-              return <img src={datum.image.src} key={idx} alt="" height="277rem" />;
+              return <img src={datum.image.src} key={idx} alt={datum.keyword} height="277rem" />;
             })
           : sampleData.map((datum, idx) => {
               return <Recommendation datum={datum} idx={idx} />;
@@ -111,17 +111,17 @@ const SliderWrap = styled.div`
 
   .slick-dots {
     button::before {
+      border: 0.08rem solid;
+      border: 0.08rem solid;
+      border-radius: 50%;
+      border-radius: 50%;
+      border-color: ${({ theme }) => theme.colors.black};
+      border-color: ${({ theme }) => theme.colors.black};
       width: 1.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
       height: 1.5rem;
       color: ${({ theme }) => theme.colors.white};
-      border: 0.08rem solid;
-      border-radius: 50%;
-      border-color: ${({ theme }) => theme.colors.black};
-      border: 0.08rem solid;
-      border-radius: 50%;
-      border-color: ${({ theme }) => theme.colors.black};
-      width: 1.5rem;
-      height: 1.5rem;
       color: ${({ theme }) => theme.colors.white};
     }
 

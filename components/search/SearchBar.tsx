@@ -26,16 +26,16 @@ const SearchBar = () => {
 };
 
 const SearchBarWrap = styled.div`
-  margin-top: 7.2rem; // 헤더 높이만큼의 margin값
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: center;margin값display
+  justify-content: center;justify-contentjustify-contentjustify-contentjustify-content
+  margin-top: 7.2rem;margin-topmargin-topmargin-top // 헤더 높이만큼의 margin값
+  display: flex;margin값displaymargin값displaymargin값displaymargin값display
 `;
 
 const SearchBarBox = styled.div`
-  margin: 16.7rem 58rem 14.2rem;
   display: flex;
   align-items: center;
+  margin: 16.7rem 58rem 14.2rem;
   border-bottom: 0.2rem solid #3e3e3e;
 
   .searchIcon {
@@ -43,12 +43,12 @@ const SearchBarBox = styled.div`
   }
 
   input {
-    outline-style: none;
-    width: 61.5rem;
-    border: none;
-    font-size: 2.6rem;
     position: relative;
     bottom: 0.1rem;
+    outline-style: none;
+    border: none;
+    width: 61.5rem;
+    font-size: 2.6rem;
 
     &::placeholder {
       color: ${({ theme }) => theme.colors.gray3};
@@ -57,8 +57,8 @@ const SearchBarBox = styled.div`
 
   button {
     position: relative;
-    bottom: -0.6rem;
     right: -0.6rem;
+    bottom: -0.6rem;
   }
 `;
 
