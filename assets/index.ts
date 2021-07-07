@@ -1,4 +1,3 @@
-export { default as Sample } from './sample.svg';
 export { default as Palette01Red } from './main/Palette01Red.svg';
 export { default as Palette02Orange } from './main/Palette02Orange.svg';
 export { default as Palette03Yellow } from './main/Palette03Yellow.svg';
