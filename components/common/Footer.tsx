@@ -4,6 +4,7 @@ import { FooterIcons } from '../../assets';
 import Image from 'next/image';
 
 const Box = styled.div`
+  background: #fafafa;
   bottom: 0;
   margin-top: auto;
   background: ${({ theme }) => theme.colors.gray1};
@@ -18,19 +19,20 @@ const Box = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: cetner;
+  justify-content: center;
   max-width: 190rem;
 `;
 
 const Row = styled.div`
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-   grid-gap: 2rem;
-   margin-top: 11.44rem;
-   margin-left: 11.56rem;
+  margin-top: 11.44rem;
+  margin-left: 11.56rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  grid-gap: 2rem;
 `;
 
 const Column = styled.div`
+  width: 13rem;
   display: flex;
   flex-direction: column;
   width: 13rem;
@@ -39,16 +41,16 @@ const Column = styled.div`
 
 const InfoColumn = styled.div`
   display: flex;
-  flex-direction: column;
   width: 44rem;
+  flex-direction: column;
   text-align: left;
 `;
 
 const FollowColumn = styled.div`
-  display: flex;
-  flex-direction: column;
   margin-left: 230px;
   width: 150px;
+  display: flex;
+  flex-direction: column;
   text-align: left;
 `;
 
@@ -63,7 +65,6 @@ const FooterHeading = styled.div`
   margin-bottom: 4rem;
   font-family: 'Junge';
   font-size: 3.2rem;
-  font-weight: 400;
 `;
 
 const FooterButton = styled.div`

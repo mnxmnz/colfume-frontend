@@ -7,7 +7,7 @@ import { GlobalStyle } from '../styles/global';
 import { RecoilRoot } from 'recoil';
 import { SWRConfig } from 'swr';
 import { client } from '../lib/api';
-import { Header, Footer } from '../components/index';
+import { Header } from '../components/index';
 
 function App({ Component, pageProps }: AppProps) {
   const fetcher = (url: string) => client.get(url);
@@ -24,7 +24,6 @@ function App({ Component, pageProps }: AppProps) {
             <GlobalStyle />
             <Header />
             <Component {...pageProps} />
-            <Footer />
           </RecoilRoot>
         </SWRConfig>
       </ThemeProvider>

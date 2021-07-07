@@ -3,6 +3,7 @@ import Content from './Content';
 import Banner from './Banner';
 import Mood from './Mood';
 import { Slide } from '../';
+import Footer from '../common/Footer';
 import styled from 'styled-components';
 
 function MainWrap() {
@@ -56,6 +57,7 @@ function MainWrap() {
           </div>
         </div>
       </ContentWrap>
+      <Footer />
     </>
   );
 }
