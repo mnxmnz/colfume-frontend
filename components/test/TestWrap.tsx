@@ -1,11 +1,10 @@
 import React from 'react';
-import Test from '../../pages/test';
 import TestResult from './TestResult/TestResult';
+import Questions from './questions/Questions';
+
 
 function TestWrap() {
-  return (
-    <TestResult />
-  )
+  return <Questions />;
 }
 
 export default TestWrap;
