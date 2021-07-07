@@ -72,6 +72,7 @@ function Slide({ slideName, length, paddingBottom, paddingTop, width }) {
       <Slider {...settings}>
         {slideName === 'palette'
           ? PaletteData.map((datum, idx) => {
+              console.log(datum.image);
               return <img src={datum.image.src} key={idx} alt={datum.keyword} height="277rem" />;
             })
           : SampleData.map((datum, idx) => {
