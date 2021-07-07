@@ -81,8 +81,8 @@ const ContentWrap = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 19.7rem;
-    border-top: solid;
-    border-bottom: solid;
+    border-top: solid ${({ theme }) => theme.colors.black};
+    border-bottom: solid ${({ theme }) => theme.colors.black};
     width: 142.6rem;
   }
 `;
