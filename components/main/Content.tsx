@@ -2,21 +2,28 @@ import React from 'react';
 import { constSelector } from 'recoil';
 import styled from 'styled-components';
 
-function Content({ title, content, paddingTitle, paddingContent, paddingBottom }) {
+interface PropsType {
+  title: string;
+  content: string;
+  paddingTitle: string;
+  paddingContent: string;
+  paddingBottom: string;
+}
+function Content(props: PropsType) {
   const styleTitle = {
-    paddingTop: `${paddingTitle}`,
+    paddingTop: `${props.paddingTitle}`,
   };
 
   const styleContent = {
-    paddingTop: `${paddingContent}`,
-    paddingBottom: `${paddingBottom}`,
+    paddingTop: `${props.paddingContent}`,
+    paddingBottom: `${props.paddingBottom}`,
   };
 
   return (
     <>
-      <TitleWrap style={styleTitle}>{title}</TitleWrap>
+      <TitleWrap style={styleTitle}>{props.title}</TitleWrap>
       <ContentWrap style={styleContent}>
-        <div>{content}</div>
+        <div>{props.content}</div>
       </ContentWrap>
     </>
   );
