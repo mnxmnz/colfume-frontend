@@ -13,14 +13,6 @@ import PaletteData from '../../public/PaletteData';
 import SampleData from '../../public/SampleData';
 import Recommendation from './Recommendation';
 
-interface Props {
-  slideName: string;
-  length: number;
-  paddingBottom: string;
-  paddingTop: string;
-  width: string;
-}
-
 function ArrowLeft(props) {
   const { className, style, onClick, id } = props;
   const leftButton = React.useRef();
@@ -55,18 +47,12 @@ function ArrowRight(props) {
   );
 }
 
-function Slide(props: Props) {
-  const paletteData = PaletteData;
-  const sampleData = SampleData;
-  const length = props.length;
-
+function Slide({ slideName, length, paddingBottom, paddingTop, width }) {
   const styleSlider = {
-    paddingBottom: `${props.paddingBottom}`,
-    paddingTop: `${props.paddingTop}`,
-    width: `${props.width}`,
+    paddingBottom: `${paddingBottom}`,
+    paddingTop: `${paddingTop}`,
+    width: `${width}`,
   };
-
-  const slideName = props.slideName;
 
   const settings = {
     dots: true,
@@ -85,10 +71,10 @@ function Slide(props: Props) {
     <SliderWrap style={styleSlider}>
       <Slider {...settings}>
         {slideName === 'palette'
-          ? paletteData.map((datum, idx) => {
+          ? PaletteData.map((datum, idx) => {
               return <img src={datum.image.src} key={idx} alt={datum.keyword} height="277rem" />;
             })
-          : sampleData.map((datum, idx) => {
+          : SampleData.map((datum, idx) => {
               return <Recommendation datum={datum} idx={idx} />;
             })}
       </Slider>
