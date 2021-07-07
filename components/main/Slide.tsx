@@ -16,12 +16,13 @@ import Recommendation from './Recommendation';
 interface ArrowPropsType {
   className: string;
   style: object;
-  onClick: Event;
-  id: number;
+  onClick: any;
+  id: string;
 }
+
 function ArrowLeft(props: ArrowPropsType) {
   const { className, style, onClick, id } = props;
-  const leftButton = React.useRef();
+  const leftButton: any = React.useRef();
 
   return (
     <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
@@ -38,7 +39,7 @@ function ArrowLeft(props: ArrowPropsType) {
 
 function ArrowRight(props: ArrowPropsType) {
   const { className, style, onClick, id } = props;
-  const rightButton = React.useRef();
+  const rightButton: any = React.useRef();
 
   return (
     <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
@@ -64,9 +65,9 @@ interface SlidePropsType {
 function Slide(props: SlidePropsType) {
   const slideName = props.slideName;
   const styleSlider = {
-    paddingBottom: `${paddingBottom}`,
-    paddingTop: `${paddingTop}`,
-    width: `${width}`,
+    paddingBottom: `${props.paddingBottom}`,
+    paddingTop: `${props.paddingTop}`,
+    width: `${props.width}`,
   };
 
   const settings = {

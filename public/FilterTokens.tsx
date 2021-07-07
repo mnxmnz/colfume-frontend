@@ -9,7 +9,19 @@ import {
   FilterWhite,
 } from '../assets';
 
-const FilterTokens: object[] = [
+interface ImgType {
+  src: string;
+}
+
+interface FilterType {
+  image: ImgType;
+  keyword: string;
+  marginRight: string;
+  width: string;
+  url: string;
+}
+
+const FilterTokens: FilterType[] = [
   {
     image: FilterRed,
     keyword: 'Red',
