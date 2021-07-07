@@ -4,26 +4,32 @@ const SampleData: object[] = [
   {
     image: Sample,
     keyword: '#지적인#차분한',
+    name: 'ZARA PERFUME',
   },
   {
     image: Sample,
     keyword: '#지적인#차분한',
+    name: 'ZARA PERFUME',
   },
   {
     image: Sample,
     keyword: '#지적인#차분한',
+    name: 'ZARA PERFUME',
   },
   {
     image: Sample,
     keyword: '#지적인#차분한',
+    name: 'ZARA PERFUME',
   },
   {
     image: Sample,
     keyword: '#지적인#차분한',
+    name: 'ZARA PERFUME',
   },
   {
     image: Sample,
     keyword: '#지적인#차분한',
+    name: 'ZARA PERFUME',
   },
 ];
 
