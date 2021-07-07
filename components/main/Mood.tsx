@@ -26,7 +26,7 @@ function Mood() {
 }
 
 const MoodWrap = styled.div`
-  background-color: ${({ theme }) => theme.colors.backgroundGray};
+  background-color: ${({ theme }) => theme.colors.gray1};
   height: 77.7rem;
 `;
 
