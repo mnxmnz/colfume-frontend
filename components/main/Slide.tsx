@@ -86,7 +86,7 @@ function Slide(props: Props) {
       <Slider {...settings}>
         {slideName === 'palette'
           ? paletteData.map((datum, idx) => {
-              return <img src={datum.image.src} key={idx} alt="" height="277rem" />;
+              return <img src={datum.image.src} key={idx} alt={datum.keyword} height="277rem" />;
             })
           : sampleData.map((datum, idx) => {
               return <Recommendation datum={datum} idx={idx} />;
@@ -99,12 +99,14 @@ function Slide(props: Props) {
 export default Slide;
 
 const SliderWrap = styled.div`
+  height: 74.9rem;
+
   .slick-dots.palette {
     bottom: -17rem;
   }
 
   .slick-dots.recommendation {
-    bottom: -8.2rem;
+    bottom: -11rem;
   }
 
   .slick-dots {
