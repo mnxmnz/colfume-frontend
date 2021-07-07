@@ -1,13 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function PerfumeImg({ image, name, keyword }) {
+interface PropsType {
+  image: string;
+  name: string;
+  keyword: string;
+}
+
+function PerfumeImg(props: PropsType) {
   return (
     <PerfumeImgWrap>
-      <img className="fume_img" src={image} />
+      <img className="fume_img" src={props.image} />
       <div className="hover_img">
-        <Name>{name}</Name>
-        <Keyword>{keyword}</Keyword>
+        <Name>{props.name}</Name>
+        <Keyword>{props.keyword}</Keyword>
       </div>
     </PerfumeImgWrap>
   );

@@ -3,7 +3,7 @@ import { SearchArrowOff, SearchArrowOn, SearchIcon } from '../../assets';
 import styled from 'styled-components';
 
 const SearchBar = () => {
-  const searchButton = React.useRef();
+  const searchButton: any = React.useRef();
 
   return (
     <SearchBarWrap>
