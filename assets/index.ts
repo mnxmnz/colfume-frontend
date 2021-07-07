@@ -21,6 +21,7 @@ export { default as SearchCheckboxOn } from './search/SearchCheckboxOn.svg';
 export { default as SearchCheckboxOff } from './search/SearchCheckboxOff.svg';
 export { default as SearchCheckboxHover } from './search/SearchCheckboxHover.svg';
 export { default as PerfumeImg } from './search/PerfumeImg.svg';
+export { default as LoadingIcon } from './test/LoadingIcon.svg';
 export { default as FilterRed } from './product/FilterRed.svg';
 export { default as FilterOrange } from './product/FilterOrange.svg';
 export { default as FilterVanilla } from './product/FilterVanilla.svg';
