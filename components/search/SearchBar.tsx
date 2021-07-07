@@ -26,10 +26,10 @@ const SearchBar = () => {
 };
 
 const SearchBarWrap = styled.div`
-  align-items: center;margin값display
-  justify-content: center;justify-contentjustify-contentjustify-contentjustify-content
-  margin-top: 7.2rem;margin-topmargin-topmargin-top // 헤더 높이만큼의 margin값
-  display: flex;margin값displaymargin값displaymargin값displaymargin값display
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7.2rem;
 `;
 
 const SearchBarBox = styled.div`

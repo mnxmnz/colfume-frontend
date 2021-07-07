@@ -12,12 +12,12 @@ function TestResult() {
          <ResultColor>Orange</ResultColor>
          <ResultText>주변에 활기를 가득 채워주는 당신의 색깔은 Orange</ResultText>
          <ResultContent>
-         <ResultProperty>발랄한</ResultProperty>
-         <CompatibleColor>궁합이 맞는 컬러 </CompatibleColor>
+            <ResultProperty>발랄한</ResultProperty>
+            <CompatibleColor>궁합이 맞는 컬러 </CompatibleColor>
          </ResultContent>
          </ResultColorWrap>
       </Layout>
-   )
+   );
 }
 
 export default TestResult;

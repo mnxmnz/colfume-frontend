@@ -31,4 +31,4 @@ export { default as FilterPurple } from './product/FilterPurple.svg';
 export { default as FilterPink } from './product/FilterPink.svg';
 export { default as FilterWhite } from './product/FilterWhite.svg';
 export { default as ResultOrange } from './TestReult/ResultOrange.svg';
-export { default as FilterWhite } from './product/FilterWhite.svg';
+
