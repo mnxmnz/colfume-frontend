@@ -30,3 +30,8 @@ export { default as FilterBlue } from './product/FilterBlue.svg';
 export { default as FilterPurple } from './product/FilterPurple.svg';
 export { default as FilterPink } from './product/FilterPink.svg';
 export { default as FilterWhite } from './product/FilterWhite.svg';
+export { default as ButtonBackDefault } from './productDetail/ButtonBackDefault.svg';
+export { default as IconMainCol } from './productDetail/IconMainCol.svg';
+export { default as IconSubColRed } from './productDetail/IconSubColRed.svg';
+export { default as IconSubColVanilla } from './productDetail/IconSubColVanilla.svg';
+export { default as IconSubColGreen } from './productDetail/IconSubColGreen.svg';
