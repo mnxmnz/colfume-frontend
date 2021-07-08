@@ -3,7 +3,7 @@
   "plugins": ["react", "react-hooks", "prettier"],
   "rules": {
     "prettier/prettier": [
-      "recommended",
+      1,
       {
         "endOfLine": "auto"
       }
