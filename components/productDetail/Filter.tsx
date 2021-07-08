@@ -1,46 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface ImgType {
-  height: number;
-  src: string;
-  width: number;
-}
-
-interface PropsType {
-  colData: ImgType[];
-  moodData: string[];
-  styleData: string[];
-}
-
-function Filter(props: PropsType) {
+function Filter(props) {
   const imgData = props.colData;
-  const moodData = props.moodData;
-  const styleData = props.styleData;
+  const filterData = [props.moodData, props.styleData];
 
   return (
     <FilterWrap>
-      <Color>
-        <span>Color</span>
-        <div>
+      <ColorWrap>
+        <Categ>Color</Categ>
+        <Color>
           {imgData.map((img, idx) => {
             return <img key={idx} src={img.src} alt="" />;
           })}
-        </div>
-      </Color>
+        </Color>
+      </ColorWrap>
       <MoodStyleWrap>
-        <Mood>
-          <Categ>Mood</Categ>
-          {moodData.map((mood, idx) => {
-            return <KeyWord key={idx}>{mood}</KeyWord>;
-          })}
-        </Mood>
-        <Style>
-          <Categ>Style</Categ>
-          {styleData.map((style, idx) => {
-            return <KeyWord key={idx}>{style}</KeyWord>;
-          })}
-        </Style>
+        {filterData.map((data, idx) => {
+          const categ = !idx ? 'Mood' : 'Style';
+          return (
+            <MoodStyle>
+              <Categ>{categ}</Categ>
+              <KeywordWrap>
+                {data.map((datum, idx) => {
+                  return <Keyword key={idx}>{datum}</Keyword>;
+                })}
+              </KeywordWrap>
+            </MoodStyle>
+          );
+        })}
       </MoodStyleWrap>
     </FilterWrap>
   );
@@ -55,29 +43,35 @@ const FilterWrap = styled.div`
   border-color: ${({ theme }) => theme.colors.black};
 `;
 
-const Color = styled.div`
-  display: flex;
+const ColorWrap = styled.div`
   border-right: 0.2rem solid;
   border-color: ${({ theme }) => theme.colors.black};
   padding-top: 5.2rem;
   padding-bottom: 11.7rem;
+  padding-right: 6.8rem;
+  width: 32.8rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+`;
 
-  span {
-    font-size: 2rem;
-    line-height: 3.6rem;
-    padding-right: 6.2rem;
-  }
+const Categ = styled.div`
+  font-family: Junge;
+  font-size: 2rem;
+  line-height: 3.6rem;
+`;
 
-  div {
-    padding-right: 4.9rem;
+const Color = styled.div`
+  width: 14.6rem;
+  padding-right: 4.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 
-    img {
-      margin-right: 1.9rem;
-      width: 3.6rem;
-      height: 3.9rem;
-    }
+  img {
+    margin-right: 1.9rem;
+    width: 3.6rem;
+    height: 3.9rem;
   }
 `;
 
@@ -89,33 +83,27 @@ const MoodStyleWrap = styled.div`
   padding-left: 6.8rem;
 `;
 
-const Mood = styled.div`
+const MoodStyle = styled.div`
   margin-top: 3rem;
+  width: 47.5rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
-const Style = styled.div`
-  margin-top: 3rem;
+const KeywordWrap = styled.div`
+  width: 35.7rem;
   display: flex;
-  align-items: center;
+  justify-content: flex-start;
 `;
 
-const Categ = styled.div`
-  font-family: Junge;
-  font-size: 2rem;
-  width: 5.7rem;
-  margin-right: 6.2rem;
-`;
-
-const KeyWord = styled.div`
+const Keyword = styled.div`
   width: 9.3rem;
   height: 3.9rem;
   font-family: NotoSans;
   font-size: 1.8rem;
   line-height: 3.24rem;
   text-align: center;
-  padding-top: 0.3rem;
   background-color: ${({ theme }) => theme.colors.gray2};
   margin-right: 2.6rem;
 `;

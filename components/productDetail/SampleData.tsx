@@ -33,7 +33,7 @@ const SampleData: DataType = {
     price: '00,000',
   },
   images: [IconSubColRed, IconSubColVanilla, IconSubColGreen],
-  mood: ['무드', '무드', '무드'],
+  mood: ['무드', '무드'],
   style: ['스타일', '스타일', '스타일'],
   levels: ['000000', '000000', '000000'],
   description: [

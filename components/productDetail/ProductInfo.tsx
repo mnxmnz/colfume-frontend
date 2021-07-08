@@ -1,25 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface ImgType {
-  height: number;
-  src: string;
-  width: number;
-}
-
-interface ObjectType {
-  brandName: string;
-  productName: string;
-  volume: number;
-  price: string;
-}
-
-interface PropsType {
-  colIcon: ImgType;
-  infoData: ObjectType;
-}
-
-function ProductInfo(props: PropsType) {
+function ProductInfo(props) {
   const colIcon = props.colIcon;
   const infoData = props.infoData;
 
@@ -48,9 +30,8 @@ const ProductInfoWrap = styled.div`
   img {
     width: 11.4rem;
     height: 12.5rem;
-    padding-top: 0.9rem;
-    padding-bottom: 0.4rem;
-    padding-right: 3.4rem;
+    margin-top: 0.9rem;
+    margin-right: 3.4rem;
   }
 `;
 
