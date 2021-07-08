@@ -1,9 +1,18 @@
 {
-  "extends": ["react-app", "plugin:react/recommended", "plugin:prettier/recommended"],
+  "extends": [
+    "next",
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
   "plugins": ["react", "react-hooks", "prettier"],
   "rules": {
+    "react/prop-types": 0,
+    "no-unused-vars": 0,
+    "react/jsx-key": 0,
     "prettier/prettier": [
-      1,
+      "warn",
       {
         "endOfLine": "auto"
       }
