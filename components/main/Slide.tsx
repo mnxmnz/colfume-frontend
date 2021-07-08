@@ -14,10 +14,10 @@ import SampleData from '../../public/SampleData';
 import Recommendation from './Recommendation';
 
 interface ArrowPropsType {
-  className: string;
-  style: object;
-  onClick: any;
   id: string;
+  className?: string;
+  style?: object;
+  onClick?: any;
 }
 
 function ArrowLeft(props: ArrowPropsType) {

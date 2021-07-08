@@ -32,29 +32,29 @@ const NumberWrap = styled.div`
 `;
 
 const Number = styled.div`
+  line-height: 16.2rem;
   font-family: Junge;
   font-size: 9rem;
   font-weight: 400;
-  line-height: 16.2rem;
 `;
 
 const ContentWrap = styled.div`
-  padding-top: 5.9rem;
   margin-left: 2rem;
+  padding-top: 5.9rem;
 `;
 
 const Text = styled.div`
+  line-height: 7.2rem;
   font-family: NanumMyeongjo;
   font-size: 4rem;
   font-weight: 700;
-  line-height: 7.2rem;
 `;
 
 const Detail = styled.div`
+  margin-top: 3.7037vh;
+  line-height: 4.7rem;
   font-size: 2.6rem;
   font-weight: 400;
-  line-height: 4.7rem;
-  margin-top: 3.7037vh;
 `;
 
 export default QuestionList;
