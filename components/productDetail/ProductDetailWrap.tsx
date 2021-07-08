@@ -25,10 +25,6 @@ const ContentWrap = styled.div`
   justify-content: space-between;
   align-items: flex-start;
 
-  img {
-    padding-top: 0.9rem;
-  }
-
   .btn {
     padding-top: 1.9rem;
   }

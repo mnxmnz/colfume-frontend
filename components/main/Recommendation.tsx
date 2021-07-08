@@ -25,19 +25,19 @@ function Recommendation(props: Props) {
 
   return (
     <RecommWrap key={idx}>
-      <div>
+      <Recomm>
         <img className="item" src={datum.image.src} alt="sampleImage" />
-        <span id="keyword">{datum.keyword}</span>
-      </div>
+        <Keyword>{datum.keyword}</Keyword>
+      </Recomm>
+      <Hovered>
+        <Name>{datum.name}</Name>
+      </Hovered>
       <img
         className="contour"
         id={idx % 3 === 2 ? 'hidden' : 'show'}
         src={Contour.src}
         alt="sampleImage"
       />
-      <div className="hovered">
-        <span>{datum.name}</span>
-      </div>
     </RecommWrap>
   );
 }
@@ -51,19 +51,6 @@ const RecommWrap = styled.div`
   justify-content: flex-end;
   cursor: pointer;
 
-  &:hover img {
-    opacity: 0.7;
-  }
-
-  &:hover .hovered {
-    opacity: 1;
-  }
-
-  .item {
-    width: 33.2rem;
-    height: 45rem;
-  }
-
   .contour {
     padding-left: 6.7rem;
   }
@@ -71,35 +58,49 @@ const RecommWrap = styled.div`
   #hidden.contour {
     visibility: hidden;
   }
+`;
 
-  #keyword {
-    line-height: 3.96rem;
-    font-size: 2.2rem;
-  }
-
-  .hovered {
-    display: flex;
-
-    position: absolute;
-    left: 7.05rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s ease;
-    opacity: 0;
-    background-color: rgba(1, 1, 1, 0.4);
-    width: 32.85rem;
+const Recomm = styled.div`
+  .item {
+    width: 33.2rem;
     height: 45rem;
-    text-align: center;
-    color: white;
   }
 
-  .hovered > span {
-    display: block;
-    width: 13rem;
-    text-align: center;
-    line-height: 3.12rem;
-    font-size: 2.6rem;
-    font-weight: bold;
+  &:hover {
+    opacity: 0.7;
   }
+`;
+
+const Hovered = styled.div`
+  display: flex;
+  position: absolute;
+  left: 7.05rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+  opacity: 0;
+  background-color: rgba(1, 1, 1, 0.4);
+  width: 32.85rem;
+  height: 45rem;
+  text-align: center;
+  color: white;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
+
+const Keyword = styled.div`
+  line-height: 3.96rem;
+  font-size: 2.2rem;
+`;
+
+const Name = styled.div`
+  display: block;
+  width: 13rem;
+  text-align: center;
+  line-height: 3.12rem;
+  font-size: 2.6rem;
+  font-weight: bold;
 `;
