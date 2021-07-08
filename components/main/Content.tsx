@@ -9,6 +9,7 @@ interface PropsType {
   paddingContent: string;
   paddingBottom: string;
 }
+
 function Content(props: PropsType) {
   const styleTitle = {
     paddingTop: `${props.paddingTitle}`,
@@ -38,16 +39,16 @@ const TitleWrap = styled.div`
 `;
 
 const ContentWrap = styled.div`
-  font-size: 2.2rem;
-  font-weight: 300;
-  line-height: 4rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  text-align: center;
+  line-height: 4rem;
   line-height: 4rem;
   font-size: 2.2rem;
+  font-size: 2.2rem;
+  font-weight: 300;
   font-weight: 400;
 `;
 

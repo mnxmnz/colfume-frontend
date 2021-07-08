@@ -13,6 +13,7 @@ interface DatumType {
   keyword: string;
   name: string;
 }
+
 interface Props {
   datum: DatumType;
   idx: number;
@@ -45,10 +46,18 @@ export default Recommendation;
 
 const RecommWrap = styled.div`
   display: flex;
+  position: relative;
   align-items: flex-start;
   justify-content: flex-end;
-  position: relative;
   cursor: pointer;
+
+  &:hover img {
+    opacity: 0.7;
+  }
+
+  &:hover .hovered {
+    opacity: 1;
+  }
 
   .item {
     width: 33.2rem;
@@ -69,37 +78,28 @@ const RecommWrap = styled.div`
   }
 
   .hovered {
-    color: white;
-    text-align: center;
-    font-family: 'NotoSans';
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     position: absolute;
     left: 7.05rem;
-    height: 45rem;
-    width: 32.85rem;
-    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     transition: 0.5s ease;
+    opacity: 0;
     background-color: rgba(1, 1, 1, 0.4);
-  }
-
-  &:hover img {
-    opacity: 0.7;
-  }
-
-  &:hover .hovered {
-    opacity: 1;
+    width: 32.85rem;
+    height: 45rem;
+    text-align: center;
+    color: white;
   }
 
   .hovered > span {
     display: block;
     width: 13rem;
     text-align: center;
-    font-weight: bold;
-    font-size: 2.6rem;
     line-height: 3.12rem;
+    font-size: 2.6rem;
+    font-weight: bold;
   }
 `;

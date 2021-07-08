@@ -5,8 +5,10 @@ import styled from 'styled-components';
 
 const Header = () => {
   const [category, setCategory] = useState('');
+
   const onClickCategory = event => {
     const target = event.currentTarget.getAttribute('value');
+
     setCategory(target);
   };
 
@@ -48,20 +50,20 @@ const LogoWrap = styled.div`
 
 const Positioner = styled.div`
   display: flex;
-  flex-direction: column;
   position: fixed;
-  width: 100%;
-  z-index: 1;
   top: 0;
+  flex-direction: column;
+  z-index: 1;
+  width: 100%;
 `;
 
 const WhiteBackground = styled.div`
-  width: 100vw;
-  height: 7.2rem;
-  background: ${({ theme }) => theme.colors.white};
   display: flex;
   align-items: center;
   border-bottom: 0.2rem solid ${({ theme }) => theme.colors.gray2};
+  background: ${({ theme }) => theme.colors.white};
+  width: 100vw;
+  height: 7.2rem;
 `;
 
 const Category = styled.div`
@@ -82,14 +84,14 @@ const Category = styled.div`
   }
 `;
 
-const CategoryBtn = styled.span`
-  font-size: 2.2rem;
-  font-family: 'Junge';
-  text-align: center;
-  padding: 0 1rem;
+const CategoryBtn = styled.span<{ value: string; category: string }>`
   margin: 0 3rem;
-  cursor: pointer;
   border-bottom: ${props => props.category === props.value && '0.1rem solid #3e3e3e;'};
+  cursor: pointer;
+  padding: 0 1rem;
+  text-align: center;
+  font-family: 'Junge';
+  font-size: 2.2rem;
 `;
 
 export default Header;

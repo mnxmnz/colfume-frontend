@@ -41,13 +41,13 @@ function SelectKeyword() {
 }
 
 const SelectKeywordWrap = styled.div`
-  height: 40rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   border-top: 0.16rem solid #d4d4d4;
   border-bottom: 0.16rem solid #d4d4d4;
+  height: 40rem;
 `;
 
 const KeywordWrap = styled.div`
@@ -55,10 +55,10 @@ const KeywordWrap = styled.div`
 `;
 
 const Line = styled.div`
-  height: 23.5rem;
-  width: 0.16rem;
-  background-color: ${({ theme }) => theme.colors.gray3};
   margin: 6.6rem 2.7rem 0 2.7rem;
+  background-color: ${({ theme }) => theme.colors.gray3};
+  width: 0.16rem;
+  height: 23.5rem;
 `;
 
 export default SelectKeyword;
