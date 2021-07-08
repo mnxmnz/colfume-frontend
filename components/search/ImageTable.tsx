@@ -61,15 +61,47 @@ function ImageTable() {
 const ImageTableWrap = styled.div`
   padding-top: 13rem;
   padding-bottom: 38.4rem;
+  justify-content: center;
+
+  @media screen and (max-width: 1300px) {
+    padding-bottom: 20rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 10rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    padding-top: 4.5rem;
+    padding-bottom: 2.6rem;
+  }
 `;
 
 const ImageTableBox = styled.div`
-  display: grid;
   width: 100%;
   max-width: 113.6rem;
+  display: grid;
+  justify-content: center;
   margin: 0 auto;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 3.2rem;
+
+  @media screen and (max-width: 1300px) {
+    max-width: 80rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 30rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2.8rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+  }
 `;
 
 export default ImageTable;

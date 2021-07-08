@@ -37,6 +37,10 @@ const PerfumeImgWrap = styled.div`
     opacity: 1;
     width: 26rem;
     height: 35.2rem;
+    @media screen and (max-width: 576px) {
+      width: 16.2rem;
+      height: 21.9rem;
+    }
   }
 
   .hover_img {
@@ -68,17 +72,26 @@ const Name = styled.div`
   line-height: 3.12rem;
   letter-spacing: 4px;
   font-size: 2.6rem;
-  font-size: 2.6rem;
   font-weight: bold;
-  font-weight: bold;
+  @media screen and (max-width: 576px) {
+    width: 10rem;
+    margin-top: 3rem;
+    font-size: 1.6rem;
+    line-height: 1.92rem;
+    letter-spacing: 0.1em;
+  }
 `;
 
 const Keyword = styled.div`
   margin-top: 1.5rem;
   text-align: center;
   line-height: 2.4rem;
-  line-height: 2.4rem;
   font-size: 2rem;
+  @media screen and (max-width: 576px) {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.8rem;
+  }
 `;
 
 export default PerfumeImg;
