@@ -42,11 +42,11 @@ function MainWrap() {
           paddingContent="0rem"
           paddingBottom="16rem"
         />
-        <div>
-          <div id="comment">
+        <SlideWrap>
+          <Comment>
             다음 주 <strong>면접</strong> 전에, 이런 향수는 어떤가요?
-          </div>
-          <div className="slide-container">
+          </Comment>
+          <SlideContainer>
             <Slide
               slideName="recommendation"
               length={3}
@@ -54,8 +54,8 @@ function MainWrap() {
               paddingTop="9.8rem"
               width="141rem"
             />
-          </div>
-        </div>
+          </SlideContainer>
+        </SlideWrap>
       </ContentWrap>
       <Footer />
     </>
@@ -68,21 +68,26 @@ const ContentWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
 
-  #comment {
-    margin-bottom: 1.98rem;
-    font-size: 2rem;
-    strong {
-      font-weight: bold;
-    }
-  }
+const SlideWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
 
-  .slide-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 19.7rem;
-    border-top: solid ${({ theme }) => theme.colors.black};
-    border-bottom: solid ${({ theme }) => theme.colors.black};
-    width: 142.6rem;
+const Comment = styled.div`
+  margin-bottom: 1.98rem;
+  font-size: 2rem;
+  strong {
+    font-weight: bold;
   }
+`;
+const SlideContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 19.7rem;
+  border-top: solid ${({ theme }) => theme.colors.black};
+  border-bottom: solid ${({ theme }) => theme.colors.black};
+  width: 142.6rem;
 `;
