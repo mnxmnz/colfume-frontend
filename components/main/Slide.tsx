@@ -114,17 +114,17 @@ const SliderWrap = styled.div`
 
   .slick-dots {
     button::before {
+      border: 0.08rem solid;
+      border: 0.08rem solid;
+      border-radius: 50%;
+      border-radius: 50%;
+      border-color: ${({ theme }) => theme.colors.black};
+      border-color: ${({ theme }) => theme.colors.black};
       width: 1.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
       height: 1.5rem;
       color: ${({ theme }) => theme.colors.white};
-      border: 0.08rem solid;
-      border-radius: 50%;
-      border-color: ${({ theme }) => theme.colors.black};
-      border: 0.08rem solid;
-      border-radius: 50%;
-      border-color: ${({ theme }) => theme.colors.black};
-      width: 1.5rem;
-      height: 1.5rem;
       color: ${({ theme }) => theme.colors.white};
     }
 

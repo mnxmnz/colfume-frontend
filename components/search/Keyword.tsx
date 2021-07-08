@@ -22,42 +22,42 @@ const KeywordWrap = styled.div`
 
   input[type='checkbox'] {
     position: absolute;
+    margin: -1px;
+    border: 0;
+    padding: 0;
     width: 1px;
     height: 1px;
-    padding: 0;
-    margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
-    border: 0;
   }
 
   input[type='checkbox'] + label {
     display: inline-block;
     position: relative;
-    padding-left: 26px;
     cursor: pointer;
+    padding-left: 26px;
   }
 
   input[type='checkbox'] + label:before {
-    content: '';
+    box-sizing: border-box;
     position: absolute;
-    left: 0;
     top: 3px;
+    left: 0;
+    border: 0.16rem solid #d4d4d4;
     width: 1.7rem;
     height: 1.7rem;
-    border: 0.16rem solid #d4d4d4;
     text-align: center;
-    box-sizing: border-box;
+    content: '';
   }
 
   input[type='checkbox']:checked + label:after {
-    content: '';
     position: absolute;
     top: 3px;
     left: 0;
+    background-color: ${({ theme }) => theme.colors.black};
     width: 18px;
     height: 18px;
-    background-color: ${({ theme }) => theme.colors.black};
+    content: '';
   }
 `;
 

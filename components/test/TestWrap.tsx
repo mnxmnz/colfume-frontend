@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import TestResult from './TestResult/TestResult';
 import Questions from './questions/Questions';
+
 
 function TestWrap() {
   return <Questions />;
