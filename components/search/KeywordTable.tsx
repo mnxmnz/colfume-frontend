@@ -24,19 +24,19 @@ const Table = styled.div`
 const Title = styled.div`
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 3rem;
   margin-left: 7rem;
-  line-height: 4.7rem;
   font-family: 'Junge';
   font-size: 2.6rem;
   font-weight: 400;
+  line-height: 4.7rem;
+  margin-bottom: 3rem;
 `;
 
 const Wrap = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   width: 48rem;
   height: 22.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 `;
 
 export default KeywordTable;
