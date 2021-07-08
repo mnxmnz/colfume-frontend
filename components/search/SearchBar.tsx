@@ -36,7 +36,7 @@ const SearchBarBox = styled.div`
   display: flex;
   align-items: center;
   margin: 16.7rem 58rem 14.2rem;
-  border-bottom: 0.2rem solid #3e3e3e;
+  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.gray3};
 
   .searchIcon {
     margin-right: 4.2rem;
@@ -58,8 +58,43 @@ const SearchBarBox = styled.div`
   button {
     position: relative;
     right: -0.6rem;
-    bottom: -0.7rem;
     bottom: -0.6rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 8rem 0;
+    .searchIcon {
+      position: relative;
+      margin-right: 3.5rem;
+    }
+    input {
+      width: 40rem;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    margin: 5.3rem 0 3em 0;
+    border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
+
+    input {
+      width: 24.5rem;
+      font-size: 1.6rem;
+      bottom: -0.2rem;
+    }
+
+    .searchIcon {
+      position: relative;
+      margin-right: 0.9rem;
+      width: 2rem;
+      bottom: -0.1rem;
+    }
+    button {
+      bottom: -0.5rem;
+      img {
+        width: 4.7rem;
+        height: 3.2rem;
+      }
+    }
   }
 `;
 
