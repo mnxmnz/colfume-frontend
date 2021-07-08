@@ -4,12 +4,14 @@ import ProductInfo from './ProductInfo';
 import Filter from './Filter';
 import Description from './Description';
 
-function Detail() {
+function Detail(props) {
+  const data = props.data;
+
   return (
     <DetailWrap>
-      <ProductInfo />
-      <Filter />
-      <Description />
+      <ProductInfo colIcon={data.mainColor} infoData={data.infos} />
+      <Filter colData={data.images} moodData={data.mood} styleData={data.style} />
+      <Description levels={data.levels} description={data.description} />
     </DetailWrap>
   );
 }

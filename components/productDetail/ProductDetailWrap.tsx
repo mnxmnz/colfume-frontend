@@ -1,15 +1,15 @@
 import React from 'react';
-import { ButtonBackDefault, PerfumeImg } from 'assets';
-import SampleImg from 'assets/productDetail/SampleImg.svg';
+import { ButtonBackDefault } from 'assets';
 import styled from 'styled-components';
 import Detail from './Detail';
+import SampleData from './SampleData';
 
 function ProductDetailWrap() {
   return (
     <ContentWrap>
       <img className="btn" src={ButtonBackDefault.src} alt="button-back" />
-      <img className="product" src={SampleImg.src} alt="sample" />
-      <Detail />
+      <img className="product" src={SampleData.mainImage.src} alt="sample" />
+      <Detail data={SampleData} />
     </ContentWrap>
   );
 }
