@@ -1,13 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function PerfumeImg({ image, name, keyword }) {
+interface PropsType {
+  image: string;
+  name: string;
+  keyword: string;
+}
+
+function PerfumeImg(props: PropsType) {
   return (
     <PerfumeImgWrap>
-      <img className="fume_img" src={image} />
+      <img className="fume_img" src={props.image} />
       <div className="hover_img">
-        <Name>{name}</Name>
-        <Keyword>{keyword}</Keyword>
+        <Name>{props.name}</Name>
+        <Keyword>{props.keyword}</Keyword>
       </div>
     </PerfumeImgWrap>
   );
@@ -56,18 +62,22 @@ const PerfumeImgWrap = styled.div`
 `;
 
 const Name = styled.div`
-  display: block;
-  width: 13rem;
-  text-align: center;
+  display: flex;
+  margin-top: 2.5rem;
+  width: 20rem;
   line-height: 3.12rem;
+  letter-spacing: 4px;
   font-size: 2.6rem;
+  font-size: 2.6rem;
+  font-weight: bold;
   font-weight: bold;
 `;
 
 const Keyword = styled.div`
+  margin-top: 1.5rem;
   text-align: center;
   line-height: 2.4rem;
-  line-height: 2.8rem;
+  line-height: 2.4rem;
   font-size: 2rem;
 `;
 

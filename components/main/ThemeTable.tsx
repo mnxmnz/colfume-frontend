@@ -1,7 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function ThemeTable({ title, list }) {
+interface PropsType {
+  title: string;
+  list: string[];
+}
+function ThemeTable(props: PropsType) {
+  const title = props.title;
+  const list = props.list;
+
   return (
     <Table>
       <Title>{title}</Title>

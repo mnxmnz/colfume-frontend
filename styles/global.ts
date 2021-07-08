@@ -9,34 +9,41 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: 10px;
+    color: #3E3E3E;
     font-family: NotoSans;
-    color: #3E3E3E
+    font-size: 10px;
   }
 
   a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
   }
 
   input, button {
-    background-color: transparent;
+    outline: none; 
     border: none;
-    outline: none;                                                                                                                                                                         
+    background-color: transparent;                                                                                                                                                                        
   }
 
   @font-face {
     font-family: "NotoSans";
-    font-style: normal;
     font-weight: normal;
+    font-style: normal;
     src: url("/fonts/NotoSansKR-Regular.otf") format("truetype");
   }
 
   @font-face {
     font-family: "Junge";
-    font-style: normal;
     font-weight: normal;
+    font-style: normal;
     src: url("/fonts/Junge-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "NanumMyeongjo";
+    font-weight: normal;
+    font-style: normal;
+    src: url("/fonts/NanumMyeongjo-Regular.ttf") format("truetype");
   }
 `;
 

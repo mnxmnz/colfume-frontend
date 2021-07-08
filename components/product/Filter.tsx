@@ -9,8 +9,19 @@ function Filter() {
     <FilterWrap>
       <div className="title">Which Color You Want</div>
       <div className="icon-wrap">
-        {iconTokens.map((icon, idx) => {
-          return <img src={icon.image.src} key={idx} alt={icon.keyword} />;
+        {iconTokens.map((token, idx) => {
+          const iconStyle = {
+            marginRight: token.marginRight,
+          };
+          return (
+            <img
+              src={token.image.src}
+              key={idx}
+              alt={token.keyword}
+              width={token.width}
+              style={iconStyle}
+            />
+          );
         })}
       </div>
     </FilterWrap>
@@ -35,9 +46,8 @@ const FilterWrap = styled.div`
   .icon-wrap {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-top: 6.5rem;
-    width: 84.9rem;
+    width: 85.1rem;
     height: 13.6rem;
     border-bottom: solid 0.2rem;
     border-color: ${({ theme }) => theme.colors.gray3};

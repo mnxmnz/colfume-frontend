@@ -1,4 +1,3 @@
-export { default as Sample } from './sample.svg';
 export { default as Palette01Red } from './main/Palette01Red.svg';
 export { default as Palette02Orange } from './main/Palette02Orange.svg';
 export { default as Palette03Yellow } from './main/Palette03Yellow.svg';
@@ -21,6 +20,7 @@ export { default as SearchCheckboxOn } from './search/SearchCheckboxOn.svg';
 export { default as SearchCheckboxOff } from './search/SearchCheckboxOff.svg';
 export { default as SearchCheckboxHover } from './search/SearchCheckboxHover.svg';
 export { default as PerfumeImg } from './search/PerfumeImg.svg';
+export { default as Logo } from './main/Logo.svg';
 export { default as LoadingIcon } from './test/LoadingIcon.svg';
 export { default as FilterRed } from './product/FilterRed.svg';
 export { default as FilterOrange } from './product/FilterOrange.svg';
@@ -30,5 +30,4 @@ export { default as FilterBlue } from './product/FilterBlue.svg';
 export { default as FilterPurple } from './product/FilterPurple.svg';
 export { default as FilterPink } from './product/FilterPink.svg';
 export { default as FilterWhite } from './product/FilterWhite.svg';
-export { default as ResultOrange } from './TestReult/ResultOrange.svg';
 

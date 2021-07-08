@@ -3,7 +3,7 @@ import { SearchArrowOff, SearchArrowOn, SearchIcon } from '../../assets';
 import styled from 'styled-components';
 
 const SearchBar = () => {
-  const searchButton = React.useRef();
+  const searchButton: any = React.useRef();
 
   return (
     <SearchBarWrap>
@@ -58,6 +58,7 @@ const SearchBarBox = styled.div`
   button {
     position: relative;
     right: -0.6rem;
+    bottom: -0.7rem;
     bottom: -0.6rem;
   }
 `;

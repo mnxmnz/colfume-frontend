@@ -13,17 +13,16 @@ import PaletteData from '../../public/PaletteData';
 import SampleData from '../../public/SampleData';
 import Recommendation from './Recommendation';
 
-interface Props {
-  slideName: string;
-  length: number;
-  paddingBottom: string;
-  paddingTop: string;
-  width: string;
+interface ArrowPropsType {
+  className: string;
+  style: object;
+  onClick: any;
+  id: string;
 }
 
-function ArrowLeft(props) {
+function ArrowLeft(props: ArrowPropsType) {
   const { className, style, onClick, id } = props;
-  const leftButton = React.useRef();
+  const leftButton: any = React.useRef();
 
   return (
     <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
@@ -38,9 +37,9 @@ function ArrowLeft(props) {
   );
 }
 
-function ArrowRight(props) {
+function ArrowRight(props: ArrowPropsType) {
   const { className, style, onClick, id } = props;
-  const rightButton = React.useRef();
+  const rightButton: any = React.useRef();
 
   return (
     <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
@@ -55,25 +54,28 @@ function ArrowRight(props) {
   );
 }
 
-function Slide(props: Props) {
-  const paletteData = PaletteData;
-  const sampleData = SampleData;
-  const length = props.length;
+interface SlidePropsType {
+  slideName: string;
+  length: number;
+  paddingBottom: string;
+  paddingTop: string;
+  width: string;
+}
 
+function Slide(props: SlidePropsType) {
+  const slideName = props.slideName;
   const styleSlider = {
     paddingBottom: `${props.paddingBottom}`,
     paddingTop: `${props.paddingTop}`,
     width: `${props.width}`,
   };
 
-  const slideName = props.slideName;
-
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: length,
-    slidesToScroll: length,
+    slidesToShow: props.length,
+    slidesToScroll: props.length,
     cssEase: 'linear',
     arrows: true,
     nextArrow: <ArrowRight id={slideName} />,
@@ -85,10 +87,11 @@ function Slide(props: Props) {
     <SliderWrap style={styleSlider}>
       <Slider {...settings}>
         {slideName === 'palette'
-          ? paletteData.map((datum, idx) => {
+          ? PaletteData.map((datum, idx) => {
+              console.log(datum.image);
               return <img src={datum.image.src} key={idx} alt={datum.keyword} height="277rem" />;
             })
-          : sampleData.map((datum, idx) => {
+          : SampleData.map((datum, idx) => {
               return <Recommendation datum={datum} idx={idx} />;
             })}
       </Slider>
