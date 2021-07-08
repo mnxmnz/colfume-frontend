@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
 function Keyword({ list }) {
+  const [checked, setChecked] = useState([]);
+
   return (
     <KeywordWrap>
-      <input id="check" type="checkbox" />
-      <label for="check">
+      <input id={list} type="checkbox" name="keyword" />
+      <label for={list}>
         <span>{list}</span>
       </label>
     </KeywordWrap>
