@@ -1,4 +1,4 @@
-const QuestionData: object[] = [
+const QuestionData = [
   {
     index: 0,
     text01: '하루 일과를 마치고',

@@ -47,9 +47,9 @@ const AnswerWrap = styled.div`
 `;
 
 const Text = styled.div`
+  line-height: 4.3rem;
   font-size: 3rem;
   font-weight: 400;
-  line-height: 4.3rem;
 `;
 
 const LineWrap = styled.div`
@@ -58,17 +58,17 @@ const LineWrap = styled.div`
 `;
 
 const Circle = styled.div`
-  width: 0.8rem;
-  height: 0.8rem;
   margin-top: 0.85rem;
   border-radius: 0.4rem;
   background-color: ${({ theme }) => theme.colors.black};
+  width: 0.8rem;
+  height: 0.8rem;
 `;
 
 const Line = styled.div`
   margin-top: 1.2rem;
-  height: 1.6px;
   background-color: ${({ theme }) => theme.colors.black};
+  height: 1.6px;
   animation: lineAnimation 2s;
 
   @keyframes lineAnimation {

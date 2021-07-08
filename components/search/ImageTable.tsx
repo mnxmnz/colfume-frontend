@@ -65,11 +65,11 @@ const ImageTableWrap = styled.div`
 
 const ImageTableBox = styled.div`
   display: grid;
-  width: 100%;
-  max-width: 113.6rem;
-  margin: 0 auto;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 3.2rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 113.6rem;
 `;
 
 export default ImageTable;

@@ -5,7 +5,7 @@ function Keyword({ list }) {
   return (
     <KeywordWrap>
       <input id="check" type="checkbox" />
-      <label for="check">
+      <label htmlFor="check">
         <span>{list}</span>
       </label>
     </KeywordWrap>
