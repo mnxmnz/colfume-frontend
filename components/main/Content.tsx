@@ -1,6 +1,7 @@
 import React from 'react';
 import { constSelector } from 'recoil';
 import styled from 'styled-components';
+import { media } from '@styles/theme';
 
 interface PropsType {
   title: string;
@@ -36,6 +37,11 @@ const TitleWrap = styled.div`
   font-family: Junge;
   font-size: 4.2rem;
   font-weight: 400;
+
+  ${media.mobile} {
+    font-size: 1.8rem;
+    line-height: 3.24rem;
+  }
 `;
 
 const ContentWrap = styled.div`
@@ -43,13 +49,14 @@ const ContentWrap = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  text-align: center;
   line-height: 4rem;
-  line-height: 4rem;
-  font-size: 2.2rem;
   font-size: 2.2rem;
   font-weight: 300;
-  font-weight: 400;
+
+  ${media.mobile} {
+    font-size: 1.2rem;
+    line-height: 2.16rem;
+  }
 `;
 
 export default Content;
