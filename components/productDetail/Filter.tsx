@@ -106,4 +106,5 @@ const Keyword = styled.div`
   text-align: center;
   background-color: ${({ theme }) => theme.colors.gray2};
   margin-right: 2.6rem;
+  padding-top: 0.3rem;
 `;
