@@ -1,42 +1,47 @@
 import React from 'react';
 import Keyword from './Keyword';
+import { media } from '@styles/theme';
 import styled from 'styled-components';
 
 function KeywordTable({ title, list }) {
   return (
-    <Table>
+    <Wrap>
       <Title>{title}</Title>
-      <Wrap>
-        {list.map(list => (
-          <Keyword list={list} />
-        ))}
-      </Wrap>
-    </Table>
+      <Keyword list={list} />
+    </Wrap>
   );
 }
 
-const Table = styled.div`
+const Wrap = styled.div`
   display: flex;
-  flex-direction: column;
-  text-align: center;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+  width: 100%;
+  max-width: 113.6rem;
+
+  ${media[1440]} {
+    max-width: 84rem;
+  }
+
+  ${media[768]} {
+    max-width: 54rem;
+  }
+
+  ${media.mobile} {
+    max-width: 34rem;
+  }
 `;
 
 const Title = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 7rem;
+  margin-bottom: 1rem;
+  line-height: 3.96rem;
   font-family: 'Junge';
-  font-size: 2.6rem;
-  font-weight: 400;
-  line-height: 4.7rem;
-  margin-bottom: 3rem;
-`;
+  font-size: 2.2rem;
 
-const Wrap = styled.div`
-  width: 48rem;
-  height: 22.5rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  ${media.mobile} {
+    line-height: 2.88rem;
+    font-size: 1.6rem;
+  }
 `;
 
 export default KeywordTable;
