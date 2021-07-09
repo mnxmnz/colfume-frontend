@@ -24,9 +24,14 @@ function Description(props) {
           </LevelWrap>
         </TableHeader>
         <DescWrap>
-          {description.map((desc, idx) => {
-            return <Desc key={idx}>{desc}</Desc>;
-          })}
+          {description.split('\n').map((line, idx) => (
+            <Desc key={idx}>
+              {line.includes('//')
+                ? line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
+                : line}
+              <br />
+            </Desc>
+          ))}
         </DescWrap>
       </TableWrap>
     </DescriptionWrap>
@@ -94,27 +99,7 @@ const DescWrap = styled.div`
 `;
 
 const Desc = styled.div`
-  #color {
-    font-weight: 700;
-    color: #faaa6b;
-  }
-
   #bold {
     font-weight: 700;
   }
 `;
-
-{
-  /* <div className="level">
-            <div className="level__categ">Top</div>
-            <div className="level__value">000000</div>
-          </div>
-          <div className="level">
-            <div className="level__categ">Middle</div>
-            <div className="level__value">000000</div>
-          </div>
-          <div className="level">
-            <div className="level__categ">Base</div>
-            <div className="level__value">000000</div>
-          </div> */
-}

@@ -20,7 +20,7 @@ interface DataType {
   mood: string[];
   style: string[];
   levels: string[];
-  description: string[];
+  description: string;
 }
 
 const SampleData: DataType = {
@@ -36,12 +36,8 @@ const SampleData: DataType = {
   mood: ['무드', '무드'],
   style: ['스타일', '스타일', '스타일'],
   levels: ['000000', '000000', '000000'],
-  description: [
-    '이 향수는 //오렌지//처럼 //발랄한 향//을 가지고 있습니다.',
-    '처음에는 000000향, 시간이 조금 지나면 000000향, 마지막으로 000000향을',
-    '느낄 수 있어요. 마치 스웨덴 튤립 축제에 놀러가 자전거를 타고 돌아다닐',
-    '때 날 것 같은 느낌이랍니다. (설명 4줄)',
-  ],
+  description:
+    '이 향수는 오렌지처럼 //발랄한 향//을 가지고 있습니다.\n처음에는 000000향, 시간이 조금 지나면 000000향, 마지막으로 000000향을\n느낄 수 있어요. 마치 스웨덴 튤립 축제에 놀러가 자전거를 타고 돌아다닐\n때 날 것 같은 느낌이랍니다.',
 };
 
 export default SampleData;
