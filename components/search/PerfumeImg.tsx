@@ -77,11 +77,11 @@ const Name = styled.div`
   font-weight: bold;
 
   ${media.mobile} {
-    width: 10rem;
     margin-top: 3rem;
-    font-size: 1.6rem;
+    width: 10rem;
     line-height: 1.92rem;
     letter-spacing: 0.1em;
+    font-size: 1.6rem;
   }
 `;
 
@@ -93,8 +93,8 @@ const Keyword = styled.div`
 
   ${media.mobile} {
     margin-top: 1rem;
-    font-size: 1rem;
     line-height: 1.8rem;
+    font-size: 1rem;
   }
 `;
 
