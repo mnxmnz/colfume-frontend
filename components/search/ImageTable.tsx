@@ -1,5 +1,6 @@
 import React from 'react';
 import PerfumeImg from './PerfumeImg';
+import { media } from '@styles/theme';
 import styled from 'styled-components';
 
 const perfumeData = [
@@ -63,15 +64,15 @@ const ImageTableWrap = styled.div`
   padding-bottom: 38.4rem;
   justify-content: center;
 
-  @media screen and (max-width: 1300px) {
+  ${media.custom[1300]} {
     padding-bottom: 20rem;
   }
 
-  @media screen and (max-width: 768px) {
+  ${media[768]} {
     padding-bottom: 10rem;
   }
 
-  @media screen and (max-width: 576px) {
+  ${media.mobile} {
     padding-top: 4.5rem;
     padding-bottom: 2.6rem;
   }
@@ -86,19 +87,19 @@ const ImageTableBox = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 3.2rem;
 
-  @media screen and (max-width: 1300px) {
-    max-width: 80rem;
+  ${media[1440]} {
+    max-width: 84rem;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 3rem;
   }
 
-  @media screen and (max-width: 768px) {
-    max-width: 30rem;
+  ${media[768]} {
+    max-width: 34rem;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2.8rem;
   }
 
-  @media screen and (max-width: 576px) {
+  ${media.mobile} {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
   }
