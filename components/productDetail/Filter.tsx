@@ -45,6 +45,7 @@ const FilterWrap = styled.div`
 
   ${media.mobile} {
     flex-direction: column;
+    border-bottom: 0.1rem solid;
   }
 `;
 
