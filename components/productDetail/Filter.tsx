@@ -38,35 +38,35 @@ export default Filter;
 
 const FilterWrap = styled.div`
   display: flex;
-  font-family: Junge;
   border-bottom: 0.2rem solid;
   border-color: ${({ theme }) => theme.colors.black};
+  font-family: Junge;
 `;
 
 const ColorWrap = styled.div`
-  border-right: 0.2rem solid;
-  border-color: ${({ theme }) => theme.colors.black};
-  padding-top: 5.2rem;
-  padding-bottom: 11.7rem;
-  padding-right: 6.8rem;
-  width: 32.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-right: 0.2rem solid;
+  border-color: ${({ theme }) => theme.colors.black};
+  padding-top: 5.2rem;
+  padding-right: 6.8rem;
+  padding-bottom: 11.7rem;
+  width: 32.8rem;
 `;
 
 const Categ = styled.div`
+  line-height: 3.6rem;
   font-family: Junge;
   font-size: 2rem;
-  line-height: 3.6rem;
 `;
 
 const Color = styled.div`
-  width: 14.6rem;
-  padding-right: 4.9rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding-right: 4.9rem;
+  width: 14.6rem;
 
   img {
     margin-right: 1.9rem;
@@ -84,27 +84,27 @@ const MoodStyleWrap = styled.div`
 `;
 
 const MoodStyle = styled.div`
-  margin-top: 3rem;
-  width: 47.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 3rem;
+  width: 47.5rem;
 `;
 
 const KeywordWrap = styled.div`
-  width: 35.7rem;
   display: flex;
   justify-content: flex-start;
+  width: 35.7rem;
 `;
 
 const Keyword = styled.div`
+  margin-right: 2.6rem;
+  background-color: ${({ theme }) => theme.colors.gray2};
+  padding-top: 0.3rem;
   width: 9.3rem;
   height: 3.9rem;
+  text-align: center;
+  line-height: 3.24rem;
   font-family: NotoSans;
   font-size: 1.8rem;
-  line-height: 3.24rem;
-  text-align: center;
-  background-color: ${({ theme }) => theme.colors.gray2};
-  margin-right: 2.6rem;
-  padding-top: 0.3rem;
 `;

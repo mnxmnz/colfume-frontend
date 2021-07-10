@@ -122,6 +122,13 @@ const SliderWrap = styled.div`
   }
 
   .slick-dots {
+    li {
+      margin-right: 0.35;
+      margin-left: 0.35;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+
     button::before {
       border: 0.08rem solid;
       border-radius: 50%;
@@ -131,6 +138,7 @@ const SliderWrap = styled.div`
       color: ${({ theme }) => theme.colors.white};
 
       ${media.mobile} {
+        position: relative;
         border: 0.05rem solid;
         border-color: ${({ theme }) => theme.colors.black};
         width: 0.8rem;

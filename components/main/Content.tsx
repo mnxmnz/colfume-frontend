@@ -39,8 +39,8 @@ const TitleWrap = styled.div`
   font-weight: 400;
 
   ${media.mobile} {
-    font-size: 1.8rem;
     line-height: 3.24rem;
+    font-size: 1.8rem;
   }
 `;
 
@@ -54,8 +54,8 @@ const ContentWrap = styled.div`
   font-weight: 300;
 
   ${media.mobile} {
-    font-size: 1.2rem;
     line-height: 2.16rem;
+    font-size: 1.2rem;
   }
 `;
 

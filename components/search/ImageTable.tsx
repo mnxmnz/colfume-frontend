@@ -60,6 +60,7 @@ function ImageTable() {
 }
 
 const ImageTableWrap = styled.div`
+  justify-content: center;
   padding-top: 13rem;
   padding-bottom: 38.4rem;
 

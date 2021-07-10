@@ -47,8 +47,8 @@ const Title = styled.div`
 
   ${media.mobile} {
     margin-bottom: 1.525rem;
-    font-size: 1.4rem;
     line-height: 2.52rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -60,8 +60,8 @@ const Wrap = styled.div`
   font-weight: 400;
 
   ${media.mobile} {
-    font-size: 1.4rem;
     line-height: 2.52rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -74,9 +74,9 @@ const Content = styled.div`
   height: 7.5rem;
 
   ${media.mobile} {
+    margin-bottom: 1rem;
     width: 6.7rem;
     height: 3.8rem;
-    margin-bottom: 1rem;
   }
 `;
 

@@ -119,10 +119,10 @@ const Keyword = styled.div`
   font-size: 2.2rem;
 
   ${media.mobile} {
-    font-size: 1.2rem;
-    line-height: 1.98rem;
-    font-weight: 500;
     padding-top: 1.3rem;
+    line-height: 1.98rem;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
 `;
 

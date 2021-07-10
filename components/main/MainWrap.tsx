@@ -42,7 +42,7 @@ function MainWrap() {
         <Slide
           slideName="palette"
           length={isMobile ? 2 : 4}
-          paddingBottom={isMobile ? '8.6rem' : '35.7rem'}
+          paddingBottom={isMobile ? '14.26rem' : '35.7rem'}
           paddingTop="0rem"
           width={isMobile ? '24rem' : '106.2rem'}
           height={isMobile ? '143rem' : '277rem'}
