@@ -5,7 +5,7 @@ import styled from 'styled-components';
 interface PropsType {
   image: string;
   name: string;
-  keyword: string;
+  keyword: string[];
 }
 
 function PerfumeImg(props: PropsType) {
