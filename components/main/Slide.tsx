@@ -123,10 +123,16 @@ const SliderWrap = styled.div`
 
   .slick-dots {
     li {
-      margin-right: 0.35;
-      margin-left: 0.35;
-      width: 0.8rem;
-      height: 0.8rem;
+      margin-right: 0.75rem;
+      margin-left: 0.75rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      ${media.mobile} {
+        margin-right: 0.35rem;
+        margin-left: 0.35rem;
+        width: 0.8rem;
+        height: 0.8rem;
+      }
     }
 
     button::before {

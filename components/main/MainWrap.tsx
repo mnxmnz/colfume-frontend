@@ -104,13 +104,13 @@ const SlideWrap = styled.div`
 
 const Comment = styled.div`
   margin-bottom: 1.98rem;
-  font-size: 2rem;
   line-height: 3.6rem;
+  font-size: 2rem;
 
   ${media.mobile} {
-    font-size: 1.4rem;
-    line-height: 2.31rem;
     margin-bottom: 3.05rem;
+    line-height: 2.31rem;
+    font-size: 1.4rem;
   }
   strong {
     font-weight: bold;
