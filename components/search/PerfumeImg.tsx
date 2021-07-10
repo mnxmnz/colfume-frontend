@@ -54,14 +54,11 @@ const PerfumeImgWrap = styled.div`
     bottom: 0;
     left: 0;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     transition: 0.5s ease;
     opacity: 0;
     background-color: rgba(1, 1, 1, 0.4);
     width: 100%;
     height: 100%;
-    text-align: center;
     color: white;
     font-family: 'NotoSans';
   }
@@ -69,7 +66,8 @@ const PerfumeImgWrap = styled.div`
 
 const Name = styled.div`
   display: flex;
-  margin-top: 2.5rem;
+  margin-top: 23rem;
+  margin-left: 2.6rem;
   width: 20rem;
   line-height: 3.12rem;
   letter-spacing: 4px;
@@ -77,7 +75,8 @@ const Name = styled.div`
   font-weight: bold;
 
   ${media.mobile} {
-    margin-top: 3rem;
+    margin-top: 14.9rem;
+    margin-left: 1.7rem;
     width: 10rem;
     line-height: 1.92rem;
     letter-spacing: 0.1em;
@@ -86,13 +85,14 @@ const Name = styled.div`
 `;
 
 const Keyword = styled.div`
-  margin-top: 1.5rem;
-  text-align: center;
+  margin-top: 0.8rem;
+  margin-left: 2.6rem;
   line-height: 2.4rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
 
   ${media.mobile} {
-    margin-top: 1rem;
+    margin-top: 0.3rem;
+    margin-left: 1.7rem;
     line-height: 1.8rem;
     font-size: 1rem;
   }
