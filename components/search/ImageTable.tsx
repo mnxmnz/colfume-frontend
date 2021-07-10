@@ -7,42 +7,42 @@ const perfumeData = [
   // 임시 데이터
   {
     id: 1,
-    name: 'ZARA PERFUME',
-    keyword: '# 달콤한 향',
+    name: 'ZARA PERfUME',
+    keyword: ['# 달콤한', ' # 달콤한', ' # 달콤한'],
     image:
       'https://beautymatter.com/media/pages/articles/berlin-packaging-acquires-roma-international/30cd49356a-1616086617/berlin-packaging-acquires-roma-international2.jpeg',
   },
   {
     id: 2,
     name: 'ZARA PERFUME',
-    keyword: '# 새콤한 향',
+    keyword: ['# 새콤한', ' # 새콤한', ' # 달콤한'],
     image:
       'https://beautymatter.com/media/pages/articles/berlin-packaging-acquires-roma-international/30cd49356a-1616086617/berlin-packaging-acquires-roma-international2.jpeg',
   },
   {
     id: 3,
     name: 'ZARA PERFUME',
-    keyword: '# 상콤한 향',
+    keyword: ['# 새콤한', ' # 새콤한'],
     image:
       'https://beautymatter.com/media/pages/articles/berlin-packaging-acquires-roma-international/30cd49356a-1616086617/berlin-packaging-acquires-roma-international2.jpeg',
   },
   {
     id: 4,
     name: 'ZARA PERFUME',
-    keyword: '# 달달한 향',
+    keyword: ['# 새콤한', ' # 새콤한'],
     image:
       'https://beautymatter.com/media/pages/articles/berlin-packaging-acquires-roma-international/30cd49356a-1616086617/berlin-packaging-acquires-roma-international2.jpeg',
   },
   {
     id: 5,
     name: 'ZARA PERFUME',
-    keyword: '# 달달한 향',
+    keyword: ['# 새콤한', ' # 새콤한'],
     image: 'http://www.dailygrid.net/news/photo/201905/222119_121434_5843.jpg',
   },
   {
     id: 6,
     name: 'ZARA PERFUME',
-    keyword: '# 새콤한 향',
+    keyword: ['# 새콤한', ' # 새콤한'],
     image: 'http://www.dailygrid.net/news/photo/201905/222119_121434_5843.jpg',
   },
 ];
