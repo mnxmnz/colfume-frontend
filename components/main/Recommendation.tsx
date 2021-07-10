@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Contour } from '../../assets';
+import { media } from '@styles/theme';
 
 interface Img {
   height: number;
@@ -53,10 +54,17 @@ const RecommWrap = styled.div`
 
   .contour {
     padding-left: 6.7rem;
+
+    ${media.mobile} {
+      display: none;
+    }
   }
 
   #hidden.contour {
     visibility: hidden;
+    ${media.mobile} {
+      display: none;
+    }
   }
 `;
 
@@ -64,10 +72,21 @@ const Recomm = styled.div`
   .item {
     width: 33.2rem;
     height: 45rem;
+
+    ${media.mobile} {
+      width: 10.981rem;
+      height: 14.3rem;
+    }
   }
 
   &:hover {
     opacity: 0.7;
+  }
+
+  ${media.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -89,11 +108,22 @@ const Hovered = styled.div`
   &:hover {
     opacity: 1;
   }
+
+  ${media.mobile} {
+    display: none;
+  }
 `;
 
 const Keyword = styled.div`
   line-height: 3.96rem;
   font-size: 2.2rem;
+
+  ${media.mobile} {
+    padding-top: 1.3rem;
+    line-height: 1.98rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
 `;
 
 const Name = styled.div`

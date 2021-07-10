@@ -77,16 +77,16 @@ const SearchBarBox = styled.div`
     border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
 
     input {
+      bottom: -0.2rem;
       width: 24.5rem;
       font-size: 1.6rem;
-      bottom: -0.2rem;
     }
 
     .searchIcon {
       position: relative;
+      bottom: -0.1rem;
       margin-right: 0.9rem;
       width: 2rem;
-      bottom: -0.1rem;
     }
     button {
       bottom: -0.5rem;

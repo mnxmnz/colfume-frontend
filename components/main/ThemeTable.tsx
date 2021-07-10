@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { media } from '@styles/theme';
 
 interface PropsType {
   title: string;
@@ -30,6 +31,10 @@ function ThemeTable(props: PropsType) {
 const Table = styled.div`
   width: 50.2rem;
   text-align: center;
+
+  ${media.mobile} {
+    width: 29.3rem;
+  }
 `;
 
 const Title = styled.div`
@@ -39,6 +44,12 @@ const Title = styled.div`
   font-family: Junge;
   font-size: 2.6rem;
   font-weight: 400;
+
+  ${media.mobile} {
+    margin-bottom: 1.525rem;
+    line-height: 2.52rem;
+    font-size: 1.4rem;
+  }
 `;
 
 const Wrap = styled.div`
@@ -47,6 +58,11 @@ const Wrap = styled.div`
   line-height: 3.6rem;
   font-size: 2rem;
   font-weight: 400;
+
+  ${media.mobile} {
+    line-height: 2.52rem;
+    font-size: 1.4rem;
+  }
 `;
 
 const Content = styled.div`
@@ -55,7 +71,13 @@ const Content = styled.div`
   justify-content: center;
   border-bottom: 1px solid ${({ theme }) => theme.colors.borderGray};
   width: 13.1rem;
-  height: 7.4rem;
+  height: 7.5rem;
+
+  ${media.mobile} {
+    margin-bottom: 1rem;
+    width: 6.7rem;
+    height: 3.8rem;
+  }
 `;
 
 export default ThemeTable;

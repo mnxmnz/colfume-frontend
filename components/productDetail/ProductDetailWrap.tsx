@@ -17,21 +17,21 @@ function ProductDetailWrap() {
 export default ProductDetailWrap;
 
 const ContentWrap = styled.div`
-  margin-top: 12rem;
-  margin-left: 10.3rem;
-  margin-right: 21.4rem;
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 12rem;
+  margin-right: 21.4rem;
+  margin-left: 10.3rem;
 
   .btn {
-    padding-top: 1.9rem;
     margin-right: 9.5rem;
+    padding-top: 1.9rem;
   }
 
   .product {
+    margin-right: 10.5rem;
     width: 51.1rem;
     height: 77.1rem;
-    margin-right: 10.5rem;
   }
 `;
