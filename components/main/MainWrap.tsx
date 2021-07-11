@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import { media } from '@styles/theme';
 
 function MainWrap() {
-  const [windowSize, setWindowSize] = useState(0);
+  const [windowSize, setWindowSize] = useState(1920);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
