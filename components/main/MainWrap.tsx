@@ -9,9 +9,11 @@ import { media } from '@styles/theme';
 
 function MainWrap() {
   const [windowSize, setWindowSize] = useState(0);
+
   const handleResize = () => {
     setWindowSize(window.innerWidth);
   };
+
   useEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => {
@@ -19,7 +21,7 @@ function MainWrap() {
     };
   }, []);
 
-  const isMobile = windowSize <= 576 ? true : false;
+  const isMobile = windowSize <= 375 ? true : false;
 
   return (
     <>
@@ -112,6 +114,7 @@ const Comment = styled.div`
     line-height: 2.31rem;
     font-size: 1.4rem;
   }
+
   strong {
     font-weight: bold;
   }
