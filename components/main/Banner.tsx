@@ -49,9 +49,9 @@ const MainTitle = styled.div`
 `;
 
 const SubTitle = styled.div`
-  font-size: 2.8rem;
   margin-top: 2rem;
   margin-bottom: 16%;
+  font-size: 2.8rem;
   font-size: 2.8rem;
 `;
 
@@ -67,9 +67,9 @@ const TestBnt = styled.div`
   font-size: 5rem;
 
   &:hover {
+    background-color: ${({ theme }) => theme.colors.black};
     cursor: pointer;
     color: white;
-    background-color: ${({ theme }) => theme.colors.black};
   }
 `;
 
