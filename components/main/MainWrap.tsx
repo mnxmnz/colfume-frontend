@@ -10,16 +10,21 @@ import { media } from '@styles/theme';
 function MainWrap() {
   const [windowSize, setWindowSize] = useState(0);
 
-  const handleResize = () => {
-    setWindowSize(window.innerWidth);
-  };
-
   useEffect(() => {
     window.addEventListener('resize', handleResize);
+    setWindowSize(JSON.parse(window.localStorage.getItem('size')));
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('size', JSON.stringify(windowSize));
+  }, [windowSize]);
+
+  const handleResize = () => {
+    return setWindowSize(window.innerWidth);
+  };
 
   const isMobile = windowSize <= 375 ? true : false;
 
