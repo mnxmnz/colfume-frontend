@@ -20,19 +20,18 @@ const Banner = () => {
 
 const BannerWrap = styled.div`
   margin-top: 7.2rem;
-  height: 94.1rem;
 
   img {
-    position: relative;
-    justify-content: center;
-    width: 100vw;
+    width: 100%;
+    height: 94.1rem;
+    object-fit: cover;
   }
 `;
 
 const BannerBox = styled.div`
   display: flex;
   position: absolute;
-  top: 22.7rem;
+  top: 27.5rem;
   flex-direction: column;
   width: 100%;
 `;
@@ -49,9 +48,7 @@ const MainTitle = styled.div`
 `;
 
 const SubTitle = styled.div`
-  margin-top: 2rem;
-  margin-bottom: 16%;
-  font-size: 2.8rem;
+  margin-top: 2.5rem;
   font-size: 2.8rem;
 `;
 
@@ -60,6 +57,7 @@ const TestBnt = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
+  margin-top: 26.876rem;
   border: 0.3rem solid ${({ theme }) => theme.colors.black};
   width: 38.2rem;
   height: 10.7rem;
