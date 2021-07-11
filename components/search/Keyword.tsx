@@ -13,9 +13,6 @@ function Keyword({ list }) {
 }
 
 const Wrap = styled.div`
-  color: ${({ theme }) => theme.colors.black};
-  font-family: 'NotoSans';
-
   button {
     margin-right: 1.7rem;
     margin-bottom: 1.8rem;

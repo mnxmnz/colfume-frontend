@@ -34,7 +34,6 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   width: 13rem;
-  width: 13rem;
   text-align: left;
 `;
 

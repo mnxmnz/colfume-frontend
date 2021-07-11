@@ -40,6 +40,7 @@ function ArrowLeft(props: ArrowPropsType) {
 
 function ArrowRight(props: ArrowPropsType) {
   const { className, style, onClick, id } = props;
+
   const rightButton: any = React.useRef();
 
   return (
@@ -66,6 +67,7 @@ interface SlidePropsType {
 
 function Slide(props: SlidePropsType) {
   const slideName = props.slideName;
+
   const styleSlider = {
     paddingBottom: `${props.paddingBottom}`,
     paddingTop: `${props.paddingTop}`,
@@ -127,6 +129,7 @@ const SliderWrap = styled.div`
       margin-left: 0.75rem;
       width: 1.5rem;
       height: 1.5rem;
+
       ${media.mobile} {
         margin-right: 0.35rem;
         margin-left: 0.35rem;
@@ -149,7 +152,6 @@ const SliderWrap = styled.div`
         border-color: ${({ theme }) => theme.colors.black};
         width: 0.8rem;
         height: 0.8rem;
-        /* color: ${({ theme }) => theme.colors.white}; */
       }
     }
 

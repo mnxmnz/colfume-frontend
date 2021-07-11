@@ -69,7 +69,7 @@ const TestBnt = styled.div`
   &:hover {
     background-color: ${({ theme }) => theme.colors.black};
     cursor: pointer;
-    color: white;
+    color: ${({ theme }) => theme.colors.white};
   }
 `;
 

@@ -62,6 +62,7 @@ const WhiteBackground = styled.div`
   background: ${({ theme }) => theme.colors.white};
   width: 100vw;
   height: 7.2rem;
+
   ${media.mobile} {
     border-bottom: 0.1rem solid ${({ theme }) => theme.colors.gray2};
     height: 4.5rem;
@@ -75,9 +76,11 @@ const Layout = styled.div`
   width: 100%;
   max-width: 113.6rem;
   height: 7.2rem;
+
   ${media[1440]} {
     max-width: 84rem;
   }
+
   ${media[768]} {
     max-width: 35rem;
   }
@@ -92,14 +95,17 @@ const LogoWrap = styled.div`
   top: 1.62rem;
   z-index: 100;
   margin-left: 10.1rem;
+
   ${media[1440]} {
     margin-left: 6rem;
   }
+
   ${media[768]} {
     top: 2.2rem;
     margin-left: 3rem;
     width: 10rem;
   }
+
   ${media.mobile} {
     top: 1.1rem;
     margin-left: 5%;
@@ -125,9 +131,11 @@ const Category = styled.div`
 
   #Product {
     width: 10rem;
+
     ${media[768]} {
       width: 8.5rem;
     }
+
     ${media.mobile} {
       width: 5.5rem;
     }
@@ -135,9 +143,11 @@ const Category = styled.div`
 
   #ColorTest {
     width: 12.7rem;
+
     ${media[768]} {
       width: 11.5rem;
     }
+
     ${media.mobile} {
       width: 6.8rem;
     }
@@ -145,9 +155,11 @@ const Category = styled.div`
 
   #Search {
     width: 8.8rem;
+
     ${media[768]} {
       width: 7.5rem;
     }
+
     ${media.mobile} {
       width: 4.8rem;
     }
@@ -156,7 +168,8 @@ const Category = styled.div`
 
 const CategoryBtn = styled.span<{ value: string; category: string }>`
   margin: 0 3rem;
-  border-bottom: ${props => props.category === props.value && '0.1rem solid #3e3e3e;'};
+  border-bottom: ${props =>
+    props.category === props.value && `0.1rem solid ${({ theme }) => theme.colors.black}`};
   cursor: pointer;
   text-align: center;
   line-height: 2.674rem;

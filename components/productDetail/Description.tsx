@@ -45,8 +45,7 @@ const DescriptionWrap = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: 0.2rem solid;
-  border-color: ${({ theme }) => theme.colors.black};
+  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
   padding-top: 5.2rem;
   padding-bottom: 5.1rem;
 
@@ -55,6 +54,7 @@ const DescriptionWrap = styled.div`
     padding-top: 3.9rem;
     padding-bottom: 8.8.rem;
   }
+
   span {
     line-height: 3.6rem;
     font-family: Junge;
@@ -84,8 +84,7 @@ const TableWrap = styled.div`
 const TableHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.16rem solid;
-  border-color: ${({ theme }) => theme.colors.gray3};
+  border-bottom: 0.16rem solid ${({ theme }) => theme.colors.gray3};
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
 
@@ -123,7 +122,6 @@ const Level = styled.div`
 
 const LevelDesc = styled.div`
   line-height: 2.88rem;
-  font-family: NotoSans;
 
   ${media.mobile} {
     line-height: 2.072rem;
@@ -135,7 +133,6 @@ const DescWrap = styled.div`
   padding-top: 2.8rem;
   line-height: 3.96rem;
   letter-spacing: 0.06rem;
-  font-family: NotoSans;
   font-size: 2.2rem;
 
   ${media.mobile} {
