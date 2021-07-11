@@ -25,12 +25,12 @@ export default ProductInfo;
 
 const ProductInfoWrap = styled.div`
   display: flex;
-  border-bottom: 0.2rem solid;
-  border-color: ${({ theme }) => theme.colors.black};
+  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
 
   ${media.mobile} {
-    border-bottom: 0.1rem solid;
+    border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
   }
+
   img {
     margin-top: 0.9rem;
     margin-right: 3.4rem;

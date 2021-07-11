@@ -49,8 +49,7 @@ const IconWrap = styled.div`
   display: flex;
   align-items: center;
   margin-top: 6.5rem;
-  border-bottom: solid 0.2rem;
-  border-color: ${({ theme }) => theme.colors.gray3};
+  border-bottom: solid 0.2rem ${({ theme }) => theme.colors.gray3};
   width: 85.1rem;
   height: 13.6rem;
 `;

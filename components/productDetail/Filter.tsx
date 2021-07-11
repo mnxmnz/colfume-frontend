@@ -39,13 +39,12 @@ export default Filter;
 
 const FilterWrap = styled.div`
   display: flex;
-  border-bottom: 0.2rem solid;
-  border-color: ${({ theme }) => theme.colors.black};
+  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
   font-family: Junge;
 
   ${media.mobile} {
     flex-direction: column;
-    border-bottom: 0.1rem solid;
+    border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
   }
 `;
 
@@ -53,8 +52,7 @@ const ColorWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-right: 0.2rem solid;
-  border-color: ${({ theme }) => theme.colors.black};
+  border-right: 0.2rem solid ${({ theme }) => theme.colors.black};
   padding-top: 5.2rem;
   padding-right: 6.8rem;
   padding-bottom: 11.7rem;
@@ -62,7 +60,7 @@ const ColorWrap = styled.div`
 
   ${media.mobile} {
     border-right: 0rem;
-    border-bottom: 0.1rem solid;
+    border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
     padding-top: 4.5rem;
     padding-right: 10.6rem;
     padding-bottom: 4.6rem;
@@ -149,7 +147,6 @@ const Keyword = styled.div`
   height: 3.9rem;
   text-align: center;
   line-height: 3.24rem;
-  font-family: NotoSans;
   font-size: 1.8rem;
 
   ${media.mobile} {

@@ -59,8 +59,7 @@ const PerfumeImgWrap = styled.div`
     background-color: rgba(1, 1, 1, 0.4);
     width: 100%;
     height: 100%;
-    color: white;
-    font-family: 'NotoSans';
+    color: ${({ theme }) => theme.colors.white};
   }
 `;
 

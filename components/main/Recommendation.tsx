@@ -62,6 +62,7 @@ const RecommWrap = styled.div`
 
   #hidden.contour {
     visibility: hidden;
+
     ${media.mobile} {
       display: none;
     }
@@ -103,7 +104,7 @@ const Hovered = styled.div`
   width: 32.85rem;
   height: 45rem;
   text-align: center;
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
 
   &:hover {
     opacity: 1;

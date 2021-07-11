@@ -9,17 +9,24 @@ import { media } from '@styles/theme';
 
 function MainWrap() {
   const [windowSize, setWindowSize] = useState(0);
-  const handleResize = () => {
-    setWindowSize(window.innerWidth);
-  };
+
   useEffect(() => {
     window.addEventListener('resize', handleResize);
+    setWindowSize(JSON.parse(window.localStorage.getItem('size')));
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  const isMobile = windowSize <= 576 ? true : false;
+  useEffect(() => {
+    window.localStorage.setItem('size', JSON.stringify(windowSize));
+  }, [windowSize]);
+
+  const handleResize = () => {
+    return setWindowSize(window.innerWidth);
+  };
+
+  const isMobile = windowSize <= 375 ? true : false;
 
   return (
     <>
@@ -112,6 +119,7 @@ const Comment = styled.div`
     line-height: 2.31rem;
     font-size: 1.4rem;
   }
+
   strong {
     font-weight: bold;
   }

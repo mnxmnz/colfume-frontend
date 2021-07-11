@@ -63,16 +63,18 @@ const SearchBarBox = styled.div`
 
   @media screen and (max-width: 768px) {
     margin: 8rem 0;
+
     .searchIcon {
       position: relative;
       margin-right: 3.5rem;
     }
+
     input {
       width: 40rem;
     }
   }
 
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 375px) {
     margin: 5.3rem 0 3em 0;
     border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
 
@@ -88,8 +90,10 @@ const SearchBarBox = styled.div`
       margin-right: 0.9rem;
       width: 2rem;
     }
+
     button {
       bottom: -0.5rem;
+
       img {
         width: 4.7rem;
         height: 3.2rem;
