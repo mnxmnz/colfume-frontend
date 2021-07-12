@@ -5,8 +5,8 @@ import ThemeTable from './ThemeTable';
 import { media } from '@styles/theme';
 
 function Mood(props) {
-  const moodList = ['봄바람', '꽃', '달콤한', '봄바람', '꽃', '편안한'];
-  const styleList = ['캐쥬얼', '무슨 룩', '달콤한', '봄바람', '꽃', '편안한'];
+  const moodList = ['달콤한', '시원한', '편안한', '섹시한', '화사한', '고급스러운'];
+  const styleList = ['댄디룩', '모던룩', '캐주얼룩', '오프스룩', '페미닌룩', '데이트룩'];
 
   return (
     <MoodWrap>
