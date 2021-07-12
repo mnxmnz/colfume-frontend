@@ -26,13 +26,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: "NotoSans";
-    font-weight: normal;
-    font-style: normal;
-    src: url("/fonts/NotoSansKR-Regular.otf") format("truetype");
-  }
-
-  @font-face {
     font-family: "Junge";
     font-weight: normal;
     font-style: normal;
@@ -44,6 +37,20 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: normal;
     font-style: normal;
     src: url("/fonts/NanumMyeongjo-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "NotoSans";
+    font-weight: normal;
+    font-style: normal;
+    src: url("/fonts/NotoSansKR-Regular.otf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    font-weight: normal;
+    font-style: normal;
+    src: url("/fonts/Gotham-Medium.otf") format("truetype");
   }
 `;
 

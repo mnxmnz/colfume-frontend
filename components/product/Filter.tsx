@@ -7,12 +7,13 @@ function Filter() {
 
   return (
     <FilterWrap>
-      <div className="title">Which Color You Want</div>
-      <div className="icon-wrap">
+      <Title>Which Color You Want</Title>
+      <IconWrap>
         {iconTokens.map((token, idx) => {
           const iconStyle = {
             marginRight: token.marginRight,
           };
+
           return (
             <img
               src={token.image.src}
@@ -23,7 +24,7 @@ function Filter() {
             />
           );
         })}
-      </div>
+      </IconWrap>
     </FilterWrap>
   );
 }
@@ -31,25 +32,24 @@ function Filter() {
 export default Filter;
 
 const FilterWrap = styled.div`
-  margin-top: 7.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 7.2rem;
+`;
 
-  .title {
-    margin-top: 20rem;
-    font-family: Junge;
-    font-size: 4rem;
-    color: ${({ theme }) => theme.colors.black};
-  }
+const Title = styled.div`
+  margin-top: 20rem;
+  color: ${({ theme }) => theme.colors.black};
+  font-family: Junge;
+  font-size: 4rem;
+`;
 
-  .icon-wrap {
-    display: flex;
-    align-items: center;
-    margin-top: 6.5rem;
-    width: 85.1rem;
-    height: 13.6rem;
-    border-bottom: solid 0.2rem;
-    border-color: ${({ theme }) => theme.colors.gray3};
-  }
+const IconWrap = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 6.5rem;
+  border-bottom: solid 0.2rem ${({ theme }) => theme.colors.gray3};
+  width: 85.1rem;
+  height: 13.6rem;
 `;

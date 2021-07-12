@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Result from './ResultData';
 import Image from 'next/image';
 import {Green} from '../../../assets/';
+import { media } from '@styles/theme';
 
 function TestResult() {
    const data = Result;
@@ -16,6 +17,25 @@ function TestResult() {
       '당신에게 올곧은 성품과 자연친화적인 매력을 부각시켜줄 Green계열 향수를 써보기를 추천해요!',]
 const listDescription = descriptions.map((description) => 
 <li>{description}</li>);
+  const [windowSize, setWindowSize] = useState(1920);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    setWindowSize(JSON.parse(window.localStorage.getItem('size')));
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  useEffect(() => {
+   window.localStorage.setItem('size', JSON.stringify(windowSize));
+ }, [windowSize]);
+
+ const handleResize = () => {
+   return setWindowSize(window.innerWidth);
+ };
+
+ const isMobile = windowSize <= 375 ? true : false;
+
 
    return (
       <Layout>
@@ -45,7 +65,7 @@ export default TestResult;
 
 const Layout = styled.div`
   margin-top: 7.3rem;
-  width: 1920px;
+  width: 100%
 `;
 
 const LeftWrapper = styled.div`

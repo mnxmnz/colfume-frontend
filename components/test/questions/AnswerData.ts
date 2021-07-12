@@ -1,4 +1,4 @@
-const AnswerData: object[] = [
+const AnswerData = [
   {
     index: 0,
     answer01: {

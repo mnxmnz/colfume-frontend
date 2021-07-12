@@ -6,7 +6,6 @@ import Image from 'next/image';
 const Box = styled.div`
   bottom: 0;
   margin-top: auto;
-  background: #fafafa;
   background: ${({ theme }) => theme.colors.gray1};
   width: 100%;
   min-height: 57.6rem;
@@ -34,7 +33,6 @@ const Row = styled.div`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  width: 13rem;
   width: 13rem;
   text-align: left;
 `;

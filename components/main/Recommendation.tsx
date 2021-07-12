@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Contour } from '../../assets';
+import { media } from '@styles/theme';
 
 interface Img {
   height: number;
@@ -13,6 +14,7 @@ interface DatumType {
   keyword: string;
   name: string;
 }
+
 interface Props {
   datum: DatumType;
   idx: number;
@@ -24,19 +26,19 @@ function Recommendation(props: Props) {
 
   return (
     <RecommWrap key={idx}>
-      <div>
+      <Recomm>
         <img className="item" src={datum.image.src} alt="sampleImage" />
-        <span id="keyword">{datum.keyword}</span>
-      </div>
+        <Keyword>{datum.keyword}</Keyword>
+      </Recomm>
+      <Hovered>
+        <Name>{datum.name}</Name>
+      </Hovered>
       <img
         className="contour"
         id={idx % 3 === 2 ? 'hidden' : 'show'}
         src={Contour.src}
         alt="sampleImage"
       />
-      <div className="hovered">
-        <span>{datum.name}</span>
-      </div>
     </RecommWrap>
   );
 }
@@ -45,61 +47,91 @@ export default Recommendation;
 
 const RecommWrap = styled.div`
   display: flex;
+  position: relative;
   align-items: flex-start;
   justify-content: flex-end;
-  position: relative;
   cursor: pointer;
-
-  .item {
-    width: 33.2rem;
-    height: 45rem;
-  }
 
   .contour {
     padding-left: 6.7rem;
+
+    ${media.mobile} {
+      display: none;
+    }
   }
 
   #hidden.contour {
     visibility: hidden;
+
+    ${media.mobile} {
+      display: none;
+    }
   }
+`;
 
-  #keyword {
-    line-height: 3.96rem;
-    font-size: 2.2rem;
-  }
-
-  .hovered {
-    color: white;
-    text-align: center;
-    font-family: 'NotoSans';
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    position: absolute;
-    left: 7.05rem;
+const Recomm = styled.div`
+  .item {
+    width: 33.2rem;
     height: 45rem;
-    width: 32.85rem;
-    opacity: 0;
-    transition: 0.5s ease;
-    background-color: rgba(1, 1, 1, 0.4);
+
+    ${media.mobile} {
+      width: 10.981rem;
+      height: 14.3rem;
+    }
   }
 
-  &:hover img {
+  &:hover {
     opacity: 0.7;
   }
 
-  &:hover .hovered {
+  ${media.mobile} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const Hovered = styled.div`
+  display: flex;
+  position: absolute;
+  left: 7.05rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+  opacity: 0;
+  background-color: rgba(1, 1, 1, 0.4);
+  width: 32.85rem;
+  height: 45rem;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.white};
+
+  &:hover {
     opacity: 1;
   }
 
-  .hovered > span {
-    display: block;
-    width: 13rem;
-    text-align: center;
-    font-weight: bold;
-    font-size: 2.6rem;
-    line-height: 3.12rem;
+  ${media.mobile} {
+    display: none;
   }
+`;
+
+const Keyword = styled.div`
+  line-height: 3.96rem;
+  font-size: 2.2rem;
+
+  ${media.mobile} {
+    padding-top: 1.3rem;
+    line-height: 1.98rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+`;
+
+const Name = styled.div`
+  display: block;
+  width: 13rem;
+  text-align: center;
+  line-height: 3.12rem;
+  font-size: 2.6rem;
+  font-weight: bold;
 `;

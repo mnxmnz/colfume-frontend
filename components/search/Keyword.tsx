@@ -1,63 +1,46 @@
 import React from 'react';
+import { media } from '@styles/theme';
 import styled from 'styled-components';
 
 function Keyword({ list }) {
   return (
-    <KeywordWrap>
-      <input id="check" type="checkbox" />
-      <label for="check">
-        <span>{list}</span>
-      </label>
-    </KeywordWrap>
+    <Wrap>
+      {list.map(list => (
+        <button>{list}</button>
+      ))}
+    </Wrap>
   );
 }
 
-const KeywordWrap = styled.div`
-  font-family: 'NotoSans';
-  font-size: 2rem;
-  font-weight: 400;
-  span {
-    margin-left: 1.7rem;
-  }
+const Wrap = styled.div`
+  button {
+    margin-right: 1.7rem;
+    margin-bottom: 1.8rem;
+    border: 0.1rem solid ${({ theme }) => theme.colors.gray3};
+    padding: 0 3rem;
+    line-height: 3.9rem;
+    font-size: 2rem;
 
-  input[type='checkbox'] {
-    position: absolute;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-  }
+    &:hover {
+      background: ${({ theme }) => theme.colors.gray3};
+      color: ${({ theme }) => theme.colors.white};
+    }
 
-  input[type='checkbox'] + label {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    padding-left: 26px;
-  }
+    ${media[768]} {
+      margin-right: 1.5rem;
+      margin-bottom: 1.3rem;
+      padding: 0 2rem;
+      line-height: 3.2rem;
+      font-size: 1.6rem;
+    }
 
-  input[type='checkbox'] + label:before {
-    box-sizing: border-box;
-    position: absolute;
-    top: 3px;
-    left: 0;
-    border: 0.16rem solid #d4d4d4;
-    width: 1.7rem;
-    height: 1.7rem;
-    text-align: center;
-    content: '';
-  }
-
-  input[type='checkbox']:checked + label:after {
-    position: absolute;
-    top: 3px;
-    left: 0;
-    background-color: ${({ theme }) => theme.colors.black};
-    width: 18px;
-    height: 18px;
-    content: '';
+    ${media.mobile} {
+      margin-right: 1.3rem;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+      line-height: 2.52rem;
+      font-size: 1.4rem;
+    }
   }
 `;
 

@@ -17,5 +17,5 @@ export const media = {
   custom: customMediaQuery,
   1440: customMediaQuery(1440),
   768: customMediaQuery(768),
-  mobile: customMediaQuery(576),
+  mobile: customMediaQuery(375),
 };

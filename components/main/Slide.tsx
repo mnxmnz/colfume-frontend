@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
+import { media } from '@styles/theme';
 import {
   ArrowLeftUnHovered,
   ArrowLeftHovered,
@@ -14,10 +15,10 @@ import SampleData from '../../public/SampleData';
 import Recommendation from './Recommendation';
 
 interface ArrowPropsType {
-  className: string;
-  style: object;
-  onClick: any;
   id: string;
+  className?: string;
+  style?: object;
+  onClick?: any;
 }
 
 function ArrowLeft(props: ArrowPropsType) {
@@ -39,6 +40,7 @@ function ArrowLeft(props: ArrowPropsType) {
 
 function ArrowRight(props: ArrowPropsType) {
   const { className, style, onClick, id } = props;
+
   const rightButton: any = React.useRef();
 
   return (
@@ -60,10 +62,12 @@ interface SlidePropsType {
   paddingBottom: string;
   paddingTop: string;
   width: string;
+  height: string;
 }
 
 function Slide(props: SlidePropsType) {
   const slideName = props.slideName;
+
   const styleSlider = {
     paddingBottom: `${props.paddingBottom}`,
     paddingTop: `${props.paddingTop}`,
@@ -88,8 +92,9 @@ function Slide(props: SlidePropsType) {
       <Slider {...settings}>
         {slideName === 'palette'
           ? PaletteData.map((datum, idx) => {
-              console.log(datum.image);
-              return <img src={datum.image.src} key={idx} alt={datum.keyword} height="277rem" />;
+              return (
+                <img src={datum.image.src} key={idx} alt={datum.keyword} height={props.height} />
+              );
             })
           : SampleData.map((datum, idx) => {
               return <Recommendation datum={datum} idx={idx} />;
@@ -102,30 +107,52 @@ function Slide(props: SlidePropsType) {
 export default Slide;
 
 const SliderWrap = styled.div`
-  height: 74.9rem;
-
   .slick-dots.palette {
     bottom: -17rem;
+
+    ${media.mobile} {
+      bottom: -4.8rem;
+    }
   }
 
   .slick-dots.recommendation {
     bottom: -11rem;
+
+    ${media.mobile} {
+      bottom: -7rem;
+    }
   }
 
   .slick-dots {
+    li {
+      margin-right: 0.75rem;
+      margin-left: 0.75rem;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      ${media.mobile} {
+        margin-right: 0.35rem;
+        margin-left: 0.35rem;
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+    }
+
     button::before {
       border: 0.08rem solid;
-      border: 0.08rem solid;
-      border-radius: 50%;
       border-radius: 50%;
       border-color: ${({ theme }) => theme.colors.black};
-      border-color: ${({ theme }) => theme.colors.black};
-      width: 1.5rem;
       width: 1.5rem;
       height: 1.5rem;
-      height: 1.5rem;
       color: ${({ theme }) => theme.colors.white};
-      color: ${({ theme }) => theme.colors.white};
+
+      ${media.mobile} {
+        position: relative;
+        border: 0.05rem solid;
+        border-color: ${({ theme }) => theme.colors.black};
+        width: 0.8rem;
+        height: 0.8rem;
+      }
     }
 
     .slick-active {
@@ -140,6 +167,11 @@ const SliderWrap = styled.div`
     img {
       width: 2.1rem;
       height: 4.6rem;
+
+      ${media.mobile} {
+        width: 1.278rem;
+        height: 2.8rem;
+      }
     }
   }
 
@@ -149,19 +181,35 @@ const SliderWrap = styled.div`
 
   #palette.slick-arrow.slick-prev {
     left: -18.3rem;
+
+    ${media.mobile} {
+      left: -4.498rem;
+    }
   }
 
   #palette.slick-arrow.slick-next {
     right: -18.3rem;
+
+    ${media.mobile} {
+      right: -4.498rem;
+    }
   }
 
   #recommendation.slick-arrow.slick-prev {
     top: 45%;
     left: -0.8rem;
+
+    ${media.mobile} {
+      left: -4.498rem;
+    }
   }
 
   #recommendation.slick-arrow.slick-next {
     top: 45%;
     right: -0.8rem;
+
+    ${media.mobile} {
+      right: -4.498rem;
+    }
   }
 `;

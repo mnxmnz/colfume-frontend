@@ -4,61 +4,52 @@ import KeywordTable from './KeywordTable';
 
 function SelectKeyword() {
   const moodList = [
-    '달콤한',
-    '달콤한',
-    '달콤한',
-    '달콤한',
-    '달콤한',
-    '달콤한',
-    '달콤한',
-    '달콤한',
-    '달콤한',
-    '달콤한',
+    '네에글자',
+    '네에글자',
+    '세글자',
+    '두자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '두자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
   ];
 
   const styleList = [
-    '새콤한',
-    '새콤한',
-    '새콤한',
-    '새콤한',
-    '새콤한',
-    '새콤한',
-    '새콤한',
-    '새콤한',
-    '새콤한',
-    '새콤한',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
+    '세글자',
   ];
 
   return (
-    <SelectKeywordWrap>
-      <KeywordWrap>
+    <>
+      <SelectKeywordWrap>
         <KeywordTable title="Mood" list={moodList} />
-        <Line />
         <KeywordTable title="Style" list={styleList} />
-      </KeywordWrap>
-    </SelectKeywordWrap>
+      </SelectKeywordWrap>
+    </>
   );
 }
 
 const SelectKeywordWrap = styled.div`
-  height: 40rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border-top: 0.16rem solid #d4d4d4;
-  border-bottom: 0.16rem solid #d4d4d4;
-`;
-
-const KeywordWrap = styled.div`
-  display: flex;
-`;
-
-const Line = styled.div`
-  height: 23.5rem;
-  width: 0.16rem;
-  background-color: ${({ theme }) => theme.colors.gray3};
-  margin: 6.6rem 2.7rem 0 2.7rem;
+  height: auto;
 `;
 
 export default SelectKeyword;
