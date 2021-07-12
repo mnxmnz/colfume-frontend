@@ -27,18 +27,17 @@ function Recommendation(props: Props) {
   return (
     <RecommWrap key={idx}>
       <Recomm>
-        <img className="item" src={datum.image.src} alt="sampleImage" />
+        <ItemImg src={datum.image.src} alt="sampleImage" />
         <Keyword>{datum.keyword}</Keyword>
       </Recomm>
       <Hovered>
         <Name>{datum.name}</Name>
       </Hovered>
-      <img
-        className="contour"
-        id={idx % 3 === 2 ? 'hidden' : 'show'}
-        src={Contour.src}
-        alt="sampleImage"
-      />
+      {idx % 3 === 2 ? (
+        <HiddenImg src={Contour.src} alt="hidden" />
+      ) : (
+        <ContourImg src={Contour.src} alt="sampleImage" />
+      )}
     </RecommWrap>
   );
 }
@@ -51,35 +50,36 @@ const RecommWrap = styled.div`
   align-items: flex-start;
   justify-content: flex-end;
   cursor: pointer;
+`;
 
-  .contour {
-    padding-left: 6.7rem;
+const ContourImg = styled.img`
+  padding-left: 6.7rem;
 
-    ${media.mobile} {
-      display: none;
-    }
+  ${media.mobile} {
+    display: none;
   }
+`;
 
-  #hidden.contour {
-    visibility: hidden;
+const HiddenImg = styled.img`
+  visibility: hidden;
+  padding-left: 6.7rem;
 
-    ${media.mobile} {
-      display: none;
-    }
+  ${media.mobile} {
+    display: none;
+  }
+`;
+
+const ItemImg = styled.img`
+  width: 33.2rem;
+  height: 45rem;
+
+  ${media.mobile} {
+    width: 10.981rem;
+    height: 14.3rem;
   }
 `;
 
 const Recomm = styled.div`
-  .item {
-    width: 33.2rem;
-    height: 45rem;
-
-    ${media.mobile} {
-      width: 10.981rem;
-      height: 14.3rem;
-    }
-  }
-
   &:hover {
     opacity: 0.7;
   }
