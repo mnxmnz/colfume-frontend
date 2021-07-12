@@ -48,6 +48,7 @@ const DescriptionWrap = styled.div`
   border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
   padding-top: 5.2rem;
   padding-bottom: 5.1rem;
+  word-break: keep-all;
 
   ${media.mobile} {
     border-bottom: 0;
