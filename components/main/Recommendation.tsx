@@ -3,24 +3,7 @@ import styled from 'styled-components';
 import { Contour } from '../../assets';
 import { media } from '@styles/theme';
 
-interface Img {
-  height: number;
-  src: string;
-  width: number;
-}
-
-interface DatumType {
-  image: Img;
-  keyword: string;
-  name: string;
-}
-
-interface Props {
-  datum: DatumType;
-  idx: number;
-}
-
-function Recommendation(props: Props) {
+function Recommendation(props) {
   const datum = props.datum;
   const idx = props.idx;
 
@@ -34,9 +17,9 @@ function Recommendation(props: Props) {
         <Name>{datum.name}</Name>
       </Hovered>
       {idx % 3 === 2 ? (
-        <HiddenImg src={Contour.src} alt="hidden" />
+        <HiddenImg id="hidden" src={Contour.src} alt="hidden" />
       ) : (
-        <ContourImg src={Contour.src} alt="sampleImage" />
+        <ContourImg id="contour" src={Contour.src} alt="sampleImage" />
       )}
     </RecommWrap>
   );
@@ -54,29 +37,10 @@ const RecommWrap = styled.div`
 
 const ContourImg = styled.img`
   padding-left: 6.7rem;
-
-  ${media.mobile} {
-    display: none;
-  }
 `;
 
 const HiddenImg = styled.img`
-  visibility: hidden;
   padding-left: 6.7rem;
-
-  ${media.mobile} {
-    display: none;
-  }
-`;
-
-const ItemImg = styled.img`
-  width: 33.2rem;
-  height: 45rem;
-
-  ${media.mobile} {
-    width: 10.981rem;
-    height: 14.3rem;
-  }
 `;
 
 const Recomm = styled.div`
@@ -88,6 +52,16 @@ const Recomm = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+`;
+
+const ItemImg = styled.img`
+  width: 33.2rem;
+  height: 45rem;
+
+  ${media.mobile} {
+    width: 10.981rem;
+    height: 14.3rem;
   }
 `;
 
