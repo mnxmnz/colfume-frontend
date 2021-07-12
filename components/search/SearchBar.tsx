@@ -1,8 +1,9 @@
 import React from 'react';
+import { media } from '@styles/theme';
 import { SearchArrowOff, SearchArrowOn, SearchIcon } from '../../assets';
 import styled from 'styled-components';
 
-const SearchBar = () => {
+function SearchBar() {
   const searchButton: any = React.useRef();
 
   return (
@@ -23,20 +24,19 @@ const SearchBar = () => {
       </SearchBarBox>
     </SearchBarWrap>
   );
-};
+}
 
 const SearchBarWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 7.2rem;
 `;
 
 const SearchBarBox = styled.div`
   display: flex;
   align-items: center;
   margin: 16.7rem 58rem 14.2rem;
-  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.gray3};
+  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
 
   .searchIcon {
     margin-right: 4.2rem;
@@ -58,10 +58,10 @@ const SearchBarBox = styled.div`
   button {
     position: relative;
     right: -0.6rem;
-    bottom: -0.6rem;
+    bottom: -0.7rem;
   }
 
-  @media screen and (max-width: 768px) {
+  ${media[768]} {
     margin: 8rem 0;
 
     .searchIcon {
@@ -80,7 +80,7 @@ const SearchBarBox = styled.div`
 
     input {
       bottom: -0.2rem;
-      width: 24.5rem;
+      width: 24rem;
       font-size: 1.6rem;
     }
 

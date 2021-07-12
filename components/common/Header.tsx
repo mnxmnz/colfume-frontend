@@ -108,7 +108,6 @@ const LogoWrap = styled.div`
 
   ${media.mobile} {
     top: 1.1rem;
-    margin-left: 5%;
     width: 8rem;
   }
 `;
