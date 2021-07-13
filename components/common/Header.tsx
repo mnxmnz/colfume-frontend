@@ -4,15 +4,29 @@ import Link from 'next/link';
 import { Logo } from '../../assets';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 const Header = () => {
   const [category, setCategory] = useState('');
 
   const onClickCategory = event => {
     const target = event.currentTarget.getAttribute('value');
-
     setCategory(target);
   };
+
+  const router = useRouter();
+
+  const currentPath = router.pathname;
+
+  // if (currentPath === '/') {
+  //   setCategory('Home');
+  // } else if (currentPath === '/product') {
+  //   setCategory('Product');
+  // } else if (currentPath === '/test') {
+  //   setCategory('Test');
+  // } else if (currentPath === '/search') {
+  //   setCategory('Search');
+  // }
 
   return (
     <>
@@ -182,8 +196,7 @@ const Category = styled.div`
 
 const CategoryBtn = styled.span<{ value: string; category: string }>`
   margin: 0 3rem;
-  border-bottom: ${props =>
-    props.category === props.value && `0.1rem solid ${({ theme }) => theme.colors.black}`};
+  border-bottom: ${props => props.category === props.value && `0.1rem solid #3E3E3E`};
   cursor: pointer;
   text-align: center;
   line-height: 2.674rem;
