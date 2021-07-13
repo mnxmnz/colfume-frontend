@@ -64,9 +64,6 @@ function TestResult() {
         <CopyLinkBtn>링크 복사</CopyLinkBtn>
         <RetryBtn>다시 하기</RetryBtn>
       </RightWrapper>
-      <DescriptionWrap>
-        <Description>{listDescription}</Description>
-      </DescriptionWrap>
       {isMobile ? <DescriptionWrap>dfdfdfd</DescriptionWrap> : ''}
     </Layout>
   );
