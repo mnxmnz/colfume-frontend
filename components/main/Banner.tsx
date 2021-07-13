@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import { BannerImg } from '../../assets';
 import Image from 'next/image';
 
@@ -12,7 +13,9 @@ const Banner = () => {
           <MainTitle>Find Your Colfume</MainTitle>
           <SubTitle>컬러테스트와 함께 나에게 어울리는 색과 향수를 찾아보세요</SubTitle>
         </TitleBox>
-        <TestBnt>Start</TestBnt>
+        <Link href="/test">
+          <TestBnt>Start</TestBnt>
+        </Link>
       </BannerBox>
     </BannerWrap>
   );
