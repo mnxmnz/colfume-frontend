@@ -149,6 +149,7 @@ const DescriptionWrap = styled.div`
   font-size: 1.8rem;
   font-weight: 400;
   ${media.mobile} {
+    display: none;
     width: 33.5rem;
     font-size: 1.5rem;
   }
