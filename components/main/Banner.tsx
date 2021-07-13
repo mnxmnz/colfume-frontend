@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import { media } from '@styles/theme';
 import { BannerImg } from '../../assets';
 import Image from 'next/image';
@@ -16,7 +17,9 @@ const Banner = () => {
             <span>어울리는 색과 향수를 찾아보세요</span>
           </SubTitle>
         </TitleBox>
-        <StartBnt>Start</StartBnt>
+        <Link href="/test">
+          <TestBnt>Start</TestBnt>
+        </Link>
       </BannerBox>
     </BannerWrap>
   );
