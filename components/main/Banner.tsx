@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import Link from 'next/link';
 import { media } from '@styles/theme';
 import { BannerImg } from '../../assets';
 import Image from 'next/image';
