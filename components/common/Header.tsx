@@ -33,14 +33,8 @@ const Header = () => {
       <Positioner>
         <WhiteBackground>
           <Link href="/">
-            <LogoWrap>
-              <Image
-                src={Logo}
-                id="Logo"
-                value="Logo"
-                onClick={onClickCategory}
-                category={category}
-              />
+            <LogoWrap id="Logo" value="Logo" onClick={onClickCategory} category={category}>
+              <Image src={Logo} />
             </LogoWrap>
           </Link>
           <Layout>
@@ -124,7 +118,7 @@ const Layout = styled.div`
   }
 `;
 
-const LogoWrap = styled.div`
+const LogoWrap = styled.div<{ value: string; category: string }>`
   position: fixed;
   top: 1.62rem;
   z-index: 100;
