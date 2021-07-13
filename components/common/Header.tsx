@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Logo } from '../../assets';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
@@ -17,30 +18,43 @@ const Header = () => {
     <>
       <Positioner>
         <WhiteBackground>
-          <LogoWrap>
-            <Image src={Logo} />
-          </LogoWrap>
+          <Link href="/">
+            <LogoWrap>
+              <Image src={Logo} />
+            </LogoWrap>
+          </Link>
           <Layout>
             <Category>
-              <CategoryBtn
-                id="Product"
-                value="Product"
-                onClick={onClickCategory}
-                category={category}
-              >
-                Product
-              </CategoryBtn>
-              <CategoryBtn
-                id="ColorTest"
-                value="Color Test"
-                onClick={onClickCategory}
-                category={category}
-              >
-                Color Test
-              </CategoryBtn>
-              <CategoryBtn id="Search" value="Search" onClick={onClickCategory} category={category}>
-                Search
-              </CategoryBtn>
+              <Link href="/product">
+                <CategoryBtn
+                  id="Product"
+                  value="Product"
+                  onClick={onClickCategory}
+                  category={category}
+                >
+                  Product
+                </CategoryBtn>
+              </Link>
+              <Link href="/test">
+                <CategoryBtn
+                  id="ColorTest"
+                  value="Color Test"
+                  onClick={onClickCategory}
+                  category={category}
+                >
+                  Color Test
+                </CategoryBtn>
+              </Link>
+              <Link href="/search">
+                <CategoryBtn
+                  id="Search"
+                  value="Search"
+                  onClick={onClickCategory}
+                  category={category}
+                >
+                  Search
+                </CategoryBtn>
+              </Link>
             </Category>
           </Layout>
         </WhiteBackground>
@@ -95,6 +109,7 @@ const LogoWrap = styled.div`
   top: 1.62rem;
   z-index: 100;
   margin-left: 10.1rem;
+  cursor: pointer;
 
   ${media[1440]} {
     margin-left: 6rem;

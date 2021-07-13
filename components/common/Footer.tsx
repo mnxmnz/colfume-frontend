@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import { FooterIcons } from '../../assets';
 import Image from 'next/image';
 
@@ -96,23 +97,35 @@ const Footer = () => {
           </Column>
           <Column>
             <Heading>Menu</Heading>
-            <FooterButton>Product</FooterButton>
-            <FooterButton>Color Test</FooterButton>
-            <FooterButton>Search</FooterButton>
+            <Link href="/product">
+              <FooterButton>Product</FooterButton>
+            </Link>
+            <Link href="/test">
+              <FooterButton>Color Test</FooterButton>
+            </Link>
+            <Link href="/search">
+              <FooterButton>Search</FooterButton>
+            </Link>
           </Column>
           <InfoColumn>
             <Heading>Contact</Heading>
-            <FooterButton>khyeryun98@inha.edu</FooterButton>
+            <a href="mailto:khyeryun98@inha.edu">
+              <FooterButton>khyeryun98@inha.edu</FooterButton>
+            </a>
             <Heading>Info</Heading>
             <FooterContent>COLFUME | 대표 구혜련</FooterContent>
-            <FooterContent>
-              https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788
-            </FooterContent>
+            <a href="https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788">
+              <FooterContent>
+                https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788
+              </FooterContent>
+            </a>
           </InfoColumn>
           <FollowColumn>
             <Heading>Follow us</Heading>
             <ImageWrapper>
-              <Image src={FooterIcons} />
+              <a href="https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788">
+                <Image src={FooterIcons} />
+              </a>
             </ImageWrapper>
             <FooterContent>개인정보취급방침</FooterContent>
             <FooterContent>이용약관</FooterContent>
