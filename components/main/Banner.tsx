@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
+import styled from 'styled-components';
 import { media } from '@styles/theme';
 import { BannerImg } from '../../assets';
 import Image from 'next/image';
 
-const Banner = () => {
+function Banner() {
   return (
     <BannerWrap>
       <Image src={BannerImg} />
@@ -23,7 +23,7 @@ const Banner = () => {
       </BannerBox>
     </BannerWrap>
   );
-};
+}
 
 const BannerWrap = styled.div`
   margin-top: 7.2rem;
