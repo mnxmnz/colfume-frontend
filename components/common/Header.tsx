@@ -20,7 +20,13 @@ const Header = () => {
         <WhiteBackground>
           <Link href="/">
             <LogoWrap>
-              <Image src={Logo} />
+              <Image
+                src={Logo}
+                id="Logo"
+                value="Logo"
+                onClick={onClickCategory}
+                category={category}
+              />
             </LogoWrap>
           </Link>
           <Layout>
@@ -182,8 +188,7 @@ const Category = styled.div`
 
 const CategoryBtn = styled.span<{ value: string; category: string }>`
   margin: 0 3rem;
-  border-bottom: ${props =>
-    props.category === props.value && `0.1rem solid ${({ theme }) => theme.colors.black}`};
+  border-bottom: ${props => props.category === props.value && '0.1rem solid #3E3E3E'};
   cursor: pointer;
   text-align: center;
   line-height: 2.674rem;
