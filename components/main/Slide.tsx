@@ -58,28 +58,19 @@ function ArrowRight(props: ArrowPropsType) {
 
 interface SlidePropsType {
   slideName: string;
-  length: number;
-  paddingBottom: string;
-  paddingTop: string;
-  width: string;
-  height: string;
+  isMobile: boolean;
 }
 
 function Slide(props: SlidePropsType) {
   const slideName = props.slideName;
-
-  const styleSlider = {
-    paddingBottom: `${props.paddingBottom}`,
-    paddingTop: `${props.paddingTop}`,
-    width: `${props.width}`,
-  };
+  const length = slideName === 'palette' ? (props.isMobile ? 2 : 4) : props.isMobile ? 2 : 3;
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: props.length,
-    slidesToScroll: props.length,
+    slidesToShow: length,
+    slidesToScroll: length,
     cssEase: 'linear',
     arrows: true,
     nextArrow: <ArrowRight id={slideName} />,
@@ -88,18 +79,24 @@ function Slide(props: SlidePropsType) {
   };
 
   return (
-    <SliderWrap style={styleSlider}>
-      <Slider {...settings}>
-        {slideName === 'palette'
-          ? PaletteData.map((datum, idx) => {
-              return (
-                <img src={datum.image.src} key={idx} alt={datum.keyword} height={props.height} />
-              );
-            })
-          : SampleData.map((datum, idx) => {
+    <SliderWrap>
+      {slideName === 'palette' ? (
+        <PaletteWrap>
+          <Slider {...settings}>
+            {PaletteData.map((datum, idx) => {
+              return <Palette src={datum.image.src} key={idx} alt={datum.keyword} />;
+            })}
+          </Slider>
+        </PaletteWrap>
+      ) : (
+        <RecommWrap>
+          <Slider {...settings}>
+            {SampleData.map((datum, idx) => {
               return <Recommendation datum={datum} idx={idx} />;
             })}
-      </Slider>
+          </Slider>
+        </RecommWrap>
+      )}
     </SliderWrap>
   );
 }
@@ -211,5 +208,49 @@ const SliderWrap = styled.div`
     ${media.mobile} {
       right: -4.498rem;
     }
+  }
+`;
+
+const PaletteWrap = styled.div`
+  padding-bottom: 35.7rem;
+  width: 106.2rem;
+
+  ${media.mobile} {
+    padding-bottom: 14.26rem;
+    width: 24rem;
+  }
+`;
+
+const RecommWrap = styled.div`
+  padding-top: 9.8rem;
+  padding-bottom: 18.9rem;
+  width: 141rem;
+
+  ${media.mobile} {
+    padding-top: 3.15rem;
+    padding-bottom: 10rem;
+    width: 23.965rem;
+  }
+
+  #hidden {
+    visibility: hidden;
+
+    ${media.mobile} {
+      display: none;
+    }
+  }
+
+  #contour {
+    ${media.mobile} {
+      display: none;
+    }
+  }
+`;
+
+const Palette = styled.img`
+  height: 27.7rem;
+
+  ${media.mobile} {
+    height: 14.3rem;
   }
 `;

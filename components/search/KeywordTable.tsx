@@ -28,7 +28,7 @@ const Wrap = styled.div`
   }
 
   ${media.mobile} {
-    max-width: 34rem;
+    max-width: 33rem;
   }
 `;
 

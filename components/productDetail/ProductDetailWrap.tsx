@@ -62,12 +62,10 @@ const ContentWrap = styled.div`
   }
 
   .product {
-    margin-right: 10.5rem;
     width: 51.1rem;
     height: 77.1rem;
 
     ${media.mobile} {
-      margin-right: 0;
       width: 20rem;
       height: 30.1rem;
     }
