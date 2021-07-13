@@ -1261,6 +1261,13 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
 
+"@types/react-responsive@^8.0.3":
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/@types/react-responsive/-/react-responsive-8.0.3.tgz#7096b888a5963ab7755ec4e9e52b652e1cc3146b"
+  integrity sha512-K9VsY1tbwt/CNQ/00oGIXjnRwj+3WRB/nDN9Oglqn41sFgVH5A0WkERO7P2xGJJU3ylttiKnT3stZxIccGVBug==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-slick@^0.23.4":
   version "0.23.4"
   resolved "https://registry.yarnpkg.com/@types/react-slick/-/react-slick-0.23.4.tgz#c97e2a9e7e3d1933c68593b8e82752fab1e8ce53"

@@ -38,3 +38,4 @@ export { default as IconMainCol } from './productDetail/IconMainCol.svg';
 export { default as IconSubColRed } from './productDetail/IconSubColRed.svg';
 export { default as IconSubColVanilla } from './productDetail/IconSubColVanilla.svg';
 export { default as IconSubColGreen } from './productDetail/IconSubColGreen.svg';
+export { default as Line } from './result/Line.svg';

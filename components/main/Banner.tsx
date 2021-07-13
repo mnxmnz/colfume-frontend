@@ -48,12 +48,7 @@ const MainTitle = styled.div`
 `;
 
 const SubTitle = styled.div`
-<<<<<<< HEAD
-  margin-top: 2rem;
-  margin-bottom: 16%;
-=======
   margin-top: 2.5rem;
->>>>>>> 6a7daf73dce9d28125df590e1a3ab84719ae881f
   font-size: 2.8rem;
   font-size: 2.8rem;
 `;
