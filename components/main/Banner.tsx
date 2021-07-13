@@ -18,7 +18,7 @@ const Banner = () => {
           </SubTitle>
         </TitleBox>
         <Link href="/test">
-          <TestBnt>Start</TestBnt>
+          <StartBnt>Start</StartBnt>
         </Link>
       </BannerBox>
     </BannerWrap>
