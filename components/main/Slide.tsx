@@ -13,6 +13,7 @@ import {
 import PaletteData from '../../public/PaletteData';
 import SampleData from '../../public/SampleData';
 import Recommendation from './Recommendation';
+import { GetRecommData } from '../../lib/api/main/getRecomm';
 
 interface ArrowPropsType {
   id: string;
@@ -62,6 +63,8 @@ interface SlidePropsType {
 }
 
 function Slide(props: SlidePropsType) {
+  const tempData = GetRecommData();
+  console.log(tempData);
   const slideName = props.slideName;
   const length = slideName === 'palette' ? (props.isMobile ? 2 : 4) : props.isMobile ? 2 : 3;
 
