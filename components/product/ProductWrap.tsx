@@ -1,12 +1,12 @@
 import React from 'react';
 import Filter from './Filter';
-import ImageTable from 'components/search/ImageTable';
+import PaletteImageTable from 'components/search/PaletteImageTable';
 
 function ProductWrap() {
   return (
     <>
       <Filter />
-      <ImageTable />
+      <PaletteImageTable />
     </>
   );
 }
