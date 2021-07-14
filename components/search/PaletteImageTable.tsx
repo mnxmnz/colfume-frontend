@@ -4,7 +4,7 @@ import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { keywordAtom } from '../../states/search';
-import { PaletteData } from 'lib/api/search/search';
+import { PaletteData } from '../../lib/api/search/search';
 
 interface PaletteType {
   _id: string;
@@ -15,21 +15,23 @@ interface PaletteType {
 function PaletteImageTable() {
   const keyword = useRecoilValue(keywordAtom);
   const rawData = PaletteData(keyword);
-  const category = keyword[0];
 
-  console.log(rawData);
+  // console.log('Data1', rawData.data[0].moods[0].mood1.mood_name);
+  // console.log('Data2', rawData.data[0].moods[0].mood2.mood_name);
+  // console.log('Data3', rawData.data[0].moods[0].mood3.mood_name);
 
   return (
     <ImageTableWrap>
       <ImageTableBox>
         {rawData.data &&
-          rawData.data.map(data => {
+          rawData.data.map((data, idx) => {
+            console.log(idx);
             return (
               <PerfumeImg
                 key={data._id}
                 image={data.perfume_image}
                 name={data.perfume_name}
-                keyword={data.moods.mood_name}
+                keyword={data.moods.mood`${1}`.mood_name}
               />
             );
           })}
