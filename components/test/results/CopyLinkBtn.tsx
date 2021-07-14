@@ -1,21 +1,51 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { media } from '@styles/theme';
 import { useRouter } from 'next/router';
+import Modal from 'react-modal';
 
+const customStyles = {
+  content: {
+    top: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    left: '',
+    transform: 'translate(-50%, -50%)',
+    marginRight: '-50%',
+  },
+};
 function CopyLinkBtn() {
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   const router = useRouter();
   const currentPath = router.pathname;
-  console.log(currentPath);
   const url = 'https://www.colfume.com/api/test/result' + currentPath;
 
-  const onHandleCopy = () => {
-    alert('copied');
-  };
   return (
     <CopyToClipboard text={url}>
-      <CopyLinkWrapper onClick={onHandleCopy}> 링크 복사</CopyLinkWrapper>
+      <CopyLinkWrapper onClick={openModal}> 링크 복사</CopyLinkWrapper>
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      ></Modal>
     </CopyToClipboard>
   );
 }
