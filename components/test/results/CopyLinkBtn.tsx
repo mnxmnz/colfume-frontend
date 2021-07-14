@@ -56,7 +56,7 @@ function CopyLinkBtn() {
       </Modal>
     </>
   );
-}
+
 const TextBox = styled.div`
   margin-top: 7.4rem;
   font-size: 4rem;
@@ -69,6 +69,7 @@ const ConfirmBox = styled.button`
   height: 6.496rem;
   font-size: 2.4rem;
 `;
+
 
 const ModalBox = styled.div`
   position: absolute;
