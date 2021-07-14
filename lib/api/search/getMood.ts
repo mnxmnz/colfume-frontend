@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { fetcher } from './fetch';
+import { fetcher } from '../fetch';
 
 export const GetMoodData = moodName => {
   const { data, error } = useSWR(
