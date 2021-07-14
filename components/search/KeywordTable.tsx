@@ -14,7 +14,11 @@ function KeywordTable({ title, list }) {
         const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
           setText([title, word]);
         };
-        return <button onClick={handleClick}>{word}</button>;
+        return (
+          <button onClick={handleClick} value={word}>
+            {word}
+          </button>
+        );
       })}
     </Wrap>
   );
@@ -22,6 +26,7 @@ function KeywordTable({ title, list }) {
 
 const Wrap = styled.div`
   max-width: 113rem;
+
   ${media[1440]} {
     max-width: 84rem;
   }
@@ -41,10 +46,12 @@ const Wrap = styled.div`
     padding: 0 3rem;
     line-height: 3.9rem;
     font-size: 2rem;
+
     &:hover {
       background: ${({ theme }) => theme.colors.gray3};
       color: ${({ theme }) => theme.colors.white};
     }
+
     &:focus {
       background: ${({ theme }) => theme.colors.black};
       color: ${({ theme }) => theme.colors.white};
@@ -57,6 +64,7 @@ const Wrap = styled.div`
       line-height: 3.2rem;
       font-size: 1.6rem;
     }
+
     ${media.mobile} {
       margin-right: 1.3rem;
       margin-bottom: 1rem;
