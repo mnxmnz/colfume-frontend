@@ -3,10 +3,17 @@ import styled from 'styled-components';
 import Content from './Content';
 import ThemeTable from './ThemeTable';
 import { media } from '@styles/theme';
+import { GetFilterList } from 'lib/api/main/getFilter';
 
 function Mood(props) {
-  const moodList = ['달콤한', '시원한', '편안한', '섹시한', '화사한', '고급스러운'];
-  const styleList = ['댄디룩', '모던룩', '캐주얼룩', '오프스룩', '페미닌룩', '데이트룩'];
+  const rawData = GetFilterList();
+  const moodList = [];
+  const styleList = [];
+
+  if (rawData.message) {
+    rawData.moods.map(rawMood => moodList.push(rawMood.mood_name));
+    rawData.styles.map(rawStyle => styleList.push(rawStyle.style_name));
+  }
 
   return (
     <MoodWrap>

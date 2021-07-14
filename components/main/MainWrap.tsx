@@ -6,7 +6,7 @@ import { Slide } from '../';
 import Footer from '../common/Footer';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
-import { GetRecommData } from '../../lib/api/main/getRecomm';
+import { GetRecommData } from 'lib/api/main/getRecomm';
 import PaletteData from '../../public/PaletteData';
 
 function MainWrap(props) {

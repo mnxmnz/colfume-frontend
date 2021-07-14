@@ -12,7 +12,7 @@ export const SearchData = props => {
         // 상태코드가 404라면 더이상 시도하지 않습니다.
         if (error.status === 404) return;
         // 최대 10번까지만 시도합니다.
-        // if (retryCount >= 10) return;
+        if (retryCount >= 10) return;
         // 5초에 한 번 재검증합니다.
         // setTimeout(() => revalidate({ retryCount }), 5000);
       },
