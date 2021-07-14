@@ -6,7 +6,7 @@ export const fetcher = async url => {
     const error = new Error('[FAIL] fetch data');
     //error.info에는 오류 객체를 담습니다.
     // error.info = await res.json();
-    // //error.status에는 상태코드를 담습니다.
+    // error.status에는 상태코드를 담습니다.
     // error.status = res.status;
     throw error;
   }

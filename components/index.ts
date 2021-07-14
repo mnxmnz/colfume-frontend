@@ -7,6 +7,4 @@ export { default as ProductWrap } from './product/ProductWrap';
 export { default as ProductDetailWrap } from './productDetail/ProductDetailWrap';
 export { default as SearchWrap } from './search/SearchWrap';
 export { default as TestWrap } from './test/TestWrap';
-export { default as TestResult } from './test/TestResult/TestResult';
-export { default as TestResultText } from './test/TestResult/TestResultText';
 export { default as Loading } from './test/questions/Loading';

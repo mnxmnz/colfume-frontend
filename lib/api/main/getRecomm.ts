@@ -9,7 +9,7 @@ export const GetRecommData = () => {
       // 최대 10번까지만 시도합니다.
       if (retryCount >= 10) return;
       // 5초에 한 번 재검증합니다.
-      setTimeout(() => revalidate({ retryCount }), 5000);
+      // setTimeout(() => revalidate({ retryCount }), 5000);
     },
   });
 
