@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Content from './Content';
 import Banner from './Banner';
 import Mood from './Mood';
@@ -7,27 +7,8 @@ import Footer from '../common/Footer';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 
-function MainWrap() {
-  const [windowSize, setWindowSize] = useState(1920);
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    setWindowSize(JSON.parse(window.localStorage.getItem('size')));
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem('size', JSON.stringify(windowSize));
-  }, [windowSize]);
-
-  const handleResize = () => {
-    return setWindowSize(window.innerWidth);
-  };
-
-  const isMobile = windowSize <= 375 ? true : false;
-  console.log(windowSize);
+function MainWrap(props) {
+  const isMobile = props.isMobile;
   return (
     <>
       <Banner />
@@ -46,7 +27,7 @@ function MainWrap() {
           paddingContent={isMobile ? '0.6rem' : '0rem'}
           paddingBottom={isMobile ? '4.5rem' : '12.5rem'}
         />
-        <Slide slideName="palette" isMobile={isMobile} />
+        <Slide slideName="palette" isMobile={isMobile} length={isMobile ? 2 : 4} />
       </ContentWrap>
       <Mood
         title="Mood and Style"
@@ -68,7 +49,7 @@ function MainWrap() {
             다음 주 <strong>면접,</strong> 이런 향수는 어떤가요?
           </Comment>
           <SlideContainer>
-            <Slide slideName="recommendation" isMobile={isMobile} />
+            <Slide slideName="recommendation" isMobile={isMobile} length={isMobile ? 2 : 3} />
           </SlideContainer>
         </SlideWrap>
       </ContentWrap>

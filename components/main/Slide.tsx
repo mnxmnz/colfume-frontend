@@ -60,14 +60,15 @@ function ArrowRight(props: ArrowPropsType) {
 interface SlidePropsType {
   slideName: string;
   isMobile: boolean;
+  length: number;
 }
 
 function Slide(props: SlidePropsType) {
   const tempData = GetRecommData();
   console.log(tempData);
   const slideName = props.slideName;
-  const length = slideName === 'palette' ? (props.isMobile ? 2 : 4) : props.isMobile ? 2 : 3;
-
+  // const length = slideName === 'palette' ? (props.isMobile ? 2 : 4) : props.isMobile ? 2 : 3;
+  const length = props.length;
   const settings = {
     dots: true,
     infinite: true,

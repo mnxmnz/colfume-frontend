@@ -49,7 +49,6 @@ const IconWrap = styled.div`
 
   ${media.mobile} {
     flex-wrap: wrap;
-    margin-bottom: 0.5rem;
     width: 22rem;
   }
 `;
@@ -60,6 +59,7 @@ const FilterIcon = styled.img`
   height: 12rem;
 
   ${media.mobile} {
+    margin-top: 0.5rem;
     width: 5.5rem;
     height: 5.4rem;
   }

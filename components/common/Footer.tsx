@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { FooterIcons } from '../../assets';
 import Image from 'next/image';
+import { media } from '@styles/theme';
+import { Logo } from '../../assets';
 
 const Box = styled.div`
   bottom: 0;
@@ -10,6 +12,11 @@ const Box = styled.div`
   background: ${({ theme }) => theme.colors.gray1};
   width: 100%;
   min-height: 57.6rem;
+
+  ${media.mobile} {
+    display: none;
+    min-height: 25.6rem;
+  }
 
   @media (max-width: 100rem) {
     padding: 7rem 3rem;
@@ -27,8 +34,13 @@ const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
   grid-gap: 2rem;
-  margin-top: 11.44rem;
-  margin-left: 11.56rem;
+  margin-top: 17.8rem;
+  margin-left: 24.5rem;
+
+  ${media.mobile} {
+    margin-top: 3.6rem;
+    margin-left: 0;
+  }
 `;
 
 const Column = styled.div`
@@ -36,6 +48,12 @@ const Column = styled.div`
   flex-direction: column;
   width: 13rem;
   text-align: left;
+
+  ${media.mobile} {
+    :nth-child(2) {
+      display: none;
+    }
+  }
 `;
 
 const InfoColumn = styled.div`
@@ -43,6 +61,10 @@ const InfoColumn = styled.div`
   flex-direction: column;
   width: 44rem;
   text-align: left;
+
+  ${media.mobile} {
+    width: 25.9rem;
+  }
 `;
 
 const FollowColumn = styled.div`
@@ -51,6 +73,10 @@ const FollowColumn = styled.div`
   margin-left: 230px;
   width: 150px;
   text-align: left;
+
+  ${media.mobile} {
+    margin-left: 0;
+  }
 `;
 
 const Heading = styled.div`
@@ -58,6 +84,10 @@ const Heading = styled.div`
   font-family: 'Gotham';
   font-size: 2rem;
   font-weight: 700;
+
+  ${media.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 const FooterHeading = styled.div`
