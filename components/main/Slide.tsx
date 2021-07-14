@@ -86,7 +86,7 @@ function Slide(props) {
         <RecommWrap>
           <Slider {...settings}>
             {dataArr.map((datum, idx) => {
-              return <Recommendation datum={datum} idx={idx} />;
+              return <Recommendation datum={datum} idx={idx} key={idx} />;
             })}
           </Slider>
         </RecommWrap>
