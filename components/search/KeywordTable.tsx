@@ -45,6 +45,11 @@ const Wrap = styled.div`
       background: ${({ theme }) => theme.colors.gray3};
       color: ${({ theme }) => theme.colors.white};
     }
+    &:focus {
+      background: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.colors.white};
+    }
+
     ${media[768]} {
       margin-right: 1.5rem;
       margin-bottom: 1.3rem;
