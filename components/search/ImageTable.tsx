@@ -2,58 +2,34 @@ import React from 'react';
 import PerfumeImg from './PerfumeImg';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
+import { useRecoilValue } from 'recoil';
+import { keywordAtom } from '../../states/search';
+import { GetMoodData } from '../../lib/api/main/getMood';
+import { SampleImg } from '../../assets';
 
-const perfumeData = [
-  // 임시 데이터
-  {
-    id: 1,
-    name: 'ZARA PERfUME',
-    keyword: ['# 달콤한', ' # 달콤한', ' # 달콤한'],
-    image:
-      'https://beautymatter.com/media/pages/articles/berlin-packaging-acquires-roma-international/30cd49356a-1616086617/berlin-packaging-acquires-roma-international2.jpeg',
-  },
-  {
-    id: 2,
-    name: 'ZARA PERFUME',
-    keyword: ['# 새콤한', ' # 새콤한', ' # 달콤한'],
-    image:
-      'https://beautymatter.com/media/pages/articles/berlin-packaging-acquires-roma-international/30cd49356a-1616086617/berlin-packaging-acquires-roma-international2.jpeg',
-  },
-  {
-    id: 3,
-    name: 'ZARA PERFUME',
-    keyword: ['# 새콤한', ' # 새콤한'],
-    image:
-      'https://beautymatter.com/media/pages/articles/berlin-packaging-acquires-roma-international/30cd49356a-1616086617/berlin-packaging-acquires-roma-international2.jpeg',
-  },
-  {
-    id: 4,
-    name: 'ZARA PERFUME',
-    keyword: ['# 새콤한', ' # 새콤한'],
-    image:
-      'https://beautymatter.com/media/pages/articles/berlin-packaging-acquires-roma-international/30cd49356a-1616086617/berlin-packaging-acquires-roma-international2.jpeg',
-  },
-  {
-    id: 5,
-    name: 'ZARA PERFUME',
-    keyword: ['# 새콤한', ' # 새콤한'],
-    image: 'http://www.dailygrid.net/news/photo/201905/222119_121434_5843.jpg',
-  },
-  {
-    id: 6,
-    name: 'ZARA PERFUME',
-    keyword: ['# 새콤한', ' # 새콤한'],
-    image: 'http://www.dailygrid.net/news/photo/201905/222119_121434_5843.jpg',
-  },
-];
+interface MoodType {
+  _id: string;
+  mood_name: string;
+}
 
 function ImageTable() {
+  const keyword = useRecoilValue(keywordAtom);
+  const rawData = GetMoodData(keyword);
+  // console.log(rawData.data);
+  // const moods: [string, MoodType][] = Object.entries(rawData.data.moods);
+  const tempKey = ['blah', 'blah'];
   return (
     <ImageTableWrap>
       <ImageTableBox>
-        {perfumeData.map(data => (
-          <PerfumeImg key={data.id} image={data.image} name={data.name} keyword={data.keyword} />
-        ))}
+        {rawData.data &&
+          rawData.data.map(data => (
+            <PerfumeImg
+              key={data._id}
+              image={SampleImg.src}
+              name={data.perfume_name}
+              keyword={tempKey}
+            />
+          ))}
       </ImageTableBox>
     </ImageTableWrap>
   );

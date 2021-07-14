@@ -56,14 +56,10 @@ function MainWrap(props) {
         {rawData && (
           <SlideWrap>
             <Comment>
-<<<<<<< HEAD
               <span>
                 <strong>{rawData.section_name},</strong>
               </span>{' '}
               <span>이런 향수는 어떤가요?</span>
-=======
-              <strong>{rawData.section_name},</strong> 이런 향수는 어떤가요?
->>>>>>> b7d504c... style: modify slider keyword text style
             </Comment>
             <SlideContainer>
               <Slide
