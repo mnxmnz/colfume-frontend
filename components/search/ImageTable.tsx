@@ -4,8 +4,7 @@ import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { keywordAtom } from '../../states/search';
-import { GetMoodData } from '../../lib/api/main/getMood';
-import { SampleImg } from '../../assets';
+import { GetMoodData } from '../../lib/api/search/getMood';
 
 interface MoodType {
   _id: string;
@@ -14,23 +13,23 @@ interface MoodType {
 
 function ImageTable() {
   const keyword = useRecoilValue(keywordAtom);
-  console.log(keyword);
   const rawData = GetMoodData(keyword);
-  // console.log(rawData.data);
-  // const moods: [string, MoodType][] = Object.entries(rawData.data.moods);
-  const tempKey = ['blah', 'blah'];
+
   return (
     <ImageTableWrap>
       <ImageTableBox>
         {rawData.data &&
-          rawData.data.map(data => (
-            <PerfumeImg
-              key={data._id}
-              image={SampleImg.src}
-              name={data.perfume_name}
-              keyword={tempKey}
-            />
-          ))}
+          rawData.data.map(data => {
+            const moods: [string, MoodType][] = Object.entries(data.moods[0]);
+            return (
+              <PerfumeImg
+                key={data._id}
+                image={data.perfume_img}
+                name={data.perfume_name}
+                keyword={moods.map(mood => mood[1] && `#${mood[1].mood_name} `)}
+              />
+            );
+          })}
       </ImageTableBox>
     </ImageTableWrap>
   );
