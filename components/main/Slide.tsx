@@ -10,10 +10,7 @@ import {
   ArrowRightUnHovered,
   ArrowRightHovered,
 } from '../../assets/';
-import PaletteData from '../../public/PaletteData';
-import SampleData from '../../public/SampleData';
 import Recommendation from './Recommendation';
-import { GetRecommData } from '../../lib/api/main/getRecomm';
 
 interface ArrowPropsType {
   id: string;
@@ -57,17 +54,9 @@ function ArrowRight(props: ArrowPropsType) {
   );
 }
 
-interface SlidePropsType {
-  slideName: string;
-  isMobile: boolean;
-}
-
-function Slide(props: SlidePropsType) {
-  const tempData = GetRecommData();
-  console.log(tempData);
+function Slide(props) {
   const slideName = props.slideName;
-  const length = slideName === 'palette' ? (props.isMobile ? 2 : 4) : props.isMobile ? 2 : 3;
-
+  const length = props.length;
   const settings = {
     dots: true,
     infinite: true,
@@ -80,13 +69,15 @@ function Slide(props: SlidePropsType) {
     prevArrow: <ArrowLeft id={slideName} />,
     dotsClass: `slick-dots ${slideName}`,
   };
+  const data = props.data;
+  const dataArr = Object.entries(data);
 
   return (
     <SliderWrap>
       {slideName === 'palette' ? (
         <PaletteWrap>
           <Slider {...settings}>
-            {PaletteData.map((datum, idx) => {
+            {data.map((datum, idx) => {
               return <Palette src={datum.image.src} key={idx} alt={datum.keyword} />;
             })}
           </Slider>
@@ -94,7 +85,7 @@ function Slide(props: SlidePropsType) {
       ) : (
         <RecommWrap>
           <Slider {...settings}>
-            {SampleData.map((datum, idx) => {
+            {dataArr.map((datum, idx) => {
               return <Recommendation datum={datum} idx={idx} />;
             })}
           </Slider>

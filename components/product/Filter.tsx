@@ -25,6 +25,10 @@ const FilterWrap = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 7.2rem;
+  ${media.mobile} {
+    margin-top: 3.1rem;
+    margin-bottom: 3.1rem;
+  }
 `;
 
 const Title = styled.div`
@@ -49,7 +53,6 @@ const IconWrap = styled.div`
 
   ${media.mobile} {
     flex-wrap: wrap;
-    margin-bottom: 0.5rem;
     width: 22rem;
   }
 `;
@@ -60,6 +63,7 @@ const FilterIcon = styled.img`
   height: 12rem;
 
   ${media.mobile} {
+    margin-top: 0.5rem;
     width: 5.5rem;
     height: 5.4rem;
   }

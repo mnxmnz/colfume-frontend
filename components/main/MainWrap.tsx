@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Content from './Content';
 import Banner from './Banner';
 import Mood from './Mood';
@@ -6,28 +6,13 @@ import { Slide } from '../';
 import Footer from '../common/Footer';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
+import { GetRecommData } from '../../lib/api/main/getRecomm';
+import PaletteData from '../../public/PaletteData';
 
-function MainWrap() {
-  const [windowSize, setWindowSize] = useState(1920);
+function MainWrap(props) {
+  const isMobile = props.isMobile;
+  const rawData = GetRecommData().data;
 
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    setWindowSize(JSON.parse(window.localStorage.getItem('size')));
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem('size', JSON.stringify(windowSize));
-  }, [windowSize]);
-
-  const handleResize = () => {
-    return setWindowSize(window.innerWidth);
-  };
-
-  const isMobile = windowSize <= 375 ? true : false;
-  console.log(windowSize);
   return (
     <>
       <Banner />
@@ -46,7 +31,12 @@ function MainWrap() {
           paddingContent={isMobile ? '0.6rem' : '0rem'}
           paddingBottom={isMobile ? '4.5rem' : '12.5rem'}
         />
-        <Slide slideName="palette" isMobile={isMobile} />
+        <Slide
+          slideName="palette"
+          isMobile={isMobile}
+          length={isMobile ? 2 : 4}
+          data={PaletteData}
+        />
       </ContentWrap>
       <Mood
         title="Mood and Style"
@@ -63,14 +53,24 @@ function MainWrap() {
           paddingContent={isMobile ? '0.6rem' : '0rem'}
           paddingBottom={isMobile ? '5.9rem' : '16rem'}
         />
-        <SlideWrap>
-          <Comment>
-            다음 주 <strong>면접,</strong> 이런 향수는 어떤가요?
-          </Comment>
-          <SlideContainer>
-            <Slide slideName="recommendation" isMobile={isMobile} />
-          </SlideContainer>
-        </SlideWrap>
+        {rawData && (
+          <SlideWrap>
+            <Comment>
+              <span>
+                <strong>{rawData.section_name},</strong>
+              </span>{' '}
+              <span>이런 향수는 어떤가요?</span>
+            </Comment>
+            <SlideContainer>
+              <Slide
+                slideName="recommendation"
+                isMobile={isMobile}
+                length={isMobile ? 2 : 3}
+                data={rawData.section_perfumes[0]}
+              />
+            </SlideContainer>
+          </SlideWrap>
+        )}
       </ContentWrap>
       <Footer />
     </>
@@ -101,7 +101,11 @@ const Comment = styled.div`
   font-size: 2rem;
 
   ${media.mobile} {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
     margin-bottom: 3.05rem;
+    text-align: center;
     line-height: 2.31rem;
     font-size: 1.4rem;
   }
