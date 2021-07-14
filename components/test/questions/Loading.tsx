@@ -33,6 +33,7 @@ const IconWrap = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 
   img {
     animation: loadingAnimation 2s;
