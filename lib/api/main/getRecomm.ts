@@ -2,7 +2,7 @@ import useSWR from 'swr';
 import { fetcher } from './fetch';
 
 export const GetRecommData = () => {
-  const { data, error } = useSWR('https://www.colfume.com', fetcher, {
+  const { data, error } = useSWR('https://colfume.com/api/home/recommand', fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
       // 상태코드가 404라면 더이상 시도하지 않습니다.
       if (error.status === 404) return;
