@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FilterTokens from '../../public/FilterTokens';
+import { media } from '@styles/theme';
 
 function Filter() {
   const iconTokens = FilterTokens;
@@ -10,19 +11,7 @@ function Filter() {
       <Title>Which Color You Want</Title>
       <IconWrap>
         {iconTokens.map((token, idx) => {
-          const iconStyle = {
-            marginRight: token.marginRight,
-          };
-
-          return (
-            <img
-              src={token.image.src}
-              key={idx}
-              alt={token.keyword}
-              width={token.width}
-              style={iconStyle}
-            />
-          );
+          return <FilterIcon src={token.image.src} key={idx} alt={token.keyword} />;
         })}
       </IconWrap>
     </FilterWrap>
@@ -39,18 +28,39 @@ const FilterWrap = styled.div`
 `;
 
 const Title = styled.div`
-  margin-top: 20rem;
+  margin-top: 27.2rem;
+  margin-bottom: 8.1rem;
   color: ${({ theme }) => theme.colors.black};
   font-family: Junge;
   font-size: 4rem;
+
+  ${media.mobile} {
+    margin-top: 7.4rem;
+    margin-bottom: 2rem;
+    line-height: 2.88rem;
+    font-size: 1.6rem;
+  }
 `;
 
 const IconWrap = styled.div`
   display: flex;
-  align-items: center;
-  margin-top: 6.5rem;
-  border-bottom: solid 0.2rem ${({ theme }) => theme.colors.gray3};
-  background: pink;
+  align-items: flex-end;
   width: 85.1rem;
-  height: 13.6rem;
+
+  ${media.mobile} {
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    width: 22rem;
+  }
+`;
+
+const FilterIcon = styled.img`
+  border-bottom: solid 0.2rem ${({ theme }) => theme.colors.gray3};
+  width: 10.6rem;
+  height: 12rem;
+
+  ${media.mobile} {
+    width: 5.5rem;
+    height: 5.4rem;
+  }
 `;

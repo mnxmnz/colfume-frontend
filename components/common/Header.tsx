@@ -1,51 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Logo } from '../../assets';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 const Header = () => {
-  const [category, setCategory] = useState('');
-
-  const onClickCategory = event => {
-    const target = event.currentTarget.getAttribute('value');
-
-    setCategory(target);
-  };
+  const router = useRouter();
+  const currentPath = router.pathname;
 
   return (
-    <>
-      <Positioner>
-        <WhiteBackground>
+    <Positioner>
+      <WhiteBackground>
+        <Link href="/">
           <LogoWrap>
-            <Image src={Logo} />
+            <Image src={Logo} id="Logo" current={currentPath === '/'} />
           </LogoWrap>
-          <Layout>
-            <Category>
-              <CategoryBtn
-                id="Product"
-                value="Product"
-                onClick={onClickCategory}
-                category={category}
-              >
+        </Link>
+        <Layout>
+          <Category>
+            <Link href="/product">
+              <CategoryBtn id="Product" current={currentPath === '/product'}>
                 Product
               </CategoryBtn>
-              <CategoryBtn
-                id="ColorTest"
-                value="Color Test"
-                onClick={onClickCategory}
-                category={category}
-              >
+            </Link>
+            <Link href="/test">
+              <CategoryBtn id="ColorTest" current={currentPath === '/test'}>
                 Color Test
               </CategoryBtn>
-              <CategoryBtn id="Search" value="Search" onClick={onClickCategory} category={category}>
+            </Link>
+            <Link href="/search">
+              <CategoryBtn id="Search" current={currentPath === '/search'}>
                 Search
               </CategoryBtn>
-            </Category>
-          </Layout>
-        </WhiteBackground>
-      </Positioner>
-    </>
+            </Link>
+          </Category>
+        </Layout>
+      </WhiteBackground>
+    </Positioner>
   );
 };
 
@@ -95,6 +88,7 @@ const LogoWrap = styled.div`
   top: 1.62rem;
   z-index: 100;
   margin-left: 10.1rem;
+  cursor: pointer;
 
   ${media[1440]} {
     margin-left: 6rem;
@@ -108,7 +102,6 @@ const LogoWrap = styled.div`
 
   ${media.mobile} {
     top: 1.1rem;
-    margin-left: 5%;
     width: 8rem;
   }
 `;
@@ -166,10 +159,9 @@ const Category = styled.div`
   }
 `;
 
-const CategoryBtn = styled.span<{ value: string; category: string }>`
+const CategoryBtn = styled.span<{ current: string }>`
   margin: 0 3rem;
-  border-bottom: ${props =>
-    props.category === props.value && `0.1rem solid ${({ theme }) => theme.colors.black}`};
+  border-bottom: 0.1rem solid ${props => (props.current ? '#3e3e3e' : 'transparent')};
   cursor: pointer;
   text-align: center;
   line-height: 2.674rem;

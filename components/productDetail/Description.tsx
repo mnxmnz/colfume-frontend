@@ -47,7 +47,8 @@ const DescriptionWrap = styled.div`
   justify-content: space-between;
   border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
   padding-top: 5.2rem;
-  padding-bottom: 5.1rem;
+  padding-bottom: 4.2rem;
+  word-break: keep-all;
 
   ${media.mobile} {
     border-bottom: 0;
@@ -71,8 +72,8 @@ const TableWrap = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1.4rem;
-  margin-left: 14.7rem;
-  width: 73.1rem;
+  /* margin-left: 14.7rem; */
+  /* width: 73.1rem; */
 
   ${media.mobile} {
     margin-top: 2.4rem;
@@ -99,8 +100,9 @@ const TableHeader = styled.div`
 
 const LevelWrap = styled.div`
   display: flex;
+  line-height: 2.56rem;
   font-family: Junge;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 
   ${media.mobile} {
     align-items: center;
@@ -130,20 +132,22 @@ const LevelDesc = styled.div`
 `;
 
 const DescWrap = styled.div`
-  padding-top: 2.8rem;
+  padding-top: 3.7rem;
   line-height: 3.96rem;
   letter-spacing: 0.06rem;
-  font-size: 2.2rem;
+  font-size: 1.9rem;
 
   ${media.mobile} {
     padding-top: 3.8rem;
-    line-height: 2.7rem;
+    line-height: 3.42rem;
     letter-spacing: 0.045rem;
     font-size: 1.5rem;
   }
 `;
 
 const Desc = styled.div`
+  padding-left: 14.6rem;
+
   #bold {
     font-weight: 700;
 

@@ -1,8 +1,9 @@
 import React from 'react';
+import { media } from '@styles/theme';
 import { SearchArrowOff, SearchArrowOn, SearchIcon } from '../../assets';
 import styled from 'styled-components';
 
-const SearchBar = () => {
+function SearchBar() {
   const searchButton: any = React.useRef();
 
   return (
@@ -23,20 +24,29 @@ const SearchBar = () => {
       </SearchBarBox>
     </SearchBarWrap>
   );
-};
+}
 
 const SearchBarWrap = styled.div`
   display: flex;
+  position: relative;
+  right: 19rem;
   align-items: center;
   justify-content: center;
-  margin-top: 7.2rem;
+  ${media[1440]} {
+    right: 4.2rem;
+  }
+
+  ${media[768]} {
+    right: 0rem;
+  }
 `;
 
 const SearchBarBox = styled.div`
   display: flex;
   align-items: center;
-  margin: 16.7rem 58rem 14.2rem;
-  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.gray3};
+  margin-top: 16.6rem;
+  margin-bottom: 6rem;
+  border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
 
   .searchIcon {
     margin-right: 4.2rem;
@@ -47,7 +57,7 @@ const SearchBarBox = styled.div`
     bottom: 0.1rem;
     outline-style: none;
     border: none;
-    width: 61.5rem;
+    width: 60.2rem;
     font-size: 2.6rem;
 
     &::placeholder {
@@ -61,7 +71,7 @@ const SearchBarBox = styled.div`
     bottom: -0.6rem;
   }
 
-  @media screen and (max-width: 768px) {
+  ${media[768]} {
     margin: 8rem 0;
 
     .searchIcon {
@@ -74,13 +84,13 @@ const SearchBarBox = styled.div`
     }
   }
 
-  @media screen and (max-width: 375px) {
-    margin: 5.3rem 0 3em 0;
+  ${media.mobile} {
+    margin: 2.3rem 0 3em 0;
     border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
 
     input {
       bottom: -0.2rem;
-      width: 24.5rem;
+      width: 24rem;
       font-size: 1.6rem;
     }
 
@@ -92,7 +102,7 @@ const SearchBarBox = styled.div`
     }
 
     button {
-      bottom: -0.5rem;
+      bottom: -0.6rem;
 
       img {
         width: 4.7rem;

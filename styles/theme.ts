@@ -8,6 +8,7 @@ export const theme: DefaultTheme = {
     black: '#3E3E3E',
     white: '#FFFFFF',
     borderGray: '#929292',
+    progressBeige: '#F8EFDD',
   },
 };
 

@@ -3,42 +3,24 @@ import styled from 'styled-components';
 import { Contour } from '../../assets';
 import { media } from '@styles/theme';
 
-interface Img {
-  height: number;
-  src: string;
-  width: number;
-}
-
-interface DatumType {
-  image: Img;
-  keyword: string;
-  name: string;
-}
-
-interface Props {
-  datum: DatumType;
-  idx: number;
-}
-
-function Recommendation(props: Props) {
+function Recommendation(props) {
   const datum = props.datum;
   const idx = props.idx;
 
   return (
     <RecommWrap key={idx}>
       <Recomm>
-        <img className="item" src={datum.image.src} alt="sampleImage" />
+        <ItemImg src={datum.image.src} alt="sampleImage" />
         <Keyword>{datum.keyword}</Keyword>
       </Recomm>
       <Hovered>
         <Name>{datum.name}</Name>
       </Hovered>
-      <img
-        className="contour"
-        id={idx % 3 === 2 ? 'hidden' : 'show'}
-        src={Contour.src}
-        alt="sampleImage"
-      />
+      {idx % 3 === 2 ? (
+        <HiddenImg id="hidden" src={Contour.src} alt="hidden" />
+      ) : (
+        <ContourImg id="contour" src={Contour.src} alt="sampleImage" />
+      )}
     </RecommWrap>
   );
 }
@@ -51,35 +33,17 @@ const RecommWrap = styled.div`
   align-items: flex-start;
   justify-content: flex-end;
   cursor: pointer;
+`;
 
-  .contour {
-    padding-left: 6.7rem;
+const ContourImg = styled.img`
+  padding-left: 6.7rem;
+`;
 
-    ${media.mobile} {
-      display: none;
-    }
-  }
-
-  #hidden.contour {
-    visibility: hidden;
-
-    ${media.mobile} {
-      display: none;
-    }
-  }
+const HiddenImg = styled.img`
+  padding-left: 6.7rem;
 `;
 
 const Recomm = styled.div`
-  .item {
-    width: 33.2rem;
-    height: 45rem;
-
-    ${media.mobile} {
-      width: 10.981rem;
-      height: 14.3rem;
-    }
-  }
-
   &:hover {
     opacity: 0.7;
   }
@@ -88,6 +52,16 @@ const Recomm = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+`;
+
+const ItemImg = styled.img`
+  width: 33.2rem;
+  height: 45rem;
+
+  ${media.mobile} {
+    width: 10.981rem;
+    height: 14.3rem;
   }
 `;
 

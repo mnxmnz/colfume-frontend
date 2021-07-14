@@ -27,7 +27,7 @@ function MainWrap() {
   };
 
   const isMobile = windowSize <= 375 ? true : false;
-
+  console.log(windowSize);
   return (
     <>
       <Banner />
@@ -46,14 +46,7 @@ function MainWrap() {
           paddingContent={isMobile ? '0.6rem' : '0rem'}
           paddingBottom={isMobile ? '4.5rem' : '12.5rem'}
         />
-        <Slide
-          slideName="palette"
-          length={isMobile ? 2 : 4}
-          paddingBottom={isMobile ? '14.26rem' : '35.7rem'}
-          paddingTop="0rem"
-          width={isMobile ? '24rem' : '106.2rem'}
-          height={isMobile ? '143rem' : '277rem'}
-        />
+        <Slide slideName="palette" isMobile={isMobile} />
       </ContentWrap>
       <Mood
         title="Mood and Style"
@@ -75,14 +68,7 @@ function MainWrap() {
             다음 주 <strong>면접,</strong> 이런 향수는 어떤가요?
           </Comment>
           <SlideContainer>
-            <Slide
-              slideName="recommendation"
-              length={isMobile ? 2 : 3}
-              paddingBottom={isMobile ? '10rem' : '18.9rem'}
-              paddingTop={isMobile ? '3.15rem' : '9.8rem'}
-              width={isMobile ? '23.965rem' : '141rem'}
-              height={isMobile ? '143rem' : '450rem'}
-            />
+            <Slide slideName="recommendation" isMobile={isMobile} />
           </SlideContainer>
         </SlideWrap>
       </ContentWrap>
