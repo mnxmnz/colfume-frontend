@@ -1,19 +1,21 @@
 import React from 'react';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
-import { useRecoilValue } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { keywordAtom } from '../../states/search';
 
 function KeywordTable({ title, list }) {
-  const text = useRecoilValue(keywordAtom);
-  console.log('keyword', text);
+  const setText: any = useSetRecoilState(keywordAtom);
 
   return (
     <Wrap>
       <Title>{title}</Title>
-      {list.map(list => (
-        <button>{list}</button>
-      ))}
+      {list.map(word => {
+        const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
+          setText(word);
+        };
+        return <button onClick={handleClick}>{word}</button>;
+      })}
     </Wrap>
   );
 }
