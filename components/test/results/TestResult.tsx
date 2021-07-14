@@ -6,6 +6,7 @@ import { Green } from '../../../assets/';
 import { Line } from '../../../assets';
 import { media } from '@styles/theme';
 import MatchingColor from './MatchingColor';
+import CopyLinkBtn from './CopyLinkBtn';
 
 function TestResult() {
   const descriptions = [
@@ -65,7 +66,7 @@ function TestResult() {
           <Image alt="resultColorGreen" src={Green} />
         </ImageWrapper>
         <RecommendBtn>향수 추천을 받아보세요</RecommendBtn>
-        <CopyLinkBtn>링크 복사</CopyLinkBtn>
+        <CopyLinkBtn />
         <RetryBtn>다시 하기</RetryBtn>
       </RightWrapper>
       <DescriptionBox>
@@ -235,28 +236,6 @@ const RecommendBtn = styled.button`
     width: 25.2rem;
     height: 3.578rem;
     font-size: 1.4rem;
-  }
-`;
-
-const CopyLinkBtn = styled.button`
-  margin-top: 2.4rem;
-  border: solid 1px;
-  width: 23.2rem;
-  height: 6.496rem;
-  font-family: NotoSans;
-  font-size: 2.4rem;
-  font-weight: 400;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  ${media.mobile} {
-    margin-top: 1.222rem;
-    margin-left: 4.6rem;
-    width: 11.8rem;
-    height: 3.274rem;
-    font-size: 1.2rem;
   }
 `;
 
