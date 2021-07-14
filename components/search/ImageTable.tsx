@@ -6,27 +6,38 @@ import { useRecoilValue } from 'recoil';
 import { keywordAtom } from '../../states/search';
 import { GetMoodData } from '../../lib/api/search/getMood';
 
-interface MoodType {
+interface KeywordType {
   _id: string;
-  mood_name: string;
+  mood_name?: string;
+  style_name?: string;
 }
 
 function ImageTable() {
   const keyword = useRecoilValue(keywordAtom);
   const rawData = GetMoodData(keyword);
+  const category = keyword[0];
 
   return (
     <ImageTableWrap>
       <ImageTableBox>
         {rawData.data &&
           rawData.data.map(data => {
-            const moods: [string, MoodType][] = Object.entries(data.moods[0]);
+            let keywordList: [string, KeywordType][];
+            if (category === 'Mood') {
+              keywordList = Object.entries(data.moods[0]);
+            } else {
+              keywordList = Object.entries(data.styles[0]);
+            }
             return (
               <PerfumeImg
                 key={data._id}
                 image={data.perfume_img}
                 name={data.perfume_name}
-                keyword={moods.map(mood => mood[1] && `#${mood[1].mood_name} `)}
+                keyword={
+                  category === 'Mood'
+                    ? keywordList.map(mood => mood[1] && `#${mood[1].mood_name} `)
+                    : keywordList.map(style => style[1] && `#${style[1].style_name} `)
+                }
               />
             );
           })}

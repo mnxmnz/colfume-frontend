@@ -12,7 +12,7 @@ function KeywordTable({ title, list }) {
       <Title>{title}</Title>
       {list.map(word => {
         const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
-          setText(word);
+          setText([title, word]);
         };
         return <button onClick={handleClick}>{word}</button>;
       })}
