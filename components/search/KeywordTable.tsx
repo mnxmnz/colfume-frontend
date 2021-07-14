@@ -1,25 +1,32 @@
 import React from 'react';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
-import { useRecoilValue } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { keywordAtom } from '../../states/search';
 
 function KeywordTable({ title, list }) {
-  const text = useRecoilValue(keywordAtom);
-  console.log('keyword', text);
+  const setText: any = useSetRecoilState(keywordAtom);
 
   return (
     <Wrap>
       <Title>{title}</Title>
-      {list.map(list => (
-        <button>{list}</button>
-      ))}
+      {list.map(word => {
+        const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
+          setText([title, word]);
+        };
+        return (
+          <button onClick={handleClick} value={word}>
+            {word}
+          </button>
+        );
+      })}
     </Wrap>
   );
 }
 
 const Wrap = styled.div`
   max-width: 113rem;
+
   ${media[1440]} {
     max-width: 84rem;
   }
@@ -39,10 +46,17 @@ const Wrap = styled.div`
     padding: 0 3rem;
     line-height: 3.9rem;
     font-size: 2rem;
+
     &:hover {
       background: ${({ theme }) => theme.colors.gray3};
       color: ${({ theme }) => theme.colors.white};
     }
+
+    &:focus {
+      background: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.colors.white};
+    }
+
     ${media[768]} {
       margin-right: 1.5rem;
       margin-bottom: 1.3rem;
@@ -50,6 +64,7 @@ const Wrap = styled.div`
       line-height: 3.2rem;
       font-size: 1.6rem;
     }
+
     ${media.mobile} {
       margin-right: 1.3rem;
       margin-bottom: 1rem;

@@ -4,40 +4,32 @@ import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { keywordAtom } from '../../states/search';
-import { SearchData } from '../../lib/api/search/search';
+import { PaletteData } from 'lib/api/search/search';
 
-interface KeywordType {
+interface PaletteType {
   _id: string;
   mood_name?: string;
   style_name?: string;
 }
 
-function ImageTable() {
+function PaletteImageTable() {
   const keyword = useRecoilValue(keywordAtom);
-  const rawData = SearchData(keyword);
+  const rawData = PaletteData(keyword);
   const category = keyword[0];
+
+  console.log(rawData);
 
   return (
     <ImageTableWrap>
       <ImageTableBox>
         {rawData.data &&
           rawData.data.map(data => {
-            let keywordList: [string, KeywordType][];
-            if (category === 'Mood') {
-              keywordList = Object.entries(data.moods[0]);
-            } else {
-              keywordList = Object.entries(data.styles[0]);
-            }
             return (
               <PerfumeImg
                 key={data._id}
-                image={data.perfume_img}
+                image={data.perfume_image}
                 name={data.perfume_name}
-                keyword={
-                  category === 'Mood'
-                    ? keywordList.map(mood => mood[1] && `#${mood[1].mood_name} `)
-                    : keywordList.map(style => style[1] && `#${style[1].style_name} `)
-                }
+                keyword={data.moods.mood_name}
               />
             );
           })}
@@ -92,4 +84,4 @@ const ImageTableBox = styled.div`
   }
 `;
 
-export default ImageTable;
+export default PaletteImageTable;
