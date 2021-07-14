@@ -1,24 +1,22 @@
 import React from 'react';
-import Keyword from './Keyword';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
 
 function KeywordTable({ title, list }) {
   return (
-    <Wrap>
+    <>
       <Title>{title}</Title>
-      <Keyword list={list} />
-    </Wrap>
+      <Wrap>
+        {list.map(list => (
+          <button>{list}</button>
+        ))}
+      </Wrap>
+    </>
   );
 }
 
 const Wrap = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1.4rem;
-  width: 100%;
-  max-width: 113.6rem;
-
+  max-width: 113rem;
   ${media[1440]} {
     max-width: 84rem;
   }
@@ -30,10 +28,38 @@ const Wrap = styled.div`
   ${media.mobile} {
     max-width: 33rem;
   }
+
+  button {
+    margin-right: 1.7rem;
+    margin-bottom: 1.8rem;
+    border: 0.1rem solid ${({ theme }) => theme.colors.gray3};
+    padding: 0 3rem;
+    line-height: 3.9rem;
+    font-size: 2rem;
+    &:hover {
+      background: ${({ theme }) => theme.colors.gray3};
+      color: ${({ theme }) => theme.colors.white};
+    }
+    ${media[768]} {
+      margin-right: 1.5rem;
+      margin-bottom: 1.3rem;
+      padding: 0 2rem;
+      line-height: 3.2rem;
+      font-size: 1.6rem;
+    }
+    ${media.mobile} {
+      margin-right: 1.3rem;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+      line-height: 2.52rem;
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 const Title = styled.div`
   margin-bottom: 1rem;
+  max-width: 113rem;
   line-height: 3.96rem;
   font-family: 'Junge';
   font-size: 2.2rem;
