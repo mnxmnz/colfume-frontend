@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { fetcher } from '../fetch';
 
-export const GetMoodData = props => {
+export const SearchData = props => {
   const category = props[0];
   const moodName = props[1];
   const { data, error } = useSWR(

@@ -4,7 +4,7 @@ import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { keywordAtom } from '../../states/search';
-import { GetMoodData } from '../../lib/api/search/getMood';
+import { SearchData } from '../../lib/api/search/search';
 
 interface KeywordType {
   _id: string;
@@ -14,7 +14,7 @@ interface KeywordType {
 
 function ImageTable() {
   const keyword = useRecoilValue(keywordAtom);
-  const rawData = GetMoodData(keyword);
+  const rawData = SearchData(keyword);
   const category = keyword[0];
 
   return (
