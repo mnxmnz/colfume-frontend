@@ -13,8 +13,10 @@ function PerfumeImg(props: PropsType) {
     <PerfumeImgWrap>
       <img className="fume_img" src={props.image} />
       <div className="hover_img">
-        <Name>{props.name}</Name>
-        <Keyword>{props.keyword}</Keyword>
+        <div>
+          <Name>{props.name}</Name>
+          <Keyword>{props.keyword}</Keyword>
+        </div>
       </div>
     </PerfumeImgWrap>
   );
@@ -22,6 +24,7 @@ function PerfumeImg(props: PropsType) {
 
 const PerfumeImgWrap = styled.div`
   position: relative;
+  background: ${({ theme }) => theme.colors.gray1};
   cursor: pointer;
 
   &:hover img {
@@ -51,9 +54,10 @@ const PerfumeImgWrap = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0px;
     left: 0;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-end;
     transition: 0.5s ease;
     opacity: 0;
     background-color: rgba(1, 1, 1, 0.4);
@@ -65,7 +69,7 @@ const PerfumeImgWrap = styled.div`
 
 const Name = styled.div`
   display: flex;
-  margin-top: 23rem;
+  margin-bottom: 0.9rem;
   margin-left: 2.6rem;
   width: 20rem;
   line-height: 3.12rem;
@@ -74,7 +78,7 @@ const Name = styled.div`
   font-weight: bold;
 
   ${media.mobile} {
-    margin-top: 14.9rem;
+    margin-bottom: 0.3rem;
     margin-left: 1.7rem;
     width: 10rem;
     line-height: 1.92rem;
@@ -84,13 +88,13 @@ const Name = styled.div`
 `;
 
 const Keyword = styled.div`
-  margin-top: 0.8rem;
+  margin-bottom: 2.2rem;
   margin-left: 2.6rem;
   line-height: 2.4rem;
   font-size: 1.8rem;
 
   ${media.mobile} {
-    margin-top: 0.3rem;
+    margin-bottom: 1.1rem;
     margin-left: 1.7rem;
     line-height: 1.8rem;
     font-size: 1rem;
