@@ -19,24 +19,24 @@ function ThemeTable(props: PropsType) {
     <Table>
       <Title>{title}</Title>
       <Wrap>
-        {list.slice(0, 3).map(word => {
+        {list.slice(0, 3).map((word, idx) => {
           const handleClick: React.MouseEventHandler<HTMLDivElement> = () => {
             setText([title, word]);
           };
           return (
-            <Link href="/search" passHref>
+            <Link key={idx} href="/search" passHref>
               <Content onClick={handleClick}>{word}</Content>
             </Link>
           );
         })}
       </Wrap>
       <Wrap>
-        {list.slice(3).map(word => {
+        {list.slice(3).map((word, idx) => {
           const handleClick: React.MouseEventHandler<HTMLDivElement> = () => {
             setText([title, word]);
           };
           return (
-            <Link href="/search" passHref>
+            <Link key={idx} href="/search" passHref>
               <Content onClick={handleClick}>{word}</Content>
             </Link>
           );

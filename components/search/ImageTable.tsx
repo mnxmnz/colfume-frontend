@@ -4,7 +4,7 @@ import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { keywordAtom } from '../../states/search';
-import { SearchData } from '../../lib/api/search/search';
+import { SearchData } from 'lib/api/search/search';
 
 interface KeywordType {
   _id: string;

@@ -3,15 +3,17 @@ import styled from 'styled-components';
 import Content from './Content';
 import ThemeTable from './ThemeTable';
 import { media } from '@styles/theme';
-import { GetFilterList } from '../../lib/api/main/getFilter';
+import { GetFilterList } from 'lib/api/main/getFilter';
 
 function Mood(props) {
   const rawData = GetFilterList();
   const moodList = [];
   const styleList = [];
 
-  rawData.moods.map(rawMood => moodList.push(rawMood.mood_name));
-  rawData.styles.map(rawStyle => styleList.push(rawStyle.style_name));
+  if (rawData.message) {
+    rawData.moods.map(rawMood => moodList.push(rawMood.mood_name));
+    rawData.styles.map(rawStyle => styleList.push(rawStyle.style_name));
+  }
 
   return (
     <MoodWrap>
