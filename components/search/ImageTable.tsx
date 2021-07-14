@@ -14,6 +14,7 @@ interface MoodType {
 
 function ImageTable() {
   const keyword = useRecoilValue(keywordAtom);
+  console.log(keyword);
   const rawData = GetMoodData(keyword);
   // console.log(rawData.data);
   // const moods: [string, MoodType][] = Object.entries(rawData.data.moods);
