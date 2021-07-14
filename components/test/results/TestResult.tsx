@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { Green } from '../../../assets/';
 import { Line } from '../../../assets';
 import { media } from '@styles/theme';
+import MatchingColor from './MatchingColor';
 
 function TestResult() {
-  const data = Result;
   const descriptions = [
     'Green은 생명의 색이기도 하며, 안전, 인내를 의미합니다.',
     '또한 Green은 인테리어를 포함하여 다양한 디자인 요소에서 이용될 정도로, 자연스럽고 안정된 모습을 느끼게 해줘요.',
@@ -47,14 +47,18 @@ function TestResult() {
         <KeySentence>주변의 상황에 휘둘리지 않는 올곧음을 가진</KeySentence>
         <KeySentence>당신의 색깔은 Green</KeySentence>
         <KeyWord>발랄한</KeyWord>
-        <MatchingColor>궁합이 맞는 컬러</MatchingColor>
-        {isMobile ? (
-          ''
-        ) : (
-          <DescriptionWrap>
-            <Description>{listDescription}</Description>
-          </DescriptionWrap>
-        )}
+        <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
+        <MatchingColor color="Sky" background="#96BCD2" />
+        <MatchingColor color="Vanila" background="#FCE6AE" />
+        <>
+          {isMobile ? (
+            ''
+          ) : (
+            <DescriptionWrap>
+              <Description>{listDescription}</Description>
+            </DescriptionWrap>
+          )}
+        </>
       </LeftWrapper>
       <RightWrapper>
         <ImageWrapper>
@@ -64,12 +68,24 @@ function TestResult() {
         <CopyLinkBtn>링크 복사</CopyLinkBtn>
         <RetryBtn>다시 하기</RetryBtn>
       </RightWrapper>
-      {isMobile ? <DescriptionWrap>dfdfdfd</DescriptionWrap> : ''}
+      <DescriptionBox>
+        <Description>{listDescription}</Description>
+      </DescriptionBox>
     </Layout>
   );
 }
 
 export default TestResult;
+
+const DescriptionBox = styled.div`
+  display: none;
+  ${media.mobile} {
+    display: block;
+    margin-top: 75rem;
+    background: #fafafa;
+    height: 87.9rem;
+  }
+`;
 const LineWrapper = styled.div`
   margin-top: 7.2rem;
   padding-top: 7.2rem;
@@ -129,32 +145,47 @@ const KeyWord = styled.div`
     font-size: 1.4rem;
   }
 `;
-const MatchingColor = styled.div`
+const MatchingColorText = styled.div`
+  float: left;
   margin-top: 1rem;
   margin-left: 1.8rem;
+  width: 13rem;
   font-family: NotoSans;
   font-size: 1.8rem;
   font-weight: 500;
   ${media.mobile} {
+    align-items: center;
+    margin-left: 7rem;
+    width: 25rem;
     font-size: 1.4rem;
   }
 `;
+
 const DescriptionWrap = styled.div`
   margin-top: 10.1rem;
   width: 80rem;
   font-family: NotoSans;
   font-size: 1.8rem;
   font-weight: 400;
+
   ${media.mobile} {
     display: none;
-    width: 33.5rem;
-    font-size: 1.5rem;
   }
 `;
 const Description = styled.div`
   margin-bottom: 2rem;
   > li {
     margin-top: 2.4rem;
+  }
+  ${media.mobile} {
+    margin-left: 2rem;
+    padding-top: 2.6rem;
+    width: 33.5rem;
+    font-family: NotoSans;
+    font-size: 1.5rem;
+    > li {
+      margin-bottom: 3rem;
+    }
   }
 `;
 
@@ -163,8 +194,9 @@ const RightWrapper = styled.div`
   margin-top: 18.3rem;
   margin-right: 24.5rem;
   width: 50rem;
-  height: 59.9rem;
+  height: 30.3rem;
   ${media.mobile} {
+    solid: solid 1px;
     align-items: center;
     margin-right: 0;
     width: 100%;

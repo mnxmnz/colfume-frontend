@@ -50,6 +50,7 @@ const IconWrap = styled.div`
   align-items: center;
   margin-top: 6.5rem;
   border-bottom: solid 0.2rem ${({ theme }) => theme.colors.gray3};
+  background: pink;
   width: 85.1rem;
   height: 13.6rem;
 `;
