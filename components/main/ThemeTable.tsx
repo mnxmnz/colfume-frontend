@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
+import { useSetRecoilState } from 'recoil';
+import { keywordAtom } from '../../states/search';
+import Link from 'next/link';
 
 interface PropsType {
   title: string;
@@ -8,6 +11,7 @@ interface PropsType {
 }
 
 function ThemeTable(props: PropsType) {
+  const setText: any = useSetRecoilState(keywordAtom);
   const title = props.title;
   const list = props.list;
 
@@ -15,14 +19,28 @@ function ThemeTable(props: PropsType) {
     <Table>
       <Title>{title}</Title>
       <Wrap>
-        <Content>{list[0]}</Content>
-        <Content>{list[1]}</Content>
-        <Content>{list[2]}</Content>
+        {list.slice(0, 3).map(word => {
+          const handleClick: React.MouseEventHandler<HTMLDivElement> = () => {
+            setText([title, word]);
+          };
+          return (
+            <Link href="/search" passHref>
+              <Content onClick={handleClick}>{word}</Content>
+            </Link>
+          );
+        })}
       </Wrap>
       <Wrap>
-        <Content>{list[3]}</Content>
-        <Content>{list[4]}</Content>
-        <Content>{list[5]}</Content>
+        {list.slice(3).map(word => {
+          const handleClick: React.MouseEventHandler<HTMLDivElement> = () => {
+            setText([title, word]);
+          };
+          return (
+            <Link href="/search" passHref>
+              <Content onClick={handleClick}>{word}</Content>
+            </Link>
+          );
+        })}
       </Wrap>
     </Table>
   );
@@ -70,6 +88,7 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid ${({ theme }) => theme.colors.borderGray};
+  cursor: pointer;
   width: 13.1rem;
   height: 7.5rem;
 
