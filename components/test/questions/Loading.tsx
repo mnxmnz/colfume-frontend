@@ -21,7 +21,7 @@ const LoadingWrap = styled.div`
   bottom: 0;
   left: 0;
   z-index: 50;
-  background-color: #3e3e3e, 40%;
+  background-color: rgba(62, 62, 62, 0.4);
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
@@ -30,12 +30,26 @@ const LoadingWrap = styled.div`
 
 const IconWrap = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  img {
+    animation: loadingAnimation 2s;
+  }
+
+  @keyframes loadingAnimation {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 `;
 
 const Text = styled.div`
-  text-align: center;
+  margin-top: 3.6rem;
   line-height: 5.8rem;
   color: ${({ theme }) => theme.colors.white};
   font-size: 4rem;
