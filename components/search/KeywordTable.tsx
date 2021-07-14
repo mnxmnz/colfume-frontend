@@ -2,12 +2,19 @@ import React from 'react';
 import Keyword from './Keyword';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
+import { useRecoilValue } from 'recoil';
+import { keywordAtom } from '../../states/search';
 
 function KeywordTable({ title, list }) {
+  const text = useRecoilValue(keywordAtom);
+  console.log('keyword', text);
+
   return (
     <Wrap>
       <Title>{title}</Title>
-      <Keyword list={list} />
+      {list.map(list => (
+        <Keyword list={list} />
+      ))}
     </Wrap>
   );
 }

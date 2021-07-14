@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
+import { useSetRecoilState } from 'recoil';
+import { keywordAtom } from '../../states/search';
 
 function Keyword({ list }) {
+  const setText = useSetRecoilState(keywordAtom);
+
+  useEffect(() => {
+    setText(list);
+  }, [list]);
+
   return (
     <Wrap>
-      {list.map(list => (
-        <button>{list}</button>
-      ))}
+      <button>{list}</button>
     </Wrap>
   );
 }
