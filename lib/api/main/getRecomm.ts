@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { fetcher } from './fetch';
+import { fetcher } from '../fetch';
 
 export const GetRecommData = () => {
   const { data, error } = useSWR('https://colfume.com/api/home/recommand', fetcher, {

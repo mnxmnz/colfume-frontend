@@ -4,33 +4,43 @@ import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { keywordAtom } from '../../states/search';
-import { GetMoodData } from '../../lib/api/main/getMood';
-import { SampleImg } from '../../assets';
+import { SearchData } from '../../lib/api/search/search';
 
-interface MoodType {
+interface KeywordType {
   _id: string;
-  mood_name: string;
+  mood_name?: string;
+  style_name?: string;
 }
 
 function ImageTable() {
   const keyword = useRecoilValue(keywordAtom);
-  console.log(keyword);
-  const rawData = GetMoodData(keyword);
-  // console.log(rawData.data);
-  // const moods: [string, MoodType][] = Object.entries(rawData.data.moods);
-  const tempKey = ['blah', 'blah'];
+  const rawData = SearchData(keyword);
+  const category = keyword[0];
+
   return (
     <ImageTableWrap>
       <ImageTableBox>
         {rawData.data &&
-          rawData.data.map(data => (
-            <PerfumeImg
-              key={data._id}
-              image={SampleImg.src}
-              name={data.perfume_name}
-              keyword={tempKey}
-            />
-          ))}
+          rawData.data.map(data => {
+            let keywordList: [string, KeywordType][];
+            if (category === 'Mood') {
+              keywordList = Object.entries(data.moods[0]);
+            } else {
+              keywordList = Object.entries(data.styles[0]);
+            }
+            return (
+              <PerfumeImg
+                key={data._id}
+                image={data.perfume_img}
+                name={data.perfume_name}
+                keyword={
+                  category === 'Mood'
+                    ? keywordList.map(mood => mood[1] && `#${mood[1].mood_name} `)
+                    : keywordList.map(style => style[1] && `#${style[1].style_name} `)
+                }
+              />
+            );
+          })}
       </ImageTableBox>
     </ImageTableWrap>
   );
