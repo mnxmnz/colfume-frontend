@@ -9,10 +9,10 @@ function KeywordTable({ title, list }) {
   console.log('keyword', text);
 
   return (
-    <>
+    <Wrap>
       <Title>{title}</Title>
       {list.map(list => (
-        <Keyword list={list} />
+        <button>{list}</button>
       ))}
     </Wrap>
   );
