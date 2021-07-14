@@ -56,7 +56,10 @@ function MainWrap(props) {
         {rawData && (
           <SlideWrap>
             <Comment>
-              다음 주 <strong>{rawData.section_name},</strong> 이런 향수는 어떤가요?
+              <span>
+                <strong>{rawData.section_name},</strong>
+              </span>{' '}
+              <span>이런 향수는 어떤가요?</span>
             </Comment>
             <SlideContainer>
               <Slide
@@ -98,7 +101,11 @@ const Comment = styled.div`
   font-size: 2rem;
 
   ${media.mobile} {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
     margin-bottom: 3.05rem;
+    text-align: center;
     line-height: 2.31rem;
     font-size: 1.4rem;
   }
