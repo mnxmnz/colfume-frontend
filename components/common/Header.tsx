@@ -14,8 +14,8 @@ const Header = () => {
     <Positioner>
       <WhiteBackground>
         <Link href="/">
-          <LogoWrap>
-            <Image src={Logo} id="Logo" current={currentPath === '/'} />
+          <LogoWrap id="Logo" current={currentPath === '/'}>
+            <Image src={Logo} />
           </LogoWrap>
         </Link>
         <Layout>

@@ -25,6 +25,10 @@ const FilterWrap = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 7.2rem;
+  ${media.mobile} {
+    margin-top: 3.1rem;
+    margin-bottom: 3.1rem;
+  }
 `;
 
 const Title = styled.div`
