@@ -51,14 +51,25 @@ function CopyLinkBtn() {
       >
         <ModalBox>
           <TextBox>링크가 복사되었습니다.</TextBox>
-          <ConfirmBox>확인</ConfirmBox>
+          <ConfirmBox onClick={closeModal}>확인</ConfirmBox>
         </ModalBox>
       </Modal>
     </>
   );
-}
-const TextBox = styled.div``;
-const ConfirmBox = styled.button``;
+
+const TextBox = styled.div`
+  margin-top: 7.4rem;
+  font-size: 4rem;
+  font-weight: 400;
+`;
+const ConfirmBox = styled.button`
+  margin-top: 6.79rem;
+  border: solid 1px;
+  width: 23.2rem;
+  height: 6.496rem;
+  font-size: 2.4rem;
+`;
+
 
 const ModalBox = styled.div`
   position: absolute;
