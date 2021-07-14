@@ -17,7 +17,9 @@ function Recommendation(props) {
     <RecommWrap key={idx}>
       <Recomm>
         <ItemImg src={datum.perfume_img} alt="productImage" />
-        <KeywordWrap>{moods.map(mood => mood[1] && `#${mood[1].mood_name} `)}</KeywordWrap>
+        <KeywordWrap>
+          <Keyword>{moods.map(mood => mood[1] && `#${mood[1].mood_name}`)}</Keyword>
+        </KeywordWrap>
       </Recomm>
       <Hovered>
         <Name>{datum.perfume_name}</Name>
@@ -100,13 +102,18 @@ const KeywordWrap = styled.div`
   font-size: 2.2rem;
 
   ${media.mobile} {
+    display: flex;
+    justify-content: space-between;
     padding-top: 1.3rem;
-    line-height: 1.485rem;
-    font-size: 0.9rem;
-    font-weight: 500;
+    width: 100%;
   }
 `;
 
+const Keyword = styled.span`
+  line-height: 1.32rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+`;
 const Name = styled.div`
   display: block;
   width: 13rem;
