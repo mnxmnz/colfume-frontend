@@ -14,8 +14,13 @@ const Header = () => {
     <Positioner>
       <WhiteBackground>
         <Link href="/">
+<<<<<<< HEAD
           <LogoWrap id="Logo" current={currentPath === '/'}>
             <Image src={Logo} />
+=======
+          <LogoWrap current={currentPath === '/'}>
+            <Image src={Logo} id="Logo" />
+>>>>>>> 986e94195cd15b5c137a4c2012a4e9af4d476b3e
           </LogoWrap>
         </Link>
         <Layout>
@@ -83,7 +88,7 @@ const Layout = styled.div`
   }
 `;
 
-const LogoWrap = styled.div`
+const LogoWrap = styled.div<{ current: boolean }>`
   position: fixed;
   top: 1.62rem;
   z-index: 100;
@@ -159,7 +164,7 @@ const Category = styled.div`
   }
 `;
 
-const CategoryBtn = styled.span<{ current: string }>`
+const CategoryBtn = styled.span<{ current: boolean }>`
   margin: 0 3rem;
   border-bottom: 0.1rem solid ${props => (props.current ? '#3e3e3e' : 'transparent')};
   cursor: pointer;
