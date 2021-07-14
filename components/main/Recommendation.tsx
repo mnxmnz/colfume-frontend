@@ -3,18 +3,24 @@ import styled from 'styled-components';
 import { Contour } from '../../assets';
 import { media } from '@styles/theme';
 
+interface MoodType {
+  _id: string;
+  mood_name: string;
+}
+
 function Recommendation(props) {
-  const datum = props.datum;
+  const datum = props.datum[1];
   const idx = props.idx;
+  const moods: [string, MoodType][] = Object.entries(datum.moods[0]);
 
   return (
     <RecommWrap key={idx}>
       <Recomm>
-        <ItemImg src={datum.image.src} alt="sampleImage" />
-        <Keyword>{datum.keyword}</Keyword>
+        <ItemImg src={datum.perfume_img} alt="productImage" />
+        <KeywordWrap>{moods.map(mood => mood[1] && `#${mood[1].mood_name} `)}</KeywordWrap>
       </Recomm>
       <Hovered>
-        <Name>{datum.name}</Name>
+        <Name>{datum.perfume_name}</Name>
       </Hovered>
       {idx % 3 === 2 ? (
         <HiddenImg id="hidden" src={Contour.src} alt="hidden" />
@@ -89,14 +95,14 @@ const Hovered = styled.div`
   }
 `;
 
-const Keyword = styled.div`
+const KeywordWrap = styled.div`
   line-height: 3.96rem;
   font-size: 2.2rem;
 
   ${media.mobile} {
     padding-top: 1.3rem;
-    line-height: 1.98rem;
-    font-size: 1.2rem;
+    line-height: 1.485rem;
+    font-size: 0.9rem;
     font-weight: 500;
   }
 `;

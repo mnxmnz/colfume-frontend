@@ -6,9 +6,13 @@ import { Slide } from '../';
 import Footer from '../common/Footer';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
+import { GetRecommData } from '../../lib/api/main/getRecomm';
+import PaletteData from '../../public/PaletteData';
 
 function MainWrap(props) {
   const isMobile = props.isMobile;
+  const rawData = GetRecommData().data;
+
   return (
     <>
       <Banner />
@@ -27,7 +31,12 @@ function MainWrap(props) {
           paddingContent={isMobile ? '0.6rem' : '0rem'}
           paddingBottom={isMobile ? '4.5rem' : '12.5rem'}
         />
-        <Slide slideName="palette" isMobile={isMobile} length={isMobile ? 2 : 4} />
+        <Slide
+          slideName="palette"
+          isMobile={isMobile}
+          length={isMobile ? 2 : 4}
+          data={PaletteData}
+        />
       </ContentWrap>
       <Mood
         title="Mood and Style"
@@ -44,14 +53,21 @@ function MainWrap(props) {
           paddingContent={isMobile ? '0.6rem' : '0rem'}
           paddingBottom={isMobile ? '5.9rem' : '16rem'}
         />
-        <SlideWrap>
-          <Comment>
-            다음 주 <strong>면접,</strong> 이런 향수는 어떤가요?
-          </Comment>
-          <SlideContainer>
-            <Slide slideName="recommendation" isMobile={isMobile} length={isMobile ? 2 : 3} />
-          </SlideContainer>
-        </SlideWrap>
+        {rawData && (
+          <SlideWrap>
+            <Comment>
+              다음 주 <strong>{rawData.section_name},</strong> 이런 향수는 어떤가요?
+            </Comment>
+            <SlideContainer>
+              <Slide
+                slideName="recommendation"
+                isMobile={isMobile}
+                length={isMobile ? 2 : 3}
+                data={rawData.section_perfumes[0]}
+              />
+            </SlideContainer>
+          </SlideWrap>
+        )}
       </ContentWrap>
       <Footer />
     </>
