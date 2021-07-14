@@ -56,7 +56,9 @@ function CopyLinkBtn() {
       </Modal>
     </>
   );
+}
 
+export default CopyLinkBtn;
 const TextBox = styled.div`
   margin-top: 7.4rem;
   font-size: 4rem;
@@ -69,7 +71,6 @@ const ConfirmBox = styled.button`
   height: 6.496rem;
   font-size: 2.4rem;
 `;
-
 
 const ModalBox = styled.div`
   position: absolute;
@@ -89,11 +90,9 @@ const CopyLinkWrapper = styled.button`
   font-family: NotoSans;
   font-size: 2.4rem;
   font-weight: 400;
-
   &:hover {
     cursor: pointer;
   }
-
   ${media.mobile} {
     margin-top: 1.222rem;
     margin-left: 4.6rem;
@@ -102,5 +101,3 @@ const CopyLinkWrapper = styled.button`
     font-size: 1.2rem;
   }
 `;
-
-export default CopyLinkBtn;
