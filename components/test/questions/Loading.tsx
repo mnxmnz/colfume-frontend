@@ -36,7 +36,7 @@ const IconWrap = styled.div`
   text-align: center;
 
   img {
-    animation: loadingAnimation 2s;
+    animation: loadingAnimation 3s;
   }
 
   @keyframes loadingAnimation {
