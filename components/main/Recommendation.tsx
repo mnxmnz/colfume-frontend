@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Contour } from '../../assets';
 import { media } from '@styles/theme';
@@ -12,9 +12,11 @@ function Recommendation(props) {
   const datum = props.datum[1];
   const idx = props.idx;
 
-  if (datum === undefined) return;
+  const [moods, setMoods] = useState([]);
 
-  const moods: [string, MoodType][] = Object.entries(datum.moods[0]);
+  useEffect(() => {
+    setMoods(Object.entries(datum.moods[0]));
+  }, []);
 
   return (
     <RecommWrap key={idx}>
