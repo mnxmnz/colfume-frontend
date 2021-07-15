@@ -42,7 +42,7 @@ const FilterTokens: FilterType[] = [
   },
   {
     image: FilterBlue,
-    keyword: 'Blue',
+    keyword: 'Sky',
     url: '/',
   },
   {

@@ -1,37 +1,34 @@
 import React from 'react';
-import PerfumeImg from './PerfumeImg';
+import PerfumeImg from '../search/PerfumeImg';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
-import { keywordAtom } from '../../states/search';
-import { PaletteData } from '../../lib/api/search/search';
+import { paletteAtom } from '../../states/product';
+import { GetProductList } from '../../lib/api/product/getProduct';
 
-interface PaletteType {
+interface MoodType {
   _id: string;
-  mood_name?: string;
-  style_name?: string;
+  mood_name: string;
 }
 
 function PaletteImageTable() {
-  const keyword = useRecoilValue(keywordAtom);
-  const rawData = PaletteData(keyword);
-
-  // console.log('Data1', rawData.data[0].moods[0].mood1.mood_name);
-  // console.log('Data2', rawData.data[0].moods[0].mood2.mood_name);
-  // console.log('Data3', rawData.data[0].moods[0].mood3.mood_name);
+  const keyword = useRecoilValue(paletteAtom);
+  console.log('color: ', keyword);
+  const rawData = GetProductList(keyword);
+  console.log(rawData);
 
   return (
     <ImageTableWrap>
       <ImageTableBox>
         {rawData.data &&
           rawData.data.map((data, idx) => {
-            console.log(idx);
+            const moods: [string, MoodType][] = Object.entries(data.moods[0]);
             return (
               <PerfumeImg
                 key={data._id}
                 image={data.perfume_image}
                 name={data.perfume_name}
-                keyword={data.mood_name}
+                keyword={moods.map(mood => mood[1] && `#${mood[1].mood_name}`)}
               />
             );
           })}
