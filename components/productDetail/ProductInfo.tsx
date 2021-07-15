@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 
-function ProductInfo({ brand, price, capacity, name }) {
+function ProductInfo({ brand, price, capacity, name, colIcon }) {
   return (
     <ProductInfoWrap>
       {/* <img src={colIcon.src} alt="productMainImage" /> */}
