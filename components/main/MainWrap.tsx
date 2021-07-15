@@ -4,7 +4,6 @@ import Banner from './Banner';
 import Mood from './Mood';
 import { Slide } from '../';
 import Footer from '../common/Footer';
-import MobileFooter from '../common/MobileFooter';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 import { GetRecommData } from 'lib/api/main/getRecomm';

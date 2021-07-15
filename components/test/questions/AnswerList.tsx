@@ -15,7 +15,6 @@ function AnswerList() {
 
   const data = AnswerData;
   const length = data[progress].length;
-
   const styleMargin = {
     marginTop: '4rem',
   };
