@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Result from './ResultData';
 import Image from 'next/image';
 import { Green } from '../../../assets/';
 import { Line } from '../../../assets';
