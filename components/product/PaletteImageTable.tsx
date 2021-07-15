@@ -19,7 +19,7 @@ function PaletteImageTable() {
     <ImageTableWrap>
       <ImageTableBox>
         {rawData.data &&
-          rawData.data.map((data, idx) => {
+          rawData.data.map(data => {
             const moods: [string, MoodType][] = Object.entries(data.moods[0]);
             return (
               <PerfumeImg
