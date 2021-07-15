@@ -21,7 +21,7 @@ function Filter({ moods, styles, colors }) {
             <Categ>Mood</Categ>
             <Keyword>{moods.mood1.mood_name}</Keyword>
             <Keyword>{moods.mood2.mood_name}</Keyword>
-            <Keyword>{moods.mood3.mood_name}</Keyword>
+            {moods.mood3 !== null && <Keyword>{moods.mood3.mood_name}</Keyword>}
           </KeywordWrap>
         </MoodStyle>
         <MoodStyle>
