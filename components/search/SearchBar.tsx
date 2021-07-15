@@ -1,17 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { media } from '@styles/theme';
 import { SearchArrowOff, SearchArrowOn, SearchIcon } from '../../assets';
 import styled from 'styled-components';
+import { useSetRecoilState } from 'recoil';
+import { keywordAtom } from '../../states/search';
 
 function SearchBar() {
   const searchButton: any = React.useRef();
 
+  const [keyword, getKeyword] = useState('');
+  const handleChange = event => {
+    getKeyword(event.target.value);
+  };
+
+  const setKeyword: any = useSetRecoilState(keywordAtom);
+
+  const handleClick = event => {
+    console.log('input: ', keyword);
+    setKeyword(['/', keyword]);
+    getKeyword('');
+  };
+
+  const handleSubmit = event => {
+    if (event.key === 'Enter') {
+      handleClick(event);
+    }
+  };
+
   return (
     <SearchBarWrap>
       <SearchBarBox>
-        <img className="searchIcon" src={SearchIcon.src} alt="" />
-        <input type="text" placeholder="제품명, 키워드로 검색해보세요" />
-        <button type="submit">
+        <SearchIconImg src={SearchIcon.src} alt="" />
+        <input
+          type="text"
+          placeholder="제품명, 키워드로 검색해보세요"
+          value={keyword}
+          onChange={handleChange}
+          onKeyPress={handleSubmit}
+        />
+        <button type="submit" onClick={handleClick}>
           <img
             className="searchButton"
             src={SearchArrowOff.src}
@@ -48,10 +75,6 @@ const SearchBarBox = styled.div`
   margin-bottom: 6rem;
   border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
 
-  .searchIcon {
-    margin-right: 4.2rem;
-  }
-
   input {
     position: relative;
     bottom: 0.1rem;
@@ -74,11 +97,6 @@ const SearchBarBox = styled.div`
   ${media[768]} {
     margin: 8rem 0;
 
-    .searchIcon {
-      position: relative;
-      margin-right: 3.5rem;
-    }
-
     input {
       width: 40rem;
     }
@@ -94,13 +112,6 @@ const SearchBarBox = styled.div`
       font-size: 1.6rem;
     }
 
-    .searchIcon {
-      position: relative;
-      bottom: -0.1rem;
-      margin-right: 0.9rem;
-      width: 2rem;
-    }
-
     button {
       bottom: -0.6rem;
 
@@ -109,6 +120,22 @@ const SearchBarBox = styled.div`
         height: 3.2rem;
       }
     }
+  }
+`;
+
+const SearchIconImg = styled.img`
+  margin-right: 4.2rem;
+
+  ${media[768]} {
+    position: relative;
+    margin-right: 3.5rem;
+  }
+
+  ${media.mobile} {
+    position: relative;
+    bottom: -0.1rem;
+    margin-right: 0.9rem;
+    width: 2rem;
   }
 `;
 
