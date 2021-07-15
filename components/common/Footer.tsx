@@ -22,7 +22,6 @@ const Box = styled.div`
 const MaterialBox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   padding-top: 17.8rem;
   width: 190rem;
