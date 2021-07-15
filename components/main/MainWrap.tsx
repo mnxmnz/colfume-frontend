@@ -73,7 +73,7 @@ function MainWrap(props) {
           </SlideWrap>
         )}
       </ContentWrap>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
