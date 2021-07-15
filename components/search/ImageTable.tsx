@@ -16,6 +16,7 @@ function ImageTable() {
   const keyword = useRecoilValue(keywordAtom);
   const rawData = SearchData(keyword);
   const category = keyword[0];
+  console.log('loaded data: ', rawData);
 
   return (
     <ImageTableWrap>
