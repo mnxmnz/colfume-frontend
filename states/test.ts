@@ -9,3 +9,8 @@ export const modalIsOpenAtom = atom({
   key: 'modalIsOpenAtom',
   default: false,
 });
+
+export const answerAtom = atom({
+  key: 'answerAtom',
+  default: {},
+});

@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import AnswerData from './AnswerData';
 import { useRecoilState } from 'recoil';
-import { questionNumberAtom } from '../../../states/test';
+import { questionNumberAtom, answerAtom } from '../../../states/test';
+import { testResult } from '../../../lib/api/test/postAnswer';
 
 function AnswerList() {
   const [progress, setProgress] = useRecoilState(questionNumberAtom);
+  const [answer, setAnswer] = useRecoilState(answerAtom);
 
   const data = AnswerData;
   const length = data[progress].length;
@@ -18,18 +20,26 @@ function AnswerList() {
     width: `${length}rem`,
   };
 
-  const onClickAnswer = () => {
+  const onClickAnswer = data => {
+    answer[progress + 1] = data;
     setProgress(progress => progress + 1);
   };
 
+  if (progress === 7) {
+    const testData = testResult(answer);
+    console.log(testData);
+  }
+
   return (
     <AnswerWrap>
-      <Text onClick={onClickAnswer}>{data[progress].answer01.text}</Text>
+      <Text onClick={() => onClickAnswer(data[progress].answer01.value)}>
+        {data[progress].answer01.text}
+      </Text>
       <LineWrap>
         <Circle />
         <Line style={styleWidth} />
       </LineWrap>
-      <Text onClick={onClickAnswer} style={styleMargin}>
+      <Text onClick={() => onClickAnswer(data[progress].answer02.value)} style={styleMargin}>
         {data[progress].answer02.text}
       </Text>
       <LineWrap>
