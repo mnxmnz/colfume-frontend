@@ -63,6 +63,10 @@ const TextBox = styled.div`
   margin-top: 7.4rem;
   font-size: 4rem;
   font-weight: 400;
+  ${media.mobile} {
+    margin-top: 2.647rem;
+    font-size: 1.4rem;
+  }
 `;
 const ConfirmBox = styled.button`
   margin-top: 6.79rem;
@@ -70,6 +74,12 @@ const ConfirmBox = styled.button`
   width: 23.2rem;
   height: 6.496rem;
   font-size: 2.4rem;
+  ${media.mobile} {
+    margin-top: 2.422em;
+    width: 8.271rem;
+    height: 2.316rem;
+    font-size: 1.2rem;
+  }
 `;
 
 const ModalBox = styled.div`
@@ -80,6 +90,10 @@ const ModalBox = styled.div`
   background: #ffffff;
   width: 69rem;
   height: 30.8rem;
+  ${media.mobile} {
+    width: 24.2rem;
+    height: 11rem;
+  }
 `;
 
 const CopyLinkWrapper = styled.button`
