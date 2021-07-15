@@ -12,7 +12,6 @@ import PaletteData from '../../public/PaletteData';
 function MainWrap(props) {
   const isMobile = props.isMobile;
   const rawData = GetRecommData().data;
-  rawData && console.log('향수 추천 상황 업데이트 확인 : ', rawData.section_name);
 
   return (
     <>
