@@ -31,6 +31,7 @@ function ImageTable() {
             return (
               <PerfumeImg
                 key={data._id}
+                productId={data._id}
                 image={data.perfume_img}
                 name={data.perfume_name}
                 keyword={

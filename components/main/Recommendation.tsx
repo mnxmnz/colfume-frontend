@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSetRecoilState } from 'recoil';
+import { productDetailAtom } from 'states/detail';
 import styled from 'styled-components';
 import { Contour } from '../../assets';
 import { media } from '@styles/theme';
+import Link from 'next/link';
 
 interface MoodType {
   _id: string;
@@ -10,28 +13,39 @@ interface MoodType {
 
 function Recommendation(props) {
   const datum = props.datum[1];
+  const setPerfumeName: any = useSetRecoilState(productDetailAtom);
+  const handleClick = () => {
+    setPerfumeName(datum.perfume_name);
+  };
   const idx = props.idx;
   const moods: [string, MoodType][] = Object.entries(datum?.moods[0]);
   if (datum.moods[0] === null) return;
   if (datum.moods === null) return;
 
   return (
-    <RecommWrap key={idx}>
-      <Recomm>
-        <ItemImg src={datum.perfume_img} alt="productImage" />
-        <KeywordWrap>
-          <Keyword>{moods.map(mood => mood[1] && `#${mood[1].mood_name}`)}</Keyword>
-        </KeywordWrap>
-      </Recomm>
-      <Hovered>
-        <Name>{datum.perfume_name}</Name>
-      </Hovered>
-      {idx % 3 === 2 ? (
-        <HiddenImg id="hidden" src={Contour.src} alt="hidden" />
-      ) : (
-        <ContourImg id="contour" src={Contour.src} alt="sampleImage" />
-      )}
-    </RecommWrap>
+    <Link
+      href={{
+        pathname: `/product/${datum._id}`,
+      }}
+      passHref
+    >
+      <RecommWrap key={idx} onClick={handleClick}>
+        <Recomm>
+          <ItemImg src={datum.perfume_img} alt="productImage" />
+          <KeywordWrap>
+            <Keyword>{moods.map(mood => mood[1] && `#${mood[1].mood_name}`)}</Keyword>
+          </KeywordWrap>
+        </Recomm>
+        <Hovered>
+          <Name>{datum.perfume_name}</Name>
+        </Hovered>
+        {idx % 3 === 2 ? (
+          <HiddenImg id="hidden" src={Contour.src} alt="hidden" />
+        ) : (
+          <ContourImg id="contour" src={Contour.src} alt="sampleImage" />
+        )}
+      </RecommWrap>
+    </Link>
   );
 }
 

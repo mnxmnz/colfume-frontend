@@ -7,7 +7,6 @@ import { GetFilterList } from 'lib/api/main/getFilter';
 
 function Mood(props) {
   const rawData = GetFilterList();
-  // console.log('mood and style data', rawData);
   const moodList = [];
   const styleList = [];
 

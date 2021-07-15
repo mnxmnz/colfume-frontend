@@ -7,8 +7,6 @@ import { GetDetailData } from 'lib/api/detail/detail';
 
 function ProductDetailWrap(props) {
   const perfumeName = props.perfumeName;
-  // const perfumeName = useRecoilValue(productDetailAtom);
-  // console.log(perfumeName);
   const data = GetDetailData(perfumeName);
 
   return (

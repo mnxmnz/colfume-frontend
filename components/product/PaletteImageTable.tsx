@@ -21,9 +21,11 @@ function PaletteImageTable() {
         {rawData.data &&
           rawData.data.map(data => {
             const moods: [string, MoodType][] = Object.entries(data.moods[0]);
+
             return (
               <PerfumeImg
                 key={data._id}
+                productId={data._id}
                 image={data.perfume_img}
                 name={data.perfume_name}
                 keyword={moods.map(mood => mood[1] && `#${mood[1].mood_name}`)}
