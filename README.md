@@ -5,23 +5,27 @@
 <br />
 <br />
 
-### 🧷   프로젝트 소개
-####  Sopt 28th AppJam-web part 
+### 🧷 프로젝트 소개
+
+#### Sopt 28th AppJam-web part
+
 #### Project name : Colfume
+
 #### Project period : 2021.06.26 ~ 2021.07.17
 
 <br />
 
-### 📌  팀원 소개 
+### 📌 팀원 소개
 
-|                                                            김민지                                                             |                                                            손예지                                                            |                                                            김소령                                                            |                                                            김영서                                                             |
-| :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
-| <img src="https://avatars.githubusercontent.com/u/48766355?v=4" alt="profile" width="200" height="200"> | <img src="https://avatars.githubusercontent.com/u/55784772?v=4" alt="profile" width="200" height="200"> | <img src="https://user-images.githubusercontent.com/55784772/124715910-74793900-df3e-11eb-9745-2601765cd046.png" alt="profile" width="200" height="200"> | <img src="https://avatars.githubusercontent.com/u/79343830?v=4" alt="profile" width="200" height="200">
-|                                             [mnxmnz](https://github.com/sohee-K)                                             |                                          [yezgoget](https://github.com/Hyun-juhee)                                          |                                            [soryeongk](https://github.com/soryeongk)                                            |                                              [kimyeongseo](https://github.com/kimyeongseo)                                              |
-            
+|                                                 김민지                                                  |                                                 손예지                                                  |                                                                          김소령                                                                          |                                                 김영서                                                  |
+| :-----------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------: |
+| <img src="https://avatars.githubusercontent.com/u/48766355?v=4" alt="profile" width="200" height="200"> | <img src="https://avatars.githubusercontent.com/u/55784772?v=4" alt="profile" width="200" height="200"> | <img src="https://user-images.githubusercontent.com/55784772/124715910-74793900-df3e-11eb-9745-2601765cd046.png" alt="profile" width="200" height="200"> | <img src="https://avatars.githubusercontent.com/u/79343830?v=4" alt="profile" width="200" height="200"> |
+|                                   [mnxmnz](https://github.com/mnxmnz)                                   |                                 [yezgoget](https://github.com/yezgoget)                                 |                                                        [soryeongk](https://github.com/soryeongk)                                                         |                              [kimyeongseo](https://github.com/kimyeongseo)                              |
+
 <br />
 
 ### 🔨 기술 스택 및 사용 라이브러리
+
 ```
     "@types/lodash": "^4.14.170",
     "@types/react-slick": "^0.23.4",
@@ -43,9 +47,11 @@
     "stylelint-config-concentric-order": "^4.0.1",
     "typescript": "4.3.4"
 ```
+
 <br />
 
 ### 🗂 프로젝트 폴더 구조
+
 ```
 📦.next
  ┣ 📂cache
@@ -79,4 +85,3 @@
  ┣ 📜build-manifest.json
  ┗ 📜react-loadable-manifest.json
 ```
-

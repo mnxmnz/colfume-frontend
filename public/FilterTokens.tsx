@@ -3,7 +3,7 @@ import {
   FilterOrange,
   FilterVanilla,
   FilterGreen,
-  FilterBlue,
+  FilterSky,
   FilterPurple,
   FilterPink,
   FilterWhite,
@@ -41,8 +41,8 @@ const FilterTokens: FilterType[] = [
     url: '/',
   },
   {
-    image: FilterBlue,
-    keyword: 'Blue',
+    image: FilterSky,
+    keyword: 'Sky',
     url: '/',
   },
   {

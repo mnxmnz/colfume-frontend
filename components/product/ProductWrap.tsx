@@ -1,6 +1,6 @@
 import React from 'react';
 import Filter from './Filter';
-import PaletteImageTable from 'components/search/PaletteImageTable';
+import PaletteImageTable from 'components/product/PaletteImageTable';
 
 function ProductWrap() {
   return (

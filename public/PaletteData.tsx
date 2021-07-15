@@ -3,7 +3,7 @@ import {
   Palette02Orange,
   Palette03Yellow,
   Palette04Green,
-  Palette05Blue,
+  Palette05Sky,
   Palette06Purple,
   Palette07Pink,
   Palette08White,
@@ -43,7 +43,7 @@ const PaletteData: Data[] = [
     url: '/',
   },
   {
-    image: Palette05Blue,
+    image: Palette05Sky,
     keyword: 'Blue',
     url: '/',
   },

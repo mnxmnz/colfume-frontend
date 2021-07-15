@@ -11,6 +11,9 @@ interface MoodType {
 function Recommendation(props) {
   const datum = props.datum[1];
   const idx = props.idx;
+
+  if (datum === undefined) return;
+
   const moods: [string, MoodType][] = Object.entries(datum.moods[0]);
 
   return (
@@ -98,9 +101,6 @@ const Hovered = styled.div`
 `;
 
 const KeywordWrap = styled.div`
-  line-height: 3.96rem;
-  font-size: 2.2rem;
-
   ${media.mobile} {
     display: flex;
     justify-content: space-between;
@@ -110,9 +110,14 @@ const KeywordWrap = styled.div`
 `;
 
 const Keyword = styled.span`
-  line-height: 1.32rem;
-  font-size: 0.8rem;
+  line-height: 3.96rem;
+  font-size: 2.2rem;
   font-weight: 500;
+
+  ${media.mobile} {
+    line-height: 1.32rem;
+    font-size: 0.8rem;
+  }
 `;
 const Name = styled.div`
   display: block;

@@ -7,8 +7,9 @@ import { media } from '@styles/theme';
 import { GetDetailData } from 'lib/api/detail/detail';
 
 function Detail(props) {
-  const perfumeData = GetDetailData();
-
+  const perfumeName = '구찌 길티 러브에디션(2021) 뿌르 옴므[EDT]';
+  const perfumeData = GetDetailData(perfumeName);
+  // console.log(perfumeData);
   const data = props.data; // 임시데이터
   // console.log(data);
   // console.log(perfumeData.data);
@@ -21,7 +22,7 @@ function Detail(props) {
             brand={perfumeData.data[0].brand}
             price={perfumeData.data[0].price}
             capacity={perfumeData.data[0].capacity}
-            name={perfumeData.data[0].perfuem_name}
+            name={perfumeData.data[0].perfume_name}
             colIcon={data.mainColor}
           />
           <Filter

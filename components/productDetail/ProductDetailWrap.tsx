@@ -7,7 +7,9 @@ import { media } from '@styles/theme';
 import { GetDetailData } from 'lib/api/detail/detail';
 
 function ProductDetailWrap() {
-  const data = GetDetailData();
+  const perfumeName = '구찌 길티 러브에디션(2021) 뿌르 옴므[EDT]';
+  const data = GetDetailData(perfumeName);
+  console.log(data);
 
   return (
     <>

@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSetRecoilState } from 'recoil';
+import { paletteAtom } from '../../states/product';
 import FilterTokens from '../../public/FilterTokens';
 import { media } from '@styles/theme';
 
 function Filter() {
+  const setPalette: any = useSetRecoilState(paletteAtom);
   const iconTokens = FilterTokens;
 
   return (
@@ -11,7 +14,12 @@ function Filter() {
       <Title>Which Color You Want</Title>
       <IconWrap>
         {iconTokens.map((token, idx) => {
-          return <FilterIcon src={token.image.src} key={idx} alt={token.keyword} />;
+          const handleClick: React.MouseEventHandler<HTMLImageElement> = () => {
+            setPalette(token.keyword);
+          };
+          return (
+            <FilterIcon onClick={handleClick} src={token.image.src} key={idx} alt={token.keyword} />
+          );
         })}
       </IconWrap>
     </FilterWrap>
@@ -59,6 +67,7 @@ const IconWrap = styled.div`
 
 const FilterIcon = styled.img`
   border-bottom: solid 0.2rem ${({ theme }) => theme.colors.gray3};
+  cursor: pointer;
   width: 10.6rem;
   height: 12rem;
 
