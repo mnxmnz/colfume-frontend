@@ -16,7 +16,6 @@ function SearchBar() {
   const setKeyword: any = useSetRecoilState(keywordAtom);
 
   const handleClick = event => {
-    console.log('input: ', keyword);
     setKeyword(['/', keyword]);
     getKeyword('');
   };

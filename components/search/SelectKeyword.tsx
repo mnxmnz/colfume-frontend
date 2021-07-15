@@ -5,7 +5,6 @@ import { GetFilterList } from 'lib/api/search/getFilter';
 
 function SelectKeyword() {
   const rawData = GetFilterList();
-  console.log('search keyword list', rawData);
   const moodList = [];
   const styleList = [];
 
