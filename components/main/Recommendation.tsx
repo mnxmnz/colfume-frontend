@@ -11,6 +11,9 @@ interface MoodType {
 function Recommendation(props) {
   const datum = props.datum[1];
   const idx = props.idx;
+
+  if (datum === undefined) return;
+
   const moods: [string, MoodType][] = Object.entries(datum.moods[0]);
 
   return (
