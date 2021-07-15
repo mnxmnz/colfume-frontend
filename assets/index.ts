@@ -1,6 +1,6 @@
 export { default as Palette01Red } from './main/Palette01Red.svg';
 export { default as Palette02Orange } from './main/Palette02Orange.svg';
-export { default as Palette03Yellow } from './main/Palette03Yellow.svg';
+export { default as Palette03Vanilla } from './main/Palette03Vanilla.svg';
 export { default as Palette04Green } from './main/Palette04Green.svg';
 export { default as Palette05Sky } from './main/Palette05Sky.svg';
 export { default as Palette06Purple } from './main/Palette06Purple.svg';
