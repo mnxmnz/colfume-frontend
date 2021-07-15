@@ -2,19 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 
-function ProductInfo(props) {
-  const colIcon = props.colIcon;
-  const infoData = props.infoData;
-
+function ProductInfo({ brand, price, capacity, name }) {
   return (
     <ProductInfoWrap>
-      <img src={colIcon.src} alt="productMainImage" />
+      {/* <img src={colIcon.src} alt="productMainImage" /> */}
       <TextInfo>
-        <BrandName>{infoData.brandName}</BrandName>
-        <ProductName>{infoData.productName}</ProductName>
+        <BrandName>{brand}</BrandName>
+        <ProductName>{name}</ProductName>
         <Infos>
-          <span>{infoData.volume}ml</span>
-          <span>{infoData.price}원</span>
+          <span>{capacity}</span>
+          {price && <span>{price}원</span>}
         </Infos>
       </TextInfo>
     </ProductInfoWrap>
