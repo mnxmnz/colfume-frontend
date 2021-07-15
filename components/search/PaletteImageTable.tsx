@@ -31,7 +31,7 @@ function PaletteImageTable() {
                 key={data._id}
                 image={data.perfume_image}
                 name={data.perfume_name}
-                keyword={data.moods.mood`${1}`.mood_name}
+                keyword={data.mood_name}
               />
             );
           })}

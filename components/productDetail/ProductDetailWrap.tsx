@@ -4,17 +4,24 @@ import styled from 'styled-components';
 import Detail from './Detail';
 import SampleData from './SampleData';
 import { media } from '@styles/theme';
+import { GetDetailData } from 'lib/api/detail/detail';
 
 function ProductDetailWrap() {
+  const data = GetDetailData();
+
   return (
     <>
-      <ButtonBack src={ButtonBackDefault.src} alt="button-back" />
-      <FlexWrap>
-        <ContentWrap>
-          <img className="product" src={SampleData.mainImage.src} alt="sample" />
-          <Detail data={SampleData} />
-        </ContentWrap>
-      </FlexWrap>
+      {data.data && (
+        <>
+          <ButtonBack src={ButtonBackDefault.src} alt="button-back" />
+          <FlexWrap>
+            <ContentWrap>
+              <img className="product" src={data.data[0].perfume_img} alt="sample" />
+              <Detail data={SampleData} />
+            </ContentWrap>
+          </FlexWrap>
+        </>
+      )}
     </>
   );
 }

@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 
-function Description(props) {
-  const levels = props.levels;
-  const description = props.description;
-
+function Description({ top, middle, base, description }) {
   return (
     <DescriptionWrap>
       <span>Description</span>
@@ -13,15 +10,15 @@ function Description(props) {
         <TableHeader>
           <LevelWrap>
             <Level>Top</Level>
-            <LevelDesc>{levels[0]}</LevelDesc>
+            <LevelDesc>{top}</LevelDesc>
           </LevelWrap>
           <LevelWrap>
             <Level>Middle</Level>
-            <LevelDesc>{levels[1]}</LevelDesc>
+            <LevelDesc>{middle}</LevelDesc>
           </LevelWrap>
           <LevelWrap>
             <Level>Base</Level>
-            <LevelDesc>{levels[2]}</LevelDesc>
+            <LevelDesc>{base}</LevelDesc>
           </LevelWrap>
         </TableHeader>
         <DescWrap>
