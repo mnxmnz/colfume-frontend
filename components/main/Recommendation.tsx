@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Contour } from '../../assets';
 import { media } from '@styles/theme';
@@ -14,10 +14,6 @@ function Recommendation(props) {
   const moods: [string, MoodType][] = Object.entries(datum?.moods[0]);
   if (datum.moods[0] === null) return;
   if (datum.moods === null) return;
-
-  useEffect(() => {
-    setMoods(Object.entries(datum.moods[0]));
-  }, []);
 
   return (
     <RecommWrap key={idx}>
