@@ -12,10 +12,9 @@ function Recommendation(props) {
   const datum = props.datum[1];
   const idx = props.idx;
 
-  if (datum === undefined) return;
-
-  const moods: [string, MoodType][] = Object.entries(datum.moods[0]);
-
+  const moods: [string, MoodType][] = Object.entries(datum?.moods[0]);
+  if (datum.moods[0] === null) return;
+  if (datum.moods === null) return;
   return (
     <RecommWrap key={idx}>
       <Recomm>
