@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Contour } from '../../assets';
 import { media } from '@styles/theme';
@@ -11,10 +11,14 @@ interface MoodType {
 function Recommendation(props) {
   const datum = props.datum[1];
   const idx = props.idx;
-
   const moods: [string, MoodType][] = Object.entries(datum?.moods[0]);
   if (datum.moods[0] === null) return;
   if (datum.moods === null) return;
+
+  useEffect(() => {
+    setMoods(Object.entries(datum.moods[0]));
+  }, []);
+
   return (
     <RecommWrap key={idx}>
       <Recomm>
