@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 
-function ProductInfo({ brand, price, capacity, name, colIcon }) {
+function ProductInfo({ brand, price, capacity, name, palette }) {
   return (
     <ProductInfoWrap>
-      {/* <img src={colIcon.src} alt="productMainImage" /> */}
+      <img src={palette} alt="productMainImage" />
       <TextInfo>
         <BrandName>{brand}</BrandName>
         <ProductName>{name}</ProductName>
@@ -53,24 +53,24 @@ const BrandName = styled.div`
   padding-bottom: 1.5rem;
   line-height: 4.861rem;
   font-family: Junge;
-  font-size: 4rem;
+  font-size: 2.6rem;
 
   ${media.mobile} {
     padding-bottom: 0.8rem;
-    line-height: 2.674rem;
-    font-size: 2.2rem;
+    line-height: 1.942rem;
+    font-size: 1.6rem;
   }
 `;
 
 const ProductName = styled.div`
   padding-bottom: 2.5rem;
-  line-height: 2.86rem;
-  font-size: 2.6rem;
+  line-height: 3.52rem;
+  font-size: 3.2rem;
 
   ${media.mobile} {
     padding-bottom: 2.2rem;
-    line-height: 1.76rem;
-    font-size: 1.6rem;
+    line-height: 2.42rem;
+    font-size: 2.2rem;
   }
 `;
 
