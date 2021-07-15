@@ -1,24 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useSetRecoilState } from 'recoil';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
 import { paletteAtom } from '../../states/product';
 import FilterTokens from '../../public/FilterTokens';
 import { media } from '@styles/theme';
 
 function Filter() {
   const setPalette: any = useSetRecoilState(paletteAtom);
+  const mainSelected = useRecoilValue(paletteAtom);
   const iconTokens = FilterTokens;
+  const [selectedIdx, setSelected] = useState(mainSelected);
 
   return (
     <FilterWrap>
       <Title>Which Color You Want</Title>
       <IconWrap>
         {iconTokens.map((token, idx) => {
+          const paletteColor = token.keyword;
           const handleClick: React.MouseEventHandler<HTMLImageElement> = () => {
-            setPalette(token.keyword);
+            setPalette(paletteColor);
+            setSelected(paletteColor);
           };
           return (
-            <FilterIcon onClick={handleClick} src={token.image.src} key={idx} alt={token.keyword} />
+            <FilterIcon>
+              <IconImg
+                onClick={handleClick}
+                src={token.image.src}
+                key={idx}
+                alt={paletteColor}
+                myId={paletteColor}
+                selectedIdx={selectedIdx}
+              />
+            </FilterIcon>
           );
         })}
       </IconWrap>
@@ -65,8 +78,7 @@ const IconWrap = styled.div`
   }
 `;
 
-const FilterIcon = styled.img`
-  border-bottom: solid 0.2rem ${({ theme }) => theme.colors.gray3};
+const FilterIcon = styled.button`
   cursor: pointer;
   width: 10.6rem;
   height: 12rem;
@@ -76,4 +88,8 @@ const FilterIcon = styled.img`
     width: 5.5rem;
     height: 5.4rem;
   }
+`;
+
+const IconImg = styled.img<{ selectedIdx: string; myId: string }>`
+  border-bottom: solid 0.2rem ${props => (props.selectedIdx === props.myId ? '#3e3e3e' : '#D4D4D4')};
 `;
