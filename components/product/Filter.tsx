@@ -92,4 +92,12 @@ const FilterIcon = styled.button`
 
 const IconImg = styled.img<{ selectedIdx: string; myId: string }>`
   border-bottom: solid 0.2rem ${props => (props.selectedIdx === props.myId ? '#3e3e3e' : '#D4D4D4')};
+  width: 10.6rem;
+  height: 12rem;
+
+  ${media.mobile} {
+    margin-top: 0.5rem;
+    width: 5.5rem;
+    height: 5.4rem;
+  }
 `;
