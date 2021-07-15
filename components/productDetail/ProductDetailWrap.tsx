@@ -2,7 +2,6 @@ import React from 'react';
 import { ButtonBackDefault } from 'assets';
 import styled from 'styled-components';
 import Detail from './Detail';
-import SampleData from './SampleData';
 import { media } from '@styles/theme';
 import { GetDetailData } from 'lib/api/detail/detail';
 
@@ -19,7 +18,7 @@ function ProductDetailWrap() {
           <FlexWrap>
             <ContentWrap>
               <img className="product" src={data.data[0].perfume_img} alt="sample" />
-              <Detail data={SampleData} />
+              <Detail data={data.data[0]} />
             </ContentWrap>
           </FlexWrap>
         </>

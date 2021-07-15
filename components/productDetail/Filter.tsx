@@ -2,42 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 
-function Filter(props) {
-  const imgData = props.colData;
-
-  const mood = [props.moods];
-  const style = [props.styles];
-  // console.log(mood[0]);
-  // console.log(style[0]);
+function Filter({ moods, styles, colors }) {
+  console.log(colors);
 
   return (
     <FilterWrap>
       <ColorWrap>
         <Categ>Color</Categ>
         <Color>
-          {imgData.map((img, idx) => {
+          {/* i{mgData.map((img, idx) => {
             return <img key={idx} src={img.src} alt="" />;
-          })}
+          })} */}
         </Color>
       </ColorWrap>
       <MoodStyleWrap>
         <MoodStyle>
-          {mood && (
-            <KeywordWrap>
-              <Categ>Mood</Categ>
-              <Keyword>{mood[0].mood1}</Keyword>
-              <Keyword>{mood[0].mood2}</Keyword>
-              <Keyword>{mood[0].mood3}</Keyword>
-            </KeywordWrap>
-          )}
+          <KeywordWrap>
+            <Categ>Mood</Categ>
+            <Keyword>{moods.mood1.mood_name}</Keyword>
+            <Keyword>{moods.mood2.mood_name}</Keyword>
+            <Keyword>{moods.mood3.mood_name}</Keyword>
+          </KeywordWrap>
         </MoodStyle>
         <MoodStyle>
-          {style && (
-            <KeywordWrap>
-              <Categ>Style</Categ>
-              <Keyword>{style[0].style1}</Keyword>
-            </KeywordWrap>
-          )}
+          <KeywordWrap>
+            <Categ>Style</Categ>
+            <Keyword>{styles.style1.style_name}</Keyword>
+          </KeywordWrap>
         </MoodStyle>
       </MoodStyleWrap>
     </FilterWrap>
@@ -79,6 +70,8 @@ const ColorWrap = styled.div`
 
 const Categ = styled.div`
   margin-right: 6.2rem;
+  margin-left: 6.2rem;
+  width: 4rem;
   line-height: 3.6rem;
   font-family: Junge;
   font-size: 2rem;
@@ -141,7 +134,7 @@ const MoodStyle = styled.div`
 const KeywordWrap = styled.div`
   display: flex;
   justify-content: flex-start;
-  width: 35.7rem;
+  width: 50rem;
 
   ${media.mobile} {
     margin-right: 8rem;
@@ -153,7 +146,7 @@ const Keyword = styled.div`
   margin-right: 2.6rem;
   background-color: ${({ theme }) => theme.colors.gray2};
   padding-top: 0.3rem;
-  width: 9.3rem;
+  width: 10rem;
   height: 3.9rem;
   text-align: center;
   line-height: 3.24rem;
