@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { FooterIcons } from '../../assets';
@@ -14,32 +14,33 @@ const Box = styled.div`
   min-height: 57.6rem;
 
   ${media.mobile} {
-    display: none;
+    width: 37.5rem;
     min-height: 25.6rem;
-  }
-
-  @media (max-width: 100rem) {
-    padding: 7rem 3rem;
   }
 `;
 
-const Container = styled.div`
+const MaterialBox = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  max-width: 190rem;
+  padding-top: 17.8rem;
+  width: 190rem;
+  ${media.mobile} {
+    margin-top: 3.36rem;
+    padding-top: 3.36rem;
+  }
 `;
 
 const Row = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-gap: 2rem;
-  margin-top: 17.8rem;
-  margin-left: 24.5rem;
+  margin-left: 21.3rem;
 
   ${media.mobile} {
-    margin-top: 3.6rem;
-    margin-left: 0;
+    grid-template-columns: repeat(auto-fill, minmax(6.2rem, 1fr));
+    margin-left: 1.4744rem;
   }
 `;
 
@@ -48,29 +49,33 @@ const Column = styled.div`
   flex-direction: column;
   width: 13rem;
   text-align: left;
-
+`;
+const HeadingColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+  text-align: left;
   ${media.mobile} {
-    :nth-child(2) {
-      display: none;
-    }
+    display: none;
   }
 `;
-
 const InfoColumn = styled.div`
   display: flex;
   flex-direction: column;
-  width: 44rem;
+  width: 50rem;
   text-align: left;
-
   ${media.mobile} {
+    display: flex;
+    flex-direction: column;
     width: 25.9rem;
+    text-align: left;
   }
 `;
 
 const FollowColumn = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 230px;
+  margin-left: 43rem;
   width: 150px;
   text-align: left;
 
@@ -86,14 +91,19 @@ const Heading = styled.div`
   font-weight: 700;
 
   ${media.mobile} {
+    margin-bottom: 2.5rem;
     font-size: 1.2rem;
   }
 `;
 
-const FooterHeading = styled.div`
+const LogoWrapper = styled.div`
   margin-bottom: 4rem;
+  width: 12.8rem;
   font-family: 'Junge';
   font-size: 3.2rem;
+  ${media.mobile} {
+    width: 8.012rem;
+  }
 `;
 
 const FooterButton = styled.div`
@@ -105,12 +115,20 @@ const FooterButton = styled.div`
   &:hover {
     cursor: pointer;
   }
+  ${media.mobile} {
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+  }
 `;
 
 const FooterContent = styled.div`
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 400;
+  ${media.mobile} {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -118,14 +136,18 @@ const ImageWrapper = styled.div`
 `;
 
 const Footer = () => {
+  const [windowSize, setWindowSize] = useState(1920);
+  const isMobile = windowSize <= 375 ? true : false;
   return (
     <Box>
-      <Container>
+      <MaterialBox>
         <Row>
           <Column>
-            <FooterHeading>Colfume</FooterHeading>
+            <LogoWrapper>
+              <Image src={Logo} />
+            </LogoWrapper>
           </Column>
-          <Column>
+          <HeadingColumn>
             <Heading>Menu</Heading>
             <Link href="/product">
               <FooterButton>Product</FooterButton>
@@ -136,7 +158,7 @@ const Footer = () => {
             <Link href="/search">
               <FooterButton>Search</FooterButton>
             </Link>
-          </Column>
+          </HeadingColumn>
           <InfoColumn>
             <Heading>Contact</Heading>
             <a href="mailto:khyeryun98@inha.edu">
@@ -161,7 +183,7 @@ const Footer = () => {
             <FooterContent>이용약관</FooterContent>
           </FollowColumn>
         </Row>
-      </Container>
+      </MaterialBox>
     </Box>
   );
 };
