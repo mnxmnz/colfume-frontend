@@ -11,8 +11,9 @@ interface MoodType {
 function Recommendation(props) {
   const datum = props.datum[1];
   const idx = props.idx;
-
-  const [moods, setMoods] = useState([]);
+  const moods: [string, MoodType][] = Object.entries(datum?.moods[0]);
+  if (datum.moods[0] === null) return;
+  if (datum.moods === null) return;
 
   useEffect(() => {
     setMoods(Object.entries(datum.moods[0]));
