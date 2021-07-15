@@ -1,7 +1,11 @@
 import axios from 'axios';
-const baseURL = 'https://colfume.com/api';
+const baseURL = 'https://colfume.co.kr/api';
 
-export const testResult = async answer => {
-  const { data } = await axios.post(`${baseURL}/colfume/test`, answer);
-  return data.data;
-};
+export async function testResult(answer) {
+  try {
+    const response = await axios.post(`${baseURL}/colfume/test`, answer);
+    return response;
+  } catch (error) {
+    console.error('Test Result Error', error);
+  }
+}
