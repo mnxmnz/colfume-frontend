@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { FooterIcons } from '../../assets';
 import Image from 'next/image';
 import { media } from '@styles/theme';
 import { Logo } from '../../assets';
+import MobileFooter from './MobileFooter';
 
 const Box = styled.div`
   bottom: 0;
@@ -22,7 +23,6 @@ const Box = styled.div`
 const MaterialBox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   padding-top: 17.8rem;
   width: 190rem;
@@ -41,6 +41,7 @@ const Row = styled.div`
   ${media.mobile} {
     grid-template-columns: repeat(auto-fill, minmax(6.2rem, 1fr));
     margin-left: 1.4744rem;
+    background: violet;
   }
 `;
 
@@ -66,7 +67,8 @@ const InfoColumn = styled.div`
   text-align: left;
   ${media.mobile} {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    background: pink;
     width: 25.9rem;
     text-align: left;
   }
@@ -78,8 +80,7 @@ const FollowColumn = styled.div`
   margin-left: 43rem;
   width: 150px;
   text-align: left;
-
-  ${media.mobile} {
+  background: violet ${media.mobile} {
     margin-left: 0;
   }
 `;
@@ -91,6 +92,8 @@ const Heading = styled.div`
   font-weight: 700;
 
   ${media.mobile} {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 2.5rem;
     font-size: 1.2rem;
   }
@@ -102,6 +105,7 @@ const LogoWrapper = styled.div`
   font-family: 'Junge';
   font-size: 3.2rem;
   ${media.mobile} {
+    background: yellow;
     width: 8.012rem;
   }
 `;
@@ -116,6 +120,8 @@ const FooterButton = styled.div`
     cursor: pointer;
   }
   ${media.mobile} {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 2.5rem;
     font-size: 1rem;
   }
@@ -128,6 +134,15 @@ const FooterContent = styled.div`
   ${media.mobile} {
     margin-bottom: 1.2rem;
     font-size: 1rem;
+  }
+`;
+
+const MobileContent = styled.div`
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  ${media.mobile} {
+    display: none;
   }
 `;
 
@@ -167,16 +182,16 @@ const Footer = () => {
             <Heading>Info</Heading>
             <FooterContent>COLFUME | 대표 구혜련</FooterContent>
             <a href="https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788">
-              <FooterContent>
+              <MobileContent>
                 https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788
-              </FooterContent>
+              </MobileContent>
             </a>
           </InfoColumn>
           <FollowColumn>
             <Heading>Follow us</Heading>
             <ImageWrapper>
               <a href="https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788">
-                <Image src={FooterIcons} />
+                <Image alt="footerIcon" src={FooterIcons} />
               </a>
             </ImageWrapper>
             <FooterContent>개인정보취급방침</FooterContent>
