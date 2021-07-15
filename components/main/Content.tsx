@@ -20,12 +20,18 @@ function Content(props: PropsType) {
     paddingTop: `${props.paddingContent}`,
     paddingBottom: `${props.paddingBottom}`,
   };
-
   return (
     <>
       <TitleWrap style={styleTitle}>{props.title}</TitleWrap>
       <ContentWrap style={styleContent}>
-        <div>{props.content}</div>
+        <div>
+          {props.content.split('//').map((line, idx) => (
+            <span key={idx}>
+              {line}
+              <br />
+            </span>
+          ))}
+        </div>
       </ContentWrap>
     </>
   );

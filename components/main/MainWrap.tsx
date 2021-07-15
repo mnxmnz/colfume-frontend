@@ -19,7 +19,7 @@ function MainWrap(props) {
       <Banner />
       <Content
         title="About Colfume"
-        content="8가지의 색과 함께 쉽고 재미있게 향을 알아보세요"
+        content="향수가 어려우신가요?//Colfume에서 당신의 색과 향기를 찾아보세요"
         paddingTitle={isMobile ? '6.2rem' : '12.5rem'}
         paddingContent={isMobile ? '1.6rem' : '6.3rem'}
         paddingBottom={isMobile ? '5.8rem' : '12.7rem'}
@@ -27,7 +27,7 @@ function MainWrap(props) {
       <ContentWrap>
         <Content
           title="Colfume Palette"
-          content="8가지의 색과 함께 쉽고 재미있게 향을 알아보세요"
+          content="8가지의 색으로 쉽고 재미있게 당신의 향을 알아볼까요?"
           paddingTitle={isMobile ? '3.2rem' : '12.5rem'}
           paddingContent={isMobile ? '0.6rem' : '0rem'}
           paddingBottom={isMobile ? '4.5rem' : '12.5rem'}
@@ -49,7 +49,7 @@ function MainWrap(props) {
       <ContentWrap>
         <Content
           title="Recommendation"
-          content="당신의 상황에 어울리는 향수를 찾아보세요"
+          content="테마별로 향수를 추천해드려요"
           paddingTitle={isMobile ? '6.6rem' : '12.1rem'}
           paddingContent={isMobile ? '0.6rem' : '0rem'}
           paddingBottom={isMobile ? '5.9rem' : '16rem'}

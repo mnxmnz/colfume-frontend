@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
+import Link from 'next/link';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styled from 'styled-components';
@@ -11,6 +12,8 @@ import {
   ArrowRightHovered,
 } from '../../assets/';
 import Recommendation from './Recommendation';
+import { useSetRecoilState } from 'recoil';
+import { paletteAtom } from '../../states/product';
 
 interface ArrowPropsType {
   id: string;
@@ -71,6 +74,7 @@ function Slide(props) {
   };
   const data = props.data;
   const dataArr = Object.entries(data);
+  const setPalette: any = useSetRecoilState(paletteAtom);
 
   return (
     <SliderWrap>
@@ -78,7 +82,19 @@ function Slide(props) {
         <PaletteWrap>
           <Slider {...settings}>
             {data.map((datum, idx) => {
-              return <Palette src={datum.image.src} key={idx} alt={datum.keyword} />;
+              const handleClick = () => {
+                setPalette(datum.keyword);
+              };
+              return (
+                <Link href="/product" passHref>
+                  <Palette
+                    src={datum.image.src}
+                    key={idx}
+                    alt={datum.keyword}
+                    onClick={handleClick}
+                  />
+                </Link>
+              );
             })}
           </Slider>
         </PaletteWrap>
