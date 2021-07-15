@@ -9,16 +9,22 @@ interface PropsType {
   image: string;
   name: string;
   keyword: string[];
+  productId: string;
 }
 
 function PerfumeImg(props: PropsType) {
   const setPerfumeName: any = useSetRecoilState(productDetailAtom);
   const handleClick = () => {
     setPerfumeName(props.name);
-    // console.log(props.name);
   };
+
   return (
-    <Link href="/product/detail" passHref>
+    <Link
+      href={{
+        pathname: `/product/${props.productId}`,
+      }}
+      passHref
+    >
       <PerfumeImgWrap>
         <img className="fume_img" src={props.image} />
         <div className="hover_img" onClick={handleClick}>
