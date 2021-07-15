@@ -24,10 +24,10 @@ function ImageTable() {
         {rawData.data &&
           rawData.data.map(data => {
             let keywordList: [string, KeywordType][];
-            if (category === 'Mood') {
-              keywordList = Object.entries(data.moods[0]);
-            } else {
+            if (category === 'Style') {
               keywordList = Object.entries(data.styles[0]);
+            } else {
+              keywordList = Object.entries(data.moods[0]);
             }
             return (
               <PerfumeImg
@@ -35,9 +35,9 @@ function ImageTable() {
                 image={data.perfume_img}
                 name={data.perfume_name}
                 keyword={
-                  category === 'Mood'
-                    ? keywordList.map(mood => mood[1] && `#${mood[1].mood_name} `)
-                    : keywordList.map(style => style[1] && `#${style[1].style_name} `)
+                  category === 'Style'
+                    ? keywordList.map(style => style[1] && `#${style[1].style_name} `)
+                    : keywordList.map(mood => mood[1] && `#${mood[1].mood_name} `)
                 }
               />
             );
