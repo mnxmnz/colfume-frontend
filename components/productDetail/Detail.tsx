@@ -4,16 +4,42 @@ import ProductInfo from './ProductInfo';
 import Filter from './Filter';
 import Description from './Description';
 import { media } from '@styles/theme';
+import { GetDetailData } from 'lib/api/detail/detail';
 
 function Detail(props) {
-  const data = props.data;
+  const perfumeData = GetDetailData();
+
+  const data = props.data; // 임시데이터
+  // console.log(data);
+  // console.log(perfumeData.data);
 
   return (
-    <DetailWrap>
-      <ProductInfo colIcon={data.mainColor} infoData={data.infos} />
-      <Filter colData={data.images} moodData={data.mood} styleData={data.style} />
-      <Description levels={data.levels} description={data.description} />
-    </DetailWrap>
+    <>
+      {perfumeData.data && (
+        <DetailWrap>
+          <ProductInfo
+            brand={perfumeData.data[0].brand}
+            price={perfumeData.data[0].price}
+            capacity={perfumeData.data[0].capacity}
+            name={perfumeData.data[0].perfuem_name}
+            colIcon={data.mainColor}
+          />
+          <Filter
+            colData={data.images}
+            moodData={data.mood}
+            styleData={data.style}
+            moods={perfumeData.data[0].moods[0]}
+            styles={perfumeData.data[0].styles[0]}
+          />
+          <Description
+            top={perfumeData.data[0].top}
+            middle={perfumeData.data[0].middle}
+            base={perfumeData.data[0].base}
+            description={perfumeData.data[0].description}
+          />
+        </DetailWrap>
+      )}
+    </>
   );
 }
 

@@ -4,7 +4,11 @@ import { media } from '@styles/theme';
 
 function Filter(props) {
   const imgData = props.colData;
-  const filterData = [props.moodData, props.styleData];
+
+  const mood = [props.moods];
+  const style = [props.styles];
+  // console.log(mood[0]);
+  // console.log(style[0]);
 
   return (
     <FilterWrap>
@@ -17,19 +21,24 @@ function Filter(props) {
         </Color>
       </ColorWrap>
       <MoodStyleWrap>
-        {filterData.map((data, idx) => {
-          const categ = !idx ? 'Mood' : 'Style';
-          return (
-            <MoodStyle>
-              <Categ>{categ}</Categ>
-              <KeywordWrap>
-                {data.map((datum, idx) => {
-                  return <Keyword key={idx}>{datum}</Keyword>;
-                })}
-              </KeywordWrap>
-            </MoodStyle>
-          );
-        })}
+        <MoodStyle>
+          {mood && (
+            <KeywordWrap>
+              <Categ>Mood</Categ>
+              <Keyword>{mood[0].mood1}</Keyword>
+              <Keyword>{mood[0].mood2}</Keyword>
+              <Keyword>{mood[0].mood3}</Keyword>
+            </KeywordWrap>
+          )}
+        </MoodStyle>
+        <MoodStyle>
+          {style && (
+            <KeywordWrap>
+              <Categ>Style</Categ>
+              <Keyword>{style[0].style1}</Keyword>
+            </KeywordWrap>
+          )}
+        </MoodStyle>
       </MoodStyleWrap>
     </FilterWrap>
   );
@@ -69,6 +78,7 @@ const ColorWrap = styled.div`
 `;
 
 const Categ = styled.div`
+  margin-right: 6.2rem;
   line-height: 3.6rem;
   font-family: Junge;
   font-size: 2rem;
@@ -107,17 +117,16 @@ const MoodStyleWrap = styled.div`
   flex-direction: column;
   padding-top: 2.2rem;
   padding-bottom: 5.1rem;
-  padding-left: 6.8rem;
 
   ${media.mobile} {
     padding-top: 0.7rem;
     padding-bottom: 3.95rem;
-    padding-left: 0rem;
   }
 `;
 
 const MoodStyle = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin-top: 3rem;
@@ -135,6 +144,7 @@ const KeywordWrap = styled.div`
   width: 35.7rem;
 
   ${media.mobile} {
+    margin-right: 8rem;
     width: 24.623rem;
   }
 `;
