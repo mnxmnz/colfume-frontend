@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { fetcher } from '../fetch';
 
-const BASEURL = 'https://colfume.com/api/search';
+const BASEURL = 'https://colfume.co.kr/api/search';
 
 export const SearchData = props => {
   const category = props[0] === '/' ? '/' : `/filter/${props[0]}/`;

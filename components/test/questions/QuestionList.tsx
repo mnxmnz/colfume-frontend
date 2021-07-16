@@ -10,23 +10,19 @@ function QuestionList() {
   const progress = useRecoilValue(questionNumberAtom);
 
   return (
-    <>
-      {progress <= 6 && (
-        <QuestionWrap>
-          <NumberWrap>
-            <Number>
-              {data[progress].index + 1}
-              <span>.</span>
-            </Number>
-            <ContentWrap>
-              <Text>{data[progress].text01}</Text>
-              <Text>{data[progress].text02}</Text>
-              <Detail>{data[progress].detail}</Detail>
-            </ContentWrap>
-          </NumberWrap>
-        </QuestionWrap>
-      )}
-    </>
+    <QuestionWrap>
+      <NumberWrap>
+        <Number>
+          {data[progress].index + 1}
+          <span>.</span>
+        </Number>
+        <ContentWrap>
+          <Text>{data[progress].text01}</Text>
+          <Text>{data[progress].text02}</Text>
+          <Detail>{data[progress].detail}</Detail>
+        </ContentWrap>
+      </NumberWrap>
+    </QuestionWrap>
   );
 }
 

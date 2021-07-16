@@ -3,18 +3,19 @@ import styled from 'styled-components';
 import Router from 'next/router';
 import AnswerData from './AnswerData';
 import { media } from '@styles/theme';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { questionNumberAtom, answerAtom } from '../../../states/test';
 import { testResult } from '../../../lib/api/test/postAnswer';
 
 function AnswerList() {
   const [progress, setProgress] = useRecoilState(questionNumberAtom);
-  const [answer, setAnswer] = useRecoilState(answerAtom);
+  const answer = useRecoilValue(answerAtom);
 
   const color = 'red';
 
   const data = AnswerData;
-  const length = data[progress].length;
+  const length = data[progress]?.length;
+
   const styleMargin = {
     marginTop: '4rem',
   };
@@ -28,9 +29,11 @@ function AnswerList() {
 
     setProgress(progress => progress + 1);
 
-    if (progress === 8) {
+    if (progress === 6) {
       const testData = testResult(answer);
+      console.log('Data', testData);
       Router.push(`/test/result/${color}`);
+      setProgress(0);
     }
   };
 

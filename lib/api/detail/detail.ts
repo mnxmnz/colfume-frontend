@@ -1,9 +1,9 @@
 import useSWR from 'swr';
 import { fetcher } from '../fetch';
 
-export const GetDetailData = () => {
+export const GetDetailData = perfumeName => {
   const { data, error } = useSWR(
-    `https://colfume.com/api/product/detail/구찌 길티 러브에디션(2021) 뿌르 옴므[EDT]`,
+    `https://colfume.co.kr/api/product/detail/${perfumeName}`,
     fetcher,
     {
       onErrorRetry: (error, key, config, revalidate, { retryCount }) => {

@@ -7,7 +7,8 @@ import { keywordAtom } from '../../states/search';
 function KeywordTable({ title, list }) {
   const setText: any = useSetRecoilState(keywordAtom);
   const mainSelected = useRecoilValue(keywordAtom);
-  const [selectedIdx, setSelected] = useState(mainSelected);
+  const [selectedIdx, setSelected] = useState(mainSelected[1]);
+
   return (
     <Wrap>
       <Title>{title}</Title>

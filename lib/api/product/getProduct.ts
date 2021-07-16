@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { fetcher } from '../fetch';
 
-const BASEURL = `https://colfume.com/api/product`;
+const BASEURL = `https://colfume.co.kr/api/product`;
 export const GetProductList = props => {
   const url = props ? `/${props}` : '/';
   const { data, error } = useSWR(BASEURL + url, fetcher, {
