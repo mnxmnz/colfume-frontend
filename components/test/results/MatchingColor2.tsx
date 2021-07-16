@@ -30,6 +30,10 @@ const ColorWrap = styled.button`
   padding-right: 1.2rem;
   padding-left: 1.2rem;
   height: 3rem;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 1.8rem;
+  font-weight: 500;
 
   ${media.mobile} {
     font-size: 1.4rem;

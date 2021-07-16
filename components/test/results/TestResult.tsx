@@ -4,10 +4,11 @@ import Image from 'next/image';
 import { Green } from '../../../assets/';
 import { Line } from '../../../assets';
 import { media } from '@styles/theme';
-import MatchingColor from './MatchingColor';
+import MatchingColor1 from './MatchingColor1';
 import CopyLinkBtn from './CopyLinkBtn';
 import { testResultAtom } from '../../../states/test';
 import { useRecoilValue } from 'recoil';
+import MatchingColor2 from './MatchingColor2';
 
 function TestResult() {
   const data = useRecoilValue(testResultAtom);
@@ -30,7 +31,8 @@ function TestResult() {
         ))}
         <KeyWord>{data.palette_keyword}</KeyWord>
         <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
-        <MatchingColor />
+        <MatchingColor1 />
+        {!data.palette_matchColor[1] ? '' : <MatchingColor2 />}
       </LeftWrapper>
       <RightWrapper>
         <ImageWrapper>
@@ -43,9 +45,11 @@ function TestResult() {
       <DescriptionWrap>
         {data.palette_explanation?.split('\n').map((line, idx) => (
           <Description key={idx}>
-            {line.includes('//')
-              ? line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
-              : <li>{line}</li>}
+            {line.includes('//') ? (
+              line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
+            ) : (
+              <li>{line}</li>
+            )}
             <br />
           </Description>
         ))}
@@ -133,11 +137,11 @@ const MatchingColorText = styled.div`
 
 const DescriptionWrap = styled.div`
   margin-top: 40.8rem;
+  margin-left: 24.8rem;
   width: 80rem;
   font-family: NotoSans;
   font-size: 1.8rem;
   font-weight: 400;
-  margin-left: 24.8rem;
 
   ${media.mobile} {
     display: none;
@@ -175,10 +179,10 @@ const RightWrapper = styled.div`
 `;
 
 const ImageWrapper = styled.div`
+  align-items: center;
   margin: 0 auto;
   width: 33.1rem;
   height: 33.1rem;
-  align-items: center;
   ${media.mobile} {
     align-items: center;
     margin: 0 auto;
