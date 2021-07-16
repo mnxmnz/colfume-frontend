@@ -25,7 +25,7 @@ const ProgressWrap = styled.div`
     right: 0;
     bottom: 0;
     left: 0;
-    margin-bottom: 54.72px;
+    margin-bottom: 60.192px;
   }
 `;
 
