@@ -73,6 +73,7 @@ const MainTitle = styled.div`
   }
 
   ${media[768]} {
+    margin-top: -10;
     padding: 0 10%;
     font-size: 8rem;
   }
@@ -85,17 +86,22 @@ const MainTitle = styled.div`
 
 const SubTitle = styled.div`
   margin-top: 2rem;
-  margin-bottom: 16%;
+  margin-bottom: 20rem;
   font-size: 2.8rem;
 
   ${media[1440]} {
     font-size: 2.3rem;
   }
 
+  ${media.custom(903)} {
+    margin-bottom: 9.8rem;
+  }
+
   ${media[768]} {
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
+    margin-bottom: 10rem;
     line-height: 3.2rem;
     font-size: 2rem;
   }

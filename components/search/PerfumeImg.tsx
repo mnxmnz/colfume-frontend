@@ -89,7 +89,7 @@ const Name = styled.div`
   margin-left: 2.6rem;
   width: 20rem;
   line-height: 3.12rem;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   font-size: 2.6rem;
   font-weight: bold;
 

@@ -9,15 +9,21 @@ function Description({ top, middle, base, description }) {
       <TableWrap>
         <TableHeader>
           <LevelWrap>
-            <Level>Top</Level>
+            <Level>
+              <span>·</span>Top
+            </Level>
             <LevelDesc>{top}</LevelDesc>
           </LevelWrap>
           <LevelWrap>
-            <Level>Middle</Level>
+            <Level>
+              <span>·</span>Middle
+            </Level>
             <LevelDesc>{middle}</LevelDesc>
           </LevelWrap>
           <LevelWrap>
-            <Level>Base</Level>
+            <Level>
+              <span>·</span>Base
+            </Level>
             <LevelDesc>{base}</LevelDesc>
           </LevelWrap>
         </TableHeader>
@@ -25,7 +31,15 @@ function Description({ top, middle, base, description }) {
           {description.split('\n').map((line, idx) => (
             <Desc key={idx}>
               {line.includes('//')
-                ? line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
+                ? line.split('//').map((l, i) =>
+                    i % 2 === 1 ? (
+                      <span id="bold" key={i}>
+                        {l}
+                      </span>
+                    ) : (
+                      l
+                    ),
+                  )
                 : line}
               <br />
             </Desc>
@@ -89,9 +103,9 @@ const TableHeader = styled.div`
   ${media.mobile} {
     flex-direction: column;
     border: 0;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     padding-bottom: 0rem;
-    padding-left: 4.4rem;
+    padding-left: 2.9rem;
   }
 `;
 
@@ -104,7 +118,7 @@ const LevelWrap = styled.div`
 
   ${media.mobile} {
     align-items: center;
-    width: 18.2rem;
+    width: 30rem;
     font-size: 1.6rem;
   }
 `;
@@ -113,10 +127,21 @@ const Level = styled.div`
   margin-right: 2rem;
   line-height: 3.24rem;
 
+  span {
+    display: none;
+  }
+
   ${media.mobile} {
     margin-right: 2.8rem;
-    width: 5.3rem;
+    width: 7rem;
     line-height: 1.945rem;
+
+    span {
+      display: initial;
+      margin-right: 1rem;
+      line-height: 2.917rem;
+      font-size: 2.4rem;
+    }
   }
 `;
 
@@ -138,13 +163,14 @@ const DescWrap = styled.div`
   ${media.mobile} {
     padding-top: 3.8rem;
     line-height: 3.42rem;
-    letter-spacing: 0.045rem;
+    /* letter-spacing: 0.045rem; */
     font-size: 1.5rem;
   }
 `;
 
 const Desc = styled.div`
   padding-left: 14.6rem;
+
   ${media.mobile} {
     padding-left: 0;
   }

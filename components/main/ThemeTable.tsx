@@ -47,10 +47,15 @@ function ThemeTable(props: PropsType) {
 }
 
 const Table = styled.div`
+  margin-bottom: 17.2rem;
   width: 50.2rem;
   text-align: center;
 
+  ${media[1100]} {
+    width: 45rem;
+  }
   ${media.mobile} {
+    margin-bottom: 6.1rem;
     width: 29.3rem;
   }
 `;
@@ -73,6 +78,7 @@ const Title = styled.div`
 const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: -1px;
   line-height: 3.6rem;
   font-size: 2rem;
   font-weight: 400;
@@ -91,6 +97,9 @@ const Content = styled.div`
   cursor: pointer;
   width: 13.1rem;
   height: 7.5rem;
+  &:hover {
+    border: 1px solid ${({ theme }) => theme.colors.borderGray};
+  }
 
   ${media.mobile} {
     margin-bottom: 1rem;

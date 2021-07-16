@@ -34,6 +34,7 @@ const ButtonBack = styled.img`
   position: absolute;
   margin-top: 1.9rem;
   margin-left: 10.3rem;
+  cursor: pointer;
   width: 1.6rem;
   height: 3.6rem;
 

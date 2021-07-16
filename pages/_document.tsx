@@ -34,13 +34,11 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
-          <link rel="shortcut icon" href="/favicon.svg" type="image/svg" />
-          <meta property="og:title" content="" />
-          <meta property="og:image" content="" />
-          <meta property="og:description" content="" />
-          <meta property="og:url" content="//" />
-          <meta name="description" content="" />
-          <meta name="keywords" content="" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Colfume :: 색으로 찾는 나만의 향기" />
+          <meta property="og:image" content="/metaImage.png" />
+          <meta property="og:url" content="https://www.colfume.co.kr" />
+          <link rel="icon" href="/favicon.ico" type="image/png" />
         </Head>
         <body>
           <Main />
