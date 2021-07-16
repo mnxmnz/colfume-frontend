@@ -10,8 +10,8 @@ import { testResultAtom } from '../../../states/test';
 import { useRecoilValue } from 'recoil';
 
 function TestResult() {
-  const result = useRecoilValue(testResultAtom);
-  console.log(result);
+  const data = useRecoilValue(testResultAtom);
+  console.log('data', data);
 
   return (
     <Layout>
@@ -19,12 +19,18 @@ function TestResult() {
         <Image alt="line" src={Line} />
       </LineWrapper>
       <LeftWrapper>
-        <ResultColor>Green</ResultColor>
-        <KeySentence>주변의 상황에 휘둘리지 않는 올곧음을 가진</KeySentence>
-        <KeySentence>당신의 색깔은 Green</KeySentence>
-        <KeyWord>발랄한</KeyWord>
+        <ResultColor>{data.palette_name}</ResultColor>
+        {data.palette_title?.split('\n').map((line, idx) => (
+          <KeySentence key={idx}>
+            {line.includes('//')
+              ? line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
+              : line}
+            <br />
+          </KeySentence>
+        ))}
+        <KeyWord>{data.palette_keyword}</KeyWord>
         <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
-        <MatchingColor color="Sky" background="#96BCD2" />
+        <MatchingColor color="sky" background="#96BCD2" />
         <MatchingColor color="Vanila" background="#FCE6AE" />
       </LeftWrapper>
       <RightWrapper>
@@ -35,9 +41,16 @@ function TestResult() {
         <CopyLinkBtn />
         <RetryBtn>다시 하기</RetryBtn>
       </RightWrapper>
-      <DescriptionBox>
-        <Description></Description>
-      </DescriptionBox>
+      <DescriptionWrap>
+        {data.palette_explanation?.split('\n').map((line, idx) => (
+          <Description key={idx}>
+            {line.includes('//')
+              ? line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
+              : <li>{line}</li>}
+            <br />
+          </Description>
+        ))}
+      </DescriptionWrap>
     </Layout>
   );
 }
@@ -129,11 +142,12 @@ const MatchingColorText = styled.div`
 `;
 
 const DescriptionWrap = styled.div`
-  margin-top: 10.1rem;
+  margin-top: 40.8rem;
   width: 80rem;
   font-family: NotoSans;
   font-size: 1.8rem;
   font-weight: 400;
+  margin-left: 24.8rem;
 
   ${media.mobile} {
     display: none;
@@ -142,7 +156,7 @@ const DescriptionWrap = styled.div`
 const Description = styled.div`
   margin-bottom: 2rem;
   > li {
-    margin-top: 2.4rem;
+    margin-top: 0.5rem;
   }
   ${media.mobile} {
     margin-left: 2rem;
@@ -163,7 +177,6 @@ const RightWrapper = styled.div`
   width: 50rem;
   height: 30.3rem;
   ${media.mobile} {
-    solid: solid 1px;
     align-items: center;
     margin-right: 0;
     width: 100%;
@@ -175,7 +188,7 @@ const ImageWrapper = styled.div`
   margin: 0 auto;
   width: 33.1rem;
   height: 33.1rem;
-  align-itmes: center;
+  align-items: center;
   ${media.mobile} {
     align-items: center;
     margin: 0 auto;
