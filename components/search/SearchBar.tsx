@@ -89,8 +89,8 @@ const SearchBarBox = styled.div`
 
   button {
     position: relative;
-    right: -0.6rem;
-    bottom: -0.6rem;
+    right: -0.8rem;
+    bottom: -0.7rem;
   }
 
   ${media[768]} {

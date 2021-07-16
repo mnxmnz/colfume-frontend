@@ -6,8 +6,6 @@ import Description from './Description';
 import { media } from '@styles/theme';
 
 function Detail({ data }) {
-  console.log(data);
-
   return (
     <>
       <DetailWrap>

@@ -9,7 +9,8 @@ const AnswerData = [
       value: 2,
       text: '내일 해야하는 일을 생각한다.',
     },
-    length: 46,
+    length: 460,
+    mobileLength: 261,
   },
   {
     index: 2,
@@ -21,7 +22,8 @@ const AnswerData = [
       value: 2,
       text: '꿈이니까 그럴 수 있다고 생각한다.',
     },
-    length: 52.2,
+    length: 522,
+    mobileLength: 261,
   },
   {
     index: 3,
@@ -33,7 +35,8 @@ const AnswerData = [
       value: 2,
       text: '도와줬을 때 보상에 대하여 토끼와 타협한다.',
     },
-    length: 63.9,
+    length: 639,
+    mobileLength: 310,
   },
   {
     index: 4,
@@ -45,7 +48,8 @@ const AnswerData = [
       value: 2,
       text: '내가 해주고 싶은 요리를 해준다.',
     },
-    length: 49.4,
+    length: 494,
+    mobileLength: 261,
   },
   {
     index: 5,
@@ -57,7 +61,8 @@ const AnswerData = [
       value: 2,
       text: '똑똑한 토끼',
     },
-    length: 24.5,
+    length: 245,
+    mobileLength: 155,
   },
   {
     index: 6,
@@ -69,7 +74,8 @@ const AnswerData = [
       value: 2,
       text: '일단 주머니에 넣어둔다.',
     },
-    length: 39.8,
+    length: 398,
+    mobileLength: 203,
   },
   {
     index: 7,
@@ -81,7 +87,8 @@ const AnswerData = [
       value: 2,
       text: '꿈보다는 아침 메뉴를 고민한다.',
     },
-    length: 48.8,
+    length: 488,
+    mobileLength: 261,
   },
 ];
 
