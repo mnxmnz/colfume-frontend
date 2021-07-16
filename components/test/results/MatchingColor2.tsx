@@ -8,38 +8,32 @@ interface PropsType {
   color: string;
   background: string;
 }
-interface PropsType {
-    color: string;
-    background: string;
-  }
-  
-  function MatchingColor() {
-      const data = useRecoilValue(testResultAtom);
-      console.log(data)
-    const background = {
-      background: `${data.palette_matchBg[1]}`,
-    };
-    return (
-      <>
-       <ColorWrap style={background}>
-       <div>{data.palette_matchColor[1]}</div>
-     </ColorWrap>
-      ))}
-      </>
-    );
-  }
-  
-const ColorWrap = styled.button<`
+
+function MatchingColor2() {
+  const data = useRecoilValue(testResultAtom);
+  console.log(data);
+  const background = {
+    background: `${data.palette_matchBg[1]}`,
+  };
+  return (
+    <>
+      <ColorWrap style={background}>
+        <div>{data.palette_matchColor[1]}</div>
+      </ColorWrap>
+    </>
+  );
+}
+
+const ColorWrap = styled.button`
   margin-top: 0.6rem;
   margin-left: 1rem;
   padding-right: 1.2rem;
   padding-left: 1.2rem;
   height: 3rem;
 
-
   ${media.mobile} {
     font-size: 1.4rem;
-  }s
+  }
 `;
 
 const Text = styled.span`
