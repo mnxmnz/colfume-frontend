@@ -11,7 +11,6 @@ interface PropsType {
 
 function MatchingColor2() {
   const data = useRecoilValue(testResultAtom);
-  console.log(data);
   const background = {
     background: `${data.palette_matchBg[1]}`,
   };
@@ -36,6 +35,7 @@ const ColorWrap = styled.button`
   font-weight: 500;
 
   ${media.mobile} {
+    margin-top: 2rem;
     font-size: 1.4rem;
   }
 `;

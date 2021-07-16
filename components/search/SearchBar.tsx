@@ -106,13 +106,13 @@ const SearchBarBox = styled.div`
     border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
 
     input {
-      bottom: -0.2rem;
       width: 24rem;
       font-size: 1.6rem;
     }
 
     button {
-      bottom: -0.6rem;
+      bottom: -5px;
+      padding: 0;
 
       img {
         width: 4.7rem;

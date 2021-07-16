@@ -1,21 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import { Green } from '../../../assets/';
 import { Line } from '../../../assets';
 import { media } from '@styles/theme';
 import MatchingColor1 from './MatchingColor1';
+import MatchingColor2 from './MatchingColor2';
 import CopyLinkBtn from './CopyLinkBtn';
 import { testResultAtom } from '../../../states/test';
-import { useRecoilValue } from 'recoil';
-import MatchingColor2 from './MatchingColor2';
+import { paletteAtom } from 'states/product';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import Link from 'next/link';
+import sizeMe from 'react-sizeme';
 
-function TestResult() {
+function TestResult(props) {
+  const { width, height } = props.size;
+  const isMobile = width <= 375 ? true : false;
   const data = useRecoilValue(testResultAtom);
-
-  console.log(data.palette_explanation);
-  const tempDesc =
-    'Green은 생명의 색이기도 하며, 안전, 인내를 의미합니다.\n또한 Green은 인테리어를 포함하여 다양한 디자인 요소에서 이용될 정도로, 자연스럽고 안정된 모습을 느끼게 해줘요.\n숲속에 자리한 풀잎들과 나무에서 흘러나오는 향기가 떠오르는 색깔이에요. \nGreen이 어울리는 당신은 주변에 쉽게 흔들리지 않으며, 신뢰할 수 있는 사람이에요. \n당신은 높은 도덕기준을 가지고 있고, 올바른 일을 하는 것은 당신에게 매우 중요해요. \n위험을 무릅쓰지 않고, 행동을 우선시 하지 않으며, 관찰하는 것을 좋아해요. \n당신에게 올곧은 성품과 자연친화적인 매력을 부각시켜줄 Green계열 향수를 써보기를 추천해요!';
+  const setPaletteAtom = useSetRecoilState(paletteAtom);
+  const submitColorResult = () => {
+    setPaletteAtom(data.palette_name);
+  };
+  console.log('테스트결과 페이지', data);
 
   return (
     <Layout>
@@ -37,46 +42,91 @@ function TestResult() {
       </LeftWrapper>
       <RightWrapper>
         <ImageWrapper>
-          <Image>
-            <img alt="img" src={data.palette_img} />
-          </Image>
+          <img alt="resultColor" src={data.palette_img} width="16rem" height="16rem" />
         </ImageWrapper>
-        <RecommendBtn>향수 추천을 받아보세요</RecommendBtn>
+        <Link href="/product" passHref>
+          <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
+        </Link>
         <CopyLinkBtn />
         <RetryBtn>다시 하기</RetryBtn>
       </RightWrapper>
       <DescriptionWrap>
         {data.palette_explanation?.split('\n').map((line, idx) => (
-          <Description key={idx}>
-            {line.includes('//') ? (
-              line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
-            ) : (
-              <li>{line}</li>
-            )}
-            <br />
+          <Description>
+            <span>·</span>
+            <DescWrap>
+              {line.includes('//') ? (
+                line.split('//').map((l, i) => (
+                  <Desc>
+                    {l}
+                    <br />
+                  </Desc>
+                ))
+              ) : (
+                <Desc>{line}</Desc>
+              )}
+            </DescWrap>
           </Description>
         ))}
       </DescriptionWrap>
+      {isMobile ? (
+        <MobileBox>
+          <MobileDesc>
+            {' '}
+            {data.palette_explanation?.split('\n').map((line, idx) => (
+              <Description>
+                <span>·</span>
+                <DescWrap>
+                  {line.includes('//') ? (
+                    line.split('//').map((l, i) => (
+                      <Desc>
+                        {l}
+                        <br />
+                      </Desc>
+                    ))
+                  ) : (
+                    <Desc>{line}</Desc>
+                  )}
+                </DescWrap>
+              </Description>
+            ))}
+          </MobileDesc>
+        </MobileBox>
+      ) : (
+        ''
+      )}
     </Layout>
   );
 }
 
-export default TestResult;
+export default sizeMe({ monitorHeight: true })(TestResult);
+const MobileBox = styled.div`
+  margin-top: 70rem;
+  background: ${({ theme }) => theme.colors.gray1};
+  width: 100%;
+  height: 87.9rem;
+`;
 
+const MobileDesc = styled.div`
+  margin-top: 2rem;
+  padding-top: 2rem;
+`;
 const LineWrapper = styled.div`
   margin-top: 7.2rem;
   padding-top: 7.2rem;
   width: 22rem;
+
   ${media.mobile} {
     width: 12.5rem;
   }
 `;
+
 const Layout = styled.div`
   margin-top: 7.2rem;
   width: 192rem;
   ${media.mobile} {
     margin-top: 6.5rem;
-    width: 37.5rem;
+    width: 37rem;
     height: 157.7rem;
   }
 `;
@@ -140,31 +190,43 @@ const MatchingColorText = styled.div`
 
 const DescriptionWrap = styled.div`
   margin-top: 40.8rem;
+  margin-bottom: 2rem;
   margin-left: 24.8rem;
-  width: 80rem;
+  line-height: 3.6rem;
   font-family: NotoSans;
-  font-size: 1.8rem;
-  font-weight: 400;
-
+  span {
+    margin-right: 1rem;
+    line-height: 3.6rem;
+    font-size: 2.4rem;
+  }
   ${media.mobile} {
     display: none;
   }
 `;
+
 const Description = styled.div`
+  display: flex;
+  align-items: flex-start;
+`;
+
+const DescWrap = styled.div`
+  display: flex;
+  flex-direction: column;
   margin-bottom: 2rem;
-  width: 86.8rem;
-  > li {
-    margin-top: 0.5rem;
-  }
+  width: 80rem;
+`;
+
+const Desc = styled.li`
+  line-height: 3.6rem;
+  font-size: 2rem;
+
   ${media.mobile} {
     margin-left: 2rem;
     padding-top: 2.6rem;
     width: 33.5rem;
+    line-height: 1.8rem;
     font-family: NotoSans;
     font-size: 1.5rem;
-    > li {
-      margin-bottom: 3rem;
-    }
   }
 `;
 
@@ -175,21 +237,23 @@ const RightWrapper = styled.div`
   width: 50rem;
   height: 30.3rem;
   ${media.mobile} {
-    align-items: center;
+    justify-content: center;
+    margin-top: 9rem;
     margin-right: 0;
-    width: 100%;
-    text-align: center;
+    width: 37rem;
+    height: 29rem;
   }
 `;
 
 const ImageWrapper = styled.div`
   align-items: center;
   margin: 0 auto;
+  background: yellow;
   width: 33.1rem;
   height: 33.1rem;
   ${media.mobile} {
-    align-items: center;
     margin: 0 auto;
+    background: violet;
     width: 16rem;
     height: 16rem;
   }
@@ -209,7 +273,9 @@ const RecommendBtn = styled.button`
     cursor: pointer;
   }
   ${media.mobile} {
+    margin: 0 auto;
     margin-top: 5.5rem;
+    margin-left: 6.2rem;
     width: 25.2rem;
     height: 3.578rem;
     font-size: 1.4rem;
@@ -233,7 +299,7 @@ const RetryBtn = styled.button`
   ${media.mobile} {
     float: right;
     margin-top: 1.222rem;
-    margin-right: 6.1rem;
+    margin-right: 5.8rem;
     width: 11.8rem;
     height: 3.274rem;
     font-size: 1.2rem;
