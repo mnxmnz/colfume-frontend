@@ -16,7 +16,7 @@ function Detail({ data }) {
           price={data.price}
           capacity={data.capacity}
           name={data.perfume_name}
-          palette={data.palette_image}
+          palette={data.palette_img}
         />
         <Filter moods={data.moods[0]} styles={data.styles[0]} colors={data.colors[0]} />
         <Description
