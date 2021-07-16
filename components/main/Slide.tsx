@@ -86,7 +86,7 @@ function Slide(props) {
                 setPalette(datum.keyword);
               };
               return (
-                <Link href="/product" passHref>
+                <Link href="/product" key={idx} passHref>
                   <Palette
                     src={datum.image.src}
                     key={idx}
@@ -189,6 +189,14 @@ const SliderWrap = styled.div`
   #palette.slick-arrow.slick-prev {
     left: -18.3rem;
 
+    ${media[1440]} {
+      left: -10rem;
+    }
+
+    ${media[768]} {
+      left: -6rem;
+    }
+
     ${media.mobile} {
       left: -4.498rem;
     }
@@ -196,6 +204,14 @@ const SliderWrap = styled.div`
 
   #palette.slick-arrow.slick-next {
     right: -18.3rem;
+
+    ${media[1440]} {
+      right: -10rem;
+    }
+
+    ${media[768]} {
+      right: -6rem;
+    }
 
     ${media.mobile} {
       right: -4.498rem;
@@ -206,6 +222,14 @@ const SliderWrap = styled.div`
     top: 45%;
     left: -0.8rem;
 
+    ${media[1440]} {
+      left: -2rem;
+    }
+
+    ${media[768]} {
+      left: -3rem;
+    }
+
     ${media.mobile} {
       left: -4.498rem;
     }
@@ -214,6 +238,14 @@ const SliderWrap = styled.div`
   #recommendation.slick-arrow.slick-next {
     top: 45%;
     right: -0.8rem;
+
+    ${media[1440]} {
+      right: -2rem;
+    }
+
+    ${media[768]} {
+      right: -3rem;
+    }
 
     ${media.mobile} {
       right: -4.498rem;
@@ -225,16 +257,46 @@ const PaletteWrap = styled.div`
   padding-bottom: 35.7rem;
   width: 106.2rem;
 
+  ${media[1440]} {
+    padding-bottom: 28rem;
+    width: 75rem;
+  }
+
+  /* ${media.custom[1100]} {
+    width: 50rem;
+  } */
+
+  ${media[768]} {
+    padding-bottom: 21rem;
+    width: 45rem;
+  }
+
   ${media.mobile} {
     padding-bottom: 14.26rem;
     width: 24rem;
   }
+
+  /* @media (max-width: 1100px) {
+    width: 50rem;
+  } */
 `;
 
 const RecommWrap = styled.div`
   padding-top: 9.8rem;
   padding-bottom: 18.9rem;
   width: 141rem;
+
+  ${media[1440]} {
+    padding-top: 7rem;
+    padding-bottom: 15rem;
+    width: 100rem;
+  }
+
+  ${media[768]} {
+    padding-top: 5rem;
+    padding-bottom: 13rem;
+    width: 60rem;
+  }
 
   ${media.mobile} {
     padding-top: 3.15rem;
@@ -245,12 +307,20 @@ const RecommWrap = styled.div`
   #hidden {
     visibility: hidden;
 
+    ${media[768]} {
+      display: none;
+    }
+
     ${media.mobile} {
       display: none;
     }
   }
 
   #contour {
+    ${media[768]} {
+      display: none;
+    }
+
     ${media.mobile} {
       display: none;
     }
@@ -258,9 +328,26 @@ const RecommWrap = styled.div`
 `;
 
 const Palette = styled.img`
+  padding-left: 2.65rem;
   height: 27.7rem;
 
+  ${media[1440]} {
+    padding-left: 1rem;
+    height: 23rem;
+  }
+
+  /* ${media.custom[1100]} {
+    padding-left: 0.5em;
+    height: 15rem;
+  } */
+
+  ${media[768]} {
+    padding-left: 1.25rem;
+    height: 13rem;
+  }
+
   ${media.mobile} {
+    padding-left: 0.5rem;
     height: 14.3rem;
   }
 `;

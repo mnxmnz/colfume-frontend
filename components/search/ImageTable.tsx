@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { keywordAtom } from '../../states/search';
 import { SearchData } from 'lib/api/search/search';
+import PerfumeImg from './PerfumeImg';
 
 interface KeywordType {
   _id: string;

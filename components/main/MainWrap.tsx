@@ -65,14 +65,14 @@ function MainWrap(props) {
               </span>{' '}
               <span>이런 향수는 어떤가요?</span>
             </Comment>
-            <SlideContainer>
+            {/* <SlideContainer>
               <Slide
                 slideName="recommendation"
                 isMobile={isMobile}
                 length={isMobile ? 2 : 3}
                 data={rawData.section_perfumes[0]}
               />
-            </SlideContainer>
+            </SlideContainer> */}
           </SlideWrap>
         )}
       </ContentWrap>

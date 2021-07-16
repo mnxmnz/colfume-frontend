@@ -31,7 +31,15 @@ function Description({ top, middle, base, description }) {
           {description.split('\n').map((line, idx) => (
             <Desc key={idx}>
               {line.includes('//')
-                ? line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
+                ? line.split('//').map((l, i) =>
+                    i % 2 === 1 ? (
+                      <span id="bold" key={i}>
+                        {l}
+                      </span>
+                    ) : (
+                      l
+                    ),
+                  )
                 : line}
               <br />
             </Desc>
