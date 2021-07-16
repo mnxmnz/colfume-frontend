@@ -53,11 +53,16 @@ const FilterWrap = styled.div`
 `;
 
 const Title = styled.div`
-  margin-top: 27.2rem;
+  margin-top: 21.2rem;
   margin-bottom: 8.1rem;
   color: ${({ theme }) => theme.colors.black};
   font-family: Junge;
   font-size: 4rem;
+  ${media.custom(900)} {
+    margin-top: 17.4rem;
+    margin-bottom: 4rem;
+    font-size: 3.5rem;
+  }
 
   ${media.mobile} {
     margin-top: 7.4rem;
@@ -72,6 +77,12 @@ const IconWrap = styled.div`
   align-items: flex-end;
   width: 85.1rem;
 
+  ${media.custom(900)} {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 40rem;
+  }
+
   ${media.mobile} {
     flex-wrap: wrap;
     width: 22rem;
@@ -82,6 +93,12 @@ const FilterIcon = styled.button`
   cursor: pointer;
   width: 10.6rem;
   height: 12rem;
+
+  ${media.custom(900)} {
+    margin-top: 0.5rem;
+    width: 8.5rem;
+    height: 8.4rem;
+  }
 
   ${media.mobile} {
     margin-top: 0.5rem;
@@ -94,6 +111,11 @@ const IconImg = styled.img<{ selectedIdx: string; myId: string }>`
   border-bottom: solid 0.2rem ${props => (props.selectedIdx === props.myId ? '#3e3e3e' : '#D4D4D4')};
   width: 10.6rem;
   height: 12rem;
+
+  ${media.custom(900)} {
+    width: 8.5rem;
+    height: 8.4rem;
+  }
 
   ${media.mobile} {
     margin-top: 0.5rem;

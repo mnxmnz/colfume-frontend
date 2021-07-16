@@ -14,3 +14,8 @@ export const answerAtom = atom({
   key: 'answerAtom',
   default: {},
 });
+
+export const testResultAtom = atom({
+  key: 'testResultAtom',
+  default: '',
+});

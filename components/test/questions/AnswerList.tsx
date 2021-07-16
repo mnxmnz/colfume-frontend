@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import Router from 'next/router';
 import AnswerData from './AnswerData';
 import { media } from '@styles/theme';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { questionNumberAtom, answerAtom } from '../../../states/test';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { questionNumberAtom, answerAtom, testResultAtom } from '../../../states/test';
 import { testResult } from '../../../lib/api/test/postAnswer';
 
 function AnswerList() {
   const [progress, setProgress] = useRecoilState(questionNumberAtom);
   const answer = useRecoilValue(answerAtom);
+  const setResult = useSetRecoilState(testResultAtom);
 
   const color = 'red';
 
@@ -25,17 +26,18 @@ function AnswerList() {
   };
 
   const onClickAnswer = async data => {
-    try {
-      answer[`answer${progress + 1}`] = data;
-      setProgress(progress => progress + 1);
-      const testData = await testResult(answer);
-      if (progress === 6) {
-        console.log('Data', testData);
-        Router.push(`/test/result/${color}`);
-        setProgress(0);
+    answer[`answer${progress + 1}`] = data;
+    setProgress(progress => progress + 1);
+
+    if (progress === 6) {
+      try {
+        const testData = await testResult(answer);
+        setResult(testData);
+        Router.push(`/test/result/${testData.palette_name}`);
+      } catch (e) {
+        return e;
       }
-    } catch (e) {
-      return e;
+      setProgress(progress => 0);
     }
   };
 

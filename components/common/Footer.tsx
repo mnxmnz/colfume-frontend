@@ -8,14 +8,11 @@ import { Logo } from '../../assets';
 
 const Box = styled.div`
   bottom: 0;
-  margin-top: auto;
   background: ${({ theme }) => theme.colors.gray1};
   width: 100vw;
-  min-height: 57.6rem;
 
   ${media.mobile} {
-    width: 37.5rem;
-    min-height: 25.6rem;
+    width: 100vw;
   }
 `;
 
@@ -24,7 +21,7 @@ const MaterialBox = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-top: 17.8rem;
-  width: 190rem;
+
   ${media.mobile} {
     margin-top: 3.36rem;
     padding-top: 3.36rem;
@@ -50,20 +47,24 @@ const Column = styled.div`
   width: 13rem;
   text-align: left;
 `;
+
 const HeadingColumn = styled.div`
   display: flex;
   flex-direction: column;
   width: 13rem;
   text-align: left;
+
   ${media.mobile} {
     display: none;
   }
 `;
+
 const InfoColumn = styled.div`
   display: flex;
   flex-direction: column;
   width: 50rem;
   text-align: left;
+
   ${media.mobile} {
     display: flex;
     flex-direction: row;
@@ -79,7 +80,8 @@ const FollowColumn = styled.div`
   margin-left: 43rem;
   width: 150px;
   text-align: left;
-  background: violet ${media.mobile} {
+
+  ${media.mobile} {
     margin-left: 0;
   }
 `;
@@ -103,6 +105,7 @@ const LogoWrapper = styled.div`
   width: 12.8rem;
   font-family: 'Junge';
   font-size: 3.2rem;
+
   ${media.mobile} {
     background: yellow;
     width: 8.012rem;
@@ -118,6 +121,7 @@ const FooterButton = styled.div`
   &:hover {
     cursor: pointer;
   }
+
   ${media.mobile} {
     display: flex;
     flex-direction: column;
@@ -130,6 +134,7 @@ const FooterContent = styled.div`
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 400;
+
   ${media.mobile} {
     margin-bottom: 1.2rem;
     font-size: 1rem;
@@ -140,6 +145,7 @@ const MobileContent = styled.div`
   margin-bottom: 1.2rem;
   font-size: 1.5rem;
   font-weight: 400;
+
   ${media.mobile} {
     display: none;
   }
@@ -150,8 +156,6 @@ const ImageWrapper = styled.div`
 `;
 
 const Footer = () => {
-  const [windowSize, setWindowSize] = useState(1920);
-  const isMobile = windowSize <= 375 ? true : false;
   return (
     <Box>
       <MaterialBox>
