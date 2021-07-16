@@ -5,7 +5,6 @@ import { FooterIcons } from '../../assets';
 import Image from 'next/image';
 import { media } from '@styles/theme';
 import { Logo } from '../../assets';
-import MobileFooter from './MobileFooter';
 
 const Box = styled.div`
   bottom: 0;
