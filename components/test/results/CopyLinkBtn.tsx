@@ -36,7 +36,7 @@ function CopyLinkBtn() {
 
   const router = useRouter();
   const currentPath = router.pathname;
-  const url = 'https://www.colfume.com/api/test/result' + currentPath;
+  const url = 'https://www.colfume.co.kr' + currentPath;
 
   return (
     <>
