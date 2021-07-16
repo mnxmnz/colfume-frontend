@@ -47,10 +47,15 @@ function ThemeTable(props: PropsType) {
 }
 
 const Table = styled.div`
+  margin-bottom: 17.2rem;
   width: 50.2rem;
   text-align: center;
 
+  ${media[1100]} {
+    width: 45rem;
+  }
   ${media.mobile} {
+    margin-bottom: 6.1rem;
     width: 29.3rem;
   }
 `;
