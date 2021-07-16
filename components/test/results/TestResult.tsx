@@ -4,10 +4,11 @@ import Image from 'next/image';
 import { Green } from '../../../assets/';
 import { Line } from '../../../assets';
 import { media } from '@styles/theme';
-import MatchingColor from './MatchingColor';
+import MatchingColor1 from './MatchingColor1';
 import CopyLinkBtn from './CopyLinkBtn';
 import { testResultAtom } from '../../../states/test';
 import { useRecoilValue } from 'recoil';
+import MatchingColor2 from './MatchingColor2';
 
 function TestResult() {
   const data = useRecoilValue(testResultAtom);
@@ -31,8 +32,8 @@ function TestResult() {
         ))}
         <KeyWord>{data.palette_keyword}</KeyWord>
         <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
-        <MatchingColor color="sky" background="#96BCD2" />
-        <MatchingColor color="Vanilla" background="#FCE6AE" />
+        <MatchingColor1 />
+        {!data.palette_matchColor[1] ? '' : <MatchingColor2 />}
       </LeftWrapper>
       <RightWrapper>
         <ImageWrapper>
@@ -42,10 +43,14 @@ function TestResult() {
         <CopyLinkBtn />
         <RetryBtn>다시 하기</RetryBtn>
       </RightWrapper>
-      <DescriptionWrap> feat/main/slider
-        {tempDesc.split('\n').map((line, idx) => (
-          <Description>
-            <li>{line}</li>
+      <DescriptionWrap>
+        {data.palette_explanation?.split('\n').map((line, idx) => (
+          <Description key={idx}>
+            {line.includes('//') ? (
+              line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
+            ) : (
+              <li>{line}</li>
+            )}
             <br />
           </Description>
         ))}

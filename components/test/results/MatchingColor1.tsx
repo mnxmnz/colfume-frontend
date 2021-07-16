@@ -9,15 +9,16 @@ interface PropsType {
   background: string;
 }
 
-function MatchingColor(props: PropsType) {
-    const data = useRecoilValue(testResultAtom);
+function MatchingColor1() {
+  const data = useRecoilValue(testResultAtom);
+  console.log(data);
   const background = {
-    background: `${props.background}`,
+    background: `${data.palette_matchBg[0]}`,
   };
   return (
     <>
       <ColorWrap style={background}>
-        <div>{props.color}</div>
+        <div>{data.palette_matchColor[0]}</div>
       </ColorWrap>
     </>
   );
@@ -34,11 +35,21 @@ const ColorWrap = styled.button`
   font-size: 1.8rem;
   font-weight: 500;
 
+
   ${media.mobile} {
-    margin-top: 1rem;
-    height: 2.3rem;
     font-size: 1.4rem;
   }
 `;
 
-export default MatchingColor;
+const Text = styled.span`
+  text-align: center;
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  ${media.mobile} {
+    font-size: 1.4rem;
+  }
+`;
+
+export default MatchingColor1;
