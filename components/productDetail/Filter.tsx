@@ -107,7 +107,6 @@ const Categ = styled.div`
 
 const KeywordBox = styled.div`
   display: flex;
-  justify-content: space-between;
   width: 55rem;
 
   ${media.mobile} {
@@ -172,6 +171,7 @@ const KeywordWrap = styled.div`
 `;
 
 const Keyword = styled.div`
+  margin-right: 2rem;
   background-color: ${({ theme }) => theme.colors.gray2};
   padding-top: 0.3rem;
   width: 10rem;
