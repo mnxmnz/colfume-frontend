@@ -20,6 +20,9 @@ function ProgressBar() {
 }
 
 const ProgressWrap = styled.div`
+  margin-top: 16.9444vh;
+  margin-bottom: 11.1111vh;
+
   ${media[768]} {
     position: absolute;
     right: 0;
@@ -30,6 +33,9 @@ const ProgressWrap = styled.div`
 `;
 
 const NumberWrap = styled.div`
+  margin: 0 auto;
+  width: 63rem;
+
   ${media[768]} {
     margin: 0 auto;
     width: 280px;
@@ -38,7 +44,12 @@ const NumberWrap = styled.div`
 
 const CurrentProgress = styled.div<{ progress: number }>`
   transition: all 1s ease-in-out;
+  width: ${({ progress }) => 90 * (progress + 1) + 12}px;
+  text-align: right;
+  line-height: 4rem;
   font-family: Junge;
+  font-size: 2.2rem;
+  font-weight: 400;
 
   ${media[768]} {
     width: ${({ progress }) => 40 * (progress + 1) + 8}px;
@@ -50,10 +61,12 @@ const CurrentProgress = styled.div<{ progress: number }>`
 `;
 
 const ProgressBarWrap = styled.div`
+  margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.progressBeige};
+  width: 63rem;
+  height: 1rem;
 
   ${media[768]} {
-    margin: 0 auto;
     width: 280px;
     height: 10px;
   } ;
@@ -64,6 +77,8 @@ const Current = styled.div<{ progress: number }>`
   transition: all 1s ease-in-out;
   z-index: 10;
   background-color: ${({ theme }) => theme.colors.borderGray};
+  width: ${({ progress }) => 90 * (progress + 1)}px;
+  height: 10px;
 
   ${media[768]} {
     width: ${({ progress }) => 40 * (progress + 1)}px;
