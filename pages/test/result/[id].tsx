@@ -13,7 +13,7 @@ function Result() {
     return () => clearTimeout(loadingFinished);
   }, []);
 
-  return <>{loading ? <Loading /> : <TesultResult />}</>;
+  return <TesultResult />;
 }
 
 export default Result;
