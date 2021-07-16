@@ -11,7 +11,7 @@ const MobileFooter = () => {
     <MobileBox>
       <MaterialBox>
         <LogoWrapper>
-          <Image src={Logo} />
+          <Image alt="mobile-logo" src={Logo} />
         </LogoWrapper>
       </MaterialBox>
     </MobileBox>
