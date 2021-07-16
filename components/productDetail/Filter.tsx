@@ -8,7 +8,7 @@ function Filter({ moods, styles, colors }) {
   return (
     <FilterWrap>
       <ColorWrap>
-        <Categ>Color</Categ>
+        <span>Color</span>
         <Color>
           {colors.color1 !== null && (
             <img src={colors.color1.color_img} alt={colors.color1.color_name} />
@@ -59,12 +59,25 @@ const FilterWrap = styled.div`
 const ColorWrap = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
   border-right: 0.2rem solid ${({ theme }) => theme.colors.black};
   padding-top: 5.2rem;
   padding-right: 6.8rem;
   padding-bottom: 11.7rem;
   width: 32.8rem;
+  span {
+    margin-right: 6.2rem;
+    width: 4rem;
+    line-height: 3.6rem;
+    font-family: Junge;
+    font-size: 2rem;
+
+    ${media.mobile} {
+      margin: 0;
+      margin-right: 6.5rem;
+      line-height: 1.945rem;
+      font-size: 1.6rem;
+    }
+  }
 
   ${media.mobile} {
     border-right: 0rem;
@@ -85,8 +98,8 @@ const Categ = styled.div`
   font-size: 2rem;
 
   ${media.mobile} {
+    margin: 0;
     margin-right: 2rem;
-    margin-left: 2rem;
     line-height: 1.945rem;
     font-size: 1.6rem;
   }
@@ -96,6 +109,10 @@ const KeywordBox = styled.div`
   display: flex;
   justify-content: space-between;
   width: 55rem;
+
+  ${media.mobile} {
+    width: 30rem;
+  }
 `;
 
 const Color = styled.div`
@@ -150,7 +167,7 @@ const KeywordWrap = styled.div`
   width: 50rem;
 
   ${media.mobile} {
-    width: 24.623rem;
+    width: 33rem;
   }
 `;
 
@@ -166,7 +183,7 @@ const Keyword = styled.div`
   ${media.mobile} {
     margin-right: 1.892rem;
     padding-top: 0rem;
-    width: 6.316rem;
+    width: 8rem;
     height: 2.649rem;
     line-height: 2.52rem;
     font-size: 1.4rem;
