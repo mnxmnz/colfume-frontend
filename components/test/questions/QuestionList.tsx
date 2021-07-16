@@ -54,7 +54,7 @@ const Number = styled.div`
   font-weight: 400;
 
   ${media[768]} {
-    margin-bottom: 34.2px;
+    margin-bottom: 27.36px;
     text-align: center;
     line-height: 79px;
     font-size: 44px;

@@ -26,7 +26,6 @@ function Mood(props) {
       />
       <ThemeWrap>
         <ThemeTable title="Mood" list={moodList} />
-        {/* <Space /> */}
         <ThemeTable title="Style" list={styleList} />
       </ThemeWrap>
     </MoodWrap>
