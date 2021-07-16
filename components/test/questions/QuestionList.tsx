@@ -27,11 +27,9 @@ function QuestionList() {
 }
 
 const QuestionWrap = styled.div`
-  margin-top: 12.4074vh;
   margin-left: 23.8021vw;
 
   ${media[768]} {
-    margin-top: 6.7rem;
     margin-left: 0;
   }
 `;
