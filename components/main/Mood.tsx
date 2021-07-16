@@ -26,7 +26,7 @@ function Mood(props) {
       />
       <ThemeWrap>
         <ThemeTable title="Mood" list={moodList} />
-        <Space />
+        {/* <Space /> */}
         <ThemeTable title="Style" list={styleList} />
       </ThemeWrap>
     </MoodWrap>
@@ -34,32 +34,35 @@ function Mood(props) {
 }
 
 const MoodWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: ${({ theme }) => theme.colors.gray1};
-  height: 77.7rem;
-
-  ${media.mobile} {
-    height: 54.9rem;
-  }
 `;
 
 const ThemeWrap = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 10rem;
+  justify-content: space-between;
+  width: 126.1rem;
 
-  ${media.mobile} {
+  ${media[1100]} {
+    width: 100rem;
+  }
+
+  ${media[768]} {
     flex-direction: column;
     margin-top: 0rem;
+    width: 29.3rem;
   }
 `;
 
-const Space = styled.div`
-  width: 25.7rem;
+// const Space = styled.div`
+//   width: 25.7rem;
 
-  ${media.mobile} {
-    height: 6.1rem;
-  }
-`;
+//   ${media[768]} {
+//     height: 6.1rem;
+//   }
+// `;
 
 export default Mood;

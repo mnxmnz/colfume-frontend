@@ -67,6 +67,7 @@ const KeywordBtn = styled.button<{ selectedIdx: string; myId: string }>`
   margin-bottom: 1.8rem;
   border: 0.1rem solid ${({ theme }) => theme.colors.gray3};
   background: ${props => (props.selectedIdx === props.myId ? '#3e3e3e' : '#FFFFFF')};
+  cursor: pointer;
   padding: 0 3rem;
   line-height: 3.9rem;
   color: ${props => (props.selectedIdx === props.myId ? '#FFFFFF' : '#3e3e3e')};

@@ -1,10 +1,10 @@
 import React from 'react';
-import PerfumeImg from '../search/PerfumeImg';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { paletteAtom } from '../../states/product';
 import { GetProductList } from '../../lib/api/product/getProduct';
+import PerfumeImg from '../search/PerfumeImg';
 
 interface MoodType {
   _id: string;
@@ -14,7 +14,7 @@ interface MoodType {
 function PaletteImageTable() {
   const keyword = useRecoilValue(paletteAtom);
   const rawData = GetProductList(keyword);
-
+  console.log(keyword, ': ', rawData);
   return (
     <ImageTableWrap>
       <ImageTableBox>
