@@ -73,6 +73,7 @@ const Title = styled.div`
 const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: -1px;
   line-height: 3.6rem;
   font-size: 2rem;
   font-weight: 400;
@@ -91,6 +92,9 @@ const Content = styled.div`
   cursor: pointer;
   width: 13.1rem;
   height: 7.5rem;
+  &:hover {
+    border: 1px solid ${({ theme }) => theme.colors.borderGray};
+  }
 
   ${media.mobile} {
     margin-bottom: 1rem;
