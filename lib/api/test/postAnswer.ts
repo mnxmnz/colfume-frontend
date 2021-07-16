@@ -10,17 +10,3 @@ export async function testResult(answer) {
     console.error('Test Result Error', error);
   }
 }
-
-
-// const testResult = async answer => {
-//   try {
-//     const { data } = await axios.post(`${baseURL}/colfume/test`, answer);
-//     console.log('[SUCCESS] post answer', data);
-//     return data.data;
-//   } catch (e) {
-//     console.log('[FAIL] post answer', e);
-//     return e;
-//   }
-// };
-
-// export default testResult;
