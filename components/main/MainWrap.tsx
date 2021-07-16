@@ -47,7 +47,7 @@ function MainWrap(props) {
         content="원하는 무드 또는 스타일을 선택하여 향수를 찾아보세요"
         paddingTitle={isMobile ? '3.3rem' : '12.4rem'}
         paddingContent={isMobile ? '0.6rem' : '0rem'}
-        paddingBottom={isMobile ? '5rem' : '0rem'}
+        paddingBottom={isMobile ? '5rem' : '10rem'}
       />
       <ContentWrap>
         <Content
@@ -65,18 +65,18 @@ function MainWrap(props) {
               </span>{' '}
               <span>이런 향수는 어떤가요?</span>
             </Comment>
-            {/* <SlideContainer>
+            <SlideContainer>
               <Slide
                 slideName="recommendation"
                 isMobile={isMobile}
                 length={isMobile ? 2 : 3}
                 data={rawData.section_perfumes[0]}
               />
-            </SlideContainer> */}
+            </SlideContainer>
           </SlideWrap>
         )}
       </ContentWrap>
-      {isMobile ? <MobileFooter /> : <NewFooter />}
+      {/* {isMobile ? <MobileFooter /> : <NewFooter />} */}
     </>
   );
 }
@@ -94,7 +94,7 @@ const SlideWrap = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  ${media.mobile} {
+  ${media[768]} {
     align-items: center;
   }
 `;
@@ -104,12 +104,16 @@ const Comment = styled.div`
   line-height: 3.6rem;
   font-size: 2rem;
 
-  ${media.mobile} {
+  ${media[768]} {
     display: flex;
     flex-direction: column;
+    text-align: center;
+  }
+
+  ${media.mobile} {
     margin: auto;
     margin-bottom: 3.05rem;
-    text-align: center;
+
     line-height: 2.31rem;
     font-size: 1.4rem;
   }
@@ -118,6 +122,7 @@ const Comment = styled.div`
     font-weight: bold;
   }
 `;
+
 const SlideContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -125,6 +130,21 @@ const SlideContainer = styled.div`
   border-top: solid ${({ theme }) => theme.colors.black};
   border-bottom: solid ${({ theme }) => theme.colors.black};
   width: 142.6rem;
+
+  ${media[1440]} {
+    margin-bottom: 20rem;
+    width: 110rem;
+  }
+
+  ${media[1100]} {
+    margin-bottom: 21rem;
+    width: 80rem;
+  }
+
+  ${media[768]} {
+    margin-bottom: 22rem;
+    width: 65rem;
+  }
 
   ${media.mobile} {
     margin-bottom: 22.4rem;

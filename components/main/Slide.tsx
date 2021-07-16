@@ -117,6 +117,18 @@ const SliderWrap = styled.div`
   .slick-dots.palette {
     bottom: -17rem;
 
+    ${media[1440]} {
+      bottom: -15rem;
+    }
+
+    ${media[1100]} {
+      bottom: -10rem;
+    }
+
+    ${media[768]} {
+      bottom: -5rem;
+    }
+
     ${media.mobile} {
       bottom: -4.8rem;
     }
@@ -124,6 +136,18 @@ const SliderWrap = styled.div`
 
   .slick-dots.recommendation {
     bottom: -11rem;
+
+    ${media[1440]} {
+      bottom: -10rem;
+    }
+
+    ${media[1100]} {
+      bottom: -9rem;
+    }
+
+    ${media[768]} {
+      bottom: -8rem;
+    }
 
     ${media.mobile} {
       bottom: -7rem;
@@ -223,11 +247,14 @@ const SliderWrap = styled.div`
     left: -0.8rem;
 
     ${media[1440]} {
-      left: -2rem;
+      left: -5rem;
     }
 
-    ${media[768]} {
+    ${media[1100]} {
       left: -3rem;
+    }
+    ${media[768]} {
+      left: -2.5rem;
     }
 
     ${media.mobile} {
@@ -240,11 +267,15 @@ const SliderWrap = styled.div`
     right: -0.8rem;
 
     ${media[1440]} {
-      right: -2rem;
+      right: -5rem;
+    }
+
+    ${media[1100]} {
+      right: -3rem;
     }
 
     ${media[768]} {
-      right: -3rem;
+      right: -2.5rem;
     }
 
     ${media.mobile} {
@@ -262,9 +293,10 @@ const PaletteWrap = styled.div`
     width: 75rem;
   }
 
-  /* ${media.custom[1100]} {
+  ${media[1100]} {
+    padding-bottom: 25rem;
     width: 50rem;
-  } */
+  }
 
   ${media[768]} {
     padding-bottom: 21rem;
@@ -275,10 +307,6 @@ const PaletteWrap = styled.div`
     padding-bottom: 14.26rem;
     width: 24rem;
   }
-
-  /* @media (max-width: 1100px) {
-    width: 50rem;
-  } */
 `;
 
 const RecommWrap = styled.div`
@@ -290,6 +318,12 @@ const RecommWrap = styled.div`
     padding-top: 7rem;
     padding-bottom: 15rem;
     width: 100rem;
+  }
+
+  ${media[1100]} {
+    padding-top: 5rem;
+    padding-bottom: 13rem;
+    width: 80rem;
   }
 
   ${media[768]} {
@@ -307,20 +341,12 @@ const RecommWrap = styled.div`
   #hidden {
     visibility: hidden;
 
-    ${media[768]} {
-      display: none;
-    }
-
     ${media.mobile} {
       display: none;
     }
   }
 
   #contour {
-    ${media[768]} {
-      display: none;
-    }
-
     ${media.mobile} {
       display: none;
     }
@@ -336,10 +362,10 @@ const Palette = styled.img`
     height: 23rem;
   }
 
-  /* ${media.custom[1100]} {
+  ${media[1100]} {
     padding-left: 0.5em;
     height: 15rem;
-  } */
+  }
 
   ${media[768]} {
     padding-left: 1.25rem;

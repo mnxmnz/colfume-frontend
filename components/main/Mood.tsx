@@ -46,9 +46,8 @@ const ThemeWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10rem;
 
-  ${media.mobile} {
+  ${media[768]} {
     flex-direction: column;
     margin-top: 0rem;
   }
@@ -57,7 +56,7 @@ const ThemeWrap = styled.div`
 const Space = styled.div`
   width: 25.7rem;
 
-  ${media.mobile} {
+  ${media[768]} {
     height: 6.1rem;
   }
 `;
