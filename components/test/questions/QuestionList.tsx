@@ -31,7 +31,7 @@ const QuestionWrap = styled.div`
   margin-top: 107.2px;
 
   ${media[768]} {
-    margin-top: 110px;
+    margin-top: 88px;
     margin-left: 0;
   }
 `;
