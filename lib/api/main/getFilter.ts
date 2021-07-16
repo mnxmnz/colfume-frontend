@@ -2,7 +2,7 @@ import useSWR from 'swr';
 import { fetcher } from '../fetch';
 
 export const GetFilterList = () => {
-  const { data, error } = useSWR('https://colfume.com/api/home/keyword', fetcher, {
+  const { data, error } = useSWR('https://colfume.co.kr/api/home/keyword', fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
       if (error.status === 404) return;
       if (retryCount >= 10) return;
