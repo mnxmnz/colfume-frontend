@@ -17,5 +17,13 @@ export const answerAtom = atom({
 
 export const testResultAtom = atom({
   key: 'testResultAtom',
-  default: '',
+  default: {
+    palette_explanation: '',
+    palette_img: '',
+    palette_keyword: '',
+    palette_matchColor: ['', ''],
+    palette_name: '',
+    palette_title: '',
+    _id: '',
+  },
 });
