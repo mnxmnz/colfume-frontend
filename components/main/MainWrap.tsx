@@ -76,7 +76,7 @@ function MainWrap(props) {
           </SlideWrap>
         )}
       </ContentWrap>
-      {/* {isMobile ? <MobileFooter /> : <NewFooter />} */}
+      {isMobile ? <MobileFooter /> : <NewFooter />}
     </>
   );
 }
