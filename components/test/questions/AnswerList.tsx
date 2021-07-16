@@ -69,7 +69,7 @@ const AnswerWrap = styled.div`
     bottom: 0;
     left: 0;
     margin-right: 0;
-    margin-bottom: 170px;
+    margin-bottom: 153px;
     text-align: center;
   }
 `;
