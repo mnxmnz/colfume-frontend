@@ -1,5 +1,4 @@
 import React from 'react';
-import PerfumeImg from '../search/PerfumeImg';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
