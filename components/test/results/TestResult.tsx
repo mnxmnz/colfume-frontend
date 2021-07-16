@@ -11,7 +11,6 @@ import { useRecoilValue } from 'recoil';
 
 function TestResult() {
   const data = useRecoilValue(testResultAtom);
-  console.log('data', data);
 
   return (
     <Layout>
@@ -44,9 +43,11 @@ function TestResult() {
       <DescriptionWrap>
         {data.palette_explanation?.split('\n').map((line, idx) => (
           <Description key={idx}>
-            {line.includes('//')
-              ? line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
-              : <li>{line}</li>}
+            {line.includes('//') ? (
+              line.split('//').map((l, i) => (i % 2 === 1 ? <span id="bold">{l}</span> : l))
+            ) : (
+              <li>{line}</li>
+            )}
             <br />
           </Description>
         ))}
@@ -143,11 +144,11 @@ const MatchingColorText = styled.div`
 
 const DescriptionWrap = styled.div`
   margin-top: 40.8rem;
+  margin-left: 24.8rem;
   width: 80rem;
   font-family: NotoSans;
   font-size: 1.8rem;
   font-weight: 400;
-  margin-left: 24.8rem;
 
   ${media.mobile} {
     display: none;
@@ -185,10 +186,10 @@ const RightWrapper = styled.div`
 `;
 
 const ImageWrapper = styled.div`
+  align-items: center;
   margin: 0 auto;
   width: 33.1rem;
   height: 33.1rem;
-  align-items: center;
   ${media.mobile} {
     align-items: center;
     margin: 0 auto;
