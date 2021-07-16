@@ -10,7 +10,7 @@ const Box = styled.div`
   bottom: 0;
   margin-top: auto;
   background: ${({ theme }) => theme.colors.gray1};
-  width: 192rem;
+  width: 100vw;
   min-height: 57.6rem;
 
   ${media.mobile} {

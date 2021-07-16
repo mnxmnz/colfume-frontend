@@ -25,7 +25,13 @@ const MobileBox = styled.div`
   width: 37.5rem;
   min-height: 25.6rem;
 `;
-const LogoWrapper = styled.div``;
+const LogoWrapper = styled.div`
+  margin: 0 auto;
+  margin-top: 3.614rem;
+  padding-top: 3.614rem;
+  width: 8.012rem;
+  height: 1.986rem;
+`;
 const MaterialBox = styled.div``;
 
 export default MobileFooter;
