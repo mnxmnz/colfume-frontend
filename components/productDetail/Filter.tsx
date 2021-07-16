@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { media } from '@styles/theme';
 
 function Filter({ moods, styles, colors }) {
-  console.log(colors);
-
   return (
     <FilterWrap>
       <ColorWrap>
