@@ -27,7 +27,6 @@ function Banner() {
 
 const BannerWrap = styled.div`
   margin-top: 7.2rem;
-  margin-bottom: 10rem;
 
   img {
     width: 100vw;
@@ -50,9 +49,13 @@ const BannerWrap = styled.div`
 const BannerBox = styled.div`
   display: flex;
   position: absolute;
-  top: 27.5rem;
+  top: 20rem;
   flex-direction: column;
   width: 100%;
+
+  ${media.mobile} {
+    top: 17rem;
+  }
 `;
 
 const TitleBox = styled.div`
@@ -62,7 +65,6 @@ const TitleBox = styled.div`
 `;
 
 const MainTitle = styled.div`
-  margin-top: 1%;
   font-family: 'Junge';
   font-size: 12rem;
 
@@ -94,7 +96,7 @@ const SubTitle = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
-    line-height: 2.5rem;
+    line-height: 3.2rem;
     font-size: 2rem;
   }
 
@@ -104,7 +106,7 @@ const SubTitle = styled.div`
     margin: auto;
     margin-top: 3rem;
     margin-bottom: 9rem;
-    line-height: 1.65rem;
+    line-height: 2.31rem;
     letter-spacing: 0.05em;
     font-size: 1.4rem;
   }
@@ -137,9 +139,9 @@ const StartBnt = styled.div`
 
   ${media.mobile} {
     border: 0.16rem solid ${({ theme }) => theme.colors.black};
-    width: 18.75rem;
-    height: 5.25rem;
-    font-size: 2.45rem;
+    width: 16.2rem;
+    height: 4.5rem;
+    font-size: 2rem;
   }
 `;
 
