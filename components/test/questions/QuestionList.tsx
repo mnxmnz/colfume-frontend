@@ -28,7 +28,7 @@ function QuestionList() {
 }
 
 const QuestionWrap = styled.div`
-  margin-left: 23.8021vw;
+  margin-top: 134px;
 
   ${media[768]} {
     margin-top: 110px;
