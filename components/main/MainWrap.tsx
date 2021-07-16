@@ -9,6 +9,7 @@ import { media } from '@styles/theme';
 import { GetRecommData } from 'lib/api/main/getRecomm';
 import PaletteData from '../../public/PaletteData';
 import sizeMe from 'react-sizeme';
+import MobileFooter from '../common/MobileFooter';
 
 function MainWrap(props) {
   const { width, height } = props.size;
@@ -74,7 +75,7 @@ function MainWrap(props) {
           </SlideWrap>
         )}
       </ContentWrap>
-      <Footer />
+      {isMobile ? <MobileFooter /> : <Footer />}
     </>
   );
 }
