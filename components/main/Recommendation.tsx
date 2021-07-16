@@ -225,4 +225,10 @@ const Name = styled.div`
   letter-spacing: 3px;
   font-size: 2.6rem;
   font-weight: bold;
+
+  ${media[768]} {
+    width: 15rem;
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
 `;
