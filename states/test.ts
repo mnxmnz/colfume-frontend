@@ -25,5 +25,6 @@ export const testResultAtom = atom({
     palette_name: '',
     palette_title: '',
     _id: '',
+    palette_matchBg: '',
   },
 });

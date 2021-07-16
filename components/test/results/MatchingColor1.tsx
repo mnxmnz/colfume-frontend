@@ -11,7 +11,6 @@ interface PropsType {
 
 function MatchingColor1() {
   const data = useRecoilValue(testResultAtom);
-  console.log(data);
   const background = {
     background: `${data.palette_matchBg[0]}`,
   };
@@ -34,7 +33,6 @@ const ColorWrap = styled.button`
   color: ${({ theme }) => theme.colors.white};
   font-size: 1.8rem;
   font-weight: 500;
-
 
   ${media.mobile} {
     font-size: 1.4rem;
