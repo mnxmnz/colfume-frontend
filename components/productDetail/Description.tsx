@@ -97,6 +97,7 @@ const TableHeader = styled.div`
 
 const LevelWrap = styled.div`
   display: flex;
+  width: 28.5rem;
   line-height: 2.56rem;
   font-family: Junge;
   font-size: 1.6rem;
@@ -144,11 +145,15 @@ const DescWrap = styled.div`
 
 const Desc = styled.div`
   padding-left: 14.6rem;
+  ${media.mobile} {
+    padding-left: 0;
+  }
 
   #bold {
     font-weight: 700;
 
     ${media.mobile} {
+      padding-left: 0;
       line-height: 2.7rem;
       letter-spacing: 0.045rem;
       font-size: 1.5rem;
