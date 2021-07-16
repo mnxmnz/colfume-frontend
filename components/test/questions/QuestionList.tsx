@@ -19,7 +19,9 @@ function QuestionList() {
         <ContentWrap>
           <Text>{data[progress]?.text01}</Text>
           <Text>{data[progress]?.text02}</Text>
-          <Detail>{data[progress]?.detail}</Detail>
+          <Detail>
+            {data[progress]?.detail} {data[progress]?.detail02}
+          </Detail>
           {data[progress]?.detail02 && <span>{data[progress]?.detail02}</span>}
         </ContentWrap>
       </NumberWrap>
@@ -28,7 +30,8 @@ function QuestionList() {
 }
 
 const QuestionWrap = styled.div`
-  margin-top: 107.2px;
+  margin-top: 12.4074vh;
+  margin-left: 20.3125vw;
 
   ${media[768]} {
     margin-top: 88px;
@@ -69,12 +72,17 @@ const ContentWrap = styled.div`
   margin-left: 2rem;
   padding-top: 5.9rem;
 
+  span {
+    display: none;
+  }
+
   ${media[768]} {
     margin-left: 0;
     padding-top: 0;
     text-align: center;
 
     span {
+      display: block;
       margin-top: 19px;
       line-height: 28.8px;
       font-size: 16px;

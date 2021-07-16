@@ -127,8 +127,12 @@ const MobileCircle = styled.div`
 
 const Line = styled.div<{ length: number; mobileLength: number }>`
   background-color: ${({ theme }) => theme.colors.black};
-  width: ${({ mobileLength }) => mobileLength}px;
+  width: ${({ length }) => length}px;
   height: 0.16rem;
+
+  ${media[768]} {
+    width: ${({ mobileLength }) => mobileLength}px;
+  }
 `;
 
 export default AnswerList;
