@@ -24,31 +24,33 @@ function AnswerList() {
     width: `${length}rem`,
   };
 
-  const onClickAnswer = data => {
-    answer[`answer${progress + 1}`] = data;
-
-    setProgress(progress => progress + 1);
-
-    if (progress === 6) {
-      const testData = testResult(answer);
-      console.log('Data', testData);
-      Router.push(`/test/result/${color}`);
-      setProgress(0);
+  const onClickAnswer = async data => {
+    try {
+      answer[`answer${progress + 1}`] = data;
+      setProgress(progress => progress + 1);
+      const testData = await testResult(answer);
+      if (progress === 6) {
+        console.log('Data', testData);
+        Router.push(`/test/result/${color}`);
+        setProgress(0);
+      }
+    } catch (e) {
+      return e;
     }
   };
 
   return (
     <AnswerWrap>
-      <Text onClick={() => onClickAnswer(data[progress].answer01.value)}>
-        {data[progress].answer01.text}
+      <Text onClick={() => onClickAnswer(data[progress]?.answer01.value)}>
+        {data[progress]?.answer01.text}
       </Text>
       <LineWrap>
         <Circle />
         <Line style={styleWidth} />
         <MobileCircle />
       </LineWrap>
-      <Text onClick={() => onClickAnswer(data[progress].answer02.value)} style={styleMargin}>
-        {data[progress].answer02.text}
+      <Text onClick={() => onClickAnswer(data[progress]?.answer02.value)} style={styleMargin}>
+        {data[progress]?.answer02.text}
       </Text>
       <LineWrap>
         <Circle />
