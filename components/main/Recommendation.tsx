@@ -134,9 +134,10 @@ const Keyword = styled.span`
 `;
 const Name = styled.div`
   display: block;
-  width: 13rem;
+  width: 18rem;
   text-align: center;
   line-height: 3.12rem;
+  letter-spacing: 3px;
   font-size: 2.6rem;
   font-weight: bold;
 `;
