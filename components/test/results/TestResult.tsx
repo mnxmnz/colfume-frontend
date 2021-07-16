@@ -50,15 +50,6 @@ function TestResult() {
         <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
         <MatchingColor color="Sky" background="#96BCD2" />
         <MatchingColor color="Vanila" background="#FCE6AE" />
-        <>
-          {isMobile ? (
-            ''
-          ) : (
-            <DescriptionWrap>
-              <Description>{listDescription}</Description>
-            </DescriptionWrap>
-          )}
-        </>
       </LeftWrapper>
       <RightWrapper>
         <ImageWrapper>
