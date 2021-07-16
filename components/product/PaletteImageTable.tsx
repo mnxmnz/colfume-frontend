@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { paletteAtom } from '../../states/product';
 import { GetProductList } from '../../lib/api/product/getProduct';
+import PerfumeImg from '../search/PerfumeImg';
 
 interface MoodType {
   _id: string;
