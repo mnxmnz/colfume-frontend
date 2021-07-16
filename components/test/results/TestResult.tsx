@@ -30,8 +30,7 @@ function TestResult() {
         ))}
         <KeyWord>{data.palette_keyword}</KeyWord>
         <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
-        <MatchingColor color="sky" background="#96BCD2" />
-        <MatchingColor color="Vanila" background="#FCE6AE" />
+        <MatchingColor />
       </LeftWrapper>
       <RightWrapper>
         <ImageWrapper>
@@ -57,15 +56,6 @@ function TestResult() {
 
 export default TestResult;
 
-const DescriptionBox = styled.div`
-  display: none;
-  ${media.mobile} {
-    display: block;
-    margin-top: 75rem;
-    background: #fafafa;
-    height: 87.9rem;
-  }
-`;
 const LineWrapper = styled.div`
   margin-top: 7.2rem;
   padding-top: 7.2rem;
