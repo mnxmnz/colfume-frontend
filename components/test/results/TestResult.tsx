@@ -37,7 +37,9 @@ function TestResult() {
       </LeftWrapper>
       <RightWrapper>
         <ImageWrapper>
-          <Image alt="resultColorGreen" src={Green} />
+          <Image>
+            <img alt="img" src={data.palette_img} />
+          </Image>
         </ImageWrapper>
         <RecommendBtn>향수 추천을 받아보세요</RecommendBtn>
         <CopyLinkBtn />

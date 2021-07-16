@@ -35,7 +35,6 @@ const ColorWrap = styled.button`
   font-size: 1.8rem;
   font-weight: 500;
 
-
   ${media.mobile} {
     font-size: 1.4rem;
   }
