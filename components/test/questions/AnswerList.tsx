@@ -12,17 +12,12 @@ function AnswerList() {
   const answer = useRecoilValue(answerAtom);
   const setResult = useSetRecoilState(testResultAtom);
 
-  const color = 'red';
-
   const data = AnswerData;
   const length = data[progress]?.length;
+  const mobileLength = data[progress]?.mobileLength;
 
   const styleMargin = {
     marginTop: '4rem',
-  };
-
-  const styleWidth = {
-    width: `${length}rem`,
   };
 
   const onClickAnswer = async data => {
@@ -48,7 +43,7 @@ function AnswerList() {
       </Text>
       <LineWrap>
         <Circle />
-        <Line style={styleWidth} />
+        <Line length={length} mobileLength={mobileLength} />
         <MobileCircle />
       </LineWrap>
       <Text onClick={() => onClickAnswer(data[progress]?.answer02.value)} style={styleMargin}>
@@ -56,7 +51,7 @@ function AnswerList() {
       </Text>
       <LineWrap>
         <Circle />
-        <Line style={styleWidth} />
+        <Line length={length} mobileLength={mobileLength} />
         <MobileCircle />
       </LineWrap>
     </AnswerWrap>
@@ -69,8 +64,12 @@ const AnswerWrap = styled.div`
   text-align: right;
 
   ${media[768]} {
-    margin-top: 22.5rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
     margin-right: 0;
+    margin-bottom: 170px;
     text-align: center;
   }
 `;
@@ -82,8 +81,10 @@ const Text = styled.div`
   font-weight: 400;
 
   ${media[768]} {
-    margin-bottom: 0.6rem;
-    font-size: 1.6rem;
+    margin-bottom: 6px;
+    line-height: 23.17px;
+    font-size: 16px;
+    font-weight: 400;
   }
 `;
 
@@ -93,6 +94,8 @@ const LineWrap = styled.div`
   justify-content: flex-end;
 
   ${media[768]} {
+    display: flex;
+    align-items: center;
     justify-content: center;
   }
 `;
@@ -102,33 +105,30 @@ const Circle = styled.div`
   background-color: ${({ theme }) => theme.colors.black};
   width: 0.8rem;
   height: 0.8rem;
+
+  ${media[768]} {
+    border-radius: 2px;
+    width: 4px;
+    height: 4px;
+  }
 `;
 
 const MobileCircle = styled.div`
   display: none;
-  border-radius: 0.4rem;
+  border-radius: 2px;
   background-color: ${({ theme }) => theme.colors.black};
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 4px;
+  height: 4px;
 
   ${media[768]} {
     display: block;
   }
 `;
 
-const Line = styled.div`
+const Line = styled.div<{ length: number; mobileLength: number }>`
   background-color: ${({ theme }) => theme.colors.black};
+  width: ${({ mobileLength }) => mobileLength}px;
   height: 0.16rem;
-  animation: lineAnimation 3s;
-
-  @keyframes lineAnimation {
-    0% {
-      width: 0rem;
-    }
-    100% {
-      width: var(length) rem;
-    }
-  }
 `;
 
 export default AnswerList;

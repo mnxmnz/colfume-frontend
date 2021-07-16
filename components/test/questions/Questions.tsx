@@ -15,8 +15,7 @@ function Questions() {
 }
 
 const QuestionWrap = styled.div`
-  flex: 1 1 auto;
-  justify-content: center;
+  overflow: hidden;
 `;
 
 export default Questions;
