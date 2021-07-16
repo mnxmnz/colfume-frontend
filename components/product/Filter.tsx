@@ -22,7 +22,7 @@ function Filter() {
             setSelected(paletteColor);
           };
           return (
-            <FilterIcon>
+            <FilterIcon key={idx}>
               <IconImg
                 onClick={handleClick}
                 src={token.image.src}

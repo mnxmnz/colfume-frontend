@@ -15,7 +15,7 @@ import NewFooter from 'components/common/NewFooter';
 function MainWrap(props) {
   const { width, height } = props.size;
   const rawData = GetRecommData().data;
-  const isMobile = width <= 375 ? true : false;
+  const isMobile = width <= 700 ? true : false;
 
   return (
     <>

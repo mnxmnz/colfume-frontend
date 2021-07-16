@@ -69,7 +69,7 @@ const AnswerWrap = styled.div`
     bottom: 0;
     left: 0;
     margin-right: 0;
-    margin-bottom: 97.92px;
+    margin-bottom: 107.712px;
     text-align: center;
   }
 `;
@@ -127,8 +127,12 @@ const MobileCircle = styled.div`
 
 const Line = styled.div<{ length: number; mobileLength: number }>`
   background-color: ${({ theme }) => theme.colors.black};
-  width: ${({ mobileLength }) => mobileLength}px;
+  width: ${({ length }) => length}px;
   height: 0.16rem;
+
+  ${media[768]} {
+    width: ${({ mobileLength }) => mobileLength}px;
+  }
 `;
 
 export default AnswerList;
