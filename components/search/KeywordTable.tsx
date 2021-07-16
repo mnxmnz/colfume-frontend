@@ -92,6 +92,10 @@ const KeywordBtn = styled.button<{ selectedIdx: string; myId: string }>`
     padding: 0 1rem;
     line-height: 2.52rem;
     font-size: 1.4rem;
+    &:hover {
+      background: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.colors.white};
+    }
   }
 `;
 

@@ -111,7 +111,7 @@ const SearchBarBox = styled.div`
     }
 
     button {
-      bottom: -5px;
+      bottom: -0.6rem;
       padding: 0;
 
       img {
