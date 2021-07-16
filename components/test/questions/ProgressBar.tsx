@@ -18,7 +18,6 @@ function ProgressBar() {
 const ProgressBarWrap = styled.div`
   margin: 0 auto;
   margin-top: 16.9444vh;
-  margin-bottom: 11.1111vh;
   background-color: ${({ theme }) => theme.colors.progressBeige};
   width: 63rem;
   height: 1rem;

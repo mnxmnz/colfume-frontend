@@ -10,18 +10,26 @@ function Filter({ moods, styles, colors }) {
       <ColorWrap>
         <Categ>Color</Categ>
         <Color>
-          {/* i{mgData.map((img, idx) => {
-            return <img key={idx} src={img.src} alt="" />;
-          })} */}
+          {colors.color1 !== null && (
+            <img src={colors.color1.color_img} alt={colors.color1.color_name} />
+          )}
+          {colors.color2 !== null && (
+            <img src={colors.color2.color_img} alt={colors.color2.color_name} />
+          )}
+          {colors.color3 !== null && (
+            <img src={colors.color3.color_img} alt={colors.color3.color_name} />
+          )}
         </Color>
       </ColorWrap>
       <MoodStyleWrap>
         <MoodStyle>
           <KeywordWrap>
             <Categ>Mood</Categ>
-            <Keyword>{moods.mood1.mood_name}</Keyword>
-            <Keyword>{moods.mood2.mood_name}</Keyword>
-            {moods.mood3 !== null && <Keyword>{moods.mood3.mood_name}</Keyword>}
+            <KeywordBox>
+              <Keyword>{moods.mood1.mood_name}</Keyword>
+              <Keyword>{moods.mood2.mood_name}</Keyword>
+              {moods.mood3 !== null && <Keyword>{moods.mood3.mood_name}</Keyword>}
+            </KeywordBox>
           </KeywordWrap>
         </MoodStyle>
         <MoodStyle>
@@ -77,9 +85,17 @@ const Categ = styled.div`
   font-size: 2rem;
 
   ${media.mobile} {
+    margin-right: 2rem;
+    margin-left: 2rem;
     line-height: 1.945rem;
     font-size: 1.6rem;
   }
+`;
+
+const KeywordBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 55rem;
 `;
 
 const Color = styled.div`
@@ -121,9 +137,7 @@ const MoodStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   margin-top: 3rem;
-  width: 47.5rem;
 
   ${media.mobile} {
     margin-top: 3.7rem;
@@ -133,17 +147,14 @@ const MoodStyle = styled.div`
 
 const KeywordWrap = styled.div`
   display: flex;
-  justify-content: flex-start;
   width: 50rem;
 
   ${media.mobile} {
-    margin-right: 8rem;
     width: 24.623rem;
   }
 `;
 
 const Keyword = styled.div`
-  margin-right: 2.6rem;
   background-color: ${({ theme }) => theme.colors.gray2};
   padding-top: 0.3rem;
   width: 10rem;
