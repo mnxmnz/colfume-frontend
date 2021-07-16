@@ -4,15 +4,16 @@ import Banner from './Banner';
 import Mood from './Mood';
 import { Slide } from '../';
 import Footer from '../common/Footer';
-import MobileFooter from '../common/MobileFooter';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 import { GetRecommData } from 'lib/api/main/getRecomm';
 import PaletteData from '../../public/PaletteData';
+import sizeMe from 'react-sizeme';
 
 function MainWrap(props) {
-  const isMobile = props.isMobile;
+  const { width, height } = props.size;
   const rawData = GetRecommData().data;
+  const isMobile = width <= 375 ? true : false;
 
   return (
     <>
@@ -78,7 +79,7 @@ function MainWrap(props) {
   );
 }
 
-export default MainWrap;
+export default sizeMe({ monitorHeight: true })(MainWrap);
 
 const ContentWrap = styled.div`
   display: flex;

@@ -19,6 +19,7 @@
     "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "17.0.2",
     "react-responsive": "^8.2.0",
+    "react-sizeme": "^3.0.1",
     "react-slick": "^0.28.1",
     "recoil": "^0.3.1",
     "slick-carousel": "^1.8.1",

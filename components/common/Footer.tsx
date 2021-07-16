@@ -5,13 +5,12 @@ import { FooterIcons } from '../../assets';
 import Image from 'next/image';
 import { media } from '@styles/theme';
 import { Logo } from '../../assets';
-import MobileFooter from './MobileFooter';
 
 const Box = styled.div`
   bottom: 0;
   margin-top: auto;
   background: ${({ theme }) => theme.colors.gray1};
-  width: 100%;
+  width: 192rem;
   min-height: 57.6rem;
 
   ${media.mobile} {
