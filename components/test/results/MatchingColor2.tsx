@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 import { testResultAtom } from '../../../states/test';
 import { useRecoilValue } from 'recoil';
-
-interface PropsType {
-  color: string;
-  background: string;
-}
 
 function MatchingColor2() {
   const data = useRecoilValue(testResultAtom);
@@ -35,17 +30,8 @@ const ColorWrap = styled.button`
   font-weight: 500;
 
   ${media.mobile} {
-    font-size: 1.4rem;
-  }
-`;
-
-const Text = styled.span`
-  text-align: center;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 1.8rem;
-  font-weight: 500;
-
-  ${media.mobile} {
+    margin-right: 0.35rem;
+    margin-left: 0.35rem;
     font-size: 1.4rem;
   }
 `;

@@ -14,6 +14,7 @@ interface MoodType {
 function PaletteImageTable() {
   const keyword = useRecoilValue(paletteAtom);
   const rawData = GetProductList(keyword);
+  console.log(rawData);
 
   return (
     <ImageTableWrap>
