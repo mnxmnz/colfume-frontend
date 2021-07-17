@@ -14,7 +14,7 @@ import sizeMe from 'react-sizeme';
 
 function TestResult(props) {
   const { width, height } = props.size;
-  const isMobile = width <= 375 ? true : false;
+  const isMobile = width <= 700 ? true : false;
   const data = useRecoilValue(testResultAtom);
   const setPaletteAtom = useSetRecoilState(paletteAtom);
   const submitColorResult = () => {

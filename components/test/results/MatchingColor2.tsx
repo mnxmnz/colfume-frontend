@@ -30,23 +30,8 @@ const ColorWrap = styled.button`
   font-weight: 500;
 
   ${media.mobile} {
-<<<<<<< HEAD
-    margin-top: 2rem;
-    font-size: 1.4rem;
-  }
-`;
-
-const Text = styled.span`
-  text-align: center;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 1.8rem;
-  font-weight: 500;
-
-  ${media.mobile} {
-=======
     margin-right: 0.35rem;
     margin-left: 0.35rem;
->>>>>>> d03989998b1ce762a9f959864320397cf67f232e
     font-size: 1.4rem;
   }
 `;
