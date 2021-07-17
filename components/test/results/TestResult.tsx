@@ -9,12 +9,14 @@ import ResultButton from './ResultButton';
 import { testResultAtom } from '../../../states/test';
 import { useRecoilValue } from 'recoil';
 import { GetTestAnswer } from '../../../lib/api/test/getAnswer';
+import { useRouter } from 'next/router';
 
-function TestResult() {
-  const colorName = useRecoilValue(testResultAtom);
-  const data = GetTestAnswer(colorName);
-  console.log('colorname', colorName);
-  console.log('API 분리', data);
+function TestResult({data}) {
+  // const colorName = useRecoilValue(testResultAtom);
+  // const router = useRouter();
+  // const data = GetTestAnswer(colorName);
+  // console.log('colorname', colorName);
+  // console.log('API 분리', data);
 
   return (
     <>

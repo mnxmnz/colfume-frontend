@@ -9,8 +9,8 @@ interface PropsType {
   background: string;
 }
 
-function MatchingColor1() {
-  const data = useRecoilValue(testResultAtom);
+function MatchingColor1({data}) {
+  // const data = useRecoilValue(testResultAtom);
   console.log('matchcolor:', data);
   const background = {
     background: `${data?.palette_matchBg[0]}`,
