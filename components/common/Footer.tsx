@@ -9,12 +9,7 @@ import { Logo } from '../../assets';
 const Box = styled.div`
   bottom: 0;
   background: ${({ theme }) => theme.colors.gray1};
-  width: 100%;
-  height: 57.6rem;
-
-  ${media.mobile} {
-    width: 100vw;
-  }
+  height: 57.6rem; ;
 `;
 
 const MaterialBox = styled.div`
@@ -23,11 +18,6 @@ const MaterialBox = styled.div`
   /* padding: 0 20%; */
   padding-top: 17.8rem;
   width: 100%;
-
-  ${media.mobile} {
-    margin-top: 3.36rem;
-    padding-top: 3.36rem;
-  }
 `;
 
 const HeadingColumn = styled.div`
@@ -35,10 +25,6 @@ const HeadingColumn = styled.div`
   flex-direction: column;
   width: 10rem;
   text-align: left;
-
-  ${media.mobile} {
-    display: none;
-  }
 `;
 
 const InfoColumn = styled.div`
@@ -48,12 +34,8 @@ const InfoColumn = styled.div`
   width: 50rem;
   text-align: left;
 
-  ${media.mobile} {
-    display: flex;
-    flex-direction: row;
-    background: pink;
-    width: 25.9rem;
-    text-align: left;
+  ${media.custom(900)} {
+    width: 25rem;
   }
 `;
 
@@ -62,10 +44,6 @@ const FollowColumn = styled.div`
   flex-direction: column;
   width: 20rem;
   text-align: left;
-
-  ${media.mobile} {
-    margin-left: 0;
-  }
 `;
 
 const Heading = styled.div`
@@ -74,13 +52,6 @@ const Heading = styled.div`
   font-family: 'Gotham';
   font-size: 2rem;
   font-weight: 700;
-
-  ${media.mobile} {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2.5rem;
-    font-size: 1.2rem;
-  }
 `;
 
 const LogoColumn = styled.div`
@@ -97,11 +68,6 @@ const LogoWrapper = styled.div`
     width: 13rem;
     height: 3rem;
   }
-
-  ${media.mobile} {
-    background: yellow;
-    width: 8.012rem;
-  }
 `;
 
 const FooterButton = styled.div`
@@ -113,13 +79,6 @@ const FooterButton = styled.div`
 
   &:hover {
     cursor: pointer;
-  }
-
-  ${media.mobile} {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2.5rem;
-    font-size: 1rem;
   }
 `;
 
@@ -139,9 +98,8 @@ const MobileContent = styled.div`
   width: 50rem;
   font-size: 1.5rem;
   font-weight: 400;
-
-  ${media.mobile} {
-    display: none;
+  ${media.custom(900)} {
+    width: 25rem;
   }
 `;
 
