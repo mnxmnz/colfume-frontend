@@ -17,11 +17,11 @@ import TestResult from '../../../components/test/results/TestResult';
 
 // export default sizeMe({ monitorHeight: true })(Result);
 
-function Result(props) {
-  const { width, height } = props.size;
-  const isMobile = width <= 700 ? true : false;
+function Result() {
+  // const { width, height } = props.size;
+  // const isMobile = width <= 700 ? true : false;
 
-  return <>{isMobile ? <MobileResult /> : <TestResult />}</>;
+  return <MobileResult />;
 }
 
-export default sizeMe({ monitorHeight: true })(Result);
+export default Result;

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Line } from '../../../assets';
-import { media } from '@styles/theme';
 import MatchingColor1 from './MatchingColor1';
 import MatchingColor2 from './MatchingColor2';
 import CopyLinkBtn from './CopyLinkBtn';
@@ -11,16 +10,19 @@ import { paletteAtom } from 'states/product';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import Link from 'next/link';
 import sizeMe from 'react-sizeme';
+import ResultData from './ResultData';
 
 function TestResult(props) {
+  console.log(ResultData);
   const { width, height } = props.size;
   const isMobile = width <= 700 ? true : false;
-  const data = useRecoilValue(testResultAtom);
-  const setPaletteAtom = useSetRecoilState(paletteAtom);
-  const submitColorResult = () => {
-    setPaletteAtom(data.palette_name);
-  };
-  console.log('테스트결과 페이지', data);
+  const data = ResultData;
+  // const data = useRecoilValue(testResultAtom);
+  // const setPaletteAtom = useSetRecoilState(paletteAtom);
+  // const submitColorResult = () => {
+  //   setPaletteAtom(data.palette_name);
+  // };
+  console.log('data', data);
 
   return (
     <Layout>
