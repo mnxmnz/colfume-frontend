@@ -13,9 +13,11 @@ import Link from 'next/link';
 import sizeMe from 'react-sizeme';
 
 function TestResult(props) {
+  const {data} = props
+  console.log(data)
   const { width, height } = props.size;
   const isMobile = width <= 700 ? true : false;
-  const data = useRecoilValue(testResultAtom);
+  // const data = useRecoilValue(testResultAtom);
   const setPaletteAtom = useSetRecoilState(paletteAtom);
   const submitColorResult = () => {
     setPaletteAtom(data.palette_name);
@@ -23,6 +25,7 @@ function TestResult(props) {
   console.log('테스트결과 페이지', data);
 
   return (
+    data&&
     <Layout>
       <LineWrapper>
         <Image alt="line" src={Line} />
@@ -37,8 +40,8 @@ function TestResult(props) {
         ))}
         <KeyWord>{data?.palette_keyword}</KeyWord>
         <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
-        <MatchingColor1 />
-        {!data?.palette_matchColor[1] ? '' : <MatchingColor2 />}
+        <MatchingColor1 data={data} />
+        {!data?.palette_matchColor[1] ? '' : <MatchingColor2 data={data} />}
       </LeftWrapper>
       <RightWrapper>
         <ImageWrapper>
