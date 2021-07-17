@@ -4,23 +4,24 @@ import MatchingColor1 from './MatchingColor1';
 import MatchingColor2 from './MatchingColor2';
 import { media } from '@styles/theme';
 
-function ResultTitle({ data }) {
+function ResultTitle(props) {
+  const data = props.data;
   return (
     <TitleWrap>
-      <ResultColor>{data?.palette_name}</ResultColor>
+      <ResultColor>{data.palette_name}</ResultColor>
       <WordWrap>
-        {data?.palette_title.split('\n').map((line, idx) => (
+        {data.palette_title?.split('\n').map((line, idx) => (
           <KeySentence key={idx}>
             {line}
             <br />
           </KeySentence>
         ))}
-        <KeyWord>{data?.palette_keyword}</KeyWord>
+        <KeyWord>{data.palette_keyword}</KeyWord>
         <MatchingWrap>
           <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
           <MatchingColWrap>
             <MatchingColor1 />
-            {data?.palette_matchColor[1] && <MatchingColor2 />}
+            {!data.palette_matchColor[1] ? '' : <MatchingColor2 />}
           </MatchingColWrap>
         </MatchingWrap>
       </WordWrap>
@@ -32,7 +33,6 @@ export default ResultTitle;
 
 const TitleWrap = styled.div`
   float: left;
-
   ${media.mobile} {
     align-items: center;
     margin-left: 0;
@@ -45,7 +45,6 @@ const ResultColor = styled.div`
   font-family: Junge;
   font-size: 9rem;
   font-weight: 400;
-
   ${media.mobile} {
     margin-bottom: 2.2.rem;
     text-align: center;
@@ -60,7 +59,6 @@ const KeySentence = styled.div`
   font-family: NanumMyeongjo;
   font-size: 3rem;
   font-weight: 400;
-
   ${media.mobile} {
     margin: 0;
     line-height: 3.24rem;
@@ -83,7 +81,6 @@ const KeyWord = styled.div`
   font-family: NotoSans;
   font-size: 1.8rem;
   font-weight: 500;
-
   ${media.mobile} {
     margin-top: 3rem;
     margin-left: 0;
@@ -94,7 +91,6 @@ const KeyWord = styled.div`
 
 const MatchingWrap = styled.div`
   display: flex;
-
   ${media.mobile} {
     flex-direction: column;
   }
@@ -103,7 +99,6 @@ const MatchingWrap = styled.div`
 const MatchingColWrap = styled.div`
   display: flex;
   align-items: center;
-
   ${media.mobile} {
     display: flex;
     align-items: center;
@@ -119,7 +114,6 @@ const MatchingColorText = styled.div`
   font-family: NotoSans;
   font-size: 1.8rem;
   font-weight: 500;
-
   ${media.mobile} {
     align-items: center;
     margin-top: 0rem;
