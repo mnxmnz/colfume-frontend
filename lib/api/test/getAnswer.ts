@@ -10,7 +10,7 @@ export const GetTestAnswer = colorName => {
   });
 
   if (error) return '[FAIL] get data';
-  if (data) return '[FAIL] no data';
+  if (!data) return '[FAIL] no data';
   return data;
 };
 
