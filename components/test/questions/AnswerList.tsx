@@ -33,7 +33,7 @@ function AnswerList() {
         const testData = await testResult(answer);
         setResult(testData);
         setTimeout(() => {
-          Router.push(`/test/result/${testData.palette_name}`);
+          Router.push(`/test/result/${testData}`);
         }, 2800);
       } catch (e) {
         return e;
