@@ -13,6 +13,7 @@ import { GetTestAnswer } from '../../../lib/api/test/getAnswer';
 function TestResult() {
   const colorName = useRecoilValue(testResultAtom);
   const data = GetTestAnswer(colorName);
+  console.log('colorname', colorName);
   console.log('API 분리', data);
 
   return (
