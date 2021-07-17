@@ -23,7 +23,9 @@ function ResultButton(props) {
       </Link>
       <BtnWrap>
         <CopyLinkBtn />
-        <RetryBtn>다시 하기</RetryBtn>
+        <Link href="/test">
+          <RetryBtn>다시 하기</RetryBtn>
+        </Link>
       </BtnWrap>
     </Wrap>
   );

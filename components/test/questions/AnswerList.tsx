@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Router from 'next/router';
 import AnswerData from './AnswerData';
 import { media } from '@styles/theme';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import { questionNumberAtom, answerAtom, testResultAtom } from '../../../states/test';
 import { testResult } from '../../../lib/api/test/postAnswer';
+import Loading from './Loading';
 
 function AnswerList() {
   const [progress, setProgress] = useRecoilState(questionNumberAtom);
   const answer = useRecoilValue(answerAtom);
   const setResult = useSetRecoilState(testResultAtom);
+  const restartTest = useResetRecoilState(questionNumberAtom);
 
   const data = AnswerData;
   const length = data[progress]?.length;
   const mobileLength = data[progress]?.mobileLength;
+
+  const [loading, setLoading] = useState(false);
 
   const styleMargin = {
     marginTop: '4rem',
@@ -28,33 +32,54 @@ function AnswerList() {
       try {
         const testData = await testResult(answer);
         setResult(testData);
-        Router.push(`/test/result/${testData.palette_name}`);
+        setTimeout(() => {
+          Router.push(`/test/result/${testData.palette_name}`);
+        }, 2800);
       } catch (e) {
         return e;
       }
-      setProgress(progress => 0);
+
+      setLoading(true);
+
+      setTimeout(() => {
+        restartTest();
+        setLoading(false);
+      }, 3000);
     }
   };
 
   return (
-    <AnswerWrap>
-      <Text onClick={() => onClickAnswer(data[progress]?.answer01.value)}>
-        {data[progress]?.answer01.text}
-      </Text>
-      <LineWrap>
-        <Circle />
-        <Line length={length} mobileLength={mobileLength} />
-        <MobileCircle />
-      </LineWrap>
-      <Text onClick={() => onClickAnswer(data[progress]?.answer02.value)} style={styleMargin}>
-        {data[progress]?.answer02.text}
-      </Text>
-      <LineWrap>
-        <Circle />
-        <Line length={length} mobileLength={mobileLength} />
-        <MobileCircle />
-      </LineWrap>
-    </AnswerWrap>
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          {data[progress] && (
+            <AnswerWrap>
+              <Text onClick={() => onClickAnswer(data[progress]?.answer01.value)}>
+                {data[progress]?.answer01.text}
+              </Text>
+              <LineWrap>
+                <Circle />
+                <Line length={length} mobileLength={mobileLength} />
+                <MobileCircle />
+              </LineWrap>
+              <Text
+                onClick={() => onClickAnswer(data[progress]?.answer02.value)}
+                style={styleMargin}
+              >
+                {data[progress]?.answer02.text}
+              </Text>
+              <LineWrap>
+                <Circle />
+                <Line length={length} mobileLength={mobileLength} />
+                <MobileCircle />
+              </LineWrap>
+            </AnswerWrap>
+          )}
+        </>
+      )}
+    </>
   );
 }
 

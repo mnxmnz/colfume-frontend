@@ -95,6 +95,7 @@ function TestResult(props) {
       ) : (
         ''
       )}
+      å
     </Layout>
   );
 }
@@ -150,44 +151,6 @@ const ResultColor = styled.div`
   }
 `;
 
-const KeySentence = styled.div`
-  margin-top: 2.4rem;
-  margin-left: 1.2rem;
-  font-family: NanumMyeongjo;
-  font-size: 3rem;
-  font-weight: 400;
-  ${media.mobile} {
-    margin-top: 2.2rem;
-    font-size: 1.8em;
-    font-weight: 700;
-  }
-`;
-const KeyWord = styled.div`
-  margin-top: 4rem;
-  margin-left: 1.8rem;
-  font-family: NotoSans;
-  font-size: 1.8rem;
-  font-weight: 500;
-  ${media.mobile} {
-    font-size: 1.4rem;
-  }
-`;
-const MatchingColorText = styled.div`
-  float: left;
-  margin-top: 1rem;
-  margin-left: 1.8rem;
-  width: 13rem;
-  font-family: NotoSans;
-  font-size: 1.8rem;
-  font-weight: 500;
-  ${media.mobile} {
-    align-items: center;
-    margin-left: 7rem;
-    width: 25rem;
-    font-size: 1.4rem;
-  }
-`;
-
 const DescriptionWrap = styled.div`
   margin-top: 40.8rem;
   margin-bottom: 2rem;
@@ -212,13 +175,8 @@ const Description = styled.div`
 const DescWrap = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
-  width: 80rem;
-`;
-
-const Desc = styled.li`
-  line-height: 3.6rem;
-  font-size: 2rem;
+  margin-top: 14.5rem;
+  margin-left: 12.6042vw;
 
   ${media.mobile} {
     margin-left: 2rem;
@@ -239,69 +197,6 @@ const RightWrapper = styled.div`
   ${media.mobile} {
     justify-content: center;
     margin-top: 9rem;
-    margin-right: 0;
-    width: 37rem;
-    height: 29rem;
-  }
-`;
-
-const ImageWrapper = styled.div`
-  align-items: center;
-  margin: 0 auto;
-  background: yellow;
-  width: 33.1rem;
-  height: 33.1rem;
-  ${media.mobile} {
-    margin: 0 auto;
-    background: violet;
-    width: 16rem;
-    height: 16rem;
-  }
-`;
-
-const RecommendBtn = styled.button`
-  margin-top: 10.7rem;
-  background-color: ${({ theme }) => theme.colors.black};
-  width: 50rem;
-  height: 7.1rem;
-  color: ${({ theme }) => theme.colors.white};
-  font-family: NotoSans;
-  font-size: 2.8rem;
-  font-weight: 400;
-
-  &:hover {
-    cursor: pointer;
-  }
-  ${media.mobile} {
-    margin: 0 auto;
-    margin-top: 5.5rem;
-    margin-left: 6.2rem;
-    width: 25.2rem;
-    height: 3.578rem;
-    font-size: 1.4rem;
-  }
-`;
-
-const RetryBtn = styled.button`
-  float: right;
-  margin-top: 2.4rem;
-  border: solid 1px;
-  width: 23.2rem;
-  height: 6.496rem;
-  font-family: NotoSans;
-  font-size: 2.4rem;
-  font-weight: 400;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  ${media.mobile} {
-    float: right;
-    margin-top: 1.222rem;
-    margin-right: 5.8rem;
-    width: 11.8rem;
-    height: 3.274rem;
-    font-size: 1.2rem;
+    margin-left: 0;
   }
 `;

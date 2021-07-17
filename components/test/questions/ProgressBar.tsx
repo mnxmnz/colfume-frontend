@@ -8,19 +8,23 @@ function ProgressBar() {
   const progress = useRecoilValue(questionNumberAtom);
 
   return (
-    <ProgressWrap>
-      <NumberWrap>
-        <CurrentProgress progress={progress}>{progress + 1}/7</CurrentProgress>
-      </NumberWrap>
-      <ProgressBarWrap>
-        <Current progress={progress} />
-      </ProgressBarWrap>
-    </ProgressWrap>
+    <>
+      {progress <= 6 && (
+        <ProgressWrap>
+          <NumberWrap>
+            <CurrentProgress progress={progress}>{progress + 1}/7</CurrentProgress>
+          </NumberWrap>
+          <ProgressBarWrap>
+            <Current progress={progress} />
+          </ProgressBarWrap>
+        </ProgressWrap>
+      )}
+    </>
   );
 }
 
 const ProgressWrap = styled.div`
-  margin-top: 16.9444vh;
+  margin-top: 8.4722vh;
   margin-bottom: 11.1111vh;
 
   ${media[768]} {

@@ -35,8 +35,8 @@ function CopyLinkBtn() {
   }
 
   const router = useRouter();
-  const currentPath = router.pathname;
-  const url = 'https://www.colfume.co.kr' + currentPath;
+  const { id } = router.query;
+  const url = 'https://colfume.vercel.app/test/result/' + id;
 
   return (
     <>
