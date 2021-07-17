@@ -8,10 +8,12 @@ import ResultDescription from './ResultDescription';
 import ResultButton from './ResultButton';
 import { testResultAtom } from '../../../states/test';
 import { useRecoilValue } from 'recoil';
+import { GetTestAnswer } from '../../../lib/api/test/getAnswer';
 
 function TestResult() {
-  const data = useRecoilValue(testResultAtom);
-  console.log('테스트결과 페이지', data);
+  const colorName = useRecoilValue(testResultAtom);
+  const data = GetTestAnswer(colorName);
+  console.log('API 분리', data);
 
   return (
     <>
