@@ -5,11 +5,17 @@ import { testResultAtom } from '../../../states/test';
 import { useRecoilValue } from 'recoil';
 
 interface PropsType {
+  data: dataType;
+}
+interface dataType {
   color: string;
   background: string;
+  palette_matchBg?: string[];
+  palette_matchColor?: string[];
 }
 
-function MatchingColor1({data}) {
+function MatchingColor1(props: PropsType) {
+  const data = props.data;
   // const data = useRecoilValue(testResultAtom);
   console.log('matchcolor:', data);
   const background = {
