@@ -11,13 +11,14 @@ interface PropsType {
 
 function MatchingColor1() {
   const data = useRecoilValue(testResultAtom);
+  console.log('matchcolor:', data);
   const background = {
-    background: `${data.palette_matchBg[0]}`,
+    background: `${data?.palette_matchBg[0]}`,
   };
   return (
     <>
       <ColorWrap style={background}>
-        <div>{data.palette_matchColor[0]}</div>
+        <div>{data?.palette_matchColor[0]}</div>
       </ColorWrap>
     </>
   );
