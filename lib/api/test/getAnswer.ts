@@ -2,7 +2,7 @@ import useSWR from 'swr';
 import { fetcher } from '../fetch';
 
 export const GetTestAnswer = colorName => {
-  const { data, error } = useSWR(`https://colfume.co.kr/api/colfume/White`, fetcher, {
+  const { data, error } = useSWR(`https://colfume.co.kr/api/colfume/${colorName}`, fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
       if (error.status === 404) return;
       if (retryCount >= 10) return;
