@@ -43,4 +43,4 @@ function Result(props) {
   return <>{cData && (isMobile ? <MobileResult data={cData} /> : <TestResult data={cData} />)}</>;
 }
 
-export default Result;
+export default sizeMe({ monitorHeight: true })(Result);

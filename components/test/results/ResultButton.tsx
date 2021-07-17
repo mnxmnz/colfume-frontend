@@ -36,8 +36,8 @@ export default ResultButton;
 const Wrap = styled.div`
   display: flex;
   position: absolute;
-  top: 21.8rem;
-  right: 10rem;
+  top: 25rem;
+  right: 16rem;
   flex-direction: column;
   align-items: center;
   width: 50rem;
