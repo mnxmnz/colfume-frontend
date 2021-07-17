@@ -37,24 +37,28 @@ function AnswerList() {
   };
 
   return (
-    <AnswerWrap>
-      <Text onClick={() => onClickAnswer(data[progress]?.answer01.value)}>
-        {data[progress]?.answer01.text}
-      </Text>
-      <LineWrap>
-        <Circle />
-        <Line length={length} mobileLength={mobileLength} />
-        <MobileCircle />
-      </LineWrap>
-      <Text onClick={() => onClickAnswer(data[progress]?.answer02.value)} style={styleMargin}>
-        {data[progress]?.answer02.text}
-      </Text>
-      <LineWrap>
-        <Circle />
-        <Line length={length} mobileLength={mobileLength} />
-        <MobileCircle />
-      </LineWrap>
-    </AnswerWrap>
+    <>
+      {data[progress] && (
+        <AnswerWrap>
+          <Text onClick={() => onClickAnswer(data[progress]?.answer01.value)}>
+            {data[progress]?.answer01.text}
+          </Text>
+          <LineWrap>
+            <Circle />
+            <Line length={length} mobileLength={mobileLength} />
+            <MobileCircle />
+          </LineWrap>
+          <Text onClick={() => onClickAnswer(data[progress]?.answer02.value)} style={styleMargin}>
+            {data[progress]?.answer02.text}
+          </Text>
+          <LineWrap>
+            <Circle />
+            <Line length={length} mobileLength={mobileLength} />
+            <MobileCircle />
+          </LineWrap>
+        </AnswerWrap>
+      )}
+    </>
   );
 }
 
