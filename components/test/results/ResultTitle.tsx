@@ -4,20 +4,18 @@ import MatchingColor1 from './MatchingColor1';
 import MatchingColor2 from './MatchingColor2';
 import { media } from '@styles/theme';
 
-function ResultTitle(props) {
-  const data = props.data;
-
+function ResultTitle({ data }) {
   return (
     <TitleWrap>
-      <ResultColor>{data.palette_name}</ResultColor>
+      <ResultColor>{data?.palette_name}</ResultColor>
       <WordWrap>
-        {data.palette_title?.split('\n').map((line, idx) => (
+        {data?.palette_title.split('\n').map((line, idx) => (
           <KeySentence key={idx}>
             {line}
             <br />
           </KeySentence>
         ))}
-        <KeyWord>{data.palette_keyword}</KeyWord>
+        <KeyWord>{data?.palette_keyword}</KeyWord>
         <MatchingWrap>
           <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
           <MatchingColWrap>

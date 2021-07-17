@@ -6,7 +6,7 @@ function ResultDescription(props) {
   const description = props.description;
   return (
     <DescriptionWrap>
-      {description.split('\n').map((line, idx) => (
+      {description?.split('\n').map((line, idx) => (
         <Description>
           <span>·</span>
           <DescWrap>

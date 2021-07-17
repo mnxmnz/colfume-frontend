@@ -32,6 +32,7 @@ function AnswerList() {
       try {
         const testData = await testResult(answer);
         setResult(testData);
+        console.log('테스트 결과', testData);
         setTimeout(() => {
           Router.push(`/test/result/${testData}`);
         }, 2800);
