@@ -39,6 +39,15 @@ class MyDocument extends Document {
           <meta property="og:image" content="/metaImage.png" />
           <meta property="og:url" content="https://www.colfume.co.kr" />
           <link rel="icon" href="/favicon.ico" type="image/png" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-1VLDXK4J7L');`,
+            }}
+          />
         </Head>
         <body>
           <Main />
