@@ -6,6 +6,7 @@ import { media } from '@styles/theme';
 
 function ResultTitle(props) {
   const data = props.data;
+
   return (
     <TitleWrap>
       <ResultColor>{data.palette_name}</ResultColor>
@@ -21,7 +22,7 @@ function ResultTitle(props) {
           <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
           <MatchingColWrap>
             <MatchingColor1 />
-            {!data.palette_matchColor[1] ? '' : <MatchingColor2 />}
+            {data?.palette_matchColor[1] && <MatchingColor2 />}
           </MatchingColWrap>
         </MatchingWrap>
       </WordWrap>
