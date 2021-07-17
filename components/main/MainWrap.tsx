@@ -10,7 +10,6 @@ import { GetRecommData } from 'lib/api/main/getRecomm';
 import PaletteData from '../../public/PaletteData';
 import sizeMe from 'react-sizeme';
 import MobileFooter from '../common/MobileFooter';
-import NewFooter from 'components/common/NewFooter';
 
 function MainWrap(props) {
   const { width, height } = props.size;
