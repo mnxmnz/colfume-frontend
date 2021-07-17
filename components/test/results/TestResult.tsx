@@ -42,7 +42,7 @@ const Wrap = styled.div`
 const LineWrapper = styled.div`
   position: absolute;
   top: 22rem;
-  width: 21rem;
+  width: 10.9375vw;
 
   ${media.mobile} {
     top: 12rem;
@@ -54,13 +54,11 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 14.5rem;
-  margin-left: 24.8rem;
-  width: 144rem;
+  margin-left: 12.6042vw;
 
   ${media.mobile} {
     align-items: center;
     margin-top: 9rem;
     margin-left: 0;
-    width: 37.4rem;
   }
 `;
