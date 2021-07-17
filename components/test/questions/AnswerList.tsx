@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Router from 'next/router';
 import AnswerData from './AnswerData';
 import { media } from '@styles/theme';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import { questionNumberAtom, answerAtom, testResultAtom } from '../../../states/test';
 import { testResult } from '../../../lib/api/test/postAnswer';
 
@@ -20,6 +20,8 @@ function AnswerList() {
     marginTop: '4rem',
   };
 
+  const restartTest = useResetRecoilState(questionNumberAtom);
+
   const onClickAnswer = async data => {
     answer[`answer${progress + 1}`] = data;
     setProgress(progress => progress + 1);
@@ -32,7 +34,10 @@ function AnswerList() {
       } catch (e) {
         return e;
       }
-      setProgress(progress => 0);
+
+      setTimeout(() => {
+        restartTest();
+      }, 2000);
     }
   };
 
