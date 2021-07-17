@@ -4,8 +4,8 @@ import { media } from '@styles/theme';
 import { testResultAtom } from '../../../states/test';
 import { useRecoilValue } from 'recoil';
 
-function MatchingColor2() {
-  const data = useRecoilValue(testResultAtom);
+function MatchingColor2({data}) {
+  // const data = useRecoilValue(testResultAtom);
   const background = {
     background: `${data.palette_matchBg[1]}`,
   };
