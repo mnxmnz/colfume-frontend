@@ -21,7 +21,7 @@ function ResultTitle(props) {
         <MatchingWrap>
           <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
           <MatchingColWrap>
-            <MatchingColor1 />
+            <MatchingColor1 data={data} />
           </MatchingColWrap>
         </MatchingWrap>
       </WordWrap>
