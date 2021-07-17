@@ -1,19 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { Loading } from '../../../components/index';
-import TesultResult from '../../../components/test/results/TestResult';
+import MobileResult from '../../../components/test/results/MobileResult';
+import sizeMe from 'react-sizeme';
+import TestResult from '../../../components/test/results/TestResult';
+// function Result(props) {
+//   const { width, height } = props.size;
+//   const isMobile = width <= 700 ? true : false;
+//   const [loading, setLoading] = useState(true);
 
-function Result() {
-  const [loading, setLoading] = useState(true);
+//   useEffect(() => {
+//     const loadingFinished = setTimeout(() => {
+//       setLoading(false);
+//     }, 3000);
 
-  useEffect(() => {
-    const loadingFinished = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
+//     return () => clearTimeout(loadingFinished);
+//   }, []);
 
-    return () => clearTimeout(loadingFinished);
-  }, []);
+// export default sizeMe({ monitorHeight: true })(Result);
 
-  return <>{loading ? <Loading /> : <TesultResult />}</>;
+function Result(props) {
+  const { width, height } = props.size;
+  const isMobile = width <= 700 ? true : false;
+
+  return <>{isMobile ? <MobileResult /> : <TestResult />}</>;
 }
 
-export default Result;
+export default sizeMe({ monitorHeight: true })(Result);

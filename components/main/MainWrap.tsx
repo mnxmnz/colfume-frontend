@@ -18,7 +18,7 @@ function MainWrap(props) {
   const isMobile = width <= 375 ? true : false;
 
   return (
-    <>
+    <>w
       <Banner />
       <Content
         title="About Colfume"
