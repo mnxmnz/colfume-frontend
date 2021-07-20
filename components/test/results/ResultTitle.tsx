@@ -33,7 +33,6 @@ export default ResultTitle;
 
 const TitleWrap = styled.div`
   float: left;
-
   ${media.mobile} {
     align-items: center;
     margin-left: 0;
@@ -46,7 +45,6 @@ const ResultColor = styled.div`
   font-family: Junge;
   font-size: 9rem;
   font-weight: 400;
-
   ${media.mobile} {
     margin-bottom: 2.2.rem;
     text-align: center;
@@ -61,7 +59,6 @@ const KeySentence = styled.div`
   font-family: NanumMyeongjo;
   font-size: 3rem;
   font-weight: 400;
-
   ${media.mobile} {
     margin: 0;
     line-height: 3.24rem;
@@ -84,7 +81,6 @@ const KeyWord = styled.div`
   font-family: NotoSans;
   font-size: 1.8rem;
   font-weight: 500;
-
   ${media.mobile} {
     margin-top: 3rem;
     margin-left: 0;
@@ -95,7 +91,6 @@ const KeyWord = styled.div`
 
 const MatchingWrap = styled.div`
   display: flex;
-
   ${media.mobile} {
     flex-direction: column;
   }
@@ -104,7 +99,6 @@ const MatchingWrap = styled.div`
 const MatchingColWrap = styled.div`
   display: flex;
   align-items: center;
-
   ${media.mobile} {
     display: flex;
     align-items: center;
@@ -120,7 +114,6 @@ const MatchingColorText = styled.div`
   font-family: NotoSans;
   font-size: 1.8rem;
   font-weight: 500;
-
   ${media.mobile} {
     align-items: center;
     margin-top: 0rem;

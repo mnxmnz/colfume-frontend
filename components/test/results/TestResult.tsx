@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Line } from '../../../assets';
@@ -15,8 +15,6 @@ function TestResult({data}) {
   // const colorName = useRecoilValue(testResultAtom);
   // const router = useRouter();
   // const data = GetTestAnswer(colorName);
-  // console.log('colorname', colorName);
-  // console.log('API 분리', data);
 
   return (
     <>
