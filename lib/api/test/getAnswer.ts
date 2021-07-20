@@ -1,11 +1,10 @@
 import axios from 'axios';
-const baseURL = 'https://colfume.co.kr/api';
 
-export async function GetTestAnswer(colorName) {
-  try {
-    const { data } = await axios.get(`${baseURL}/colfume/${colorName}`);
-    return data.data;
-  } catch (error) {
-    console.error('Test Result Error', error);
-  }
-}
+export const GetTestAnswer = async colorName => {
+  const {
+    data: { data },
+  } = await axios.get(`https://colfume.co.kr/api/colfume/${colorName}`);
+  console.log(data);
+  if (!data) return '[FAIL] no data';
+  return data;
+};

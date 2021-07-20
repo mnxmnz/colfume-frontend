@@ -18,8 +18,6 @@ function AnswerList() {
   const length = data[progress]?.length;
   const mobileLength = data[progress]?.mobileLength;
 
-  const [loading, setLoading] = useState(false);
-
   const styleMargin = {
     marginTop: '4rem',
   };
@@ -32,53 +30,36 @@ function AnswerList() {
       try {
         const testData = await testResult(answer);
         setResult(testData);
-        console.log('테스트 결과', testData);
-        setTimeout(() => {
-          Router.push(`/test/result/${testData}`);
-        }, 2800);
+        Router.push(`/test/result/${testData}`);
       } catch (e) {
         return e;
       }
 
-      setLoading(true);
-
-      setTimeout(() => {
-        restartTest();
-        setLoading(false);
-      }, 3000);
+      restartTest();
     }
   };
 
   return (
     <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <>
-          {data[progress] && (
-            <AnswerWrap>
-              <Text onClick={() => onClickAnswer(data[progress]?.answer01.value)}>
-                {data[progress]?.answer01.text}
-              </Text>
-              <LineWrap>
-                <Circle />
-                <Line length={length} mobileLength={mobileLength} />
-                <MobileCircle />
-              </LineWrap>
-              <Text
-                onClick={() => onClickAnswer(data[progress]?.answer02.value)}
-                style={styleMargin}
-              >
-                {data[progress]?.answer02.text}
-              </Text>
-              <LineWrap>
-                <Circle />
-                <Line length={length} mobileLength={mobileLength} />
-                <MobileCircle />
-              </LineWrap>
-            </AnswerWrap>
-          )}
-        </>
+      {data[progress] && (
+        <AnswerWrap>
+          <Text onClick={() => onClickAnswer(data[progress]?.answer01.value)}>
+            {data[progress]?.answer01.text}
+          </Text>
+          <LineWrap>
+            <Circle />
+            <Line length={length} mobileLength={mobileLength} />
+            <MobileCircle />
+          </LineWrap>
+          <Text onClick={() => onClickAnswer(data[progress]?.answer02.value)} style={styleMargin}>
+            {data[progress]?.answer02.text}
+          </Text>
+          <LineWrap>
+            <Circle />
+            <Line length={length} mobileLength={mobileLength} />
+            <MobileCircle />
+          </LineWrap>
+        </AnswerWrap>
       )}
     </>
   );

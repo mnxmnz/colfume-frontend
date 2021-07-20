@@ -33,7 +33,7 @@ const DescriptionWrap = styled.div`
   display: flex;
   float: left;
   flex-direction: column;
-  margin-top: 11.4rem;
+  margin-top: 4.4rem;
   margin-bottom: 2rem;
   line-height: 3.6rem;
   font-family: NotoSans;
@@ -41,7 +41,7 @@ const DescriptionWrap = styled.div`
 
   span {
     margin-right: 1rem;
-    line-height: 3.6rem;
+    line-height: 2.6rem;
     font-size: 2.4rem;
   }
 
@@ -52,7 +52,7 @@ const DescriptionWrap = styled.div`
     font-size: 1.5rem;
 
     span {
-      line-height: 3rem;
+      line-height: 2rem;
     }
   }
 `;

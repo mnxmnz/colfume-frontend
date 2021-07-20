@@ -9,23 +9,12 @@ import ResultButton from './ResultButton';
 import { testResultAtom } from '../../../states/test';
 import { useRecoilValue } from 'recoil';
 import { GetTestAnswer } from '../../../lib/api/test/getAnswer';
+import { useRouter } from 'next/router';
 
-function TestResult() {
-  const colorName = useRecoilValue(testResultAtom);
-  const getFinal = async colorName => {
-    try {
-      const data = await GetTestAnswer(colorName);
-      console.log('테스트 결과', data);
-    } catch (e) {
-      return e;
-    }
-  };
-
-  useEffect(() => {
-    getFinal();
-  });
-
-  console.log('색 결과', colorName);
+function TestResult({data}) {
+  // const colorName = useRecoilValue(testResultAtom);
+  // const router = useRouter();
+  // const data = GetTestAnswer(colorName);
 
   return (
     <>

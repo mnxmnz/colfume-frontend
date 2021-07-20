@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Line } from '../../../assets';
-import { media } from '@styles/theme';
 import MatchingColor1 from './MatchingColor1';
 import MatchingColor2 from './MatchingColor2';
 import CopyLinkBtn from './CopyLinkBtn';
@@ -11,11 +10,14 @@ import { paletteAtom } from 'states/product';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import Link from 'next/link';
 import sizeMe from 'react-sizeme';
+import ResultData from './ResultData';
 
 function TestResult(props) {
+  const { data } = props;
+  console.log(data);
   const { width, height } = props.size;
   const isMobile = width <= 700 ? true : false;
-  const data = useRecoilValue(testResultAtom);
+  // const data = useRecoilValue(testResultAtom);
   const setPaletteAtom = useSetRecoilState(paletteAtom);
   const submitColorResult = () => {
     setPaletteAtom(data.palette_name);
@@ -23,61 +25,63 @@ function TestResult(props) {
   console.log('테스트결과 페이지', data);
 
   return (
-    <Layout>
-      <LineWrapper>
-        <Image alt="line" src={Line} />
-      </LineWrapper>
-      <LeftWrapper>
-        <ResultColor>{data?.palette_name}</ResultColor>
-        {data.palette_title?.split('\n').map((line, idx) => (
-          <KeySentence key={idx}>
-            {line}
-            <br />
-          </KeySentence>
-        ))}
-        <KeyWord>{data?.palette_keyword}</KeyWord>
-        <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
-        <MatchingColor1 />
-        {!data?.palette_matchColor[1] ? '' : <MatchingColor2 />}
-      </LeftWrapper>
-      <RightWrapper>
-        <ImageWrapper>
-          <img alt="resultColor" src={data.palette_img} width="16rem" height="16rem" />
-        </ImageWrapper>
-        <Link href="/product" passHref>
-          <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
-        </Link>
-        <CopyLinkBtn />
-        <RetryBtn>다시 하기</RetryBtn>
-      </RightWrapper>
+    data && (
+      <Layout>
+        <LineWrapper>
+          <Image alt="line" src={Line} />
+        </LineWrapper>
+        <LeftWrapper>
+          <ResultColor>{data?.palette_name}</ResultColor>
+          {data.palette_title?.split('\n').map((line, idx) => (
+            <KeySentence key={idx}>
+              {line}
+              <br />
+            </KeySentence>
+          ))}
+          <KeyWord>{data?.palette_keyword}</KeyWord>
+          <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
+          <MatchingColor1 data={data} />
+          {!data?.palette_matchColor[1] ? '' : <MatchingColor2 data={data} />}
+        </LeftWrapper>
+        <RightWrapper>
+          <ImageWrapper>
+            <img alt="resultColor" src={data.palette_img} width="16rem" height="16rem" />
+          </ImageWrapper>
+          <Link href="/product" passHref>
+            <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
+          </Link>
+          <CopyLinkBtn />
+          <RetryBtn>다시 하기</RetryBtn>
+        </RightWrapper>
 
-      {isMobile ? (
-        <MobileBox>
-          <MobileDesc>
-            {' '}
-            {data.palette_explanation?.split('\n').map((line, idx) => (
-              <Description>
-                <span>·</span>
-                <DescWrap>
-                  {line.includes('//') ? (
-                    line.split('//').map((l, i) => (
-                      <Desc>
-                        {l}
-                        <br />
-                      </Desc>
-                    ))
-                  ) : (
-                    <Desc>{line}</Desc>
-                  )}
-                </DescWrap>
-              </Description>
-            ))}
-          </MobileDesc>
-        </MobileBox>
-      ) : (
-        ''
-      )}
-    </Layout>
+        {isMobile ? (
+          <MobileBox>
+            <MobileDesc>
+              {' '}
+              {data.palette_explanation?.split('\n').map((line, idx) => (
+                <Description>
+                  <span>·</span>
+                  <DescWrap>
+                    {line.includes('//') ? (
+                      line.split('//').map((l, i) => (
+                        <Desc>
+                          {l}
+                          <br />
+                        </Desc>
+                      ))
+                    ) : (
+                      <Desc>{line}</Desc>
+                    )}
+                  </DescWrap>
+                </Description>
+              ))}
+            </MobileDesc>
+          </MobileBox>
+        ) : (
+          ''
+        )}
+      </Layout>
+    )
   );
 }
 
