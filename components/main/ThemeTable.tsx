@@ -105,6 +105,11 @@ const Content = styled.div`
     margin-bottom: 1rem;
     width: 6.7rem;
     height: 3.8rem;
+
+    &:hover {
+      border: none;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.borderGray};
+    }
   }
 `;
 

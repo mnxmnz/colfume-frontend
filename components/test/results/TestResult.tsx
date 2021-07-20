@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Line } from '../../../assets';
@@ -12,9 +12,20 @@ import { GetTestAnswer } from '../../../lib/api/test/getAnswer';
 
 function TestResult() {
   const colorName = useRecoilValue(testResultAtom);
-  const data = GetTestAnswer(colorName);
+  const getFinal = async colorName => {
+    try {
+      const data = await GetTestAnswer(colorName);
+      console.log('테스트 결과', data);
+    } catch (e) {
+      return e;
+    }
+  };
+
+  useEffect(() => {
+    getFinal();
+  });
+
   console.log('색 결과', colorName);
-  console.log('API 분리', data);
 
   return (
     <>

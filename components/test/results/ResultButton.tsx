@@ -16,7 +16,7 @@ function ResultButton(props) {
   return (
     <Wrap>
       <ImageWrapper>
-        <img alt="resultColorGreen" src={data.palette_img} />
+        <img alt="resultColorGreen" src={data?.palette_img} />
       </ImageWrapper>
       <Link href="/product" passHref>
         <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
