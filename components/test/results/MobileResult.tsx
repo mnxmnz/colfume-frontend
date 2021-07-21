@@ -10,14 +10,12 @@ import { paletteAtom } from 'states/product';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import Link from 'next/link';
 import sizeMe from 'react-sizeme';
-import ResultData from './ResultData';
 
 function TestResult(props) {
   const { data } = props;
   console.log(data);
   const { width, height } = props.size;
   const isMobile = width <= 700 ? true : false;
-  // const data = useRecoilValue(testResultAtom);
   const setPaletteAtom = useSetRecoilState(paletteAtom);
   const submitColorResult = () => {
     setPaletteAtom(data.palette_name);
@@ -45,7 +43,7 @@ function TestResult(props) {
         </LeftWrapper>
         <RightWrapper>
           <ImageWrapper>
-            <img alt="resultColor" src={data.palette_img} width="16rem" height="16rem" />
+            <Image alt="resultColor" src={data.palette_img} width="16rem" height="16rem" />
           </ImageWrapper>
           <Link href="/product" passHref>
             <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
@@ -100,7 +98,7 @@ const MobileDesc = styled.div`
 const LineWrapper = styled.div`
   margin-top: 7.2rem;
   padding-top: 7.2rem;
-  width: 12.5rem;
+  width: 11rem;
 `;
 
 const Layout = styled.div`
@@ -119,7 +117,6 @@ const ResultColor = styled.div`
   text-align: center;
   font-family: Junge;
   font-size: 4.4rem;
-
   font-weight: 400;
 `;
 
@@ -132,9 +129,7 @@ const KeySentence = styled.div`
 `;
 const KeyWord = styled.div`
   margin-top: 4rem;
-  margin-left: 1.8rem;
   font-family: NotoSans;
-
   font-size: 1.4rem;
   font-weight: 500;
 `;
@@ -142,8 +137,8 @@ const MatchingColorText = styled.div`
   float: left;
   align-items: center;
   margin-top: 1rem;
-  margin-left: 7rem;
-  width: 25rem;
+  margin-left: 3.5rem;
+  width: 30rem;
   font-family: NotoSans;
   font-size: 1.4rem;
   font-weight: 500;
@@ -172,7 +167,6 @@ const Desc = styled.li`
 
 const RightWrapper = styled.div`
   float: right;
-
   justify-content: center;
   margin-top: 9rem;
   margin-right: 0;
@@ -211,13 +205,12 @@ const RetryBtn = styled.button`
   float: right;
   margin-top: 1.222rem;
   margin-right: 5.8rem;
+  border: solid 1px;
   width: 11.8rem;
   height: 3.274rem;
   font-family: NotoSans;
   font-size: 1.2rem;
-
   font-weight: 400;
-
   &:hover {
     cursor: pointer;
   }
