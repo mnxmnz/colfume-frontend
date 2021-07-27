@@ -43,7 +43,7 @@ function TestResult(props) {
         </LeftWrapper>
         <RightWrapper>
           <ImageWrapper>
-            <Image alt="resultColor" src={data.palette_img} width="16rem" height="16rem" />
+            <Image alt="resultColor" src={data.palette_img} width="160rem" height="160rem" />
           </ImageWrapper>
           <Link href="/product" passHref>
             <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
@@ -177,7 +177,6 @@ const RightWrapper = styled.div`
 const ImageWrapper = styled.div`
   align-items: center;
   margin: 0 auto;
-  background: violet;
   width: 16rem;
   height: 16rem;
 `;
