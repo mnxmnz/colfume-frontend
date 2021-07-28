@@ -153,13 +153,13 @@ const DescWrap = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
-  width: 80rem;
+  width: 34.1rem;
 `;
 
 const Desc = styled.li`
-  margin-left: 2rem;
-  padding-top: 2.6rem;
-  width: 33.5rem;
+  margin-left: 3rem;
+  padding-top: 2rem;
+  width: 32rem;
   line-height: 1.8rem;
   font-family: NotoSans;
   font-size: 1.5rem;
