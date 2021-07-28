@@ -11,7 +11,7 @@ import { useRecoilValue } from 'recoil';
 import { GetTestAnswer } from '../../../lib/api/test/getAnswer';
 import { useRouter } from 'next/router';
 
-function TestResult({data}) {
+function TestResult({ data }) {
   // const colorName = useRecoilValue(testResultAtom);
   // const router = useRouter();
   // const data = GetTestAnswer(colorName);
@@ -46,9 +46,10 @@ const LineWrapper = styled.div`
   position: absolute;
   top: 22rem;
   width: 10.9375vw;
+  background: ivory;
 
   ${media.mobile} {
-    top: 12rem;
+    background: pink;
     width: 11.1rem;
   }
 `;
