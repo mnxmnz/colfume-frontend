@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
+
 import { Line } from '../../../assets';
 import { media } from '@styles/theme';
 import ResultTitle from './ResultTitle';
@@ -11,7 +11,7 @@ import { useRecoilValue } from 'recoil';
 import { GetTestAnswer } from '../../../lib/api/test/getAnswer';
 import { useRouter } from 'next/router';
 
-function TestResult({data}) {
+function TestResult({ data }) {
   // const colorName = useRecoilValue(testResultAtom);
   // const router = useRouter();
   // const data = GetTestAnswer(colorName);
@@ -19,7 +19,7 @@ function TestResult({data}) {
   return (
     <>
       <LineWrapper>
-        <Image alt="line" src={Line} />
+        <img alt="line" src={Line} />
       </LineWrapper>
       <Wrap>
         <Layout>

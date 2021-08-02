@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
+
 import { Line } from '../../../assets';
 import MatchingColor1 from './MatchingColor1';
 import MatchingColor2 from './MatchingColor2';
@@ -14,21 +14,21 @@ import ResultData from './ResultData';
 
 function TestResult(props) {
   const { data } = props;
-  console.log(data);
   const { width, height } = props.size;
+
   const isMobile = width <= 700 ? true : false;
-  // const data = useRecoilValue(testResultAtom);
+
   const setPaletteAtom = useSetRecoilState(paletteAtom);
+
   const submitColorResult = () => {
     setPaletteAtom(data.palette_name);
   };
-  console.log('테스트결과 페이지', data);
 
   return (
     data && (
       <Layout>
         <LineWrapper>
-          <Image alt="line" src={Line} />
+          <img alt="line" src={Line} />
         </LineWrapper>
         <LeftWrapper>
           <ResultColor>{data?.palette_name}</ResultColor>

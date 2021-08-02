@@ -3,12 +3,11 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 import { BannerImg } from '../../assets';
-import Image from 'next/image';
 
 function Banner() {
   return (
     <BannerWrap>
-      <Image src={BannerImg} />
+      <img src={BannerImg} alt="" />
       <BannerBox>
         <TitleBox>
           <MainTitle>Find Your Colfume</MainTitle>
@@ -17,7 +16,7 @@ function Banner() {
             <span>어울리는 색과 향수를 찾아보세요</span>
           </SubTitle>
         </TitleBox>
-        <Link href="/test">
+        <Link href="/test" passHref>
           <StartBnt>Start</StartBnt>
         </Link>
       </BannerBox>
@@ -31,15 +30,19 @@ const BannerWrap = styled.div`
   img {
     width: 100vw;
     object-fit: cover;
+
     ${media.custom(1770)} {
       height: 85rem;
     }
+
     ${media[1440]} {
       height: 80rem;
     }
+
     ${media[768]} {
       height: 80rem;
     }
+
     ${media.mobile} {
       height: 48.8rem;
     }
@@ -123,7 +126,6 @@ const StartBnt = styled.div`
   align-items: center;
   align-self: center;
   justify-content: center;
-
   border: 0.3rem solid ${({ theme }) => theme.colors.black};
   width: 38.2rem;
   height: 10.7rem;
