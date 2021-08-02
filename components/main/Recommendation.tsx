@@ -5,20 +5,20 @@ import styled from 'styled-components';
 import { Contour } from '../../assets';
 import { media } from '@styles/theme';
 import Link from 'next/link';
+import { IRecommendProps, IRecommendData } from 'types/main';
 
-interface MoodType {
-  _id: string;
-  mood_name: string;
-}
+function Recommendation(props: IRecommendProps) {
+  const datum: IRecommendData = props.datum[1];
+  const idx = props.idx;
 
-function Recommendation(props) {
-  const datum = props.datum[1];
-  const setPerfumeName: any = useSetRecoilState(productDetailAtom);
+  const moods = Object.entries(datum?.moods[0]);
+
+  const setPerfumeName = useSetRecoilState(productDetailAtom);
+
   const handleClick = () => {
     setPerfumeName(datum.perfume_name);
   };
-  const idx = props.idx;
-  const moods: [string, MoodType][] = Object.entries(datum?.moods[0]);
+
   if (datum.moods[0] === null) return;
   if (datum.moods === null) return;
 

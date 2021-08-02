@@ -4,14 +4,15 @@ import Content from './Content';
 import ThemeTable from './ThemeTable';
 import { media } from '@styles/theme';
 import { GetFilterList } from 'lib/api/main/getFilter';
+import { IContentProps, IMoodData, IRawMoodData } from 'types/main';
 
-function Mood(props) {
-  const rawData = GetFilterList();
-  const moodList = [];
-  const styleList = [];
+function Mood(props: IContentProps) {
+  const rawData: IMoodData = GetFilterList();
+  const moodList: string[] = [];
+  const styleList: string[] = [];
 
   if (rawData.message) {
-    rawData.moods.map(rawMood => moodList.push(rawMood.mood_name));
+    rawData.moods.map((rawMood: IRawMoodData) => moodList.push(rawMood.mood_name));
     rawData.styles.map(rawStyle => styleList.push(rawStyle.style_name));
   }
 
@@ -55,13 +56,5 @@ const ThemeWrap = styled.div`
     width: 29.3rem;
   }
 `;
-
-// const Space = styled.div`
-//   width: 25.7rem;
-
-//   ${media[768]} {
-//     height: 6.1rem;
-//   }
-// `;
 
 export default Mood;

@@ -1,17 +1,9 @@
 import React from 'react';
-import { constSelector } from 'recoil';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
+import { IContentProps } from 'types/main';
 
-interface PropsType {
-  title: string;
-  content: string;
-  paddingTitle: string;
-  paddingContent: string;
-  paddingBottom: string;
-}
-
-function Content(props: PropsType) {
+function Content(props: IContentProps) {
   const styleTitle = {
     paddingTop: `${props.paddingTitle}`,
   };
@@ -20,6 +12,7 @@ function Content(props: PropsType) {
     paddingTop: `${props.paddingContent}`,
     paddingBottom: `${props.paddingBottom}`,
   };
+
   return (
     <>
       <TitleWrap style={styleTitle}>{props.title}</TitleWrap>

@@ -1,10 +1,13 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from '../../assets';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+
+interface IStyledProps {
+  current: boolean;
+}
 
 const Header = () => {
   const router = useRouter();
@@ -13,24 +16,24 @@ const Header = () => {
   return (
     <Positioner>
       <WhiteBackground>
-        <Link href="/">
+        <Link href="/" passHref>
           <LogoWrap current={currentPath === '/'}>
-            <Image src={Logo} id="Logo" />
+            <img src={Logo} id="Logo" alt="" />
           </LogoWrap>
         </Link>
         <Layout>
           <Category>
-            <Link href="/product">
+            <Link href="/product" passHref>
               <CategoryBtn id="Product" current={currentPath === '/product'}>
                 Product
               </CategoryBtn>
             </Link>
-            <Link href="/test">
+            <Link href="/test" passHref>
               <CategoryBtn id="ColorTest" current={currentPath === '/test'}>
                 Color Test
               </CategoryBtn>
             </Link>
-            <Link href="/search">
+            <Link href="/search" passHref>
               <CategoryBtn id="Search" current={currentPath === '/search'}>
                 Search
               </CategoryBtn>
@@ -83,7 +86,7 @@ const Layout = styled.div`
   }
 `;
 
-const LogoWrap = styled.div<{ current: boolean }>`
+const LogoWrap = styled.div<IStyledProps>`
   position: fixed;
   top: 1.62rem;
   z-index: 100;
@@ -159,7 +162,7 @@ const Category = styled.div`
   }
 `;
 
-const CategoryBtn = styled.span<{ current: boolean }>`
+const CategoryBtn = styled.span<IStyledProps>`
   margin: 0 3rem;
   border-bottom: 0.1rem solid ${props => (props.current ? '#3e3e3e' : 'transparent')};
   cursor: pointer;
@@ -167,9 +170,6 @@ const CategoryBtn = styled.span<{ current: boolean }>`
   line-height: 2.674rem;
   font-family: 'Junge';
   font-size: 2.2rem;
-
-  ${media[1440]} {
-  }
 
   ${media[768]} {
     margin: 0 1.3rem;

@@ -4,14 +4,10 @@ import { media } from '@styles/theme';
 import { useSetRecoilState } from 'recoil';
 import { keywordAtom } from '../../states/search';
 import Link from 'next/link';
+import { IThemeProps } from 'types/main';
 
-interface PropsType {
-  title: string;
-  list: string[];
-}
-
-function ThemeTable(props: PropsType) {
-  const setText: any = useSetRecoilState(keywordAtom);
+function ThemeTable(props: IThemeProps) {
+  const setText = useSetRecoilState<string[]>(keywordAtom);
   const title = props.title;
   const list = props.list;
 
@@ -20,7 +16,7 @@ function ThemeTable(props: PropsType) {
       <Title>{title}</Title>
       <Wrap>
         {list.slice(0, 3).map((word, idx) => {
-          const handleClick: React.MouseEventHandler<HTMLDivElement> = () => {
+          const handleClick = () => {
             setText([title, word]);
           };
           return (
@@ -32,7 +28,7 @@ function ThemeTable(props: PropsType) {
       </Wrap>
       <Wrap>
         {list.slice(3).map((word, idx) => {
-          const handleClick: React.MouseEventHandler<HTMLDivElement> = () => {
+          const handleClick = () => {
             setText([title, word]);
           };
           return (
@@ -97,6 +93,7 @@ const Content = styled.div`
   cursor: pointer;
   width: 13.1rem;
   height: 7.5rem;
+
   &:hover {
     border: 1px solid ${({ theme }) => theme.colors.borderGray};
   }
