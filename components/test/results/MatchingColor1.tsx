@@ -16,11 +16,11 @@ interface dataType {
 
 function MatchingColor1(props: PropsType) {
   const data = props.data;
-  // const data = useRecoilValue(testResultAtom);
-  console.log('matchcolor:', data);
+
   const background = {
     background: `${data?.palette_matchBg[0]}`,
   };
+
   return (
     <>
       <ColorWrap style={background}>
