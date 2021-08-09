@@ -4,8 +4,9 @@ import Content from './Content';
 import ThemeTable from './ThemeTable';
 import { media } from '@styles/theme';
 import { GetFilterList } from 'lib/api/main/getFilter';
+import { IContentProps } from 'types/main';
 
-function Mood(props) {
+function Mood(props: IContentProps) {
   const rawData = GetFilterList();
   const moodList = [];
   const styleList = [];
@@ -55,13 +56,5 @@ const ThemeWrap = styled.div`
     width: 29.3rem;
   }
 `;
-
-// const Space = styled.div`
-//   width: 25.7rem;
-
-//   ${media[768]} {
-//     height: 6.1rem;
-//   }
-// `;
 
 export default Mood;

@@ -5,23 +5,18 @@ import { useRecoilValue } from 'recoil';
 import { paletteAtom } from '../../states/product';
 import { GetProductList } from '../../lib/api/product/getProduct';
 import PerfumeImg from '../search/PerfumeImg';
-
-interface MoodType {
-  _id: string;
-  mood_name: string;
-}
+import { IMood } from 'types/product';
 
 function PaletteImageTable() {
   const keyword = useRecoilValue(paletteAtom);
   const rawData = GetProductList(keyword);
-  console.log(rawData);
 
   return (
     <ImageTableWrap>
       <ImageTableBox>
         {rawData.data &&
           rawData.data.map(data => {
-            const moods: [string, MoodType][] = Object.entries(data.moods[0]);
+            const moods: [string, IMood][] = Object.entries(data.moods[0]);
 
             return (
               <PerfumeImg
@@ -43,7 +38,7 @@ const ImageTableWrap = styled.div`
   padding-top: 13rem;
   padding-bottom: 38.4rem;
 
-  ${media.custom[1300]} {
+  ${media.custom(1300)} {
     padding-bottom: 20rem;
   }
 

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
-import { GlobalStyle } from '../styles/global';
+import { GlobalStyle } from '../styles/global-style';
 import { RecoilRoot } from 'recoil';
 import { SWRConfig } from 'swr';
 import { client } from '../lib/api';

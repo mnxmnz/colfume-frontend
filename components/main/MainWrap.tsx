@@ -2,7 +2,7 @@ import React from 'react';
 import Content from './Content';
 import Banner from './Banner';
 import Mood from './Mood';
-import { Slide } from '../';
+import Slide from './Slide';
 import Footer from '../common/Footer';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
@@ -10,9 +10,10 @@ import { GetRecommData } from 'lib/api/main/getRecomm';
 import PaletteData from '../../public/PaletteData';
 import sizeMe from 'react-sizeme';
 import MobileFooter from '../common/MobileFooter';
+import { ISizeProps } from 'types/main';
 
-function MainWrap(props) {
-  const { width, height } = props.size;
+function MainWrap(props: ISizeProps) {
+  const { width } = props.size;
   const rawData = GetRecommData().data;
   const isMobile = width <= 375 ? true : false;
 
@@ -112,7 +113,6 @@ const Comment = styled.div`
   ${media.mobile} {
     margin: auto;
     margin-bottom: 3.05rem;
-
     line-height: 2.31rem;
     font-size: 1.4rem;
   }

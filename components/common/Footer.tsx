@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { FooterIcons } from '../../assets';
-import Image from 'next/image';
 import { media } from '@styles/theme';
-import { Logo } from '../../assets';
+import { Logo, FooterIcons } from '../../assets';
 
 const Box = styled.div`
   bottom: 0;
@@ -15,7 +13,6 @@ const Box = styled.div`
 const MaterialBox = styled.div`
   display: flex;
   justify-content: center;
-  /* padding: 0 20%; */
   padding-top: 17.8rem;
   width: 100%;
 `;
@@ -98,6 +95,7 @@ const MobileContent = styled.div`
   width: 50rem;
   font-size: 1.5rem;
   font-weight: 400;
+
   ${media.custom(900)} {
     width: 25rem;
   }
@@ -113,18 +111,18 @@ const Footer = () => {
       <MaterialBox>
         <LogoColumn>
           <LogoWrapper>
-            <Image src={Logo} />
+            <img src={Logo} alt="" />
           </LogoWrapper>
         </LogoColumn>
         <HeadingColumn>
           <Heading>Menu</Heading>
-          <Link href="/product">
+          <Link href="/product" passHref>
             <FooterButton>Product</FooterButton>
           </Link>
-          <Link href="/test">
+          <Link href="/test" passHref>
             <FooterButton>Color Test</FooterButton>
           </Link>
-          <Link href="/search">
+          <Link href="/search" passHref>
             <FooterButton>Search</FooterButton>
           </Link>
         </HeadingColumn>
@@ -147,7 +145,7 @@ const Footer = () => {
           <Heading>Follow us</Heading>
           <ImageWrapper>
             <a href="https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788">
-              <Image alt="footerIcon" src={FooterIcons} />
+              <img alt="footerIcon" src={FooterIcons} />
             </a>
           </ImageWrapper>
           <FooterContent>개인정보취급방침</FooterContent>

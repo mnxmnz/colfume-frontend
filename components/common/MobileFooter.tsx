@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Link from 'next/link';
-import { FooterIcons } from '../../assets';
-import Image from 'next/image';
-import { media } from '@styles/theme';
-import { Logo } from '../../assets';
+import { FooterIcons, Logo } from '../../assets';
 
 const MobileFooter = () => {
   return (
     <MobileBox>
       <LogoWrapper>
-        <Image alt="mobile-logo" src={Logo} />
+        <img alt="mobile-logo" src={Logo} />
       </LogoWrapper>
       <ContentWrapper>
         <InfoColumn>
@@ -31,7 +27,7 @@ const MobileFooter = () => {
             <Heading>Follow us</Heading>
             <ImageWrapper>
               <a href="https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788">
-                <Image alt="footerIcon" src={FooterIcons} />
+                <img alt="footerIcon" src={FooterIcons} />
               </a>
             </ImageWrapper>
           </div>
@@ -126,6 +122,7 @@ const TextInfo = styled.div`
 
 const ImageWrapper = styled.div`
   width: 17rem;
+
   img {
     width: 4.5rem;
   }

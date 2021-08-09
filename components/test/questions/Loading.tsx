@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
+
 import { LoadingIcon } from '../../../assets';
 
 function Loading() {
   return (
     <LoadingWrap>
       <IconWrap>
-        <Image src={LoadingIcon} />
+        <img src={LoadingIcon} />
         <Text>당신의 컬러를 찾는 중입니다.</Text>
       </IconWrap>
     </LoadingWrap>

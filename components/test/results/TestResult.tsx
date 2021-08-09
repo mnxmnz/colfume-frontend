@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
+
 import { Line } from '../../../assets';
 import { media } from '@styles/theme';
 import ResultTitle from './ResultTitle';
@@ -19,7 +19,7 @@ function TestResult({ data }) {
   return (
     <>
       <LineWrapper>
-        <Image alt="line" src={Line} />
+        <img alt="line" src={Line} />
       </LineWrapper>
       <Wrap>
         <Layout>

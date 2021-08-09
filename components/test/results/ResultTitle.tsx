@@ -6,7 +6,7 @@ import { media } from '@styles/theme';
 
 function ResultTitle(props) {
   const data = props.data;
-  console.log(data);
+
   return (
     <TitleWrap>
       <ResultColor>{data?.palette_name}</ResultColor>

@@ -52,7 +52,7 @@ const ImageTableWrap = styled.div`
   padding-top: 13rem;
   padding-bottom: 38.4rem;
 
-  ${media.custom[1300]} {
+  ${media.custom(1300)} {
     padding-bottom: 20rem;
   }
 
