@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-
+import Image from 'next/image';
 import { Line } from '../../../assets';
 import { media } from '@styles/theme';
 import ResultTitle from './ResultTitle';
@@ -19,7 +19,7 @@ function TestResult({ data }) {
   return (
     <>
       <LineWrapper>
-        <img alt="line" src={Line} />
+        <Image alt="line" src={Line} />
       </LineWrapper>
       <Wrap>
         <Layout>
@@ -45,8 +45,8 @@ const Wrap = styled.div`
 const LineWrapper = styled.div`
   position: absolute;
   top: 22rem;
-  width: 10.9375vw;
   background: ivory;
+  width: 10.9375vw;
 
   ${media.mobile} {
     background: pink;

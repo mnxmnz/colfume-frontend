@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
+import Image from 'next/image';
 
 function Filter({ moods, styles, colors }) {
   return (
@@ -9,13 +10,13 @@ function Filter({ moods, styles, colors }) {
         <span>Color</span>
         <Color>
           {colors.color1 !== null && (
-            <img src={colors.color1.color_img} alt={colors.color1.color_name} />
+            <Image src={colors.color1.color_img} alt={colors.color1.color_name} />
           )}
           {colors.color2 !== null && (
-            <img src={colors.color2.color_img} alt={colors.color2.color_name} />
+            <Image src={colors.color2.color_img} alt={colors.color2.color_name} />
           )}
           {colors.color3 !== null && (
-            <img src={colors.color3.color_img} alt={colors.color3.color_name} />
+            <Image src={colors.color3.color_img} alt={colors.color3.color_name} />
           )}
         </Color>
       </ColorWrap>

@@ -5,6 +5,7 @@ import Detail from './Detail';
 import { media } from '@styles/theme';
 import { GetDetailData } from 'lib/api/detail/detail';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 function ProductDetailWrap(props) {
   const perfumeName = props.perfumeName;
@@ -18,7 +19,7 @@ function ProductDetailWrap(props) {
           <ButtonBack src={ButtonBackDefault.src} onClick={() => router.back()} alt="button-back" />
           <FlexWrap>
             <ContentWrap>
-              <img className="product" src={data.data[0].perfume_img} alt="sample" />
+              <Image className="product" src={data.data[0].perfume_img} alt="sample" />
               <Detail data={data.data[0]} />
             </ContentWrap>
           </FlexWrap>

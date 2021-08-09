@@ -4,6 +4,7 @@ import { Logo } from '../../assets';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 interface IStyledProps {
   current: boolean;
@@ -18,7 +19,7 @@ const Header = () => {
       <WhiteBackground>
         <Link href="/" passHref>
           <LogoWrap current={currentPath === '/'}>
-            <img src={Logo} id="Logo" alt="" />
+            <Image src={Logo} id="Logo" alt="" />
           </LogoWrap>
         </Link>
         <Layout>

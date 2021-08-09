@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import Image from 'next/image';
 import { media } from '@styles/theme';
 import { Logo, FooterIcons } from '../../assets';
 
@@ -111,7 +112,7 @@ const Footer = () => {
       <MaterialBox>
         <LogoColumn>
           <LogoWrapper>
-            <img src={Logo} alt="" />
+            <Image src={Logo} alt="" />
           </LogoWrapper>
         </LogoColumn>
         <HeadingColumn>
@@ -145,7 +146,7 @@ const Footer = () => {
           <Heading>Follow us</Heading>
           <ImageWrapper>
             <a href="https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788">
-              <img alt="footerIcon" src={FooterIcons} />
+              <Image alt="footerIcon" src={FooterIcons} />
             </a>
           </ImageWrapper>
           <FooterContent>개인정보취급방침</FooterContent>

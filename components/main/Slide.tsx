@@ -10,7 +10,7 @@ import {
   ArrowLeftHovered,
   ArrowRightUnHovered,
   ArrowRightHovered,
-} from '../../assets/';
+} from '../../assets';
 import Recommendation from './Recommendation';
 import { useSetRecoilState } from 'recoil';
 import { paletteAtom } from '../../states/product';
