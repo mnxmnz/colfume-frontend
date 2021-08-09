@@ -4,7 +4,6 @@ import { productDetailAtom } from 'states/detail';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
 import Link from 'next/link';
-import Image from 'next/image';
 
 interface PropsType {
   image: string;
@@ -27,7 +26,7 @@ function PerfumeImg(props: PropsType) {
       passHref
     >
       <PerfumeImgWrap>
-        <Image className="fume_img" src={props.image} />
+        <img className="fume_img" src={props.image} />
         <div className="hover_img" onClick={handleClick}>
           <div>
             <Name>{props.name}</Name>
@@ -38,7 +37,6 @@ function PerfumeImg(props: PropsType) {
     </Link>
   );
 }
-
 const PerfumeImgWrap = styled.div`
   position: relative;
   background: ${({ theme }) => theme.colors.gray1};
