@@ -4,15 +4,15 @@ import Content from './Content';
 import ThemeTable from './ThemeTable';
 import { media } from '@styles/theme';
 import { GetFilterList } from 'lib/api/main/getFilter';
-import { IContentProps, IMoodData, IRawMoodData } from 'types/main';
+import { IContentProps } from 'types/main';
 
 function Mood(props: IContentProps) {
-  const rawData: IMoodData = GetFilterList();
-  const moodList: string[] = [];
-  const styleList: string[] = [];
+  const rawData = GetFilterList();
+  const moodList = [];
+  const styleList = [];
 
   if (rawData.message) {
-    rawData.moods.map((rawMood: IRawMoodData) => moodList.push(rawMood.mood_name));
+    rawData.moods.map(rawMood => moodList.push(rawMood.mood_name));
     rawData.styles.map(rawStyle => styleList.push(rawStyle.style_name));
   }
 

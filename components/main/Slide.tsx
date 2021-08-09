@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import Link from 'next/link';
 import 'slick-carousel/slick/slick.css';
@@ -14,14 +14,20 @@ import {
 import Recommendation from './Recommendation';
 import { useSetRecoilState } from 'recoil';
 import { paletteAtom } from '../../states/product';
-import { IArrowProps, ISlideProps, ISlideData } from 'types/main';
 
-function ArrowLeft(props: IArrowProps) {
-  const { id, className, style, onClick } = props;
-  const leftButton = useRef<HTMLImageElement>(null);
+interface ArrowPropsType {
+  id: string;
+  className?: string;
+  style?: object;
+  onClick?: any;
+}
+
+function ArrowLeft(props: ArrowPropsType) {
+  const { className, style, onClick, id } = props;
+  const leftButton: any = React.useRef();
 
   return (
-    <div id={id} className={className} style={{ ...style, display: 'block' }} onClick={onClick}>
+    <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
       <img
         src={ArrowLeftUnHovered.src}
         alt=""
@@ -33,12 +39,13 @@ function ArrowLeft(props: IArrowProps) {
   );
 }
 
-function ArrowRight(props: IArrowProps) {
-  const { id, className, style, onClick } = props;
-  const rightButton = useRef();
+function ArrowRight(props: ArrowPropsType) {
+  const { className, style, onClick, id } = props;
+
+  const rightButton: any = React.useRef();
 
   return (
-    <div id={id} className={className} style={{ ...style, display: 'block' }} onClick={onClick}>
+    <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
       <img
         src={ArrowRightUnHovered.src}
         alt=""
@@ -50,11 +57,9 @@ function ArrowRight(props: IArrowProps) {
   );
 }
 
-function Slide(props: ISlideProps) {
+function Slide(props) {
   const slideName = props.slideName;
   const length = props.length;
-  const data = props.data;
-
   const settings = {
     dots: true,
     infinite: true,
@@ -67,16 +72,16 @@ function Slide(props: ISlideProps) {
     prevArrow: <ArrowLeft id={slideName} />,
     dotsClass: `slick-dots ${slideName}`,
   };
-
+  const data = props.data;
   const dataArr = Object.entries(data);
-  const setPalette = useSetRecoilState(paletteAtom);
+  const setPalette: any = useSetRecoilState(paletteAtom);
 
   return (
     <SliderWrap>
       {slideName === 'palette' ? (
         <PaletteWrap>
           <Slider {...settings}>
-            {data.map((datum: ISlideData, idx: number) => {
+            {data.map((datum, idx) => {
               const handleClick = () => {
                 setPalette(datum.keyword);
               };

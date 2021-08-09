@@ -8,6 +8,9 @@
   ],
   "plugins": ["react", "react-hooks", "prettier"],
   "rules": {
+    "react/prop-types": 0,
+    "no-unused-vars": 0,
+    "react/jsx-key": 0,
     "prettier/prettier": [
       "warn",
       {
