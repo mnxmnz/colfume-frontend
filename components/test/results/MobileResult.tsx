@@ -10,7 +10,6 @@ import { paletteAtom } from 'states/product';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import Link from 'next/link';
 import sizeMe from 'react-sizeme';
-import ResultData from './ResultData';
 
 function TestResult(props) {
   const { data } = props;
@@ -45,7 +44,7 @@ function TestResult(props) {
         </LeftWrapper>
         <RightWrapper>
           <ImageWrapper>
-            <img alt="resultColor" src={data.palette_img} width="16rem" height="16rem" />
+            <Image alt="resultColor" src={data.palette_img} width="160rem" height="160rem" />
           </ImageWrapper>
           <Link href="/product" passHref>
             <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
@@ -100,7 +99,7 @@ const MobileDesc = styled.div`
 const LineWrapper = styled.div`
   margin-top: 7.2rem;
   padding-top: 7.2rem;
-  width: 12.5rem;
+  width: 11rem;
 `;
 
 const Layout = styled.div`
@@ -119,7 +118,6 @@ const ResultColor = styled.div`
   text-align: center;
   font-family: Junge;
   font-size: 4.4rem;
-
   font-weight: 400;
 `;
 
@@ -132,9 +130,7 @@ const KeySentence = styled.div`
 `;
 const KeyWord = styled.div`
   margin-top: 4rem;
-  margin-left: 1.8rem;
   font-family: NotoSans;
-
   font-size: 1.4rem;
   font-weight: 500;
 `;
@@ -142,8 +138,8 @@ const MatchingColorText = styled.div`
   float: left;
   align-items: center;
   margin-top: 1rem;
-  margin-left: 7rem;
-  width: 25rem;
+  margin-left: 3.5rem;
+  width: 30rem;
   font-family: NotoSans;
   font-size: 1.4rem;
   font-weight: 500;
@@ -158,13 +154,13 @@ const DescWrap = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
-  width: 80rem;
+  width: 34.1rem;
 `;
 
 const Desc = styled.li`
-  margin-left: 2rem;
-  padding-top: 2.6rem;
-  width: 33.5rem;
+  margin-left: 3rem;
+  padding-top: 2rem;
+  width: 32rem;
   line-height: 1.8rem;
   font-family: NotoSans;
   font-size: 1.5rem;
@@ -172,7 +168,6 @@ const Desc = styled.li`
 
 const RightWrapper = styled.div`
   float: right;
-
   justify-content: center;
   margin-top: 9rem;
   margin-right: 0;
@@ -183,7 +178,6 @@ const RightWrapper = styled.div`
 const ImageWrapper = styled.div`
   align-items: center;
   margin: 0 auto;
-  background: violet;
   width: 16rem;
   height: 16rem;
 `;
@@ -211,13 +205,12 @@ const RetryBtn = styled.button`
   float: right;
   margin-top: 1.222rem;
   margin-right: 5.8rem;
+  border: solid 1px;
   width: 11.8rem;
   height: 3.274rem;
   font-family: NotoSans;
   font-size: 1.2rem;
-
   font-weight: 400;
-
   &:hover {
     cursor: pointer;
   }

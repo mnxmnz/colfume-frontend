@@ -46,9 +46,10 @@ const LineWrapper = styled.div`
   position: absolute;
   top: 22rem;
   width: 10.9375vw;
+  background: ivory;
 
   ${media.mobile} {
-    top: 12rem;
+    background: pink;
     width: 11.1rem;
   }
 `;
