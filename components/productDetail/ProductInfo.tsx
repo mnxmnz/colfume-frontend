@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
+import Image from 'next/image';
 
 function ProductInfo({ brand, price, capacity, name, palette }) {
   return (
     <ProductInfoWrap>
-      <img src={palette} alt="productMainImage" />
+      <Image src={palette} alt="productMainImage" />
       <TextInfo>
         <BrandName>{brand}</BrandName>
         <ProductName>{name}</ProductName>

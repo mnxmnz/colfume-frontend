@@ -3,11 +3,12 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 import { BannerImg } from '../../assets';
+import Image from 'next/image';
 
 function Banner() {
   return (
     <BannerWrap>
-      <img src={BannerImg} alt="" />
+      <Image src={BannerImg} alt="" />
       <BannerBox>
         <TitleBox>
           <MainTitle>Find Your Colfume</MainTitle>

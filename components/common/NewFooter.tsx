@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { FooterIcons, Logo } from '../../assets';
 import { media } from '@styles/theme';
+import Image from 'next/image';
 
 function NewFooter() {
   return (
     <FooterWrap>
       <MainWrap>
         <LogoWrap>
-          <img src={Logo} alt="" />
+          <Image src={Logo} alt="" />
         </LogoWrap>
         <DetailWrap>
           <Contact>
@@ -29,7 +30,7 @@ function NewFooter() {
             <Title>Follow us</Title>
             <a href="https://www.instagram.com/colfume_official/">
               <Content>
-                <img alt="footerIcon" src={FooterIcons} />
+                <Image alt="footerIcon" src={FooterIcons} />
               </Content>
             </a>
           </SNS>

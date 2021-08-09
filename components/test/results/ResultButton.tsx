@@ -5,6 +5,7 @@ import CopyLinkBtn from './CopyLinkBtn';
 import Link from 'next/link';
 import { paletteAtom } from 'states/product';
 import { useSetRecoilState } from 'recoil';
+import Image from 'next/image';
 
 function ResultButton(props) {
   const data = props.data;
@@ -16,7 +17,7 @@ function ResultButton(props) {
   return (
     <Wrap>
       <ImageWrapper>
-        <img alt="resultColorGreen" src={data?.palette_img} />
+        <Image alt="resultColorGreen" src={data?.palette_img} />
       </ImageWrapper>
       <Link href="/product" passHref>
         <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>

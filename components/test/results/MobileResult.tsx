@@ -1,19 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { Line } from '../../../assets';
 import MatchingColor1 from './MatchingColor1';
 import MatchingColor2 from './MatchingColor2';
 import CopyLinkBtn from './CopyLinkBtn';
-import { testResultAtom } from '../../../states/test';
 import { paletteAtom } from 'states/product';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import Link from 'next/link';
 import sizeMe from 'react-sizeme';
+import Image from 'next/image';
 
 function TestResult(props) {
   const { data } = props;
-  const { width, height } = props.size;
+  const { width } = props.size;
 
   const isMobile = width <= 700 ? true : false;
 
@@ -27,7 +26,7 @@ function TestResult(props) {
     data && (
       <Layout>
         <LineWrapper>
-          <img alt="line" src={Line} />
+          <Image alt="line" src={Line} />
         </LineWrapper>
         <LeftWrapper>
           <ResultColor>{data?.palette_name}</ResultColor>
