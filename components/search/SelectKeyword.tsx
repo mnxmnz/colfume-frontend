@@ -47,7 +47,6 @@ function SelectKeyword() {
                   </KeywordBtn>
                 );
               })}
-              );
             </Wrap>
           );
         })}
