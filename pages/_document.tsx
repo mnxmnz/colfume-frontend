@@ -34,6 +34,10 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="utf-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Colfume :: 색으로 찾는 나만의 향기" />
           <meta property="og:image" content="/image.png" />
