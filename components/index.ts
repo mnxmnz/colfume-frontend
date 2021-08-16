@@ -1,4 +1,5 @@
 export { default as Header } from './common/Header';
+export { default as MobileHeader } from './common/MobileHeader';
 export { default as Footer } from './common/Footer';
 export { default as Banner } from './main/Banner';
 export { default as MainWrap } from './main/MainWrap';
