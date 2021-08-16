@@ -20,7 +20,7 @@ function NewFooter() {
           </Contact>
           <Info>
             <Title>Info</Title>
-            <a href="https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788">
+            <a href="https://cooing-mandolin-be1.notion.site/c-lfume-fedc588d0ba54d6f9d1b8be10823c968">
               <Content>COLFUME | 대표 구혜련</Content>
             </a>
           </Info>
@@ -28,7 +28,7 @@ function NewFooter() {
         <AccountWrap>
           <SNS>
             <Title>Follow us</Title>
-            <a href="https://www.instagram.com/colfume_official/">
+            <a href="https://cooing-mandolin-be1.notion.site/c-lfume-fedc588d0ba54d6f9d1b8be10823c968">
               <Content>
                 <Image alt="footerIcon" src={FooterIcons} />
               </Content>
