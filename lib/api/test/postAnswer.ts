@@ -1,9 +1,9 @@
 import axios from 'axios';
-const baseURL = 'https://colfume.co.kr/api';
+import BASE_URL from '../client';
 
 export async function testResult(answer) {
   try {
-    const { data } = await axios.post(`${baseURL}/colfume/test`, answer);
+    const { data } = await axios.post(`${BASE_URL}/colfume/test`, answer);
     return data.data;
   } catch (error) {
     console.error('Test Result Error', error);
