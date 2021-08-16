@@ -1,12 +1,11 @@
 import useSWR from 'swr';
 import { fetcher } from '../fetch';
-
-const BASEURL = 'https://colfume.co.kr/api/search';
+import BASE_URL from '../client';
 
 export const SearchData = props => {
   const category = props[0] === '/' ? '/' : `/filter/${props[0]}/`;
   const keyword = props[1];
-  const url = `${BASEURL}${category}${keyword}`;
+  const url = `${BASE_URL}/search${category}${keyword}`;
   const { data, error } = useSWR(url, fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
       if (error.status === 404) return;

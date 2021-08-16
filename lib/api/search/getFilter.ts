@@ -1,8 +1,9 @@
 import useSWR from 'swr';
 import { fetcher } from '../fetch';
+import BASE_URL from '../client';
 
 export const GetFilterList = () => {
-  const { data, error } = useSWR('https://colfume.co.kr/api/search/keyword', fetcher, {
+  const { data, error } = useSWR(`${BASE_URL}/search/keyword`, fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
       if (error.status === 404) return;
       if (retryCount >= 10) return;

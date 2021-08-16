@@ -1,10 +1,10 @@
 import useSWR from 'swr';
 import { fetcher } from '../fetch';
+import BASE_URL from '../client';
 
-const BASEURL = `https://colfume.co.kr/api/product`;
 export const GetProductList = props => {
   const url = props ? `/${props}` : '/';
-  const { data, error } = useSWR(BASEURL + url, fetcher, {
+  const { data, error } = useSWR(`${BASE_URL}/product` + url, fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
       if (error.status === 404) return;
     },

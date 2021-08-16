@@ -27,7 +27,7 @@ const MobileFooter = () => {
           <div>
             <Heading>Follow us</Heading>
             <ImageWrapper>
-              <a href="https://www.notion.so/Colfume-a4cd3bdbe31e46bfbff60c5beade2788">
+              <a href="https://cooing-mandolin-be1.notion.site/c-lfume-fedc588d0ba54d6f9d1b8be10823c968">
                 <Image alt="footerIcon" src={FooterIcons} />
               </a>
             </ImageWrapper>

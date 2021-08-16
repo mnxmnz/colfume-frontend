@@ -36,7 +36,7 @@ function CopyLinkBtn() {
 
   const router = useRouter();
   const { id } = router.query;
-  const url = 'https://colfume.vercel.app/test/result/' + id;
+  const url = 'https://colfume.com/test/result/' + id;
 
   return (
     <>
