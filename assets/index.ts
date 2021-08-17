@@ -17,7 +17,7 @@ export { default as Palette05Sky } from './main/Palette05Sky.svg';
 export { default as Palette06Purple } from './main/Palette06Purple.svg';
 export { default as Palette07Pink } from './main/Palette07Pink.svg';
 export { default as Palette08White } from './main/Palette08White.svg';
-export { default as MobileMenuIcon } from './main/MobileMenuIcon.svg';
+export { default as MenuIcon } from './main/MenuIcon.svg';
 ///// product assets
 export { default as FilterGreen } from './product/FilterGreen.svg';
 export { default as FilterOrange } from './product/FilterOrange.svg';
