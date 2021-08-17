@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Line } from '../../../assets';
@@ -10,11 +10,27 @@ import { testResultAtom } from '../../../states/test';
 import { useRecoilValue } from 'recoil';
 import { GetTestAnswer } from '../../../lib/api/test/getAnswer';
 import { useRouter } from 'next/router';
+import Loading from '../questions/Loading';
 
 function TestResult({ data }) {
   // const colorName = useRecoilValue(testResultAtom);
   // const router = useRouter();
   // const data = GetTestAnswer(colorName);
+  const router = useRouter();
+  const queryString = String(router.query);
+  const isShared = queryString.includes('?shared=true');
+
+  const LOADING_DELAY = 3000;
+  const [loading, setLoading] = useState(!isShared);
+
+  useEffect(() => {
+    const loadingFinished = setTimeout(() => {
+      setLoading(false);
+    }, LOADING_DELAY);
+    return () => clearTimeout(loadingFinished);
+  }, []);
+
+  if (loading) return <Loading />;
 
   return (
     <>
