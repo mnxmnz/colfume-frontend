@@ -6,6 +6,10 @@ import styled from 'styled-components';
 import { MenuIcon, Logo } from '../../assets';
 import Image from 'next/image';
 
+interface IStyledProps {
+  current: boolean;
+}
+
 const Positioner = styled.div`
   display: flex;
   position: fixed;
@@ -46,7 +50,7 @@ const Wrap = styled.div`
   }
 `;
 
-const LogoWrap = styled.div`
+const LogoWrap = styled.div<IStyledProps>`
   display: flex;
   ${media.custom(400)} {
     width: 7.4rem;
