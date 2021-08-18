@@ -19,7 +19,13 @@ function ProductDetailWrap(props) {
           <ButtonBack src={ButtonBackDefault.src} onClick={() => router.back()} alt="button-back" />
           <FlexWrap>
             <ContentWrap>
-              <Image className="product" src={data.data[0].perfume_img} alt="sample" />
+              <Image
+                className="product"
+                src={data.data[0].perfume_img}
+                alt="sample"
+                width="51.1rem"
+                height="77.1rem"
+              />
               <Detail data={data.data[0]} />
             </ContentWrap>
           </FlexWrap>
@@ -73,8 +79,8 @@ const ContentWrap = styled.div`
   }
 
   .product {
-    width: 51.1rem;
-    height: 77.1rem;
+    width: 51.1rem !important;
+    height: 77.1rem !important;
 
     ${media.mobile} {
       width: 20rem;

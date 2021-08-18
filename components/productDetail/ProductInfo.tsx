@@ -6,7 +6,7 @@ import Image from 'next/image';
 function ProductInfo({ brand, price, capacity, name, palette }) {
   return (
     <ProductInfoWrap>
-      <Image src={palette} alt="productMainImage" />
+      <Image src={palette} alt="productMainImage" width="11.4rem" height="12.5rem" />
       <TextInfo>
         <BrandName>{brand}</BrandName>
         <ProductName>{name}</ProductName>
