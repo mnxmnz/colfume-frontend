@@ -30,7 +30,7 @@ function TestResult({ data }) {
     return () => clearTimeout(loadingFinished);
   }, []);
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading isShared={loading} />;
 
   return (
     <>
