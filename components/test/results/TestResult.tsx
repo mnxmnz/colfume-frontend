@@ -18,7 +18,7 @@ function TestResult({ data }) {
   // const data = GetTestAnswer(colorName);
 
   const router = useRouter();
-  const queryString = router.query.shared;
+  const queryString = router.asPath;
   const isShared = queryString.includes('true');
 
   const LOADING_DELAY = 3000;
