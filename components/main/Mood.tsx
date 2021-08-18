@@ -38,6 +38,11 @@ const MoodWrap = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.gray1};
+
+  ${media.mobile} {
+    width: 37.5rem;
+    min-height: 25.6rem;
+  }
 `;
 
 const ThemeWrap = styled.div`
