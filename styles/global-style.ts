@@ -58,6 +58,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
+    font-family: "NotoSans Thin";
+    font-weight: normal;
+    font-style: normal;
+    src: url("/fonts/NotoSansKR-Thin.otf") format("truetype");
+  }
+
+  @font-face {
     font-family: "Gotham";
     font-weight: normal;
     font-style: normal;
