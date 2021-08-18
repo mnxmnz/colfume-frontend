@@ -16,6 +16,7 @@ function SearchWrap() {
 
 const Layout = styled.div`
   margin-top: 7.3rem;
+  padding: 0 2.5rem;
 `;
 
 export default SearchWrap;
