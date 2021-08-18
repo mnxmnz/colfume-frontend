@@ -81,7 +81,7 @@ const Layout = styled.div`
   max-width: 113.6rem;
   height: 7.2rem;
 
-  ${media[1440]} {
+  ${media.custom(1000)} {
     max-width: 84rem;
   }
 `;
@@ -93,7 +93,7 @@ const LogoWrap = styled.div<IStyledProps>`
   margin-left: 10.1rem;
   cursor: pointer;
 
-  ${media[1440]} {
+  ${media.custom(1000)} {
     margin-left: 6rem;
   }
 `;
@@ -102,7 +102,7 @@ const Category = styled.div`
   display: flex;
   margin: auto;
 
-  ${media[1440]} {
+  ${media.custom(1000)} {
     margin-right: 4rem;
   }
 

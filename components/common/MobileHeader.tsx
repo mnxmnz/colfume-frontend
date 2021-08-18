@@ -24,7 +24,7 @@ const WhiteBackground = styled.div`
   background: ${({ theme }) => theme.colors.white};
   width: 100vw;
   height: 7.2rem;
-  ${media.custom(400)} {
+  ${media.custom(480)} {
     border-bottom: 0.1rem solid ${({ theme }) => theme.colors.gray2};
     height: 4.3rem;
   }
@@ -35,7 +35,7 @@ const Category = styled.div`
   cursor: pointer;
   font-family: 'Junge';
   font-size: 2.2rem;
-  ${media.custom(400)} {
+  ${media.custom(480)} {
     font-size: 1.2rem;
   }
 `;
@@ -43,23 +43,20 @@ const Category = styled.div`
 const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0 5rem;
+  padding: 0 2.5rem;
   width: 100%;
-  ${media.custom(400)} {
-    padding: 0 2.5rem;
-  }
 `;
 
 const LogoWrap = styled.div<IStyledProps>`
   display: flex;
-  ${media.custom(400)} {
+  ${media.custom(480)} {
     width: 7.4rem;
   }
 `;
 
 const IconWrap = styled.div`
   display: flex;
-  ${media.custom(400)} {
+  ${media.custom(480)} {
     width: 2.3rem;
   }
 `;
