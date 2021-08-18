@@ -33,13 +33,10 @@ function Recommendation(props) {
         <>
           <Recomm>
             <ItemImg src={datum.perfume_img} alt="productImage" />
-            {/* <KeywordWrap>
-              <Keyword>{moods.map(mood => mood[1] && `#${mood[1].mood_name}`)}</Keyword>
-            </KeywordWrap> */}
           </Recomm>
           <Hovered>
             <Name>{datum.perfume_name}</Name>
-            <Keyword>{moods.map(mood => mood[1] && `#${mood[1].mood_name}`)}</Keyword>
+            <Keyword>{moods.map(mood => mood[1] && `#${mood[1].mood_name} `)}</Keyword>
           </Hovered>
         </>
         {idx % 3 === 2 ? (
@@ -79,6 +76,10 @@ const ContourImg = styled.img`
     padding-left: 2.5rem;
     height: 20.3rem;
   }
+
+  ${media.mobile} {
+    display: none;
+  }
 `;
 
 const HiddenImg = styled.img`
@@ -97,6 +98,10 @@ const HiddenImg = styled.img`
   ${media[768]} {
     padding-left: 2.5rem;
     height: 20.3rem;
+  }
+
+  ${media.mobile} {
+    display: none;
   }
 `;
 
@@ -130,8 +135,9 @@ const ItemImg = styled.img`
   }
 
   ${media.mobile} {
-    width: 10.981rem;
-    height: 14.3rem;
+    margin-right: 1.25rem;
+    width: 11rem;
+    height: 15rem;
   }
 `;
 
@@ -140,7 +146,6 @@ const Hovered = styled.div`
   position: absolute;
   left: 7.05rem;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: flex-end;
   transition: 0.5s ease;
   opacity: 0;
@@ -172,7 +177,9 @@ const Hovered = styled.div`
   }
 
   ${media.mobile} {
-    display: none;
+    left: 0.7rem;
+    width: 12rem;
+    height: 15rem;
   }
 `;
 
@@ -180,28 +187,35 @@ const Name = styled.div`
   display: flex;
   margin-bottom: 1rem;
   margin-left: 2.6rem;
-  width: 22rem;
+  width: 19.1rem;
   line-height: 3.12rem;
-  letter-spacing: 3px;
+  letter-spacing: 0.078rem;
   font-size: 2.6rem;
   font-weight: bold;
 
   ${media.mobile} {
-    line-height: 1.92rem;
+    margin-bottom: 0.4rem;
+    margin-left: 0.6rem;
+    width: 8.2rem;
+    line-height: 1.56rem;
     letter-spacing: 0.1em;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 `;
 
 const Keyword = styled.div`
   margin-bottom: 2.4rem;
   margin-left: 2.6rem;
-  width: 22rem;
   line-height: 2.4rem;
-  font-size: 1.8rem;
+  letter-spacing: 0.048rem;
+  font-family: 'NotoSans Thin';
+  font-size: 1.6rem;
 
   ${media.mobile} {
-    line-height: 1.8rem;
-    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    margin-left: 0.6rem;
+    line-height: 0.825rem;
+    letter-spacing: -0.04rem;
+    font-size: 0.7rem;
   }
 `;
