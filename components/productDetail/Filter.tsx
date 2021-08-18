@@ -10,13 +10,28 @@ function Filter({ moods, styles, colors }) {
         <span>Color</span>
         <Color>
           {colors.color1 !== null && (
-            <Image src={colors.color1.color_img} alt={colors.color1.color_name} />
+            <Image
+              src={colors.color1.color_img}
+              alt={colors.color1.color_name}
+              width="3.6rem"
+              height="3.9rem"
+            />
           )}
           {colors.color2 !== null && (
-            <Image src={colors.color2.color_img} alt={colors.color2.color_name} />
+            <Image
+              src={colors.color2.color_img}
+              alt={colors.color2.color_name}
+              width="3.6rem"
+              height="3.9rem"
+            />
           )}
           {colors.color3 !== null && (
-            <Image src={colors.color3.color_img} alt={colors.color3.color_name} />
+            <Image
+              src={colors.color3.color_img}
+              alt={colors.color3.color_name}
+              width="3.6rem"
+              height="3.9rem"
+            />
           )}
         </Color>
       </ColorWrap>
