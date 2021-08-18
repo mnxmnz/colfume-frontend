@@ -11,7 +11,18 @@ export const GlobalStyle = createGlobalStyle`
   html {
     color: #3E3E3E;
     font-family: NotoSans;
-    font-size: 62.5%;
+  }
+
+  @media all and (min-width: 1025px){
+    html {
+      font-size: 50%;
+    }
+  }
+
+  @media all and (min-width: 320px) and (max-width: 1024px) {
+    html {
+      font-size: 62.5%;
+    }
   }
 
   a {
