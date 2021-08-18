@@ -15,7 +15,7 @@ import { ISizeProps } from 'types/main';
 function MainWrap(props: ISizeProps) {
   const { width } = props.size;
   const rawData = GetRecommData().data;
-  const isMobile = width <= 375 ? true : false;
+  const isMobile = width <= 420 ? true : false;
 
   return (
     <>
