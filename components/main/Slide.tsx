@@ -258,7 +258,7 @@ const SliderWrap = styled.div`
     }
 
     ${media.mobile} {
-      left: -4.498rem;
+      left: -3rem;
     }
   }
 
@@ -279,7 +279,7 @@ const SliderWrap = styled.div`
     }
 
     ${media.mobile} {
-      right: -4.498rem;
+      right: -3rem;
     }
   }
 `;
@@ -304,7 +304,7 @@ const PaletteWrap = styled.div`
   }
 
   ${media.mobile} {
-    padding-bottom: 14.26rem;
+    padding-bottom: 14rem;
     width: 24rem;
   }
 `;
@@ -335,7 +335,7 @@ const RecommWrap = styled.div`
   ${media.mobile} {
     padding-top: 3.15rem;
     padding-bottom: 10rem;
-    width: 23.965rem;
+    width: 27rem;
   }
 
   #hidden {
@@ -354,6 +354,7 @@ const RecommWrap = styled.div`
 `;
 
 const Palette = styled.img`
+  cursor: pointer;
   padding-left: 2.65rem;
   height: 27.7rem;
 
