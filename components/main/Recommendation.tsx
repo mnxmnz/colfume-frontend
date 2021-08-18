@@ -33,12 +33,13 @@ function Recommendation(props) {
         <>
           <Recomm>
             <ItemImg src={datum.perfume_img} alt="productImage" />
-            <KeywordWrap>
+            {/* <KeywordWrap>
               <Keyword>{moods.map(mood => mood[1] && `#${mood[1].mood_name}`)}</Keyword>
-            </KeywordWrap>
+            </KeywordWrap> */}
           </Recomm>
           <Hovered>
             <Name>{datum.perfume_name}</Name>
+            <Keyword>{moods.map(mood => mood[1] && `#${mood[1].mood_name}`)}</Keyword>
           </Hovered>
         </>
         {idx % 3 === 2 ? (
@@ -139,14 +140,13 @@ const Hovered = styled.div`
   position: absolute;
   left: 7.05rem;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  justify-content: flex-end;
   transition: 0.5s ease;
   opacity: 0;
   background-color: rgba(1, 1, 1, 0.4);
   width: 32.85rem;
   height: 45rem;
-  text-align: center;
   color: ${({ theme }) => theme.colors.white};
 
   &:hover {
@@ -176,59 +176,32 @@ const Hovered = styled.div`
   }
 `;
 
-const KeywordWrap = styled.div`
-  ${media[1440]} {
-    padding-left: 1rem;
-  }
-
-  ${media[1100]} {
-    padding-left: 1.5rem;
-  }
-
-  ${media[768]} {
-    padding-left: 0rem;
-  }
-
-  ${media.mobile} {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 1.3rem;
-    width: 100%;
-  }
-`;
-
-const Keyword = styled.span`
-  line-height: 3.96rem;
-  font-size: 2.2rem;
-  font-weight: 500;
-
-  ${media[1440]} {
-    line-height: 3.7rem;
-    font-size: 2rem;
-  }
-
-  ${media[1100]} {
-    line-height: 3rem;
-    font-size: 1.8rem;
-  }
-
-  ${media[768]} {
-    line-height: 1.32rem;
-    font-size: 0.8rem;
-  }
-`;
 const Name = styled.div`
-  display: block;
-  width: 18rem;
-  text-align: center;
+  display: flex;
+  margin-bottom: 1rem;
+  margin-left: 2.6rem;
+  width: 22rem;
   line-height: 3.12rem;
   letter-spacing: 3px;
   font-size: 2.6rem;
   font-weight: bold;
 
-  ${media[768]} {
-    width: 15rem;
-    line-height: 2rem;
-    font-size: 1.5rem;
+  ${media.mobile} {
+    line-height: 1.92rem;
+    letter-spacing: 0.1em;
+    font-size: 1.6rem;
+  }
+`;
+
+const Keyword = styled.div`
+  margin-bottom: 2.4rem;
+  margin-left: 2.6rem;
+  width: 22rem;
+  line-height: 2.4rem;
+  font-size: 1.8rem;
+
+  ${media.mobile} {
+    line-height: 1.8rem;
+    font-size: 1rem;
   }
 `;
