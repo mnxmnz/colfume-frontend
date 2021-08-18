@@ -38,9 +38,6 @@ const TitleWrap = styled.div`
   font-weight: 400;
 
   ${media.mobile} {
-    background: pink;
-    width: 37.5rem;
-    min-height: 25.6rem;
     line-height: 3.24rem;
     font-size: 1.8rem;
   }
