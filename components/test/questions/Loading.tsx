@@ -3,14 +3,18 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import { LoadingIcon } from '../../../assets';
 
-function Loading() {
+function Loading({ isShared }) {
   return (
-    <LoadingWrap>
-      <IconWrap>
-        <Image src={LoadingIcon} width="100%" height="100%" alt="" />
-        <Text>당신의 컬러를 찾는 중입니다.</Text>
-      </IconWrap>
-    </LoadingWrap>
+    <>
+      {isShared && (
+        <LoadingWrap>
+          <IconWrap>
+            <Image src={LoadingIcon} width="100%" height="100%" alt="" />
+            <Text>당신의 컬러를 찾는 중입니다.</Text>
+          </IconWrap>
+        </LoadingWrap>
+      )}
+    </>
   );
 }
 
