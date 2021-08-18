@@ -354,6 +354,7 @@ const RecommWrap = styled.div`
 `;
 
 const Palette = styled.img`
+  cursor: pointer;
   padding-left: 2.65rem;
   height: 27.7rem;
 
