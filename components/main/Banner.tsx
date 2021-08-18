@@ -70,7 +70,7 @@ const TitleBox = styled.div`
 
 const MainTitle = styled.div`
   font-family: 'Junge';
-  font-size: 12rem;
+  font-size: 14.5rem;
 
   ${media[1440]} {
     font-size: 10rem;
@@ -91,7 +91,7 @@ const MainTitle = styled.div`
 const SubTitle = styled.div`
   margin-top: 2rem;
   margin-bottom: 20rem;
-  font-size: 2.8rem;
+  font-size: 3rem;
 
   ${media[1440]} {
     font-size: 2.3rem;
@@ -131,7 +131,7 @@ const StartBnt = styled.div`
   width: 38.2rem;
   height: 10.7rem;
   font-family: 'Junge';
-  font-size: 5rem;
+  font-size: 6rem;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.black};
