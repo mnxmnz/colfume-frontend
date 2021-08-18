@@ -16,9 +16,10 @@ function TestResult({ data }) {
   // const colorName = useRecoilValue(testResultAtom);
   // const router = useRouter();
   // const data = GetTestAnswer(colorName);
+
   const router = useRouter();
-  const queryString = router.pathname;
-  const isShared = queryString.includes('?shared=true');
+  const queryString = router.query.shared;
+  const isShared = queryString.includes('true');
 
   const LOADING_DELAY = 3000;
   const [loading, setLoading] = useState(!isShared);
