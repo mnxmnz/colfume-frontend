@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Line } from '../../../assets';
@@ -6,9 +6,6 @@ import { media } from '@styles/theme';
 import ResultTitle from './ResultTitle';
 import ResultDescription from './ResultDescription';
 import ResultButton from './ResultButton';
-import { testResultAtom } from '../../../states/test';
-import { useRecoilValue } from 'recoil';
-import { GetTestAnswer } from '../../../lib/api/test/getAnswer';
 import { useRouter } from 'next/router';
 import Loading from '../questions/Loading';
 

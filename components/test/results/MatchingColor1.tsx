@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
-import { testResultAtom } from '../../../states/test';
-import { useRecoilValue } from 'recoil';
 
 interface PropsType {
   data: dataType;
