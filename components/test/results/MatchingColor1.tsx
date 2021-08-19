@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
-import { testResultAtom } from '../../../states/test';
-import { useRecoilValue } from 'recoil';
 
 interface PropsType {
   data: dataType;
@@ -31,7 +29,7 @@ function MatchingColor1(props: PropsType) {
 }
 
 const ColorWrap = styled.button`
-  margin-top: 0.6rem;
+  margin-top: 1.6rem;
   margin-left: 7rem;
   padding-right: 1.2rem;
   padding-left: 1.2rem;

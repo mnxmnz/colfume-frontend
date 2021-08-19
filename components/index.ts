@@ -9,4 +9,3 @@ export { default as ProductDetailWrap } from './productDetail/ProductDetailWrap'
 export { default as SearchWrap } from './search/SearchWrap';
 export { default as TestWrap } from './test/TestWrap';
 export { default as Loading } from './test/questions/Loading';
-export { default as ResultData } from './test/results/ResultData';

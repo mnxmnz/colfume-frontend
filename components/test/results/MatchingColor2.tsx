@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
-import { testResultAtom } from '../../../states/test';
-import { useRecoilValue } from 'recoil';
 
-function MatchingColor2({data}) {
+function MatchingColor2({ data }) {
   // const data = useRecoilValue(testResultAtom);
   const background = {
     background: `${data.palette_matchBg[1]}`,
@@ -19,7 +17,7 @@ function MatchingColor2({data}) {
 }
 
 const ColorWrap = styled.button`
-  margin-top: 0.6rem;
+  margin-top: 1.6rem;
   margin-left: 1rem;
   padding-right: 1.2rem;
   padding-left: 1.2rem;
