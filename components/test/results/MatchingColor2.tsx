@@ -17,7 +17,7 @@ function MatchingColor2({ data }) {
 }
 
 const ColorWrap = styled.button`
-  margin-top: 0.6rem;
+  margin-top: 1.6rem;
   margin-left: 1rem;
   padding-right: 1.2rem;
   padding-left: 1.2rem;
