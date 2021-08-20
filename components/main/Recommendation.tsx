@@ -61,6 +61,7 @@ const RecommWrap = styled.div`
 
 const ContourImg = styled.img`
   padding-left: 6.7rem;
+  height: 45rem;
 
   ${media[1440]} {
     padding-left: 2.5rem;
@@ -84,6 +85,7 @@ const ContourImg = styled.img`
 
 const HiddenImg = styled.img`
   padding-left: 6.7rem;
+  height: 45rem;
 
   ${media[1440]} {
     padding-left: 2.5rem;
