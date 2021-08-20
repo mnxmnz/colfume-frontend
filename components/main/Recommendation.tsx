@@ -197,7 +197,7 @@ const Name = styled.div`
 
   ${media.mobile} {
     margin-bottom: 0.4rem;
-    margin-left: 0.6rem;
+    margin-left: 0.3rem;
     width: 8.2rem;
     line-height: 1.56rem;
     letter-spacing: 0.1em;
@@ -215,9 +215,9 @@ const Keyword = styled.div`
 
   ${media.mobile} {
     margin-bottom: 0.6rem;
-    margin-left: 0.6rem;
-    line-height: 0.825rem;
-    letter-spacing: -0.04rem;
+    margin-left: 0.3rem;
+    line-height: 1.155rem;
+    letter-spacing: -0.028rem;
     font-size: 0.7rem;
   }
 `;
