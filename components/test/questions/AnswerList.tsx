@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Router from 'next/router';
 import AnswerData from './AnswerData';
 import { media } from '@styles/theme';
-import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { questionNumberAtom, answerAtom, testResultAtom } from '../../../states/test';
 import { testResult } from '../../../lib/api/test/postAnswer';
-import Loading from './Loading';
 
 function AnswerList() {
   const [progress, setProgress] = useRecoilState(questionNumberAtom);
   const answer = useRecoilValue(answerAtom);
   const setResult = useSetRecoilState(testResultAtom);
-  const restartTest = useResetRecoilState(questionNumberAtom);
 
   const data = AnswerData;
   const length = data[progress]?.length;
@@ -34,8 +32,6 @@ function AnswerList() {
       } catch (e) {
         return e;
       }
-
-      restartTest();
     }
   };
 
