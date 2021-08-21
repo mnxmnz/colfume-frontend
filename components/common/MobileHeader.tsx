@@ -96,7 +96,7 @@ const MobileHeader = () => {
           </WhiteBackground>
           <WhiteBackground>
             <Link href="/test" passHref>
-              <Category onClick={toggleMenu}>Calor Test</Category>
+              <Category onClick={toggleMenu}>Color Test</Category>
             </Link>
           </WhiteBackground>
           <WhiteBackground>
