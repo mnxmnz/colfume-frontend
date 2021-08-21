@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Line } from '../../../assets';
 import MatchingColor1 from './MatchingColor1';
 import MatchingColor2 from './MatchingColor2';
 import CopyLinkBtn from './CopyLinkBtn';
+import Loading from '../questions/Loading';
 import { paletteAtom } from 'states/product';
-import { useSetRecoilState } from 'recoil';
+import { useSetRecoilState, useResetRecoilState } from 'recoil';
+import { questionNumberAtom } from '../../../states/test';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import sizeMe from 'react-sizeme';
 import Image from 'next/image';
@@ -21,6 +24,27 @@ function TestResult(props) {
   const submitColorResult = () => {
     setPaletteAtom(data.palette_name);
   };
+
+  const router = useRouter();
+  const queryString = router.asPath;
+  const isShared = queryString.includes('true');
+
+  const LOADING_DELAY = 3000;
+  const [loading, setLoading] = useState(!isShared);
+
+  const restartTest = useResetRecoilState(questionNumberAtom);
+
+  useEffect(() => {
+    const loadingFinished = setTimeout(() => {
+      setLoading(false);
+    }, LOADING_DELAY);
+    return () => {
+      clearTimeout(loadingFinished);
+      restartTest();
+    };
+  }, [restartTest]);
+
+  if (loading) return <Loading isShared={loading} />;
 
   return (
     data && (
@@ -49,7 +73,9 @@ function TestResult(props) {
             <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
           </Link>
           <CopyLinkBtn />
-          <RetryBtn>다시 하기</RetryBtn>
+          <Link href="/test" passHref>
+            <RetryBtn>다시 하기</RetryBtn>
+          </Link>
         </RightWrapper>
 
         {isMobile ? (
