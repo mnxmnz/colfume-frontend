@@ -60,7 +60,7 @@
 <br />
 <br />
 
-#### ✔ Color Teste - Result
+#### ✔ Color Test - Result
 
 <img alt="main" src="https://user-images.githubusercontent.com/55784772/125958027-898da592-51a4-4e01-93e9-c595fdcb9b24.png" >
 
@@ -244,7 +244,7 @@ yarn dev
 
 1. Fork the Project
 2. Create your Feature Branch (git checkout -b feat/AmazingFeature)
-3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+3. Commit your Changes (git commit -m 'add: some AmazingFeature')
 4. Push to the Branch (git push origin feat/AmazingFeature)
 5. Open a Pull Request
 
