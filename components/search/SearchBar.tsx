@@ -117,7 +117,7 @@ const SearchInput = styled.input`
 const SearchArrowIcon = styled.div`
   button {
     position: relative;
-    top: 0.7rem;
+    top: 0.5rem;
     padding: 0;
   }
   ${media[768]} {
@@ -127,6 +127,9 @@ const SearchArrowIcon = styled.div`
   }
 
   ${media.custom(480)} {
+    button {
+      right: -0.2rem;
+    }
     img {
       width: 4.7rem;
       height: 3.2rem;

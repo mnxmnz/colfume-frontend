@@ -60,7 +60,7 @@ const ImageTableWrap = styled.div`
     padding-bottom: 10rem;
   }
 
-  ${media.mobile} {
+  ${media.custom(480)} {
     padding-top: 3.2rem;
     padding-bottom: 2.6rem;
   }
@@ -87,7 +87,7 @@ const ImageTableBox = styled.div`
     max-width: 34rem;
   }
 
-  ${media.mobile} {
+  ${media.custom(480)} {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
   }
