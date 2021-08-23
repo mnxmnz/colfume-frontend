@@ -22,9 +22,10 @@ function QuestionList() {
               <Text>{data[progress]?.text01}</Text>
               <Text>{data[progress]?.text02}</Text>
               <Detail>
-                {data[progress]?.detail} {data[progress]?.detail02}
+                {data[progress]?.detail}
+                <br />
+                {data[progress]?.detail02}
               </Detail>
-              {data[progress]?.detail02 && <span>{data[progress]?.detail02}</span>}
             </ContentWrap>
           </NumberWrap>
         </QuestionWrap>
@@ -38,7 +39,7 @@ const QuestionWrap = styled.div`
   margin-left: 20.3125vw;
 
   ${media[768]} {
-    margin-top: 88px;
+    margin-top: 6.7rem;
     margin-left: 0;
   }
 `;
@@ -61,10 +62,10 @@ const Number = styled.div`
   font-weight: 400;
 
   ${media[768]} {
-    margin-bottom: 27.36px;
+    margin-bottom: 3.8rem;
     text-align: center;
-    line-height: 79px;
-    font-size: 44px;
+    line-height: 7.9rem;
+    font-size: 4.4rem;
 
     span {
       display: none;
@@ -87,9 +88,9 @@ const ContentWrap = styled.div`
 
     span {
       display: block;
-      margin-top: 19px;
-      line-height: 28.8px;
-      font-size: 16px;
+      margin-top: 1.9rem;
+      line-height: 2.8rem;
+      font-size: 1.6rem;
     }
   }
 `;
@@ -102,8 +103,8 @@ const Text = styled.div`
 
   ${media[768]} {
     text-align: center;
-    line-height: 40px;
-    font-size: 22px;
+    line-height: 4rem;
+    font-size: 2.2rem;
     font-weight: 700;
   }
 `;
@@ -115,9 +116,9 @@ const Detail = styled.div`
   font-weight: 400;
 
   ${media[768]} {
-    margin-top: 19px;
-    line-height: 28.8px;
-    font-size: 16px;
+    margin-top: 1.9rem;
+    line-height: 2.8rem;
+    font-size: 1.6rem;
   }
 `;
 

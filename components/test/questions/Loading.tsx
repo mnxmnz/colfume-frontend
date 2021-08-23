@@ -11,7 +11,11 @@ function Loading({ isShared }) {
         <LoadingWrap>
           <IconWrap>
             <Image src={LoadingIcon} width="100%" height="100%" alt="" />
-            <Text>당신의 컬러를 찾는 중입니다.</Text>
+            <Text>
+              당신의 컬러를
+              <br />
+              찾는 중입니다.
+            </Text>
           </IconWrap>
         </LoadingWrap>
       )}
