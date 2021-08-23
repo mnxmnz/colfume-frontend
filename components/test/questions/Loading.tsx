@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import { media } from '@styles/theme';
 import { LoadingIcon } from '../../../assets';
 
 function Loading({ isShared }) {
@@ -51,6 +52,12 @@ const IconWrap = styled.div`
       transform: scale(1);
     }
   }
+
+  ${media[768]} {
+    img {
+      width: 7rem;
+    }
+  }
 `;
 
 const Text = styled.div`
@@ -60,6 +67,12 @@ const Text = styled.div`
   font-size: 4rem;
   font-weight: 500;
   font-style: normal;
+
+  ${media[768]} {
+    margin-top: 1.9rem;
+    line-height: 2.8rem;
+    font-size: 2rem;
+  }
 `;
 
 export default Loading;
