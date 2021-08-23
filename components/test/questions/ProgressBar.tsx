@@ -48,7 +48,7 @@ const NumberWrap = styled.div`
 
 const CurrentProgress = styled.div<{ progress: number }>`
   transition: all 1s ease-in-out;
-  width: ${({ progress }) => 90 * (progress + 1) + 12}px;
+  width: ${({ progress }) => 9 * (progress + 1) + 1.2}rem;
   text-align: right;
   line-height: 4rem;
   font-family: Junge;
@@ -81,8 +81,8 @@ const Current = styled.div<{ progress: number }>`
   transition: all 1s ease-in-out;
   z-index: 10;
   background-color: ${({ theme }) => theme.colors.borderGray};
-  width: ${({ progress }) => 90 * (progress + 1)}px;
-  height: 10px;
+  width: ${({ progress }) => 9 * (progress + 1)}rem;
+  height: 1rem;
 
   ${media[768]} {
     width: ${({ progress }) => 40 * (progress + 1)}px;

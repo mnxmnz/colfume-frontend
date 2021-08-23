@@ -3,13 +3,13 @@ const AnswerData = [
     index: 1,
     answer01: {
       value: 1,
-      text: '오늘 있었던 일을 되돌아본다.',
+      text: '동료에게 칭찬받았던 것이 떠오른다.',
     },
     answer02: {
       value: 2,
-      text: '내일 해야하는 일을 생각한다.',
+      text: '자신이 낸 업무 성과가 떠오른다.',
     },
-    length: 460,
+    length: 535,
     mobileLength: 261,
   },
   {

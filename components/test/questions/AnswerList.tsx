@@ -64,6 +64,7 @@ function AnswerList() {
 const AnswerWrap = styled.div`
   margin-top: 14.4444vh;
   margin-right: 20.3125vw;
+  cursor: pointer;
   text-align: right;
 
   ${media[768]} {
