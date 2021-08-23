@@ -55,7 +55,6 @@ const MobileBox = styled.div`
   bottom: 0;
   margin-top: auto;
   background: ${({ theme }) => theme.colors.gray1};
-  width: 37.5rem;
   min-height: 25.6rem;
 `;
 

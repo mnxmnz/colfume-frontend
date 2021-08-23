@@ -40,7 +40,6 @@ const MoodWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.gray1};
 
   ${media.mobile} {
-    width: 37.5rem;
     min-height: 25.6rem;
   }
 `;
