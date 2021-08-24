@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://www.colfume.com">
+    <a href="https://www.colfume.co.kr/">
         <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F0hoKn%2FbtrcOe6TvjA%2FoJYxQxU0znFkRrQAlkoJR0%2Fimg.png" alt="colfume" >
     </a>
     <br />
@@ -7,7 +7,7 @@
     <p align="center">컬퓸에서 색을 통해 당신의 향을 찾아보세요</p>
     <br />
     <p align="center">
-        <a href="https://colfume.vercel.app/">View Demo</a>
+        <a href="https://www.colfume.co.kr/">View Demo</a>
     </p>
 </p>
 
