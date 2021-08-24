@@ -109,7 +109,7 @@ const CopyLinkWrapper = styled.button`
   }
   ${media.mobile} {
     margin-top: 1.3222rem;
-    margin-left: 6.2rem;
+    margin-left: 8rem;
     width: 11.8rem;
     height: 3.274rem;
     font-size: 1.2rem;

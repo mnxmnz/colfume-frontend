@@ -102,14 +102,14 @@ const LineWrapper = styled.div`
 `;
 
 const Layout = styled.div`
+  align-items: center;
+  justify-content: center;
   margin-top: 6.5rem;
-  width: 37rem;
   height: 157.7rem;
 `;
 const LeftWrapper = styled.div`
-  float: left;
   align-items: center;
-  margin-left: 0;
+  width: 100%;
   text-align: center;
 `;
 const ResultColor = styled.div`
@@ -137,8 +137,7 @@ const MatchingColorText = styled.div`
   float: left;
   align-items: center;
   margin-top: 1rem;
-  margin-left: 3.5rem;
-  width: 30rem;
+  margin-left: 8rem;
   font-family: NotoSans;
   font-size: 1.4rem;
   font-weight: 500;
@@ -166,11 +165,9 @@ const Desc = styled.li`
 `;
 
 const RightWrapper = styled.div`
-  float: right;
   justify-content: center;
   margin-top: 9rem;
-  margin-right: 0;
-  width: 37rem;
+  width: 100%;
   height: 29rem;
 `;
 
@@ -184,7 +181,7 @@ const ImageWrapper = styled.div`
 const RecommendBtn = styled.button`
   margin: 0 auto;
   margin-top: 5.5rem;
-  margin-left: 6.2rem;
+  margin-left: 8rem;
   background-color: ${({ theme }) => theme.colors.black};
   width: 25.2rem;
   height: 3.578rem;
@@ -203,7 +200,7 @@ const RecommendBtn = styled.button`
 const RetryBtn = styled.button`
   float: right;
   margin-top: 1.222rem;
-  margin-right: 5.8rem;
+  margin-right: 8rem;
   border: solid 1px;
   width: 11.8rem;
   height: 3.274rem;
