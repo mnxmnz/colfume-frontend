@@ -41,7 +41,7 @@ class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Colfume :: 색으로 찾는 나만의 향기" />
           <meta property="og:image" content="/image.png" />
-          <meta property="og:url" content="https://www.colfume.com" />
+          <meta property="og:url" content="https://www.colfume.co.kr" />
           <link rel="icon" href="/favicon.ico" type="image/png" />
         </Head>
         <body>
