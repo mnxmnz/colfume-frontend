@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
-import Image from 'next/image';
 
 function ProductInfo({ brand, price, capacity, name, palette }) {
   return (
     <ProductInfoWrap>
-      <Image src={palette} alt="productMainImage" width="11.4rem" height="12.5rem" />
+      <FilterImage src={palette} alt="productMainImage" width="11.4rem" height="12.5rem" />
       <TextInfo>
         <BrandName>{brand}</BrandName>
         <ProductName>{name}</ProductName>
@@ -28,19 +27,19 @@ const ProductInfoWrap = styled.div`
   ${media.mobile} {
     border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
   }
+`;
 
-  img {
-    margin-top: 0.9rem;
-    margin-right: 3.4rem;
-    width: 11.4rem;
-    height: 12.5rem;
+const FilterImage = styled.img`
+  margin-top: 0.9rem;
+  margin-right: 3.4rem;
+  width: 11.4rem;
+  height: 12.5rem;
 
-    ${media.mobile} {
-      margin-top: 0;
-      margin-right: 2.574rem;
-      width: 8rem;
-      height: 8.8rem;
-    }
+  ${media.mobile} {
+    margin-top: 0;
+    margin-right: 2.574rem;
+    width: 8rem;
+    height: 8.8rem;
   }
 `;
 

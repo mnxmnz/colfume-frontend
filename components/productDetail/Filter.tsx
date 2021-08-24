@@ -10,28 +10,13 @@ function Filter({ moods, styles, colors }) {
         <span>Color</span>
         <Color>
           {colors.color1 !== null && (
-            <Image
-              src={colors.color1.color_img}
-              alt={colors.color1.color_name}
-              width="3.6rem"
-              height="3.9rem"
-            />
+            <ColorIcon src={colors.color1.color_img} alt={colors.color1.color_name} />
           )}
           {colors.color2 !== null && (
-            <Image
-              src={colors.color2.color_img}
-              alt={colors.color2.color_name}
-              width="3.6rem"
-              height="3.9rem"
-            />
+            <ColorIcon src={colors.color2.color_img} alt={colors.color2.color_name} />
           )}
           {colors.color3 !== null && (
-            <Image
-              src={colors.color3.color_img}
-              alt={colors.color3.color_name}
-              width="3.6rem"
-              height="3.9rem"
-            />
+            <ColorIcon src={colors.color3.color_img} alt={colors.color3.color_name} />
           )}
         </Color>
       </ColorWrap>
@@ -78,6 +63,7 @@ const ColorWrap = styled.div`
   padding-right: 6.8rem;
   padding-bottom: 11.7rem;
   width: 32.8rem;
+
   span {
     margin-right: 6.2rem;
     width: 4rem;
@@ -121,7 +107,6 @@ const Categ = styled.div`
 
 const KeywordBox = styled.div`
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   width: 55rem;
 
@@ -139,17 +124,17 @@ const Color = styled.div`
   ${media.mobile} {
     width: 12.4rem;
   }
+`;
 
-  img {
-    margin-right: 1.9rem;
-    width: 3.6rem;
-    height: 3.9rem;
+const ColorIcon = styled.img`
+  margin-right: 1.9rem;
+  width: 3.6rem;
+  height: 3.9rem;
 
-    ${media.mobile} {
-      margin-right: 2rem;
-      width: 2.8rem;
-      height: 3.033rem;
-    }
+  ${media.mobile} {
+    margin-right: 2rem;
+    width: 2.8rem;
+    height: 3.033rem;
   }
 `;
 
