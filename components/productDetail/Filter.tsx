@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
-import Image from 'next/image';
 
 function Filter({ moods, styles, colors }) {
   return (
