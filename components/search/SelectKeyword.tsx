@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 import { GetFilterList } from 'lib/api/search/getFilter';
-import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { keywordAtom } from '../../states/search';
 
 function SelectKeyword() {
   const rawData = GetFilterList();
   const moodList: string[] = [];
   const styleList: string[] = [];
-  const setText: any = useSetRecoilState(keywordAtom);
-  const mainSelected = useRecoilValue(keywordAtom);
-  const [selectedIdx, setSelected] = useState(mainSelected[1]);
+  const [text, setText] = useRecoilState(keywordAtom);
+  const [selectedIdx, setSelected] = useState(text[1]);
 
   if (rawData.message) {
     rawData.moods.map(rawMood => moodList.push(rawMood.mood_name));
@@ -32,8 +31,14 @@ function SelectKeyword() {
               <Title>{title}</Title>
               {list.map((word, idx) => {
                 const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
-                  setText([title, word]);
-                  setSelected(word);
+                  console.log(text);
+                  if (text?.length === 0) {
+                    setText([title, word]);
+                    setSelected(word);
+                  } else {
+                    setText([]);
+                    setSelected(null);
+                  }
                 };
                 return (
                   <KeywordBtn
