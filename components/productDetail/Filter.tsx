@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
-import Image from 'next/image';
 
 function Filter({ moods, styles, colors }) {
   return (
@@ -90,6 +89,8 @@ const ColorWrap = styled.div`
 `;
 
 const Categ = styled.div`
+  display: flex;
+  align-items: center;
   margin-right: 6.2rem;
   margin-left: 6.2rem;
   width: 4rem;
@@ -172,12 +173,14 @@ const KeywordWrap = styled.div`
 `;
 
 const Keyword = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: 2.6rem;
   background-color: ${({ theme }) => theme.colors.gray2};
   padding-top: 0.3rem;
   width: 10rem;
   height: 3.9rem;
-  text-align: center;
   line-height: 3.24rem;
   font-size: 1.8rem;
 
