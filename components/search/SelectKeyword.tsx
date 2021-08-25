@@ -31,11 +31,10 @@ function SelectKeyword() {
               <Title>{title}</Title>
               {list.map((word, idx) => {
                 const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
-                  console.log(text);
-                  if (text?.length === 0) {
-                    setText([title, word]);
-                    setSelected(word);
-                  } else {
+                  setText([title, word]);
+                  setSelected(word);
+
+                  if (word === selectedIdx) {
                     setText([]);
                     setSelected(null);
                   }

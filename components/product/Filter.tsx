@@ -17,10 +17,10 @@ function Filter() {
         {iconTokens.map((token, idx) => {
           const paletteColor = token.keyword;
           const handleClick: React.MouseEventHandler<HTMLImageElement> = () => {
-            if (palette === '') {
-              setPalette(paletteColor);
-              setSelected(paletteColor);
-            } else {
+            setPalette(paletteColor);
+            setSelected(paletteColor);
+
+            if (paletteColor === selectedIdx) {
               setPalette('');
               setSelected('');
             }
