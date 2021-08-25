@@ -119,11 +119,7 @@ const SearchInput = styled.input`
 const SearchArrowIcon = styled.div`
   display: flex;
   align-items: flex-end;
-  background-color: pink;
   padding: 0;
-  img {
-    opacity: 0;
-  }
 
   ${media[768]} {
     img {
