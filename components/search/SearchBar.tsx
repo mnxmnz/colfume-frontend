@@ -41,15 +41,14 @@ function SearchBar() {
         />
       </SearchBarBox>
       <SearchArrowIcon>
-        <button type="submit" onClick={handleClick}>
-          <img
-            src={SearchArrowOff.src}
-            alt="search"
-            onMouseEnter={() => (searchButton.current.src = SearchArrowOn.src)}
-            onMouseLeave={() => (searchButton.current.src = SearchArrowOff.src)}
-            ref={searchButton}
-          />
-        </button>
+        <img
+          onClick={handleClick}
+          src={SearchArrowOff.src}
+          alt="search"
+          onMouseEnter={() => (searchButton.current.src = SearchArrowOn.src)}
+          onMouseLeave={() => (searchButton.current.src = SearchArrowOff.src)}
+          ref={searchButton}
+        />
       </SearchArrowIcon>
     </SearchBarWrap>
   );
@@ -118,11 +117,10 @@ const SearchInput = styled.input`
 `;
 
 const SearchArrowIcon = styled.div`
-  button {
-    display: flex;
-    align-items: flex-end;
-    padding: 0;
-  }
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+
   ${media[768]} {
     img {
       width: 6rem;
