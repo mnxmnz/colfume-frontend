@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { paletteAtom } from '../../states/product';
 import FilterTokens from '../../public/FilterTokens';
 import { media } from '@styles/theme';
 
 function Filter() {
-  const setPalette: any = useSetRecoilState(paletteAtom);
-  const mainSelected = useRecoilValue(paletteAtom);
+  const [palette, setPalette] = useRecoilState(paletteAtom);
   const iconTokens = FilterTokens;
-  const [selectedIdx, setSelected] = useState(mainSelected);
+  const [selectedIdx, setSelected] = useState(palette);
 
   return (
     <FilterWrap>
@@ -18,8 +17,13 @@ function Filter() {
         {iconTokens.map((token, idx) => {
           const paletteColor = token.keyword;
           const handleClick: React.MouseEventHandler<HTMLImageElement> = () => {
-            setPalette(paletteColor);
-            setSelected(paletteColor);
+            if (palette === '') {
+              setPalette(paletteColor);
+              setSelected(paletteColor);
+            } else {
+              setPalette('');
+              setSelected('');
+            }
           };
           return (
             <FilterIcon key={idx}>
