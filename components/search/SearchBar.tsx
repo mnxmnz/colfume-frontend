@@ -57,7 +57,6 @@ function SearchBar() {
 
 const SearchBarWrap = styled.div`
   display: flex;
-  /* position: relative; */
   align-items: flex-end;
   justify-content: center;
   margin-top: 16.6rem;
