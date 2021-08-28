@@ -24,7 +24,7 @@
 
 #### Project name : colfume
 
-#### Project period : 2021.06.26 ~ ing
+#### Project period : 2021.06.26 ~ 2021.08.31
 
 <br />
 <br />
