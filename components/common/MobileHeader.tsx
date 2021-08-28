@@ -78,11 +78,11 @@ const MobileHeader = () => {
             <Wrap>
               <Link href="/" passHref>
                 <LogoWrap current={currentPath === '/'}>
-                  <Image src={Logo} id="Logo" alt="" />
+                  <Image src={Logo} id="Logo" alt="colfume logo" />
                 </LogoWrap>
               </Link>
               <IconWrap>
-                <Image src={MenuIcon} id=" MenuIcon" alt="" onClick={toggleMenu} />
+                <Image src={MenuIcon} id=" MenuIcon" alt="menu icon" onClick={toggleMenu} />
               </IconWrap>
             </Wrap>
           </WhiteBackground>
@@ -108,11 +108,11 @@ const MobileHeader = () => {
             <Wrap>
               <Link href="/" passHref>
                 <LogoWrap current={currentPath === '/'}>
-                  <Image src={Logo} id="Logo" alt="" />
+                  <Image src={Logo} id="Logo" alt="colfume logo" />
                 </LogoWrap>
               </Link>
               <IconWrap>
-                <Image src={MenuIcon} id=" MenuIcon" alt="" onClick={toggleMenu} />
+                <Image src={MenuIcon} id="MenuIcon" alt="menu icon" onClick={toggleMenu} />
               </IconWrap>
             </Wrap>
           </WhiteBackground>

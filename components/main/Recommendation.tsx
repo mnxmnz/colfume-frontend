@@ -32,7 +32,7 @@ function Recommendation(props) {
       <RecommWrap key={idx} onClick={handleClick}>
         <>
           <Recomm>
-            <ItemImg src={datum.perfume_img} alt="productImage" />
+            <ItemImg src={datum.perfume_img} alt="product main image" />
           </Recomm>
           <Hovered>
             <Name>{datum.perfume_name}</Name>
@@ -40,9 +40,9 @@ function Recommendation(props) {
           </Hovered>
         </>
         {idx % 3 === 2 ? (
-          <HiddenImg id="hidden" src={Contour.src} alt="hidden" />
+          <HiddenImg id="hidden" src={Contour.src} alt="product image" />
         ) : (
-          <ContourImg id="contour" src={Contour.src} alt="sampleImage" />
+          <ContourImg id="contour" src={Contour.src} alt="product main image" />
         )}
       </RecommWrap>
     </Link>

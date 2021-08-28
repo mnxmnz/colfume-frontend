@@ -26,7 +26,7 @@ function PerfumeImg(props: PropsType) {
       passHref
     >
       <PerfumeImgWrap>
-        <img className="fume_img" src={props.image} />
+        <img className="fume_img" src={props.image} alt="perfume image" />
         <div className="hover_img" onClick={handleClick}>
           <div>
             <Name>{props.name}</Name>

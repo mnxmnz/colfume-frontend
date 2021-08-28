@@ -29,7 +29,7 @@ const Header = (props: ISizeProps) => {
           <WhiteBackground>
             <Link href="/" passHref>
               <LogoWrap current={currentPath === '/'}>
-                <Image src={Logo} id="Logo" alt="" />
+                <Image src={Logo} id="Logo" alt="colfume logo" />
               </LogoWrap>
             </Link>
             <Layout>

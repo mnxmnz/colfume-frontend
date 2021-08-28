@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://www.colfume.co.kr">
-        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F0hoKn%2FbtrcOe6TvjA%2FoJYxQxU0znFkRrQAlkoJR0%2Fimg.png" alt="colfume" >
+        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F0hoKn%2FbtrcOe6TvjA%2FoJYxQxU0znFkRrQAlkoJR0%2Fimg.png" alt="colfume logo" >
     </a>
     <br />
     <h1 align="center">colfume</h1>
@@ -33,7 +33,7 @@
 
 #### ✔ Home
 
-<img alt="main" src="https://user-images.githubusercontent.com/55784772/125957379-e85b0222-71e3-4922-abf3-1373502c7769.png" >
+<img alt="home" src="https://user-images.githubusercontent.com/55784772/125957379-e85b0222-71e3-4922-abf3-1373502c7769.png" >
 
 - Header 메뉴 클릭하면 해당 링크로 이동
 - Start 버튼 클릭하면 심리 테스트 링크로 이동
@@ -44,7 +44,7 @@
 - 총 8개의 Color 가 있어서 슬라이더로 표현
 - Mood & Style 클릭하면 해당 검색 결과 페이지로 이동
 
-<img alt="main" src="https://user-images.githubusercontent.com/55784772/125957601-b3f8c61f-f6b2-4fc2-aafc-53da89a9d67c.png" >
+<img alt="recommendation" src="https://user-images.githubusercontent.com/55784772/125957601-b3f8c61f-f6b2-4fc2-aafc-53da89a9d67c.png" >
 
 - Recommendation 향수 사진 위에 Hover 하면 향수 이름 보여줌
 - 하나의 상황에 대해 6가지 향수가 있어서 슬라이더로 표현
@@ -55,7 +55,7 @@
 
 #### ✔ Color Test - Question
 
-<img alt="main" src="https://user-images.githubusercontent.com/55784772/125957970-bb04aac5-80c0-4f2c-8c22-8ddfadfc890d.png" >
+<img alt="color test question" src="https://user-images.githubusercontent.com/55784772/125957970-bb04aac5-80c0-4f2c-8c22-8ddfadfc890d.png" >
 
 - 사용자가 입력한 테스트의 값 저장
 - 사용자 진행 상황을 Progress Bar 로 표현
@@ -66,7 +66,7 @@
 
 #### ✔ Color Test - Result
 
-<img alt="main" src="https://user-images.githubusercontent.com/55784772/125958027-898da592-51a4-4e01-93e9-c595fdcb9b24.png" >
+<img alt="color test result" src="https://user-images.githubusercontent.com/55784772/125958027-898da592-51a4-4e01-93e9-c595fdcb9b24.png" >
 
 - 사용자 입력 값에 따라 8개의 결과 표시
 - 향수 추천을 받아보세요 버튼을 클릭하면 해당 색깔에 대한 Search 결과 페이지로 이동
@@ -78,7 +78,7 @@
 
 #### ✔ Search
 
-<img alt="main" src="https://user-images.githubusercontent.com/55784772/125958172-4266d84c-dd82-4c2c-89d2-cf9fef8eeae8.png">
+<img alt="search" src="https://user-images.githubusercontent.com/55784772/125958172-4266d84c-dd82-4c2c-89d2-cf9fef8eeae8.png">
 
 - 제품명, 키워드를 검색하면 그에 맞는 향수 서치 결과 표시
 - Mood 와 Style 을 클릭하면 해당 버튼만 Active 효과 표시
@@ -91,7 +91,7 @@
 
 #### ✔ Product List
 
-<img alt="main" src="https://user-images.githubusercontent.com/55784772/125958214-9bdfe2e3-875d-4c6a-ab58-b7cfb40052f2.png" >
+<img alt="product list" src="https://user-images.githubusercontent.com/55784772/125958214-9bdfe2e3-875d-4c6a-ab58-b7cfb40052f2.png" >
 
 - 향수 팔레트 컬러를 클릭하면 해당 색에 대한 검색 결과 표시
 - 서치 결과에서 향수를 클릭하면 해당 디테일 페이지로 이동
@@ -102,7 +102,7 @@
 
 #### ✔ Product Detail
 
-<img alt="main" src="https://user-images.githubusercontent.com/55784772/125958299-123e809d-12f2-4714-97e6-fa7f44256c98.png" >
+<img alt="product detail" src="https://user-images.githubusercontent.com/55784772/125958299-123e809d-12f2-4714-97e6-fa7f44256c98.png" >
 
 - 해당 향수에 맞는 정보 표시
 - 클릭하면 향수 id로 이동

@@ -10,7 +10,7 @@ function Loading({ isShared }) {
       {isShared && (
         <LoadingWrap>
           <IconWrap>
-            <Image src={LoadingIcon} width="100%" height="100%" alt="" />
+            <Image src={LoadingIcon} width="100%" height="100%" alt="loading icon" />
             <Text>
               당신의 컬러를
               <br />
