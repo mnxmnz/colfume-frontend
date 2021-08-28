@@ -30,7 +30,7 @@ function ArrowLeft(props: ArrowPropsType) {
     <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
       <img
         src={ArrowLeftUnHovered.src}
-        alt="left button image"
+        alt="left button"
         onMouseEnter={() => (leftButton.current.src = ArrowLeftHovered.src)}
         onMouseLeave={() => (leftButton.current.src = ArrowLeftUnHovered.src)}
         ref={leftButton}
@@ -48,7 +48,7 @@ function ArrowRight(props: ArrowPropsType) {
     <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
       <img
         src={ArrowRightUnHovered.src}
-        alt="right button image"
+        alt="right button"
         onMouseEnter={() => (rightButton.current.src = ArrowRightHovered.src)}
         onMouseLeave={() => (rightButton.current.src = ArrowRightUnHovered.src)}
         ref={rightButton}
