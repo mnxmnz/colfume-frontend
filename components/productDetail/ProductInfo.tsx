@@ -5,7 +5,7 @@ import { media } from '@styles/theme';
 function ProductInfo({ brand, price, capacity, name, palette }) {
   return (
     <ProductInfoWrap>
-      <FilterImage src={palette} alt="productMainImage" width="11.4rem" height="12.5rem" />
+      <FilterImage src={palette} alt="product main image" width="11.4rem" height="12.5rem" />
       <TextInfo>
         <BrandName>{brand}</BrandName>
         <ProductName>{name}</ProductName>

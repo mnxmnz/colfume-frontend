@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { media } from '@styles/theme';
 
 function MatchingColor2({ data }) {
-  // const data = useRecoilValue(testResultAtom);
   const background = {
     background: `${data.palette_matchBg[1]}`,
   };

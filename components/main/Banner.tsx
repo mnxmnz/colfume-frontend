@@ -8,7 +8,7 @@ import Image from 'next/image';
 function Banner() {
   return (
     <BannerWrap>
-      <Image src={BannerImg} alt="" />
+      <Image src={BannerImg} alt="main banner" />
       <BannerBox>
         <TitleBox>
           <MainTitle>Find Your Colfume</MainTitle>

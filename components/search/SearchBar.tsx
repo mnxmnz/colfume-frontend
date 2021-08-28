@@ -30,7 +30,7 @@ function SearchBar() {
     <SearchBarWrap>
       <SearchBarBox>
         <SearchIconImg>
-          <IconImg src={SearchIcon.src} alt="" />
+          <IconImg src={SearchIcon.src} alt="search icon" />
         </SearchIconImg>
         <SearchInput
           type="text"
@@ -44,7 +44,7 @@ function SearchBar() {
         <img
           onClick={handleClick}
           src={SearchArrowOff.src}
-          alt="search"
+          alt="search icon"
           onMouseEnter={() => (searchButton.current.src = SearchArrowOn.src)}
           onMouseLeave={() => (searchButton.current.src = SearchArrowOff.src)}
           ref={searchButton}

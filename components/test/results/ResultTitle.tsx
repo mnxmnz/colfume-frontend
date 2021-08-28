@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import MatchingColor1 from './MatchingColor1';
-import MatchingColor2 from './MatchingColor2';
 import { media } from '@styles/theme';
 
 function ResultTitle(props) {

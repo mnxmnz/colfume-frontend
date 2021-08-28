@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Slider from 'react-slick';
 import Link from 'next/link';
 import 'slick-carousel/slick/slick.css';
@@ -31,7 +30,7 @@ function ArrowLeft(props: ArrowPropsType) {
     <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
       <img
         src={ArrowLeftUnHovered.src}
-        alt=""
+        alt="left button image"
         onMouseEnter={() => (leftButton.current.src = ArrowLeftHovered.src)}
         onMouseLeave={() => (leftButton.current.src = ArrowLeftUnHovered.src)}
         ref={leftButton}
@@ -49,7 +48,7 @@ function ArrowRight(props: ArrowPropsType) {
     <div className={className} id={id} style={{ ...style, display: 'block' }} onClick={onClick}>
       <img
         src={ArrowRightUnHovered.src}
-        alt=""
+        alt="right button image"
         onMouseEnter={() => (rightButton.current.src = ArrowRightHovered.src)}
         onMouseLeave={() => (rightButton.current.src = ArrowRightUnHovered.src)}
         ref={rightButton}

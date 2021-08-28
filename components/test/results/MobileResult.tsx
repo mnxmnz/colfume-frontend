@@ -69,7 +69,7 @@ function TestResult(props) {
         </LeftWrapper>
         <RightWrapper>
           <ImageWrapper>
-            <img alt="resultColor" src={data.palette_img} width="160rem" height="160rem" />
+            <img alt="result color" src={data.palette_img} width="160rem" height="160rem" />
           </ImageWrapper>
           <Link href="/product" passHref>
             <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>

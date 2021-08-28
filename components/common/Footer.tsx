@@ -112,7 +112,7 @@ const Footer = () => {
       <MaterialBox>
         <LogoColumn>
           <LogoWrapper>
-            <Image src={Logo} alt="" />
+            <Image src={Logo} alt="footer logo" />
           </LogoWrapper>
         </LogoColumn>
         <HeadingColumn>
@@ -146,7 +146,7 @@ const Footer = () => {
           <Heading>Follow us</Heading>
           <ImageWrapper>
             <a href="https://cooing-mandolin-be1.notion.site/c-lfume-fedc588d0ba54d6f9d1b8be10823c968">
-              <Image alt="footerIcon" src={FooterIcons} />
+              <Image alt="footer icon" src={FooterIcons} />
             </a>
           </ImageWrapper>
           <FooterContent>개인정보취급방침</FooterContent>
