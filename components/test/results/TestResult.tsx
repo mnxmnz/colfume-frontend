@@ -56,6 +56,7 @@ const Wrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: green;
   }
 `;
 
@@ -79,5 +80,6 @@ const Layout = styled.div`
     align-items: center;
     margin-top: 9rem;
     margin-left: 0;
+    background: pink;
   }
 `;
