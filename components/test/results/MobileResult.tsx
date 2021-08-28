@@ -38,18 +38,24 @@ function TestResult(props) {
           ))}
           <KeyWord>{data?.palette_keyword}</KeyWord>
           <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
-          <MatchingColor1 data={data} />
-          {!data?.palette_matchColor[1] ? '' : <MatchingColor2 data={data} />}
+          <MatchingColorWrapper>
+            <MatchingColor1 data={data} />
+            {!data?.palette_matchColor[1] ? '' : <MatchingColor2 data={data} />}
+          </MatchingColorWrapper>
         </LeftWrapper>
         <RightWrapper>
           <ImageWrapper>
-            <Image alt="resultColor" src={data.palette_img} width="160rem" height="160rem" />
+            <img alt="resultColor" src={data.palette_img} width="160rem" height="160rem" />
           </ImageWrapper>
-          <Link href="/product" passHref>
-            <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
-          </Link>
-          <CopyLinkBtn />
-          <RetryBtn>다시 하기</RetryBtn>
+          <RecommendBtnWrapper>
+            <Link href="/product" passHref>
+              <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
+            </Link>
+          </RecommendBtnWrapper>
+          <ButtonWrapper>
+            <MobileCopyLinkBtn />
+            <RetryBtn>다시 하기</RetryBtn>
+          </ButtonWrapper>
         </RightWrapper>
 
         {isMobile ? (
@@ -97,18 +103,20 @@ const MobileDesc = styled.div`
 `;
 const LineWrapper = styled.div`
   margin-top: 7.2rem;
-  padding-top: 7.2rem;
   width: 11rem;
 `;
 
 const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   margin-top: 6.5rem;
   height: 157.7rem;
+  & > *:nth-child(1) {
+    align-self: flex-start;
+  }
 `;
 const LeftWrapper = styled.div`
-  align-items: center;
   width: 100%;
   text-align: center;
 `;
@@ -134,13 +142,18 @@ const KeyWord = styled.div`
   font-weight: 500;
 `;
 const MatchingColorText = styled.div`
-  float: left;
-  align-items: center;
-  margin-top: 1rem;
-  margin-left: 8rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
   font-family: NotoSans;
   font-size: 1.4rem;
   font-weight: 500;
+`;
+
+const MatchingColorWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Description = styled.div`
@@ -165,7 +178,9 @@ const Desc = styled.li`
 `;
 
 const RightWrapper = styled.div`
-  justify-content: center;
+  display: flex;
+  display: center;
+  flex-direction: column;
   margin-top: 9rem;
   width: 100%;
   height: 29rem;
@@ -178,10 +193,25 @@ const ImageWrapper = styled.div`
   height: 16rem;
 `;
 
-const RecommendBtn = styled.button`
+const ButtonWrapper = styled.div`
+  display: flex;
   margin: 0 auto;
-  margin-top: 5.5rem;
-  margin-left: 8rem;
+  width: 25.2rem;
+  & > button:nth-child(2) {
+    margin-left: 1.6rem;
+  }
+`;
+
+const RecommendBtnWrapper = styled.div`
+  display: flex;
+  margin: 0 auto;
+  margin-top: 5rem;
+`;
+
+const RecommendBtn = styled.button`
+  /* margin: 0 auto; */
+  /* margin-top: 5.5rem;
+  margin-left: 8rem; */
   background-color: ${({ theme }) => theme.colors.black};
   width: 25.2rem;
   height: 3.578rem;
@@ -197,10 +227,15 @@ const RecommendBtn = styled.button`
   }
 `;
 
+const MobileCopyLinkBtn = styled(CopyLinkBtn)`
+  margin: 0rem;
+`;
+
 const RetryBtn = styled.button`
-  float: right;
-  margin-top: 1.222rem;
-  margin-right: 8rem;
+  margin-top: 1.3rem;
+  /* float: right; */
+  /* margin-top: 1.222rem;
+  margin-right: 8rem; */
   border: solid 1px;
   width: 11.8rem;
   height: 3.274rem;

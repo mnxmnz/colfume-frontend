@@ -28,8 +28,8 @@ const ColorWrap = styled.button`
   font-weight: 500;
 
   ${media.mobile} {
-    margin-right: 5rem;
-    margin-left: 0.35rem;
+    float: left;
+    margin-top: 1rem;
     font-size: 1.4rem;
   }
 `;

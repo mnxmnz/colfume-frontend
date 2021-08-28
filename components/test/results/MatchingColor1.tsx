@@ -40,6 +40,9 @@ const ColorWrap = styled.button`
   font-weight: 500;
 
   ${media.mobile} {
+    float: left;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
     /* padding: 0; */
     font-size: 1.4rem;
   }
