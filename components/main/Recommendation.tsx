@@ -61,6 +61,7 @@ const RecommWrap = styled.div`
 
 const ContourImg = styled.img`
   padding-left: 6.7rem;
+  height: 45rem;
 
   ${media[1440]} {
     padding-left: 2.5rem;
@@ -84,6 +85,7 @@ const ContourImg = styled.img`
 
 const HiddenImg = styled.img`
   padding-left: 6.7rem;
+  height: 45rem;
 
   ${media[1440]} {
     padding-left: 2.5rem;
@@ -214,8 +216,8 @@ const Keyword = styled.div`
   ${media.mobile} {
     margin-bottom: 0.6rem;
     margin-left: 0.6rem;
-    line-height: 0.825rem;
-    letter-spacing: -0.04rem;
+    line-height: 1.26rem;
+    letter-spacing: -0.028rem;
     font-size: 0.7rem;
   }
 `;

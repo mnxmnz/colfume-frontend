@@ -53,7 +53,6 @@ const ContentWrap = styled.div`
   font-weight: 300;
 
   ${media.mobile} {
-    width: 17.7rem;
     line-height: 2.16rem;
     font-size: 1.2rem;
   }

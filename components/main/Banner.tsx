@@ -28,6 +28,10 @@ function Banner() {
 const BannerWrap = styled.div`
   margin-top: 7.2rem;
 
+  ${media.mobile} {
+    margin-top: 4.3rem;
+  }
+
   img {
     width: 100vw;
     object-fit: cover;

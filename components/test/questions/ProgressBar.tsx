@@ -28,11 +28,7 @@ const ProgressWrap = styled.div`
   margin-bottom: 11.1111vh;
 
   ${media[768]} {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin-bottom: 60.192px;
+    margin-top: 6.7rem;
   }
 `;
 
@@ -42,13 +38,13 @@ const NumberWrap = styled.div`
 
   ${media[768]} {
     margin: 0 auto;
-    width: 280px;
+    width: 28rem;
   } ;
 `;
 
 const CurrentProgress = styled.div<{ progress: number }>`
   transition: all 1s ease-in-out;
-  width: ${({ progress }) => 90 * (progress + 1) + 12}px;
+  width: ${({ progress }) => 9 * (progress + 1) + 1.2}rem;
   text-align: right;
   line-height: 4rem;
   font-family: Junge;
@@ -56,10 +52,10 @@ const CurrentProgress = styled.div<{ progress: number }>`
   font-weight: 400;
 
   ${media[768]} {
-    width: ${({ progress }) => 40 * (progress + 1) + 8}px;
+    width: ${({ progress }) => 4 * (progress + 1) + 0.8}rem;
     text-align: right;
-    line-height: 22px;
-    font-size: 12px;
+    line-height: 2.2rem;
+    font-size: 1.2rem;
     font-weight: 400;
   } ;
 `;
@@ -71,8 +67,8 @@ const ProgressBarWrap = styled.div`
   height: 1rem;
 
   ${media[768]} {
-    width: 280px;
-    height: 10px;
+    width: 28rem;
+    height: 1rem;
   } ;
 `;
 
@@ -81,12 +77,12 @@ const Current = styled.div<{ progress: number }>`
   transition: all 1s ease-in-out;
   z-index: 10;
   background-color: ${({ theme }) => theme.colors.borderGray};
-  width: ${({ progress }) => 90 * (progress + 1)}px;
-  height: 10px;
+  width: ${({ progress }) => 9 * (progress + 1)}rem;
+  height: 1rem;
 
   ${media[768]} {
-    width: ${({ progress }) => 40 * (progress + 1)}px;
-    height: 10px;
+    width: ${({ progress }) => 4 * (progress + 1)}rem;
+    height: 1rem;
   } ;
 `;
 
