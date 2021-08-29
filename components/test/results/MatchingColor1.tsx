@@ -14,9 +14,23 @@ interface dataType {
 
 function MatchingColor1(props: PropsType) {
   const data = props.data;
+  const matchedColor = data?.palette_matchColor[0];
+  let bgColor: string, fontColor: string, borderStyle: string;
+
+  if (matchedColor === 'White') {
+    bgColor = '#FFFFFF';
+    borderStyle = '0.1rem solid #3E3E3E';
+    fontColor = '#3E3E3E';
+  } else {
+    bgColor = data.palette_matchBg[0];
+    borderStyle = '0';
+    fontColor = '#FFFFFF';
+  }
 
   const background = {
-    background: `${data?.palette_matchBg[0]}`,
+    background: `${bgColor}`,
+    color: fontColor,
+    border: borderStyle,
   };
 
   return (
@@ -35,7 +49,7 @@ const ColorWrap = styled.button`
   padding-left: 1.2rem;
   height: 3rem;
   text-align: center;
-  color: ${({ theme }) => theme.colors.white};
+  /* color: ${({ theme }) => theme.colors.white}; */
   font-size: 1.8rem;
   font-weight: 500;
 
