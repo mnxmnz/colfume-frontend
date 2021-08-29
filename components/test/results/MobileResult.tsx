@@ -64,9 +64,7 @@ function TestResult(props) {
           <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
           <MatchingColorWrapper>
             <MatchingColor1 data={data} />
-            {console.log(data.palette_matchColor)}
-            {/* 여기 코드가 palette_matchColor[1]이 존재하면 <MatchingColor2>를 호출하는 것 아닌가? 순서가 반대인지 물어보기! */}
-            {!data?.palette_matchColor[1] ? <MatchingColor2 data={data} /> : ''}
+            {!data?.palette_matchColor[1] ? '' : <MatchingColor2 data={data} />}
           </MatchingColorWrapper>
         </LeftWrapper>
         <RightWrapper>
