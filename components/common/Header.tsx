@@ -62,7 +62,6 @@ const Positioner = styled.div`
   display: flex;
   position: fixed;
   top: 0;
-  flex-direction: column;
   z-index: 1;
 `;
 
@@ -75,48 +74,20 @@ const WhiteBackground = styled.div`
 
 const Layout = styled.div`
   display: flex;
-  align-items: center;
-  margin: auto;
   width: 100%;
-  max-width: 113.6rem;
   height: 7.2rem;
-
-  ${media.custom(1000)} {
-    max-width: 84rem;
-  }
 `;
 
 const LogoWrap = styled.div<IStyledProps>`
   position: fixed;
   top: 1.62rem;
-  z-index: 100;
-  margin-left: 10.1rem;
+  margin-left: 5%;
   cursor: pointer;
-
-  ${media.custom(1000)} {
-    margin-left: 6rem;
-  }
 `;
 
 const Category = styled.div`
   display: flex;
   margin: auto;
-
-  ${media.custom(1000)} {
-    margin-right: 4rem;
-  }
-
-  #Product {
-    width: 10rem;
-  }
-
-  #ColorTest {
-    width: 12.7rem;
-  }
-
-  #Search {
-    width: 8.8rem;
-  }
 `;
 
 const CategoryBtn = styled.span<IStyledProps>`

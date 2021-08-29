@@ -24,7 +24,7 @@ const WhiteBackground = styled.div`
   background: ${({ theme }) => theme.colors.white};
   width: 100vw;
   height: 7.2rem;
-  ${media.custom(480)} {
+  ${media.mobile} {
     border-bottom: 0.1rem solid ${({ theme }) => theme.colors.gray2};
     height: 4.3rem;
   }
@@ -35,7 +35,7 @@ const Category = styled.div`
   cursor: pointer;
   font-family: 'Junge';
   font-size: 2.2rem;
-  ${media.custom(480)} {
+  ${media.mobile} {
     font-size: 1.2rem;
   }
 `;
@@ -49,14 +49,14 @@ const Wrap = styled.div`
 
 const LogoWrap = styled.div<IStyledProps>`
   display: flex;
-  ${media.custom(480)} {
+  ${media.mobile} {
     width: 7.4rem;
   }
 `;
 
 const IconWrap = styled.div`
   display: flex;
-  ${media.custom(480)} {
+  ${media.mobile} {
     width: 2.3rem;
   }
 `;
