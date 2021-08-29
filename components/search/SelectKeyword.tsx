@@ -72,7 +72,7 @@ const Wrap = styled.div`
   ${media[768]} {
     max-width: 54rem;
   }
-  ${media.custom(480)} {
+  ${media.mobile} {
     max-width: auto;
   }
 `;
@@ -82,7 +82,7 @@ const Title = styled.div`
   line-height: 3.96rem;
   font-family: 'Junge';
   font-size: 2.2rem;
-  ${media.custom(480)} {
+  ${media.mobile} {
     line-height: 2.88rem;
     font-size: 1.6rem;
   }
@@ -108,7 +108,7 @@ const KeywordBtn = styled.button<{ selectedIdx: string; myId: string }>`
     line-height: 3.2rem;
     font-size: 1.6rem;
   }
-  ${media.custom(480)} {
+  ${media.mobile} {
     margin-right: 1.3rem;
     margin-bottom: 1rem;
     padding: 0 1rem;

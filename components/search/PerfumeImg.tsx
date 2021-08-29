@@ -58,7 +58,7 @@ const PerfumeImgWrap = styled.div`
     width: 26rem;
     height: 35.2rem;
 
-    ${media.custom(480)} {
+    ${media.mobile} {
       width: 16.2rem;
       height: 21.9rem;
     }
@@ -92,7 +92,7 @@ const Name = styled.div`
   font-size: 2.6rem;
   font-weight: bold;
 
-  ${media.custom(480)} {
+  ${media.mobile} {
     margin-bottom: 0.3rem;
     margin-left: 1.7rem;
     width: 10rem;
@@ -108,7 +108,7 @@ const Keyword = styled.div`
   line-height: 2.4rem;
   font-size: 1.8rem;
 
-  ${media.custom(480)} {
+  ${media.mobile} {
     margin-bottom: 1.1rem;
     margin-left: 1.7rem;
     line-height: 1.8rem;
