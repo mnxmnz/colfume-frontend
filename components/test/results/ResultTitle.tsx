@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MatchingColor1 from './MatchingColor1';
+import MatchingColor2 from './MatchingColor2';
 import { media } from '@styles/theme';
 
 function ResultTitle(props) {
@@ -21,6 +22,7 @@ function ResultTitle(props) {
           <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
           <MatchingColWrap>
             <MatchingColor1 data={data} />
+            {!data?.palette_matchColor[1] ? '' : <MatchingColor2 data={data} />}
           </MatchingColWrap>
         </MatchingWrap>
       </WordWrap>
@@ -90,6 +92,7 @@ const KeyWord = styled.div`
 
 const MatchingWrap = styled.div`
   display: flex;
+  align-items: center;
   ${media.mobile} {
     flex-direction: column;
   }
