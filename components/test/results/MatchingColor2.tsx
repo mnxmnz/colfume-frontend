@@ -8,9 +8,7 @@ function MatchingColor2({ data }) {
   };
   return (
     <>
-      <ColorWrap style={background}>
-        <div>{data.palette_matchColor[1]}</div>
-      </ColorWrap>
+      <ColorWrap style={background}>{data.palette_matchColor[1]}</ColorWrap>
     </>
   );
 }

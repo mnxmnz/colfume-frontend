@@ -36,7 +36,7 @@ function MatchingColor1(props: PropsType) {
       <ColorWrap style={background}>
         {/* div가 없어도 되지 않을까? 예지에게 물어보기! */}
         {/* MatchingColor2도 같은 방식으로 해도 될지 물어보기! */}
-        <div>{matchedColor}</div>
+        {matchedColor}
       </ColorWrap>
     </>
   );
@@ -44,7 +44,7 @@ function MatchingColor1(props: PropsType) {
 
 const ColorWrap = styled.button`
   margin-top: 1.6rem;
-  margin-left: 7rem;
+  margin-left: 1rem;
   padding-right: 1.2rem;
   padding-left: 1.2rem;
   height: 3rem;

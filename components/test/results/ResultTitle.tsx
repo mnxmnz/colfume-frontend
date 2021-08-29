@@ -92,6 +92,7 @@ const KeyWord = styled.div`
 
 const MatchingWrap = styled.div`
   display: flex;
+  align-items: center;
   ${media.mobile} {
     flex-direction: column;
   }
