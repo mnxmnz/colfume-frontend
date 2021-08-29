@@ -15,20 +15,18 @@ interface dataType {
 function MatchingColor1(props: PropsType) {
   const data = props.data;
   const matchedColor = data?.palette_matchColor[0];
-  let bgColor: string, fontColor: string, borderStyle: string;
+  let fontColor: string, borderStyle: string;
 
   if (matchedColor === 'White') {
-    bgColor = '#FFFFFF';
     borderStyle = '0.1rem solid #3E3E3E';
     fontColor = '#3E3E3E';
   } else {
-    bgColor = data.palette_matchBg[0];
     borderStyle = '0';
     fontColor = '#FFFFFF';
   }
 
   const background = {
-    background: `${bgColor}`,
+    background: `${data?.palette_matchBg[0]}`,
     color: fontColor,
     border: borderStyle,
   };
@@ -36,7 +34,9 @@ function MatchingColor1(props: PropsType) {
   return (
     <>
       <ColorWrap style={background}>
-        <div>{data?.palette_matchColor[0]}</div>
+        {/* div가 없어도 되지 않을까? 예지에게 물어보기! */}
+        {/* MatchingColor2도 같은 방식으로 해도 될지 물어보기! */}
+        <div>{matchedColor}</div>
       </ColorWrap>
     </>
   );
