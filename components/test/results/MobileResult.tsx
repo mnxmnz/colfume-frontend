@@ -57,7 +57,7 @@ function TestResult(props) {
             <RetryBtn>다시 하기</RetryBtn>
           </ButtonWrapper>
         </RightWrapper>
-
+        <MobileBox></MobileBox>
         {isMobile ? (
           <MobileBox>
             <MobileDesc>
@@ -209,9 +209,6 @@ const RecommendBtnWrapper = styled.div`
 `;
 
 const RecommendBtn = styled.button`
-  /* margin: 0 auto; */
-  /* margin-top: 5.5rem;
-  margin-left: 8rem; */
   background-color: ${({ theme }) => theme.colors.black};
   width: 25.2rem;
   height: 3.578rem;
@@ -233,9 +230,6 @@ const MobileCopyLinkBtn = styled(CopyLinkBtn)`
 
 const RetryBtn = styled.button`
   margin-top: 1.3rem;
-  /* float: right; */
-  /* margin-top: 1.222rem;
-  margin-right: 8rem; */
   border: solid 1px;
   width: 11.8rem;
   height: 3.274rem;
