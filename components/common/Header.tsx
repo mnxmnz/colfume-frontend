@@ -28,7 +28,7 @@ const Header = (props: ISizeProps) => {
         <Positioner>
           <WhiteBackground>
             <Link href="/" passHref>
-              <LogoWrap current={currentPath === '/'}>
+              <LogoWrap current={currentPath === '/'} onClick={() => router.reload()}>
                 <Image src={Logo} id="Logo" alt="colfume logo" />
               </LogoWrap>
             </Link>
