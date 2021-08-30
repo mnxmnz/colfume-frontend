@@ -30,11 +30,13 @@ const WhiteBackground = styled.div`
   }
 `;
 
-const Category = styled.div`
+const Category = styled.div<IStyledProps>`
   margin: auto;
   cursor: pointer;
   font-family: 'Junge';
   font-size: 2.2rem;
+  font-weight: ${props => (props.current ? '700' : '0')};
+
   ${media.mobile} {
     font-size: 1.2rem;
   }
@@ -93,17 +95,23 @@ const MobileHeader = () => {
         <Positioner>
           <WhiteBackground>
             <Link href="/product" passHref>
-              <Category onClick={toggleMenu}>Product</Category>
+              <Category onClick={toggleMenu} id="Product" current={currentPath === '/product'}>
+                Product
+              </Category>
             </Link>
           </WhiteBackground>
           <WhiteBackground>
             <Link href="/test" passHref>
-              <Category onClick={toggleMenu}>Color Test</Category>
+              <Category onClick={toggleMenu} current={currentPath === '/test'}>
+                Color Test
+              </Category>
             </Link>
           </WhiteBackground>
           <WhiteBackground>
             <Link href="/search" passHref>
-              <Category onClick={toggleMenu}>Search</Category>
+              <Category onClick={toggleMenu} current={currentPath === '/search'}>
+                Search
+              </Category>
             </Link>
           </WhiteBackground>
           <WhiteBackground>
