@@ -74,10 +74,12 @@ function TestResult(props) {
           <Link href="/product" passHref>
             <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
           </Link>
-          <CopyLinkBtn />
-          <Link href="/test" passHref>
-            <RetryBtn>다시 하기</RetryBtn>
-          </Link>
+          <ButtonWrapper>
+            <CopyLinkBtn />
+            <Link href="/test" passHref>
+              <RetryBtn>다시 하기</RetryBtn>
+            </Link>
+          </ButtonWrapper>
         </RightWrapper>
 
         {isMobile ? (
@@ -224,16 +226,13 @@ const ButtonWrapper = styled.div`
   }
 `;
 
-const RecommendBtnWrapper = styled.div`
-  display: flex;
+const RecommendBtn = styled.button`
   margin: 0 auto;
   margin-top: 5rem;
-`;
-
-const RecommendBtn = styled.button`
   background-color: ${({ theme }) => theme.colors.black};
   width: 25.2rem;
   height: 3.578rem;
+  text-align: center;
 
   color: ${({ theme }) => theme.colors.white};
   font-family: NotoSans;
@@ -244,10 +243,6 @@ const RecommendBtn = styled.button`
   &:hover {
     cursor: pointer;
   }
-`;
-
-const MobileCopyLinkBtn = styled(CopyLinkBtn)`
-  margin: 0rem;
 `;
 
 const RetryBtn = styled.button`
