@@ -57,7 +57,7 @@ function TestResult(props) {
             <RetryBtn>다시 하기</RetryBtn>
           </ButtonWrapper>
         </RightWrapper>
-        <MobileBox></MobileBox>
+
         {isMobile ? (
           <MobileBox>
             <MobileDesc>
@@ -91,7 +91,7 @@ function TestResult(props) {
 
 export default sizeMe({ monitorHeight: true })(TestResult);
 const MobileBox = styled.div`
-  margin-top: 70rem;
+  margin-top: 0.5rem;
   background: ${({ theme }) => theme.colors.gray1};
   width: 100%;
   height: 87.9rem;

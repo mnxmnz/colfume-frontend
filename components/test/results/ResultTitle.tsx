@@ -22,6 +22,7 @@ function ResultTitle(props) {
           <MatchingColorText>궁합이 맞는 컬러</MatchingColorText>
           <MatchingColWrap>
             <MatchingColor1 data={data} />
+            {!data?.palette_matchColor[1] ? '' : <MatchingColor2 data={data} />}
           </MatchingColWrap>
         </MatchingWrap>
       </WordWrap>
@@ -91,6 +92,7 @@ const KeyWord = styled.div`
 
 const MatchingWrap = styled.div`
   display: flex;
+  align-items: center;
   ${media.mobile} {
     flex-direction: column;
   }
