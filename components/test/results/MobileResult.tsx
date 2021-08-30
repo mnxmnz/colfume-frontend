@@ -54,7 +54,9 @@ function TestResult(props) {
           </RecommendBtnWrapper>
           <ButtonWrapper>
             <MobileCopyLinkBtn />
-            <RetryBtn>다시 하기</RetryBtn>
+            <Link href="/test" passHref>
+              <RetryBtn>다시 하기</RetryBtn>
+            </Link>
           </ButtonWrapper>
         </RightWrapper>
 
