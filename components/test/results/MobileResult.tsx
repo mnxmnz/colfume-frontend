@@ -49,11 +49,13 @@ function TestResult(props) {
   return (
     data && (
       <Layout>
-        <LineWrapper>
-          <Image alt="line" src={Line} />
-        </LineWrapper>
-        <LeftWrapper>
+        <TopWrapper>
+          <LineWrapper>
+            <Image alt="line" src={Line} />
+          </LineWrapper>
           <ResultColor>{data?.palette_name}</ResultColor>
+        </TopWrapper>
+        <LeftWrapper>
           {data.palette_title?.split('\n').map((line, idx) => (
             <KeySentence key={idx}>
               {line}
@@ -114,6 +116,10 @@ function TestResult(props) {
 }
 
 export default sizeMe({ monitorHeight: true })(TestResult);
+const TopWrapper = styled.div`
+  display: flex;
+  margin-top: 6rem;
+`;
 const MobileBox = styled.div`
   margin-top: 0.5rem;
   background: ${({ theme }) => theme.colors.gray1};
@@ -126,7 +132,7 @@ const MobileDesc = styled.div`
   padding-top: 2rem;
 `;
 const LineWrapper = styled.div`
-  margin-top: 7.2rem;
+  margin-top: 1.5rem;
   width: 11rem;
 `;
 
@@ -141,11 +147,12 @@ const Layout = styled.div`
   }
 `;
 const LeftWrapper = styled.div`
+  margin-top: 2.2rem;
   width: 100%;
   text-align: center;
 `;
 const ResultColor = styled.div`
-  margin: 0 auto;
+  width: 12.6rem;
   text-align: center;
   font-family: Junge;
   font-size: 4.4rem;
@@ -154,7 +161,6 @@ const ResultColor = styled.div`
 
 const KeySentence = styled.div`
   margin-top: 2.2rem;
-  margin-left: 1.2rem;
   font-family: NanumMyeongjo;
   font-size: 1.8em;
   font-weight: 700;

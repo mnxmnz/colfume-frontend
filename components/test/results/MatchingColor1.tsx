@@ -44,7 +44,6 @@ function MatchingColor1(props: PropsType) {
 
 const ColorWrap = styled.button`
   margin-top: 1.6rem;
-  margin-left: 1rem;
   padding-right: 1.2rem;
   padding-left: 1.2rem;
   height: 3rem;
