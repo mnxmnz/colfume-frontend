@@ -73,15 +73,6 @@ function TestResult(props) {
           <ImageWrapper>
             <img alt="result color" src={data.palette_img} width="160rem" height="160rem" />
           </ImageWrapper>
-          <Link href="/product" passHref>
-            <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
-          </Link>
-          <ButtonWrapper>
-            <CopyLinkBtn />
-            <Link href="/test" passHref>
-              <RetryBtn>다시 하기</RetryBtn>
-            </Link>
-          </ButtonWrapper>
         </RightWrapper>
 
         {isMobile ? (
@@ -110,6 +101,16 @@ function TestResult(props) {
         ) : (
           ''
         )}
+        <Link href="/product" passHref>
+          <RecommendBtn onClick={submitColorResult}>향수 추천을 받아보세요</RecommendBtn>
+        </Link>
+        <ButtonWrapper>
+          <CopyLinkBtn />
+          <Link href="/test" passHref>
+            <RetryBtn>다시 하기</RetryBtn>
+          </Link>
+        </ButtonWrapper>
+        <Footer />
       </Layout>
     )
   );
@@ -147,7 +148,7 @@ const Layout = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 6.5rem;
-  height: 157.7rem;
+  height: 180rem;
   & > *:nth-child(1) {
     align-self: flex-start;
   }
@@ -220,7 +221,7 @@ const RightWrapper = styled.div`
   flex-direction: column;
   margin-top: 9rem;
   width: 100%;
-  height: 29rem;
+  height: 26rem;
 `;
 
 const ImageWrapper = styled.div`
@@ -269,4 +270,8 @@ const RetryBtn = styled.button`
   &:hover {
     cursor: pointer;
   }
+`;
+
+const Footer = styled.div`
+  height: 10rem;
 `;
