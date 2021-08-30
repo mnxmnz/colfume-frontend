@@ -90,7 +90,7 @@ function TestResult(props) {
               {' '}
               {data.palette_explanation?.split('\n').map((line, idx) => (
                 <Description>
-                  <span>·</span>
+                  <span></span>
                   <DescWrap>
                     {line.includes('//') ? (
                       line.split('//').map((l, i) => (
@@ -119,7 +119,9 @@ export default sizeMe({ monitorHeight: true })(TestResult);
 const TopWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 6rem;
+  width: 100%;
 `;
 const MobileBox = styled.div`
   display: flex;
@@ -133,9 +135,10 @@ const MobileDesc = styled.div`
   margin: 0 auto;
   padding-top: 2.6rem;
   padding-left: 0.5rem;
-
 `;
 const LineWrapper = styled.div`
+  position: absolute;
+  left: 0;
   width: 11rem;
 `;
 
@@ -203,6 +206,7 @@ const DescWrap = styled.div`
 `;
 
 const Desc = styled.li`
+  margin-left: 0.8rem;
   padding-top: 2rem;
   width: 32rem;
   line-height: 1.8rem;
