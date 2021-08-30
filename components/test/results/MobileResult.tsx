@@ -119,7 +119,9 @@ export default sizeMe({ monitorHeight: true })(TestResult);
 const TopWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 6rem;
+  width: 100%;
 `;
 const MobileBox = styled.div`
   display: flex;
@@ -135,6 +137,8 @@ const MobileDesc = styled.div`
   padding-left: 0.5rem;
 `;
 const LineWrapper = styled.div`
+  position: absolute;
+  left: 0;
   width: 11rem;
 `;
 
