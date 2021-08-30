@@ -121,8 +121,10 @@ const KeywordBtn = styled.button<{ selectedIdx: string; myId: string; isSearched
     line-height: 2.52rem;
     font-size: 1.4rem;
     &:hover {
-      background: ${({ theme }) => theme.colors.black};
-      color: ${({ theme }) => theme.colors.white};
+      background: ${props =>
+        props.isSearched ? '#FFFFFF' : props.selectedIdx === props.myId ? '#3e3e3e' : '#FFFFFF'};
+      color: ${props =>
+        props.isSearched ? '#3e3e3e' : props.selectedIdx === props.myId ? '#FFFFFF' : '#3e3e3e'};
     }
   }
 `;
