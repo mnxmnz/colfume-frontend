@@ -8,7 +8,7 @@ import Image from 'next/image';
 function Banner() {
   return (
     <BannerWrap>
-      <Image src={BannerImg} alt="" />
+      <Image src={BannerImg} alt="main banner" />
       <BannerBox>
         <TitleBox>
           <MainTitle>Find Your Colfume</MainTitle>
@@ -27,6 +27,10 @@ function Banner() {
 
 const BannerWrap = styled.div`
   margin-top: 7.2rem;
+
+  ${media.mobile} {
+    margin-top: 4.3rem;
+  }
 
   img {
     width: 100vw;

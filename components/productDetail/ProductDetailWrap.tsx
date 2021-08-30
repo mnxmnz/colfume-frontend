@@ -5,7 +5,6 @@ import Detail from './Detail';
 import { media } from '@styles/theme';
 import { GetDetailData } from 'lib/api/detail/detail';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 
 function ProductDetailWrap(props) {
   const perfumeName = props.perfumeName;
@@ -16,10 +15,14 @@ function ProductDetailWrap(props) {
     <>
       {data.data && (
         <>
-          <ButtonBack src={ButtonBackDefault.src} onClick={() => router.back()} alt="button-back" />
+          <ButtonBack
+            src={ButtonBackDefault.src}
+            onClick={() => router.back()}
+            alt="previous button"
+          />
           <FlexWrap>
             <ContentWrap>
-              <Image className="product" src={data.data[0].perfume_img} alt="sample" />
+              <ProductImage src={data.data[0].perfume_img} alt="product main image" />
               <Detail data={data.data[0]} />
             </ContentWrap>
           </FlexWrap>
@@ -71,14 +74,14 @@ const ContentWrap = styled.div`
     align-items: center;
     width: 33.6rem;
   }
+`;
 
-  .product {
-    width: 51.1rem;
-    height: 77.1rem;
+const ProductImage = styled.img`
+  width: 51.1rem;
+  height: 77.1rem;
 
-    ${media.mobile} {
-      width: 20rem;
-      height: 30.1rem;
-    }
+  ${media.mobile} {
+    width: 20rem;
+    height: 30.1rem;
   }
 `;

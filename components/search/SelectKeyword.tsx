@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { media } from '@styles/theme';
 import { GetFilterList } from 'lib/api/search/getFilter';
-import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { keywordAtom } from '../../states/search';
 
 function SelectKeyword() {
   const rawData = GetFilterList();
   const moodList: string[] = [];
   const styleList: string[] = [];
-  const setText: any = useSetRecoilState(keywordAtom);
-  const mainSelected = useRecoilValue(keywordAtom);
-  const [selectedIdx, setSelected] = useState(mainSelected[1]);
+  const [text, setText] = useRecoilState(keywordAtom);
+  const [selectedIdx, setSelected] = useState(text[1]);
 
   if (rawData.message) {
     rawData.moods.map(rawMood => moodList.push(rawMood.mood_name));
@@ -21,6 +20,7 @@ function SelectKeyword() {
     ['Mood', moodList],
     ['Style', styleList],
   ];
+
   return (
     <>
       <SelectKeywordWrap>
@@ -34,7 +34,14 @@ function SelectKeyword() {
                 const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
                   setText([title, word]);
                   setSelected(word);
+
+                  if (word === selectedIdx) {
+                    setText([]);
+                    setSelected(null);
+                  }
                 };
+
+                const isSearched = text && text.length > 0 && text.includes('/') ? true : false;
                 return (
                   <KeywordBtn
                     onClick={handleClick}
@@ -42,6 +49,7 @@ function SelectKeyword() {
                     value={word}
                     myId={word}
                     selectedIdx={selectedIdx}
+                    isSearched={isSearched}
                   >
                     {word}
                   </KeywordBtn>
@@ -68,7 +76,7 @@ const Wrap = styled.div`
   ${media[768]} {
     max-width: 54rem;
   }
-  ${media.custom(480)} {
+  ${media.mobile} {
     max-width: auto;
   }
 `;
@@ -78,20 +86,22 @@ const Title = styled.div`
   line-height: 3.96rem;
   font-family: 'Junge';
   font-size: 2.2rem;
-  ${media.custom(480)} {
+  ${media.mobile} {
     line-height: 2.88rem;
     font-size: 1.6rem;
   }
 `;
-const KeywordBtn = styled.button<{ selectedIdx: string; myId: string }>`
+const KeywordBtn = styled.button<{ selectedIdx: string; myId: string; isSearched: boolean }>`
   margin-right: 1.7rem;
   margin-bottom: 1.8rem;
   border: 0.1rem solid ${({ theme }) => theme.colors.gray3};
-  background: ${props => (props.selectedIdx === props.myId ? '#3e3e3e' : '#FFFFFF')};
+  background: ${props =>
+    props.isSearched ? '#FFFFFF' : props.selectedIdx === props.myId ? '#3e3e3e' : '#FFFFFF'};
   cursor: pointer;
   padding: 0 3rem;
   line-height: 3.9rem;
-  color: ${props => (props.selectedIdx === props.myId ? '#FFFFFF' : '#3e3e3e')};
+  color: ${props =>
+    props.isSearched ? '#3e3e3e' : props.selectedIdx === props.myId ? '#FFFFFF' : '#3e3e3e'};
   font-size: 2rem;
   &:hover {
     background: ${({ theme }) => theme.colors.gray3};
@@ -104,7 +114,7 @@ const KeywordBtn = styled.button<{ selectedIdx: string; myId: string }>`
     line-height: 3.2rem;
     font-size: 1.6rem;
   }
-  ${media.custom(480)} {
+  ${media.mobile} {
     margin-right: 1.3rem;
     margin-bottom: 1rem;
     padding: 0 1rem;
@@ -116,4 +126,5 @@ const KeywordBtn = styled.button<{ selectedIdx: string; myId: string }>`
     }
   }
 `;
+
 export default SelectKeyword;

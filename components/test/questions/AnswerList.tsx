@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Router from 'next/router';
 import AnswerData from './AnswerData';
 import { media } from '@styles/theme';
-import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { questionNumberAtom, answerAtom, testResultAtom } from '../../../states/test';
 import { testResult } from '../../../lib/api/test/postAnswer';
-import Loading from './Loading';
 
 function AnswerList() {
   const [progress, setProgress] = useRecoilState(questionNumberAtom);
   const answer = useRecoilValue(answerAtom);
   const setResult = useSetRecoilState(testResultAtom);
-  const restartTest = useResetRecoilState(questionNumberAtom);
 
   const data = AnswerData;
   const length = data[progress]?.length;
   const mobileLength = data[progress]?.mobileLength;
+  const mobileMargin = data[progress]?.mobileMargin;
 
   const styleMargin = {
     marginTop: '4rem',
@@ -34,15 +33,13 @@ function AnswerList() {
       } catch (e) {
         return e;
       }
-
-      restartTest();
     }
   };
 
   return (
     <>
       {data[progress] && (
-        <AnswerWrap>
+        <AnswerWrap mobileMargin={mobileMargin}>
           <Text onClick={() => onClickAnswer(data[progress]?.answer01.value)}>
             {data[progress]?.answer01.text}
           </Text>
@@ -65,18 +62,15 @@ function AnswerList() {
   );
 }
 
-const AnswerWrap = styled.div`
+const AnswerWrap = styled.div<{ mobileMargin: number }>`
   margin-top: 14.4444vh;
   margin-right: 20.3125vw;
+  cursor: pointer;
   text-align: right;
 
   ${media[768]} {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    margin-top: ${({ mobileMargin }) => mobileMargin}rem;
     margin-right: 0;
-    margin-bottom: 107.712px;
     text-align: center;
   }
 `;
@@ -88,9 +82,9 @@ const Text = styled.div`
   font-weight: 400;
 
   ${media[768]} {
-    margin-bottom: 6px;
-    line-height: 23.17px;
-    font-size: 16px;
+    margin-bottom: 0.6rem;
+    line-height: 2.3rem;
+    font-size: 1.6rem;
     font-weight: 400;
   }
 `;
@@ -134,11 +128,11 @@ const MobileCircle = styled.div`
 
 const Line = styled.div<{ length: number; mobileLength: number }>`
   background-color: ${({ theme }) => theme.colors.black};
-  width: ${({ length }) => length}px;
+  width: ${({ length }) => length}rem;
   height: 0.16rem;
 
   ${media[768]} {
-    width: ${({ mobileLength }) => mobileLength}px;
+    width: ${({ mobileLength }) => mobileLength}rem;
   }
 `;
 

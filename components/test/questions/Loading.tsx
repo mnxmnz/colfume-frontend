@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import { media } from '@styles/theme';
 import { LoadingIcon } from '../../../assets';
 
 function Loading({ isShared }) {
@@ -9,8 +10,12 @@ function Loading({ isShared }) {
       {isShared && (
         <LoadingWrap>
           <IconWrap>
-            <Image src={LoadingIcon} width="100%" height="100%" alt="" />
-            <Text>당신의 컬러를 찾는 중입니다.</Text>
+            <Image src={LoadingIcon} width="100%" height="100%" alt="loading icon" />
+            <Text>
+              당신의 컬러를
+              <br />
+              찾는 중입니다.
+            </Text>
           </IconWrap>
         </LoadingWrap>
       )}
@@ -51,6 +56,12 @@ const IconWrap = styled.div`
       transform: scale(1);
     }
   }
+
+  ${media[768]} {
+    img {
+      width: 7rem;
+    }
+  }
 `;
 
 const Text = styled.div`
@@ -60,6 +71,12 @@ const Text = styled.div`
   font-size: 4rem;
   font-weight: 500;
   font-style: normal;
+
+  ${media[768]} {
+    margin-top: 1.9rem;
+    line-height: 2.8rem;
+    font-size: 2rem;
+  }
 `;
 
 export default Loading;

@@ -7,7 +7,7 @@ const MobileFooter = () => {
   return (
     <MobileBox>
       <LogoWrapper>
-        <Image alt="mobile-logo" src={Logo} />
+        <Image alt="mobile logo" src={Logo} />
       </LogoWrapper>
       <ContentWrapper>
         <InfoColumn>
@@ -28,7 +28,7 @@ const MobileFooter = () => {
             <Heading>Follow us</Heading>
             <ImageWrapper>
               <a href="https://cooing-mandolin-be1.notion.site/c-lfume-fedc588d0ba54d6f9d1b8be10823c968">
-                <Image alt="footerIcon" src={FooterIcons} />
+                <Image alt="footer icon" src={FooterIcons} />
               </a>
             </ImageWrapper>
           </div>
@@ -55,7 +55,6 @@ const MobileBox = styled.div`
   bottom: 0;
   margin-top: auto;
   background: ${({ theme }) => theme.colors.gray1};
-  width: 37.5rem;
   min-height: 25.6rem;
 `;
 

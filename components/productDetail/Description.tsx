@@ -83,8 +83,6 @@ const TableWrap = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1.4rem;
-  /* margin-left: 14.7rem; */
-  /* width: 73.1rem; */
 
   ${media.mobile} {
     margin-top: 2.4rem;
@@ -111,19 +109,21 @@ const TableHeader = styled.div`
 
 const LevelWrap = styled.div`
   display: flex;
+  align-items: center;
   width: 28.5rem;
   line-height: 2.56rem;
   font-family: Junge;
   font-size: 1.6rem;
 
   ${media.mobile} {
-    align-items: center;
     width: 30rem;
     font-size: 1.6rem;
   }
 `;
 
 const Level = styled.div`
+  display: flex;
+  align-items: center;
   margin-right: 2rem;
   line-height: 3.24rem;
 
@@ -163,7 +163,6 @@ const DescWrap = styled.div`
   ${media.mobile} {
     padding-top: 3.8rem;
     line-height: 3.42rem;
-    /* letter-spacing: 0.045rem; */
     font-size: 1.5rem;
   }
 `;

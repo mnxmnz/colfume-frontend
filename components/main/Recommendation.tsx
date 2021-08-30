@@ -32,7 +32,7 @@ function Recommendation(props) {
       <RecommWrap key={idx} onClick={handleClick}>
         <>
           <Recomm>
-            <ItemImg src={datum.perfume_img} alt="productImage" />
+            <ItemImg src={datum.perfume_img} alt="product main image" />
           </Recomm>
           <Hovered>
             <Name>{datum.perfume_name}</Name>
@@ -40,9 +40,9 @@ function Recommendation(props) {
           </Hovered>
         </>
         {idx % 3 === 2 ? (
-          <HiddenImg id="hidden" src={Contour.src} alt="hidden" />
+          <HiddenImg id="hidden" src={Contour.src} alt="product image" />
         ) : (
-          <ContourImg id="contour" src={Contour.src} alt="sampleImage" />
+          <ContourImg id="contour" src={Contour.src} alt="product main image" />
         )}
       </RecommWrap>
     </Link>
@@ -61,6 +61,7 @@ const RecommWrap = styled.div`
 
 const ContourImg = styled.img`
   padding-left: 6.7rem;
+  height: 45rem;
 
   ${media[1440]} {
     padding-left: 2.5rem;
@@ -84,6 +85,7 @@ const ContourImg = styled.img`
 
 const HiddenImg = styled.img`
   padding-left: 6.7rem;
+  height: 45rem;
 
   ${media[1440]} {
     padding-left: 2.5rem;
@@ -214,8 +216,8 @@ const Keyword = styled.div`
   ${media.mobile} {
     margin-bottom: 0.6rem;
     margin-left: 0.6rem;
-    line-height: 0.825rem;
-    letter-spacing: -0.04rem;
+    line-height: 1.26rem;
+    letter-spacing: -0.028rem;
     font-size: 0.7rem;
   }
 `;

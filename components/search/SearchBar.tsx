@@ -30,69 +30,67 @@ function SearchBar() {
     <SearchBarWrap>
       <SearchBarBox>
         <SearchIconImg>
-          <IconImg src={SearchIcon.src} alt="" />
+          <IconImg src={SearchIcon.src} alt="search icon" />
         </SearchIconImg>
         <SearchInput
           type="text"
-          placeholder="제품명, 키워드로 검색해보세요"
+          placeholder="제품명을 검색해보세요"
           value={keyword}
           onChange={handleChange}
           onKeyPress={handleSubmit}
         />
-        <SearchArrowIcon>
-          <button type="submit" onClick={handleClick}>
-            <img
-              src={SearchArrowOff.src}
-              alt="search"
-              onMouseEnter={() => (searchButton.current.src = SearchArrowOn.src)}
-              onMouseLeave={() => (searchButton.current.src = SearchArrowOff.src)}
-              ref={searchButton}
-            />
-          </button>
-        </SearchArrowIcon>
       </SearchBarBox>
+      <SearchArrowIcon>
+        <img
+          onClick={handleClick}
+          src={SearchArrowOff.src}
+          alt="search icon"
+          onMouseEnter={() => (searchButton.current.src = SearchArrowOn.src)}
+          onMouseLeave={() => (searchButton.current.src = SearchArrowOff.src)}
+          ref={searchButton}
+        />
+      </SearchArrowIcon>
     </SearchBarWrap>
   );
 }
 
 const SearchBarWrap = styled.div`
   display: flex;
-  position: relative;
-  align-items: center;
   justify-content: center;
   margin-top: 16.6rem;
   margin-bottom: 6rem;
 
-  ${media.custom(480)} {
+  ${media.mobile} {
     margin: 2.3rem 0 3rem 0;
   }
 `;
 
 const SearchBarBox = styled.div`
   display: flex;
-  align-items: center;
   border-bottom: 0.2rem solid ${({ theme }) => theme.colors.black};
+  padding-bottom: 1.9rem;
 
   ${media[768]} {
+    border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
+    padding-bottom: 0.8rem;
     width: 100%;
-    max-width: 54rem;
+    max-width: 48rem;
   }
 
-  ${media.custom(480)} {
-    justify-content: space-between;
-    border-bottom: 0.1rem solid ${({ theme }) => theme.colors.black};
-    width: 100%;
+  ${media.mobile} {
+    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
   }
 `;
 const SearchIconImg = styled.div`
-  width: 7rem;
-  ${media.custom(480)} {
-    width: 3rem;
+  width: 5rem;
+  ${media.mobile} {
+    width: 3.7rem;
   }
 `;
 
 const IconImg = styled.img`
-  ${media.custom(480)} {
+  ${media.mobile} {
     width: 2rem;
   }
 `;
@@ -100,33 +98,34 @@ const IconImg = styled.img`
 const SearchInput = styled.input`
   width: 60.2rem;
   font-size: 2.6rem;
+
   &::placeholder {
     color: ${({ theme }) => theme.colors.gray3};
   }
 
   ${media[768]} {
+    width: 80%;
     font-size: 2.1rem;
   }
 
-  ${media.custom(480)} {
-    width: 80%;
+  ${media.mobile} {
+    width: 100%;
     font-size: 1.6rem;
   }
 `;
 
 const SearchArrowIcon = styled.div`
-  button {
-    position: relative;
-    top: 0.7rem;
-    padding: 0;
-  }
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+
   ${media[768]} {
     img {
       width: 6rem;
     }
   }
 
-  ${media.custom(480)} {
+  ${media.mobile} {
     img {
       width: 4.7rem;
       height: 3.2rem;
