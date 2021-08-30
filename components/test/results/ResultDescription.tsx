@@ -35,6 +35,7 @@ const DescriptionWrap = styled.div`
   flex-direction: column;
   margin-top: 4.4rem;
   margin-bottom: 2rem;
+  list-style: none;
   line-height: 3.6rem;
   font-family: NotoSans;
   font-size: 2rem;
@@ -60,7 +61,7 @@ const DescriptionWrap = styled.div`
 const Description = styled.div`
   display: flex;
   align-items: flex-start;
-
+  list-style: none;
   ${media.mobile} {
     padding-right: 2rem;
     padding-left: 2rem;
@@ -72,6 +73,7 @@ const DescWrap = styled.div`
   flex-direction: column;
   margin-bottom: 2rem;
   width: 80rem;
+  list-style: none;
 
   ${media.mobile} {
     width: 100%;
