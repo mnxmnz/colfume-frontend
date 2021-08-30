@@ -55,7 +55,6 @@ const ColorWrap = styled.button`
   ${media.mobile} {
     float: left;
     margin-top: 1rem;
-    margin-left: 1.5rem;
     font-size: 1.4rem;
   }
 `;

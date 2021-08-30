@@ -118,6 +118,7 @@ function TestResult(props) {
 export default sizeMe({ monitorHeight: true })(TestResult);
 const TopWrapper = styled.div`
   display: flex;
+  align-items: center;
   margin-top: 6rem;
 `;
 const MobileBox = styled.div`
@@ -132,7 +133,6 @@ const MobileDesc = styled.div`
   padding-top: 2rem;
 `;
 const LineWrapper = styled.div`
-  margin-top: 1.5rem;
   width: 11rem;
 `;
 
@@ -152,7 +152,7 @@ const LeftWrapper = styled.div`
   text-align: center;
 `;
 const ResultColor = styled.div`
-  width: 12.6rem;
+  width: 15rem;
   text-align: center;
   font-family: Junge;
   font-size: 4.4rem;
