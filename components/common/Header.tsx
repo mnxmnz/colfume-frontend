@@ -20,6 +20,10 @@ const Header = (props: ISizeProps) => {
   const { width } = props.size;
   const isMobile = width <= 768 ? true : false;
 
+  const onClickLogo = () => {
+    document.location.href = '/';
+  };
+
   return (
     <>
       {isMobile ? (
@@ -27,11 +31,9 @@ const Header = (props: ISizeProps) => {
       ) : (
         <Positioner>
           <WhiteBackground>
-            <Link href="/" passHref>
-              <LogoWrap current={currentPath === '/'} onClick={() => router.reload()}>
-                <Image src={Logo} id="Logo" alt="colfume logo" />
-              </LogoWrap>
-            </Link>
+            <LogoWrap current={currentPath === '/'} onClick={onClickLogo}>
+              <Image src={Logo} id="Logo" alt="colfume logo" />
+            </LogoWrap>
             <Layout>
               <Category>
                 <Link href="/product" passHref>
