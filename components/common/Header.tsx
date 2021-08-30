@@ -18,7 +18,7 @@ const Header = (props: ISizeProps) => {
   const currentPath = router.pathname;
 
   const { width } = props.size;
-  const isMobile = width <= 768 ? true : false;
+  const isMobile = width <= 880 ? true : false;
 
   return (
     <>
@@ -83,11 +83,25 @@ const LogoWrap = styled.div<IStyledProps>`
   top: 1.62rem;
   margin-left: 5%;
   cursor: pointer;
+
+  @media all and (min-width: 1025px) {
+    width: 14rem;
+  }
 `;
 
 const Category = styled.div`
   display: flex;
   margin: auto;
+
+  #Product {
+    width: 10rem;
+  }
+  #ColorTest {
+    width: 12.7rem;
+  }
+  #Search {
+    width: 8.8rem;
+  }
 `;
 
 const CategoryBtn = styled.span<IStyledProps>`
