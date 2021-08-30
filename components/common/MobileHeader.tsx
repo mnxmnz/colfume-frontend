@@ -70,17 +70,19 @@ const MobileHeader = () => {
     setMenu(isOpen => !isOpen);
   };
 
+  const onClickLogo = () => {
+    document.location.href = '/';
+  };
+
   return (
     <>
       {isOpen ? (
         <Positioner>
           <WhiteBackground>
             <Wrap>
-              <Link href="/" passHref>
-                <LogoWrap current={currentPath === '/'} onClick={() => router.reload()}>
-                  <Image src={Logo} id="Logo" alt="colfume logo" />
-                </LogoWrap>
-              </Link>
+              <LogoWrap current={currentPath === '/'} onClick={onClickLogo}>
+                <Image src={Logo} id="Logo" alt="colfume logo" />
+              </LogoWrap>
               <IconWrap>
                 <Image src={MenuIcon} id=" MenuIcon" alt="menu icon" onClick={toggleMenu} />
               </IconWrap>
