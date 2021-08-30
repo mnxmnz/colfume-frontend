@@ -133,6 +133,7 @@ const MobileDesc = styled.div`
   margin: 0 auto;
   padding-top: 2.6rem;
   padding-left: 0.5rem;
+
 `;
 const LineWrapper = styled.div`
   width: 11rem;
