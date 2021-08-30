@@ -122,6 +122,8 @@ const TopWrapper = styled.div`
   margin-top: 6rem;
 `;
 const MobileBox = styled.div`
+  display: flex;
+  align-items: center;
   margin-top: 0.5rem;
   background: ${({ theme }) => theme.colors.gray1};
   width: 100%;
@@ -129,8 +131,7 @@ const MobileBox = styled.div`
 `;
 
 const MobileDesc = styled.div`
-  margin-top: 2rem;
-  padding-top: 2rem;
+  margin: 0 auto;
 `;
 const LineWrapper = styled.div`
   width: 11rem;
@@ -199,7 +200,6 @@ const DescWrap = styled.div`
 `;
 
 const Desc = styled.li`
-  margin-left: 3rem;
   padding-top: 2rem;
   width: 32rem;
   line-height: 1.8rem;
