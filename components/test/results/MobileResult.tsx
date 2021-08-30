@@ -206,6 +206,7 @@ const DescWrap = styled.div`
 `;
 
 const Desc = styled.li`
+  margin-left: 0.8rem;
   padding-top: 2rem;
   width: 32rem;
   line-height: 1.8rem;
