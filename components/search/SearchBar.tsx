@@ -5,7 +5,13 @@ import styled from 'styled-components';
 import { useSetRecoilState } from 'recoil';
 import { keywordAtom } from '../../states/search';
 
-function SearchBar() {
+import sizeMe from 'react-sizeme';
+import { ISizeProps } from 'types/main';
+
+const SearchBar = (props: ISizeProps) => {
+  const { width } = props.size;
+  const isMobile = width <= 420 ? true : false;
+
   const searchButton: any = React.useRef();
 
   const [keyword, getKeyword] = useState('');
@@ -41,18 +47,27 @@ function SearchBar() {
         />
       </SearchBarBox>
       <SearchArrowIcon>
-        <img
-          onClick={handleClick}
-          src={SearchArrowOff.src}
-          alt="search icon"
-          onMouseEnter={() => (searchButton.current.src = SearchArrowOn.src)}
-          onMouseLeave={() => (searchButton.current.src = SearchArrowOff.src)}
-          ref={searchButton}
-        />
+        {isMobile ? (
+          <img
+            onClick={handleClick}
+            src={SearchArrowOff.src}
+            alt="search icon"
+            ref={searchButton}
+          />
+        ) : (
+          <img
+            onClick={handleClick}
+            src={SearchArrowOff.src}
+            alt="search icon"
+            onMouseEnter={() => (searchButton.current.src = SearchArrowOn.src)}
+            onMouseLeave={() => (searchButton.current.src = SearchArrowOff.src)}
+            ref={searchButton}
+          />
+        )}
       </SearchArrowIcon>
     </SearchBarWrap>
   );
-}
+};
 
 const SearchBarWrap = styled.div`
   display: flex;
@@ -132,4 +147,4 @@ const SearchArrowIcon = styled.div`
     }
   }
 `;
-export default SearchBar;
+export default sizeMe({ monitorHeight: true })(SearchBar);
