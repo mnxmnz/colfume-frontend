@@ -132,6 +132,7 @@ const MobileBox = styled.div`
 const MobileDesc = styled.div`
   margin: 0 auto;
   padding-top: 2.6rem;
+  padding-left: 0.5rem;
 `;
 const LineWrapper = styled.div`
   width: 11rem;
@@ -196,6 +197,7 @@ const DescWrap = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+
   width: 34.1rem;
 `;
 
