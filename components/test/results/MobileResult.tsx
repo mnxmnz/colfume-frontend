@@ -123,7 +123,6 @@ const TopWrapper = styled.div`
 `;
 const MobileBox = styled.div`
   display: flex;
-  align-items: center;
   margin-top: 0.5rem;
   background: ${({ theme }) => theme.colors.gray1};
   width: 100%;
@@ -132,6 +131,7 @@ const MobileBox = styled.div`
 
 const MobileDesc = styled.div`
   margin: 0 auto;
+  padding-top: 2.6rem;
 `;
 const LineWrapper = styled.div`
   width: 11rem;
