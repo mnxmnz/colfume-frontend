@@ -1,7 +1,8 @@
 import React from 'react';
+import Questions from './questions/Questions';
 
 function TestWrap() {
-  return <div>TestWrap</div>;
+  return <Questions />;
 }
 
 export default TestWrap;
