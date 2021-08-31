@@ -83,16 +83,10 @@ function TestResult(props) {
                 <Description>
                   <span></span>
                   <DescWrap>
-                    {line.includes('//') ? (
-                      line.split('//').map((l, i) => (
-                        <Desc>
-                          {l}
-                          <br />
-                        </Desc>
-                      ))
-                    ) : (
-                      <Desc>{line}</Desc>
-                    )}
+                    <Desc>
+                      {line.replace('//', '')}
+                      <br />
+                    </Desc>
                   </DescWrap>
                 </Description>
               ))}
@@ -128,8 +122,8 @@ const MobileBox = styled.div`
   display: flex;
   margin-top: 0.5rem;
   background: ${({ theme }) => theme.colors.gray1};
+  padding-bottom: 4.6rem;
   width: 100%;
-  height: 87.9rem;
 `;
 
 const MobileDesc = styled.div`
@@ -148,7 +142,6 @@ const Layout = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 6.5rem;
-  height: 180rem;
   & > *:nth-child(1) {
     align-self: flex-start;
   }
