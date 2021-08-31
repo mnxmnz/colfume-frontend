@@ -3,14 +3,12 @@ import { ButtonBackDefault } from 'assets';
 import styled from 'styled-components';
 import Detail from './Detail';
 import { media } from '@styles/theme';
-import { GetDetailData } from 'lib/api/detail/detail';
 import { useRouter } from 'next/router';
 
 function ProductDetailWrap(props) {
-  const perfumeName = props.perfumeName;
-  const data = GetDetailData(perfumeName);
   const router = useRouter();
 
+  const data = props.productData;
   return (
     <>
       {data.data && (

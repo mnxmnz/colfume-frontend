@@ -2,8 +2,8 @@ import useSWR from 'swr';
 import { fetcher } from '../fetch';
 import BASE_URL from '../client';
 
-export const GetDetailData = perfumeName => {
-  const { data, error } = useSWR(`${BASE_URL}/product/detail/${perfumeName}`, fetcher, {
+export const GetDetailData = perfumeId => {
+  const { data, error } = useSWR(`${BASE_URL}/product/detail/${perfumeId}`, fetcher, {
     onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
       if (error.status === 404) return;
       if (retryCount >= 10) return;
