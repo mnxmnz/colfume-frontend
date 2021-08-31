@@ -1,6 +1,4 @@
 import React from 'react';
-import { useSetRecoilState } from 'recoil';
-import { productDetailAtom } from 'states/detail';
 import { media } from '@styles/theme';
 import styled from 'styled-components';
 import Link from 'next/link';
@@ -13,11 +11,6 @@ interface PropsType {
 }
 
 function PerfumeImg(props: PropsType) {
-  const setPerfumeName: any = useSetRecoilState(productDetailAtom);
-  const handleClick = () => {
-    setPerfumeName(props.name);
-  };
-
   return (
     <Link
       href={{
@@ -27,7 +20,7 @@ function PerfumeImg(props: PropsType) {
     >
       <PerfumeImgWrap>
         <img className="fume_img" src={props.image} alt="perfume" />
-        <div className="hover_img" onClick={handleClick}>
+        <div className="hover_img">
           <div>
             <Name>{props.name}</Name>
             <Keyword>{props.keyword}</Keyword>

@@ -253,7 +253,7 @@ const RecommendBtn = styled.button`
 `;
 
 const RetryBtn = styled.button`
-  margin-top: 1.3rem;
+  margin-top: 1.3222rem;
   border: solid 1px;
   width: 11.8rem;
   height: 3.274rem;

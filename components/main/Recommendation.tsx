@@ -1,6 +1,4 @@
 import React from 'react';
-import { useSetRecoilState } from 'recoil';
-import { productDetailAtom } from 'states/detail';
 import styled from 'styled-components';
 import { Contour } from '../../assets';
 import { media } from '@styles/theme';
@@ -13,10 +11,6 @@ interface MoodType {
 
 function Recommendation(props) {
   const datum = props.datum[1];
-  const setPerfumeName: any = useSetRecoilState(productDetailAtom);
-  const handleClick = () => {
-    setPerfumeName(datum.perfume_name);
-  };
   const idx = props.idx;
   const moods: [string, MoodType][] = Object.entries(datum?.moods[0]);
   if (datum.moods[0] === null) return;
@@ -29,7 +23,7 @@ function Recommendation(props) {
       }}
       passHref
     >
-      <RecommWrap key={idx} onClick={handleClick}>
+      <RecommWrap key={idx}>
         <>
           <Recomm>
             <ItemImg src={datum.perfume_img} alt="product main image" />
