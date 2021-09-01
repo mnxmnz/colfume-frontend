@@ -17,7 +17,7 @@ function TestResult(props) {
   const { data } = props;
   const { width } = props.size;
 
-  const isMobile = width <= 700 ? true : false;
+  const isMobile = width <= 600 ? true : false;
 
   const setPaletteAtom = useSetRecoilState(paletteAtom);
 

@@ -10,7 +10,7 @@ import { ISizeProps } from 'types/main';
 
 const SearchBar = (props: ISizeProps) => {
   const { width } = props.size;
-  const isMobile = width <= 420 ? true : false;
+  const isMobile = width <= 600 ? true : false;
 
   const searchButton: any = React.useRef();
 
