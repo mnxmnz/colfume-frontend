@@ -10,7 +10,7 @@ function Result(props) {
 
   const { width } = props.size;
 
-  const isMobile = width <= 700 ? true : false;
+  const isMobile = width <= 600 ? true : false;
 
   const router = useRouter();
 
