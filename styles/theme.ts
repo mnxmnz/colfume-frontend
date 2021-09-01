@@ -21,5 +21,5 @@ export const media = {
   1440: customMediaQuery(1440),
   1100: customMediaQuery(1100),
   768: customMediaQuery(768),
-  mobile: mobileMediaQuery(370, 420),
+  mobile: mobileMediaQuery(320, 600),
 };
