@@ -1,18 +1,8 @@
 <p align="center">
-    <a href="https://www.colfume.co.kr">
-        <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F0hoKn%2FbtrcOe6TvjA%2FoJYxQxU0znFkRrQAlkoJR0%2Fimg.png" alt="colfume logo" >
-    </a>
+    <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F0hoKn%2FbtrcOe6TvjA%2FoJYxQxU0znFkRrQAlkoJR0%2Fimg.png" alt="colfume logo" >
     <br />
     <h1 align="center">colfume</h1>
     <p align="center">컬퓸에서 색을 통해 당신의 향을 찾아보세요</p>
-    <br />
-    <p align="center">
-        <a href="https://www.colfume.co.kr">View Demo</a>
-        ·
-        <a href="https://github.com/mnxmnz/colfume-frontend/issues">Report Bug</a>
-        ·
-        <a href="https://github.com/mnxmnz/colfume-frontend/issues">Request Feature</a>
-    </p>
 </p>
 
 <br />
@@ -21,10 +11,6 @@
 ## About The Project
 
 #### Sopt 28th AppJam - web part
-
-#### Project name : colfume
-
-#### Project period : 2021.06.26 ~ 2021.08.31
 
 <br />
 <br />
