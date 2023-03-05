@@ -8,6 +8,8 @@
         <a href="https://cooing-mandolin-be1.notion.site/c-lfume-fedc588d0ba54d6f9d1b8be10823c968">Notion</a>
         ·
         <a href="https://velog.io/@devfolio/이-프로젝트-어떻게-만드셨어요-4-colfume팀-인터뷰">Interview</a>
+        ·
+        <a href="https://drive.google.com/file/d/1jLg7OIjq7uWdmbynLuVN6bml36FHnX2k/view?usp=share_link">Final Presentation</a>
     </p align="center">
 </p>
 
