@@ -3,6 +3,12 @@
     <br />
     <h1 align="center">colfume</h1>
     <p align="center">컬퓸에서 색을 통해 당신의 향을 찾아보세요</p>
+    <br />
+    <p align="center">
+        <a href="https://cooing-mandolin-be1.notion.site/c-lfume-fedc588d0ba54d6f9d1b8be10823c968">Notion</a>
+        ·
+        <a href="https://velog.io/@devfolio/이-프로젝트-어떻게-만드셨어요-4-colfume팀-인터뷰">Interview</a>
+    </p align="center">
 </p>
 
 <br />
